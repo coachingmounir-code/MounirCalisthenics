@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Munirs Calisthenics Ablauf | Training, Power & Identität</title>
+  <meta name="description" content="Der ultimative Calisthenics Trainingsablauf von Munir – Workout-Phasen, 8x30s Burpees, Sportleridentität und Körpersprache." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#f97316',
+              amber: '#fbbf24',
+              red: '#ef4444',
+              dark: '#0a0a0c',
+              card: '#121216',
+              border: '#27272e',
+            }
+          },
+          fontFamily: {
+            display: ['Oswald', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            glow: {
+              '0%': { boxShadow: '0 0 15px rgba(249, 115, 22, 0.4)' },
+              '100%': { boxShadow: '0 0 35px rgba(249, 115, 22, 0.85)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Oswald (Athletic Display) + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #09090b;
+      color: #f4f4f5;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, .font-athletic {
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .hero-gradient {
+      background: linear-gradient(180deg, rgba(9,9,11,0.2) 0%, rgba(9,9,11,0.85) 65%, #09090b 100%);
+    }
+    .video-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .video-card:hover {
+      border-color: rgba(249, 115, 22, 0.6);
+      transform: translateY(-2px);
+    }
+    .glass-panel {
+      background: rgba(18, 18, 22, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="selection:bg-orange-500 selection:text-white">
+
+  <!-- Top Sticky Header / Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-zinc-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform">
+          <i data-lucide="zap" class="w-5 h-5 text-zinc-950 stroke-[2.5]"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-athletic text-xl sm:text-2xl font-bold tracking-wider text-white group-hover:text-orange-400 transition-colors">
+            MUNIR <span class="text-orange-500">CALISTHENICS</span>
+          </span>
+          <span class="text-[10px] uppercase tracking-widest text-zinc-400 font-medium -mt-1">Trainingsablauf</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-300">
+        <a href="#hero" class="hover:text-orange-400 transition-colors">Start</a>
+        <a href="#video-1" class="hover:text-orange-400 transition-colors">1. Flow Video</a>
+        <a href="#video-2" class="hover:text-orange-400 transition-colors">2. Beach Vibes</a>
+        <a href="#video-3" class="hover:text-orange-400 transition-colors">3. Street Battle</a>
+        <a href="#burpees" class="px-2.5 py-1 rounded bg-orange-500/10 border border-orange-500/30 text-orange-400 font-semibold hover:bg-orange-500/20 transition-all flex items-center gap-1.5">
+          <i data-lucide="flame" class="w-3.5 h-3.5"></i> Burpees 8x30s
+        </a>
+        <a href="#identitaet" class="hover:text-orange-400 transition-colors">Sportleridentität</a>
+        <a href="#koerpersprache" class="hover:text-orange-400 transition-colors">Körpersprache</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="flex items-center gap-3">
+        <a href="#burpees" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold bg-gradient-to-r from-orange-500 to-amber-500 text-zinc-950 hover:opacity-95 shadow-md shadow-orange-500/20 transition-all">
+          <i data-lucide="timer" class="w-4 h-4"></i>
+          <span>Burpee Timer</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================================================================= -->
+  <!-- 1. HERO SECTION: MUSKULÖSE ATHLETEN & GROSSER TITEL              -->
+  <!-- ================================================================= -->
+  <section id="hero" class="relative min-h-[92vh] flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <!-- Dramatic Athletic Background with overlay -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1920&auto=format&fit=crop" 
+        alt="Muskulöse Calisthenics Athleten im Training" 
+        class="w-full h-full object-cover object-center filter brightness-[0.45] contrast-125 scale-105 transform"
+      />
+      <!-- Ambient overlay -->
+      <div class="absolute inset-0 bg-radial from-orange-500/10 via-transparent to-zinc-950/90"></div>
+      <div class="hero-gradient absolute inset-0"></div>
+      <!-- Subtle Grid Pattern -->
+      <div class="absolute inset-0 opacity-15 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
+      
+      <!-- Top Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel border border-orange-500/30 text-orange-400 text-xs sm:text-sm font-semibold mb-6 tracking-wider uppercase">
+        <i data-lucide="shield-check" class="w-4 h-4 text-orange-400"></i>
+        <span>Offizieller Trainings-Leitfaden</span>
+      </div>
+
+      <!-- Main Headline: Munirs Calisthenics Ablauf -->
+      <h1 class="font-athletic text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-400 tracking-tight leading-none drop-shadow-2xl">
+        MUNIRS <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500">
+          CALISTHENICS ABLAUF
+        </span>
+      </h1>
+
+      <p class="mt-6 text-lg sm:text-2xl text-zinc-300 font-medium max-w-3xl leading-relaxed drop-shadow">
+        Kraft, Rhythmus, stählerne Disziplin und maximale Körperspannung.
+        Schritt für Schritt durch Munirs Calisthenics-Trainingsablauf.
+      </p>
+
+      <!-- Quick Highlights Grid -->
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 w-full max-w-3xl">
+        <div class="glass-panel p-3.5 rounded-xl border border-zinc-800 text-center">
+          <div class="text-orange-400 font-bold text-xl sm:text-2xl font-athletic">4 Videos</div>
+          <div class="text-xs text-zinc-400">Direkt integriert</div>
+        </div>
+        <div class="glass-panel p-3.5 rounded-xl border border-zinc-800 text-center">
+          <div class="text-orange-400 font-bold text-xl sm:text-2xl font-athletic">8 x 30s</div>
+          <div class="text-xs text-zinc-400">Burpee Power</div>
+        </div>
+        <div class="glass-panel p-3.5 rounded-xl border border-zinc-800 text-center">
+          <div class="text-orange-400 font-bold text-xl sm:text-2xl font-athletic">3 Säulen</div>
+          <div class="text-xs text-zinc-400">Sportleridentität</div>
+        </div>
+        <div class="glass-panel p-3.5 rounded-xl border border-zinc-800 text-center">
+          <div class="text-orange-400 font-bold text-xl sm:text-2xl font-athletic">Präsenz</div>
+          <div class="text-xs text-zinc-400">Körpersprache</div>
+        </div>
+      </div>
+
+      <!-- Hero Call-to-Actions -->
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <a href="#video-1" class="px-8 py-4 rounded-xl text-base sm:text-lg font-bold bg-gradient-to-r from-orange-500 to-amber-500 text-zinc-950 hover:brightness-110 shadow-xl shadow-orange-500/25 transition-all flex items-center gap-3">
+          <i data-lucide="play-circle" class="w-6 h-6"></i>
+          <span>Workout starten</span>
+        </a>
+        <a href="#burpees" class="px-6 py-4 rounded-xl text-base sm:text-lg font-bold glass-panel hover:bg-zinc-800/80 border border-zinc-700 text-zinc-200 transition-all flex items-center gap-2">
+          <i data-lucide="flame" class="w-5 h-5 text-orange-400"></i>
+          <span>Direkt zu den Burpees</span>
+        </a>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="mt-12 flex flex-col items-center gap-2 text-zinc-500 text-xs">
+        <span class="tracking-widest uppercase text-[11px]">Nach unten scrollen</span>
+        <i data-lucide="chevron-down" class="w-5 h-5 text-orange-400 animate-bounce"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 2. SEKTION: 1. VIDEO (Mike Song / Flow & Rhythmus)               -->
+  <!-- ================================================================= -->
+  <section id="video-1" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-zinc-900 relative">
+    <div class="max-w-5xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 text-orange-400 text-sm font-semibold tracking-wider uppercase mb-2">
+            <span class="w-6 h-0.5 bg-orange-500"></span>
+            <span>Sektion 01 • Erstes Video</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+            Flow, Rhythmus & Körperkontrolle
+          </h2>
+          <p class="text-zinc-400 text-sm sm:text-base mt-2 max-w-2xl">
+            Das erste Video für Munirs Ablauf: Starte mit Fokus auf Koordination, Rhythmusgefühl und fließende Bewegung. Direkt hier per Klick abspielen.
+          </p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono text-zinc-400 glass-panel px-3 py-1.5 rounded-lg w-fit">
+          <i data-lucide="film" class="w-4 h-4 text-orange-400"></i>
+          <span>Mike Song • It Runs Through Me</span>
+        </div>
+      </div>
+
+      <!-- Video Embed Card -->
+      <div class="video-card glass-panel rounded-2xl p-2 sm:p-4 border border-zinc-800 shadow-2xl shadow-black/60 relative overflow-hidden">
+        <div class="relative w-full overflow-hidden rounded-xl bg-zinc-950 aspect-video">
+          <iframe 
+            class="absolute top-0 left-0 w-full h-full rounded-xl"
+            src="https://www.youtube-nocookie.com/embed/g9FJhH9dOeU?rel=0" 
+            title="1. Video: Mike Song choreography to It Runs Through Me" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        
+        <!-- Video Details Footer -->
+        <div class="mt-4 px-2 py-1 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-400">
+          <div class="flex items-center gap-2">
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+            <span class="text-zinc-300 font-medium">Bereit zum Abspielen</span>
+          </div>
+          <a href="https://youtu.be/g9FJhH9dOeU" target="_blank" rel="noopener noreferrer" class="hover:text-orange-400 flex items-center gap-1 transition-colors">
+            <span>Auf YouTube ansehen</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 3. SEKTION: 2. VIDEO (Beach Vibes / House Music & Flow)          -->
+  <!-- ================================================================= -->
+  <section id="video-2" class="py-20 px-4 sm:px-6 lg:px-8 bg-zinc-950/70 border-t border-zinc-900 relative">
+    <div class="max-w-5xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 text-amber-400 text-sm font-semibold tracking-wider uppercase mb-2">
+            <span class="w-6 h-0.5 bg-amber-500"></span>
+            <span>Sektion 02 • Zweites Video</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+            Vibe, Ausdauer & Beach Energy
+          </h2>
+          <p class="text-zinc-400 text-sm sm:text-base mt-2 max-w-2xl">
+            Zweites Video im Ablauf: Den richtigen Beat und die Leichtigkeit mitnehmen. Schaffe dir die ideale Trainingsatmosphäre.
+          </p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono text-zinc-400 glass-panel px-3 py-1.5 rounded-lg w-fit">
+          <i data-lucide="music" class="w-4 h-4 text-amber-400"></i>
+          <span>Chris Luno • Beach House Music</span>
+        </div>
+      </div>
+
+      <!-- Video Embed Card -->
+      <div class="video-card glass-panel rounded-2xl p-2 sm:p-4 border border-zinc-800 shadow-2xl shadow-black/60 relative overflow-hidden">
+        <div class="relative w-full overflow-hidden rounded-xl bg-zinc-950 aspect-video">
+          <iframe 
+            class="absolute top-0 left-0 w-full h-full rounded-xl"
+            src="https://www.youtube-nocookie.com/embed/ja2dGXXmFV4?rel=0" 
+            title="2. Video: playing house music on the beach until people dance" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="mt-4 px-2 py-1 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-400">
+          <div class="flex items-center gap-2">
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+            <span class="text-zinc-300 font-medium">Soundtrack & Energie</span>
+          </div>
+          <a href="https://youtu.be/ja2dGXXmFV4" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 flex items-center gap-1 transition-colors">
+            <span>Auf YouTube ansehen</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 4. SEKTION: 3. VIDEO (NYC Street Workout Battle)                 -->
+  <!-- ================================================================= -->
+  <section id="video-3" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-zinc-900 relative">
+    <div class="max-w-5xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 text-red-500 text-sm font-semibold tracking-wider uppercase mb-2">
+            <span class="w-6 h-0.5 bg-red-500"></span>
+            <span>Sektion 03 • Drittes Video</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+            Street Workout Battle & Hardcore Calisthenics
+          </h2>
+          <p class="text-zinc-400 text-sm sm:text-base mt-2 max-w-2xl">
+            Drittes Video im Ablauf: Die Essenz von reinem Calisthenics – Bars, Dips, Muscle-Ups und der unerbittliche Wettkampfgeist im Park.
+          </p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono text-zinc-400 glass-panel px-3 py-1.5 rounded-lg w-fit">
+          <i data-lucide="flame" class="w-4 h-4 text-red-500"></i>
+          <span>NYC Street Workout Battle • Goku Pump</span>
+        </div>
+      </div>
+
+      <!-- Video Embed Card -->
+      <div class="video-card glass-panel rounded-2xl p-2 sm:p-4 border border-zinc-800 shadow-2xl shadow-black/60 relative overflow-hidden">
+        <div class="relative w-full overflow-hidden rounded-xl bg-zinc-950 aspect-video">
+          <iframe 
+            class="absolute top-0 left-0 w-full h-full rounded-xl"
+            src="https://www.youtube-nocookie.com/embed/UMYm2cBjZIY?rel=0" 
+            title="3. Video: NYC Street Workout Battle | Calisthenics Showdown in the Park" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="mt-4 px-2 py-1 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-400">
+          <div class="flex items-center gap-2">
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-red-500"></span>
+            <span class="text-zinc-300 font-medium">Maximale Intensität</span>
+          </div>
+          <a href="https://youtu.be/UMYm2cBjZIY" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 flex items-center gap-1 transition-colors">
+            <span>Auf YouTube ansehen</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 5. BURPEES SEKTION (VOR SPORTLERIDENTITÄT)                        -->
+  <!-- "wo einfach nur Burpees, da steht dann einfach Burpees,           -->
+  <!-- 8 x 30 Sekunden Burpees machen. Groß, klar, kenntlich, schön designt."-->
+  <!-- ================================================================= -->
+  <section id="burpees" class="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-zinc-950 via-[#180e05] to-zinc-950 border-y-2 border-orange-500/40">
+    
+    <!-- Atmospheric background glowing elements -->
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-orange-600/15 blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="absolute -bottom-32 right-10 w-[400px] h-[250px] bg-amber-600/15 blur-[100px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto relative z-10">
+      
+      <!-- Massive Hero-Style Card for Burpees -->
+      <div class="glass-panel border-2 border-orange-500/60 rounded-3xl p-6 sm:p-12 md:p-16 text-center shadow-[0_0_50px_rgba(249,115,22,0.25)] relative overflow-hidden">
+        
+        <!-- Top Callout Tag -->
+        <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/20 border border-orange-500/50 text-orange-400 text-sm font-bold uppercase tracking-widest mb-6">
+          <i data-lucide="flame" class="w-5 h-5 text-orange-400 animate-pulse"></i>
+          <span>Pulsbeschleuniger & Willenskraft</span>
+        </div>
+
+        <!-- RIESIGER TITEL: BURPEES -->
+        <h2 class="font-athletic text-6xl sm:text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-orange-100 to-orange-400 tracking-wider leading-none drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
+          BURPEES
+        </h2>
+
+        <!-- KLARE ANWEISUNG: 8 x 30 Sekunden Burpees machen -->
+        <div class="mt-6 mb-8">
+          <p class="font-athletic text-3xl sm:text-5xl md:text-6xl font-bold text-white tracking-wide">
+            8 x 30 SEKUNDEN <span class="text-orange-400">BURPEES</span> MACHEN
+          </p>
+          <p class="text-zinc-300 text-base sm:text-xl mt-3 max-w-2xl mx-auto font-medium">
+            Voller Körpereinsatz. Jeder Sprung zählt. Keine Kompromisse.
+          </p>
+        </div>
+
+        <!-- 8 Set Round Badges visual indicator -->
+        <div class="my-8 max-w-2xl mx-auto">
+          <div class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-3">8 Runden Übersicht</div>
+          <div class="grid grid-cols-4 sm:grid-cols-8 gap-2" id="roundBadges">
+            <div class="set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-300 transition-all" data-round="1">R1 (30s)</div>
+            <div class="set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-300 transition-all" data-round="2">R2 (30s)</div>
+            <div class="set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-300 transition-all" data-round="3">R3 (30s)</div>
+            <div class="set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-300 transition-all" data-round="4">R4 (30s)</div>
+            <div class="set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-300 transition-all" data-round="5">R5 (30s)</div>
+            <div class="set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-300 transition-all" data-round="6">R6 (30s)</div>
+            <div class="set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-300 transition-all" data-round="7">R7 (30s)</div>
+            <div class="set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-300 transition-all" data-round="8">R8 (30s)</div>
+          </div>
+        </div>
+
+        <!-- Interactive Workout Interval Timer -->
+        <div class="bg-zinc-950/80 border border-zinc-800/90 rounded-2xl p-6 max-w-xl mx-auto shadow-inner">
+          <div class="flex items-center justify-between text-xs text-zinc-400 mb-2 font-mono uppercase">
+            <span id="timerModeLabel" class="text-orange-400 font-bold flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span>
+              Intervall-Timer
+            </span>
+            <span id="roundDisplay">Runde: <strong class="text-white font-mono">1 / 8</strong></span>
+          </div>
+
+          <!-- Big Countdown Display -->
+          <div class="font-athletic text-7xl sm:text-8xl font-black text-white my-2 tracking-tight" id="timeRemaining">
+            00:30
+          </div>
+          
+          <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden mb-6">
+            <div id="timerProgress" class="bg-gradient-to-r from-orange-500 to-amber-400 h-full w-full transition-all duration-300"></div>
+          </div>
+
+          <!-- Timer Controls -->
+          <div class="flex items-center justify-center gap-3">
+            <button id="startTimerBtn" onclick="toggleTimer()" class="px-6 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-zinc-950 font-bold text-base flex items-center gap-2 shadow-lg shadow-orange-500/30 transition-all">
+              <i data-lucide="play" class="w-5 h-5 fill-current"></i>
+              <span id="startBtnText">Starten</span>
+            </button>
+            <button onclick="resetTimer()" class="px-5 py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-semibold text-sm flex items-center gap-2 border border-zinc-700 transition-all">
+              <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+              <span>Zurücksetzen</span>
+            </button>
+            <button id="soundToggleBtn" onclick="toggleAudio()" class="p-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-orange-400 border border-zinc-700 transition-all" title="Audio-Signal an/aus">
+              <i data-lucide="volume-2" id="soundIcon" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-8 text-sm text-zinc-400 flex items-center justify-center gap-6">
+          <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-orange-400"></i> Brust berührt den Boden</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-orange-400"></i> Voller Strecksprung oben</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 6. SEKTION: MUNIRS SPORTLERIDENTITÄT                             -->
+  <!-- "Titel: Munirs Sportleridentität"                                 -->
+  <!-- "Subtext: laut die drei Säulen dieser Sportleridentität benennen" -->
+  <!-- ================================================================= -->
+  <section id="identitaet" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-zinc-900 relative">
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 text-orange-400 text-sm font-semibold tracking-wider uppercase mb-3">
+          <i data-lucide="crown" class="w-4 h-4 text-orange-400"></i>
+          <span>Mindset & Fundament</span>
+        </div>
+        
+        <!-- Titel: Munirs Sportleridentität -->
+        <h2 class="font-athletic text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-wide">
+          MUNIRS SPORTLERIDENTITÄT
+        </h2>
+
+        <!-- Subtext: laut die drei Säulen dieser Sportleridentität benennen -->
+        <p class="mt-4 text-lg sm:text-2xl text-orange-300 font-semibold tracking-wide uppercase">
+          Laut die drei Säulen dieser Sportleridentität benennen
+        </p>
+
+        <p class="text-zinc-400 text-sm sm:text-base mt-2">
+          Sag sie mit klarer, fester Stimme vor jedem Durchgang auf. Verankere sie in deinem Geist.
+        </p>
+      </div>
+
+      <!-- The 3 Pillars Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Säule 1 -->
+        <div class="glass-panel rounded-2xl p-8 border border-zinc-800 hover:border-orange-500/70 transition-all duration-300 relative group flex flex-col justify-between">
+          <div class="absolute -top-4 left-6 px-3 py-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg text-zinc-950 font-athletic font-bold text-xs tracking-wider shadow-md">
+            SÄULE 01
+          </div>
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center mb-6 text-orange-400 group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-zinc-950 transition-all">
+              <i data-lucide="target" class="w-7 h-7 stroke-[2]"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">
+              Eiserne Disziplin & Fokus
+            </h3>
+            <p class="text-zinc-400 text-sm leading-relaxed mb-4">
+              Kein Zaudern, keine Ausreden. Dein Geist lenkt deinen Körper. Jeder Moment an der Stange gehört zu 100% deinem Ziel.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-zinc-800/80">
+            <button onclick="speakPillar(1)" class="w-full py-2.5 rounded-lg bg-zinc-800/80 hover:bg-orange-500 hover:text-zinc-950 text-xs font-bold uppercase tracking-wider text-zinc-300 transition-all flex items-center justify-center gap-2">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
+              <span>Säule 1 laut aussprechen</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Säule 2 -->
+        <div class="glass-panel rounded-2xl p-8 border border-zinc-800 hover:border-orange-500/70 transition-all duration-300 relative group flex flex-col justify-between">
+          <div class="absolute -top-4 left-6 px-3 py-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg text-zinc-950 font-athletic font-bold text-xs tracking-wider shadow-md">
+            SÄULE 02
+          </div>
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center mb-6 text-orange-400 group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-zinc-950 transition-all">
+              <i data-lucide="activity" class="w-7 h-7 stroke-[2]"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">
+              Maximale Körperspannung & Form
+            </h3>
+            <p class="text-zinc-400 text-sm leading-relaxed mb-4">
+              Jede Wiederholung in perfekter Ausführung. Reine Calisthenics-Kontrolle von den Fingerspitzen bis zu den Zehen. Ästhetik trifft rohe Kraft.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-zinc-800/80">
+            <button onclick="speakPillar(2)" class="w-full py-2.5 rounded-lg bg-zinc-800/80 hover:bg-orange-500 hover:text-zinc-950 text-xs font-bold uppercase tracking-wider text-zinc-300 transition-all flex items-center justify-center gap-2">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
+              <span>Säule 2 laut aussprechen</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Säule 3 -->
+        <div class="glass-panel rounded-2xl p-8 border border-zinc-800 hover:border-orange-500/70 transition-all duration-300 relative group flex flex-col justify-between">
+          <div class="absolute -top-4 left-6 px-3 py-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg text-zinc-950 font-athletic font-bold text-xs tracking-wider shadow-md">
+            SÄULE 03
+          </div>
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center mb-6 text-orange-400 group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-zinc-950 transition-all">
+              <i data-lucide="award" class="w-7 h-7 stroke-[2]"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">
+              Unaufhaltsamer Wille & No Excuses
+            </h3>
+            <p class="text-zinc-400 text-sm leading-relaxed mb-4">
+              Wenn die Muskeln brennen, fängt der Satz erst an. Ein wahrer Athlet gibt niemals auf. Kontinuität Tag für Tag.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-zinc-800/80">
+            <button onclick="speakPillar(3)" class="w-full py-2.5 rounded-lg bg-zinc-800/80 hover:bg-orange-500 hover:text-zinc-950 text-xs font-bold uppercase tracking-wider text-zinc-300 transition-all flex items-center justify-center gap-2">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
+              <span>Säule 3 laut aussprechen</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Combined Vocal Callout Bar -->
+      <div class="mt-12 glass-panel p-6 rounded-2xl border border-orange-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-4 text-left">
+          <div class="w-12 h-12 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center shrink-0">
+            <i data-lucide="mic" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="text-white font-bold text-base">Alle drei Säulen nacheinander skandieren</h4>
+            <p class="text-zinc-400 text-xs">Sprich sie laut und deutlich vor dem nächsten Satz aus.</p>
+          </div>
+        </div>
+        <button onclick="speakAllPillars()" class="px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-zinc-950 font-bold text-sm tracking-wide uppercase hover:opacity-95 shadow-lg shadow-orange-500/20 shrink-0 flex items-center gap-2">
+          <i data-lucide="megaphone" class="w-4 h-4"></i>
+          <span>Alle 3 laut aufsagen</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 7. SEKTION: KÖRPERSPRACHE & CHRISTOPH WALTZ VIDEO                 -->
+  <!-- "Nach der Sportleridentität kommt dann das Thema mit der         -->
+  <!-- Körpersprache und da wird dann das Thema eingebettet, das Video   -->
+  <!-- eingebettet, das hier als das vierte Video geteilt wurde, wo man   -->
+  <!-- da das Christoph Waltz Video sieht, das soll auch eingebettet     -->
+  <!-- werden, sodass man dann einfach da auf Play klicken kann."         -->
+  <!-- ================================================================= -->
+  <section id="koerpersprache" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-zinc-900 bg-zinc-950/80 relative">
+    <div class="max-w-5xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 text-orange-400 text-sm font-semibold tracking-wider uppercase mb-2">
+            <span class="w-6 h-0.5 bg-orange-500"></span>
+            <span>Sektion 04 • Viertes Video</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+            Körpersprache
+          </h2>
+          <p class="text-zinc-400 text-sm sm:text-base mt-2 max-w-2xl">
+            Präsenz, Haltung, Mimik und Gestik – wie du dich trägst, definiert deine innere Stärke und Wirkung. Hier direkt das Christoph Waltz Video ansehen.
+          </p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono text-zinc-400 glass-panel px-3 py-1.5 rounded-lg w-fit">
+          <i data-lucide="user-check" class="w-4 h-4 text-orange-400"></i>
+          <span>Christoph Waltz • Ausstrahlung & Haltung</span>
+        </div>
+      </div>
+
+      <!-- Video Embed Card -->
+      <div class="video-card glass-panel rounded-2xl p-2 sm:p-4 border border-zinc-800 shadow-2xl shadow-black/60 relative overflow-hidden">
+        <div class="relative w-full overflow-hidden rounded-xl bg-zinc-950 aspect-video">
+          <iframe 
+            class="absolute top-0 left-0 w-full h-full rounded-xl"
+            src="https://www.youtube-nocookie.com/embed/sBRbMvTlUok?rel=0" 
+            title="4. Video: Christoph Waltz - Körpersprache, Präsenz & Ausstrahlung" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="mt-4 px-2 py-1 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-400">
+          <div class="flex items-center gap-2">
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+            <span class="text-zinc-300 font-medium">Körpersprache & Charisma</span>
+          </div>
+          <a href="https://youtu.be/sBRbMvTlUok" target="_blank" rel="noopener noreferrer" class="hover:text-orange-400 flex items-center gap-1 transition-colors">
+            <span>Auf YouTube ansehen</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Body Language Key Takeaways for Calisthenics Athletes -->
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="glass-panel p-4 rounded-xl border border-zinc-800/80">
+          <div class="flex items-center gap-2 text-white font-bold text-sm mb-1">
+            <i data-lucide="crosshair" class="w-4 h-4 text-orange-400"></i>
+            <span>Aufrechte Haltung</span>
+          </div>
+          <p class="text-zinc-400 text-xs leading-relaxed">
+            Schultern nach hinten und unten, Brust stolz öffnen. Das signalisiert Dominanz und sofortige Rumpfspannung.
+          </p>
+        </div>
+        <div class="glass-panel p-4 rounded-xl border border-zinc-800/80">
+          <div class="flex items-center gap-2 text-white font-bold text-sm mb-1">
+            <i data-lucide="eye" class="w-4 h-4 text-orange-400"></i>
+            <span>Ruhiger Blickkontakt</span>
+          </div>
+          <p class="text-zinc-400 text-xs leading-relaxed">
+            Kein hastiges Umherblicken. Volle Kontrolle über die Atmung und eine fokussierte, unerschütterliche Präsenz.
+          </p>
+        </div>
+        <div class="glass-panel p-4 rounded-xl border border-zinc-800/80">
+          <div class="flex items-center gap-2 text-white font-bold text-sm mb-1">
+            <i data-lucide="shield" class="w-4 h-4 text-orange-400"></i>
+            <span>Souveräne Gestik</span>
+          </div>
+          <p class="text-zinc-400 text-xs leading-relaxed">
+            Bewusste, präzise Bewegungen – sowohl an der Calisthenics-Stange als auch im Alltag und Gespräch.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- FOOTER                                                           -->
+  <!-- ================================================================= -->
+  <footer class="py-12 px-4 sm:px-6 lg:px-8 border-t border-zinc-900 bg-[#070709] text-center">
+    <div class="max-w-4xl mx-auto flex flex-col items-center">
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-8 h-8 rounded-lg bg-orange-500 flex items-center justify-center text-zinc-950 font-bold">
+          <i data-lucide="zap" class="w-4 h-4 stroke-[3]"></i>
+        </div>
+        <span class="font-athletic text-xl font-bold tracking-wider text-white">MUNIR CALISTHENICS</span>
+      </div>
+      <p class="text-zinc-400 text-sm max-w-md mb-6">
+        „Disziplin ist die Brücke zwischen deinen Zielen und deinen Erfolgen.“
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 text-xs text-zinc-400">
+        <a href="#hero" class="hover:text-orange-400 transition-colors">Startseite</a>
+        <span>•</span>
+        <a href="#video-1" class="hover:text-orange-400 transition-colors">Video 1 (Flow)</a>
+        <span>•</span>
+        <a href="#video-2" class="hover:text-orange-400 transition-colors">Video 2 (Beach)</a>
+        <span>•</span>
+        <a href="#video-3" class="hover:text-orange-400 transition-colors">Video 3 (Battle)</a>
+        <span>•</span>
+        <a href="#burpees" class="hover:text-orange-400 transition-colors">Burpees</a>
+        <span>•</span>
+        <a href="#identitaet" class="hover:text-orange-400 transition-colors">Sportleridentität</a>
+        <span>•</span>
+        <a href="#koerpersprache" class="hover:text-orange-400 transition-colors">Körpersprache</a>
+      </div>
+      <div class="mt-8 text-xs text-zinc-400">
+        © 2026 Munir Calisthenics Ablauf • All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================================================================= -->
+  <!-- JAVASCRIPT: INTERAKTIVER BURPEE TIMER & SPRACHSYNTHESE            -->
+  <!-- ================================================================= -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // -------------------------------------------------------------
+    // BURPEES 8 x 30s INTERVAL TIMER LOGIC
+    // -------------------------------------------------------------
+    const TOTAL_ROUNDS = 8;
+    const WORK_SECONDS = 30;
+    const REST_SECONDS = 15; // standard rest interval between 30s bouts
+
+    let currentRound = 1;
+    let isWorking = true; // true = Work (30s), false = Rest (15s)
+    let timeLeft = WORK_SECONDS;
+    let timerInterval = null;
+    let isRunning = false;
+    let audioEnabled = true;
+
+    const roundDisplay = document.getElementById('roundDisplay');
+    const timeRemaining = document.getElementById('timeRemaining');
+    const timerProgress = document.getElementById('timerProgress');
+    const timerModeLabel = document.getElementById('timerModeLabel');
+    const startBtnText = document.getElementById('startBtnText');
+    const soundIcon = document.getElementById('soundIcon');
+
+    // Web Audio API beep sound synthesizer (no external audio files needed)
+    let audioCtx = null;
+    function playBeep(freq = 600, duration = 0.15) {
+      if (!audioEnabled) return;
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {
+        console.warn('Audio could not be played:', e);
+      }
+    }
+
+    function toggleAudio() {
+      audioEnabled = !audioEnabled;
+      if (audioEnabled) {
+        soundIcon.setAttribute('data-lucide', 'volume-2');
+        playBeep(880, 0.1);
+      } else {
+        soundIcon.setAttribute('data-lucide', 'volume-x');
+      }
+      lucide.createIcons();
+    }
+
+    function updateRoundBadges() {
+      const badges = document.querySelectorAll('.set-badge');
+      badges.forEach(badge => {
+        const r = parseInt(badge.getAttribute('data-round'));
+        if (r < currentRound) {
+          badge.className = 'set-badge py-2 px-1 rounded-lg bg-emerald-950/60 border border-emerald-500 text-xs font-bold text-emerald-400 transition-all';
+          badge.innerHTML = `✓ R${r}`;
+        } else if (r === currentRound) {
+          badge.className = 'set-badge py-2 px-1 rounded-lg bg-orange-500 border border-orange-400 text-xs font-bold text-zinc-950 shadow-lg shadow-orange-500/30 scale-105 transition-all animate-pulse';
+          badge.innerHTML = `R${r} (30s)`;
+        } else {
+          badge.className = 'set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-400 transition-all';
+          badge.innerHTML = `R${r} (30s)`;
+        }
+      });
+    }
+
+    function updateDisplay() {
+      const mins = Math.floor(timeLeft / 60);
+      const secs = timeLeft % 60;
+      timeRemaining.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+
+      const totalPhaseTime = isWorking ? WORK_SECONDS : REST_SECONDS;
+      const progressPercent = (timeLeft / totalPhaseTime) * 100;
+      timerProgress.style.width = `${progressPercent}%`;
+
+      if (isWorking) {
+        timerModeLabel.innerHTML = `<span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span> <span class="text-orange-400">BURPEE POWER (RUNDE ${currentRound})</span>`;
+        timerProgress.className = 'bg-gradient-to-r from-orange-500 to-amber-400 h-full transition-all duration-300';
+      } else {
+        timerModeLabel.innerHTML = `<span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span> <span class="text-blue-400">KURZE VERSCHNAUFPAUSE</span>`;
+        timerProgress.className = 'bg-gradient-to-r from-blue-500 to-cyan-400 h-full transition-all duration-300';
+      }
+
+      roundDisplay.innerHTML = `Runde: <strong class="text-white font-mono">${currentRound} / ${TOTAL_ROUNDS}</strong>`;
+      updateRoundBadges();
+    }
+
+    function toggleTimer() {
+      if (isRunning) {
+        clearInterval(timerInterval);
+        isRunning = false;
+        startBtnText.textContent = 'Fortsetzen';
+      } else {
+        isRunning = true;
+        startBtnText.textContent = 'Pause';
+        playBeep(880, 0.2); // Start beep
+        timerInterval = setInterval(() => {
+          if (timeLeft > 0) {
+            timeLeft--;
+            if (timeLeft <= 3 && timeLeft > 0) {
+              playBeep(440, 0.1); // Countdown beep
+            }
+            updateDisplay();
+          } else {
+            // Switch between work and rest or advance round
+            if (isWorking) {
+              playBeep(1200, 0.4); // Completion of work
+              if (currentRound >= TOTAL_ROUNDS) {
+                // Workout done!
+                clearInterval(timerInterval);
+                isRunning = false;
+                startBtnText.textContent = 'Fertig!';
+                timerModeLabel.innerHTML = `<span class="text-emerald-400 font-bold">HERVORRAGEND! 8x30s BURPEES GESCHAFFT!</span>`;
+                timeRemaining.textContent = "00:00";
+                timerProgress.style.width = "100%";
+                timerProgress.className = "bg-emerald-500 h-full";
+                confettiEffect();
+                return;
+              }
+              isWorking = false;
+              timeLeft = REST_SECONDS;
+            } else {
+              // End of rest, start next round
+              playBeep(900, 0.3);
+              isWorking = true;
+              currentRound++;
+              timeLeft = WORK_SECONDS;
+            }
+            updateDisplay();
+          }
+        }, 1000);
+      }
+    }
+
+    function resetTimer() {
+      clearInterval(timerInterval);
+      isRunning = false;
+      isWorking = true;
+      currentRound = 1;
+      timeLeft = WORK_SECONDS;
+      startBtnText.textContent = 'Starten';
+      updateDisplay();
+    }
+
+    // Initialize display state
+    updateDisplay();
+
+    // -------------------------------------------------------------
+    // THREE PILLARS (SPORTLERIDENTITÄT) VOICE / SPEECH SYNTHESIS
+    // -------------------------------------------------------------
+    const pillarsText = {
+      1: "Säule eins: Eiserne Disziplin und Fokus. Kein Tag ohne Hingabe. Der Geist lenkt den Körper.",
+      2: "Säule zwei: Maximale Körperspannung und Form. Jede Wiederholung sauber und kontrolliert.",
+      3: "Säule drei: Unaufhaltsamer Wille und No Excuses. Durchziehen bis zum Schluss!"
+    };
+
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel(); // Stop any pending speech
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'de-DE';
+        utterance.rate = 0.95; // Clear & powerful cadence
+        utterance.pitch = 1.0;
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert(text);
+      }
+    }
+
+    function speakPillar(index) {
+      if (pillarsText[index]) {
+        speakText(pillarsText[index]);
+      }
+    }
+
+    function speakAllPillars() {
+      const full = "Munirs drei Säulen der Sportleridentität. " +
+        "Erstens: Eiserne Disziplin und Fokus. " +
+        "Zweitens: Maximale Körperspannung und perfekte Form. " +
+        "Drittens: Unaufhaltsamer Wille, keine Ausreden!";
+      speakText(full);
+    }
+
+    // Simple celebration effect on finish
+    function confettiEffect() {
+      try {
+        playBeep(1000, 0.15);
+        setTimeout(() => playBeep(1200, 0.2), 160);
+        setTimeout(() => playBeep(1500, 0.35), 350);
+      } catch(e) {}
+    }
+  </script>
+</body>
+</html>
