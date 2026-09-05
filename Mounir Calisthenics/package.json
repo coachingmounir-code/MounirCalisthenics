@@ -1,14 +1,14 @@
 {
-  "name": "munir-calisthenics-trainingsablauf",
+  "name": "mounir-calisthenics-trainingsablauf",
   "version": "1.0.0",
-  "description": "Onepager für Munirs Calisthenics Trainingsablauf mit Video-Embeds, Burpee Intervalltimer, Sportleridentität und Körpersprache",
+  "description": "Onepager für Mounirs Calisthenics Trainingsablauf mit Video-Embeds, Burpee Intervalltimer, Sportleridentität und Körpersprache",
   "main": "index.html",
   "scripts": {
     "start": "npx serve -l 3000 ."
   },
   "keywords": [
     "calisthenics",
-    "munir",
+    "mounir",
     "workout",
     "burpees",
     "street-workout"

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Munirs Calisthenics Ablauf | Training, Power & Identität</title>
-  <meta name="description" content="Der ultimative Calisthenics Trainingsablauf von Munir – Workout-Phasen, 8x30s Burpees, Sportleridentität und Körpersprache." />
-  
+  <title>MOUNIR // CALISTHENICS — Performance, Burpees & Mindset</title>
+  <meta name="description" content="Mounirs Calisthenics Trainingsablauf: High-Performance Workout-Phasen, 8x30s Burpees Intervall-Engine, Sportleridentität und Körpersprache." />
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -14,27 +14,58 @@
       theme: {
         extend: {
           colors: {
-            brand: {
-              orange: '#f97316',
-              amber: '#fbbf24',
-              red: '#ef4444',
-              dark: '#0a0a0c',
-              card: '#121216',
-              border: '#27272e',
+            lime: {
+              DEFAULT: '#d2ff00',
+              50: '#f9ffe5',
+              100: '#f3ffcc',
+              200: '#e5ff99',
+              300: '#d7ff66',
+              400: '#d2ff00',
+              500: '#b8e000',
+              600: '#94b300',
+              700: '#6f8600',
+              800: '#4a5a00',
+              900: '#262d00',
+            },
+            papaya: '#ff6b00',
+            carbon: {
+              950: '#090a08',
+              900: '#0d0f0c',
+              850: '#121510',
+              800: '#171a13',
+              750: '#1d2118',
+              700: '#252a20',
+              600: '#343b2d',
+            },
+            telemetry: {
+              white: '#f4f4ed',
+              cream: '#ebeee0',
+              muted: '#9ca190',
+              dark: '#53574b',
             }
           },
           fontFamily: {
-            display: ['Oswald', 'sans-serif'],
+            display: ['Syne', 'Oswald', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace'],
             sans: ['Inter', 'system-ui', 'sans-serif'],
           },
           animation: {
-            'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'glow': 'glow 2s ease-in-out infinite alternate',
+            'marquee': 'marquee 22s linear infinite',
+            'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+            'blink': 'blink 1.2s infinite',
           },
           keyframes: {
-            glow: {
-              '0%': { boxShadow: '0 0 15px rgba(249, 115, 22, 0.4)' },
-              '100%': { boxShadow: '0 0 35px rgba(249, 115, 22, 0.85)' },
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 15px rgba(210, 255, 0, 0.25), inset 0 0 10px rgba(210, 255, 0, 0.1)' },
+              '50%': { boxShadow: '0 0 35px rgba(210, 255, 0, 0.55), inset 0 0 20px rgba(210, 255, 0, 0.25)' },
+            },
+            blink: {
+              '0%, 100%': { opacity: 1 },
+              '50%': { opacity: 0.2 },
             }
           }
         }
@@ -42,194 +73,465 @@
     }
   </script>
 
-  <!-- Google Fonts: Oswald (Athletic Display) + Inter -->
+  <!-- Google Fonts: Syne (Ultra Edgy Grotesque), Space Grotesk (Telemetry Mono), Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
+    :root {
+      --color-lime: #d2ff00;
+      --color-dark: #0d0f0c;
+      --color-white: #f4f4ed;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #09090b;
-      color: #f4f4f5;
+      background-color: #0d0f0c;
+      color: #f4f4ed;
       overflow-x: hidden;
     }
-    h1, h2, h3, .font-athletic {
-      font-family: 'Oswald', sans-serif;
-      letter-spacing: 0.05em;
+
+    ::selection {
+      background-color: #d2ff00;
+      color: #0d0f0c;
+    }
+    ::-moz-selection {
+      background-color: #d2ff00;
+      color: #0d0f0c;
+    }
+
+    .font-racing {
+      font-family: 'Syne', sans-serif;
       text-transform: uppercase;
+      letter-spacing: -0.03em;
     }
-    .hero-gradient {
-      background: linear-gradient(180deg, rgba(9,9,11,0.2) 0%, rgba(9,9,11,0.85) 65%, #09090b 100%);
+
+    .font-telemetry {
+      font-family: 'Space Grotesk', monospace;
+      letter-spacing: 0.05em;
     }
-    .video-card {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Subtle grid texture overlay like telemetry display */
+    .bg-telemetry-grid {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(210, 255, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(210, 255, 0, 0.04) 1px, transparent 1px);
     }
-    .video-card:hover {
-      border-color: rgba(249, 115, 22, 0.6);
-      transform: translateY(-2px);
+
+    /* Diagonal racing lines */
+    .bg-racing-stripes {
+      background: repeating-linear-gradient(
+        -45deg,
+        rgba(210, 255, 0, 0.03),
+        rgba(210, 255, 0, 0.03) 12px,
+        transparent 12px,
+        transparent 24px
+      );
     }
-    .glass-panel {
-      background: rgba(18, 18, 22, 0.75);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+
+    /* Chamfered corners (Lando Norris HUD aesthetic) */
+    .corner-chamfer {
+      clip-path: polygon(
+        0 14px,
+        14px 0,
+        calc(100% - 14px) 0,
+        100% 14px,
+        100% calc(100% - 14px),
+        calc(100% - 14px) 100%,
+        14px 100%,
+        0 calc(100% - 14px)
+      );
+    }
+
+    /* Card Hover micro-interaction */
+    .telemetry-card {
+      position: relative;
+      background: #131610;
+      border: 1px solid #252a20;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .telemetry-card:hover {
+      border-color: rgba(210, 255, 0, 0.6);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(210, 255, 0, 0.15);
+    }
+
+    /* Corner crosshair markers (+) */
+    .crosshair-corner {
+      position: relative;
+    }
+    .crosshair-corner::before,
+    .crosshair-corner::after {
+      content: '+';
+      position: absolute;
+      font-family: 'Space Grotesk', monospace;
+      font-size: 11px;
+      line-height: 1;
+      color: rgba(210, 255, 0, 0.4);
+      pointer-events: none;
+      transition: color 0.25s ease;
+    }
+    .crosshair-corner::before {
+      top: 6px;
+      left: 8px;
+    }
+    .crosshair-corner::after {
+      bottom: 6px;
+      right: 8px;
+    }
+    .crosshair-corner:hover::before,
+    .crosshair-corner:hover::after {
+      color: #d2ff00;
+    }
+
+    /* Custom audio wave visualizer */
+    .sound-wave-bar {
+      animation: soundWave 0.8s ease-in-out infinite alternate;
+    }
+    .sound-wave-bar:nth-child(2) { animation-delay: 0.15s; }
+    .sound-wave-bar:nth-child(3) { animation-delay: 0.3s; }
+    .sound-wave-bar:nth-child(4) { animation-delay: 0.45s; }
+    .sound-wave-bar:nth-child(5) { animation-delay: 0.2s; }
+    @keyframes soundWave {
+      0% { height: 4px; }
+      100% { height: 22px; }
+    }
+
+    /* Outline headline stroke effect */
+    .text-stroke-title {
+      -webkit-text-stroke: 1.5px rgba(244, 244, 237, 0.35);
+      color: transparent;
+    }
+    .text-stroke-lime {
+      -webkit-text-stroke: 1.5px rgba(210, 255, 0, 0.5);
+      color: transparent;
     }
   </style>
 </head>
-<body class="selection:bg-orange-500 selection:text-white">
+<body class="bg-carbon-900 text-telemetry-white antialiased selection:bg-lime selection:text-carbon-900">
 
-  <!-- Top Sticky Header / Navigation -->
-  <header class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-zinc-800/80">
+  <!-- ================================================================= -->
+  <!-- 0. TOP RACING HUD / NAVIGATION BAR                                -->
+  <!-- ================================================================= -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-carbon-950/85 backdrop-blur-md border-b border-carbon-700/70">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand / Logo -->
       <a href="#hero" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform">
-          <i data-lucide="zap" class="w-5 h-5 text-zinc-950 stroke-[2.5]"></i>
+        <!-- Racing Tag Box -->
+        <div class="px-2 py-1 bg-lime text-carbon-900 font-telemetry font-bold text-xs tracking-wider rounded-sm flex items-center gap-1 group-hover:bg-white transition-colors">
+          <span>MC</span>
+          <span class="text-carbon-900/60 font-mono">//</span>
+          <span>01</span>
         </div>
         <div class="flex flex-col">
-          <span class="font-athletic text-xl sm:text-2xl font-bold tracking-wider text-white group-hover:text-orange-400 transition-colors">
-            MUNIR <span class="text-orange-500">CALISTHENICS</span>
+          <span class="font-racing text-lg sm:text-xl font-black tracking-tight text-white group-hover:text-lime transition-colors">
+            MOUNIR <span class="text-lime">CALISTHENICS</span>
           </span>
-          <span class="text-[10px] uppercase tracking-widest text-zinc-400 font-medium -mt-1">Trainingsablauf</span>
+          <div class="flex items-center gap-2 -mt-1">
+            <span class="text-[9px] font-telemetry uppercase tracking-widest text-telemetry-muted">TRAINING PROTOCOL</span>
+            <span class="w-1 h-1 rounded-full bg-lime animate-ping"></span>
+          </div>
         </div>
       </a>
 
-      <!-- Navigation Links -->
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-300">
-        <a href="#hero" class="hover:text-orange-400 transition-colors">Start</a>
-        <a href="#video-1" class="hover:text-orange-400 transition-colors">1. Flow Video</a>
-        <a href="#video-2" class="hover:text-orange-400 transition-colors">2. Beach Vibes</a>
-        <a href="#video-3" class="hover:text-orange-400 transition-colors">3. Street Battle</a>
-        <a href="#burpees" class="px-2.5 py-1 rounded bg-orange-500/10 border border-orange-500/30 text-orange-400 font-semibold hover:bg-orange-500/20 transition-all flex items-center gap-1.5">
-          <i data-lucide="flame" class="w-3.5 h-3.5"></i> Burpees 8x30s
+      <!-- Desktop Nav with Telemetry Index Numbers -->
+      <nav class="hidden lg:flex items-center gap-6 font-telemetry text-xs uppercase tracking-wider text-telemetry-muted">
+        <a href="#hero" class="hover:text-lime transition-colors flex items-center gap-1">
+          <span class="text-lime/60 font-mono">00.</span> Start
         </a>
-        <a href="#identitaet" class="hover:text-orange-400 transition-colors">Sportleridentität</a>
-        <a href="#koerpersprache" class="hover:text-orange-400 transition-colors">Körpersprache</a>
+        <a href="#video-1" class="hover:text-lime transition-colors flex items-center gap-1">
+          <span class="text-lime/60 font-mono">01.</span> Flow
+        </a>
+        <a href="#video-2" class="hover:text-lime transition-colors flex items-center gap-1">
+          <span class="text-lime/60 font-mono">02.</span> Beach
+        </a>
+        <a href="#video-3" class="hover:text-lime transition-colors flex items-center gap-1">
+          <span class="text-lime/60 font-mono">03.</span> Battle
+        </a>
+        <a href="#burpees" class="px-3 py-1.5 rounded-sm bg-lime/10 border border-lime/30 text-lime font-bold hover:bg-lime hover:text-carbon-900 transition-all flex items-center gap-1.5 shadow-[0_0_12px_rgba(210,255,0,0.15)]">
+          <i data-lucide="zap" class="w-3.5 h-3.5 fill-current"></i>
+          <span>04. BURPEES 8x30s</span>
+        </a>
+        <a href="#identitaet" class="hover:text-lime transition-colors flex items-center gap-1">
+          <span class="text-lime/60 font-mono">05.</span> Identität
+        </a>
+        <a href="#koerpersprache" class="hover:text-lime transition-colors flex items-center gap-1">
+          <span class="text-lime/60 font-mono">06.</span> Präsenz
+        </a>
       </nav>
 
-      <!-- Action Button -->
+      <!-- Action Button & Telemetry Status -->
       <div class="flex items-center gap-3">
-        <a href="#burpees" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold bg-gradient-to-r from-orange-500 to-amber-500 text-zinc-950 hover:opacity-95 shadow-md shadow-orange-500/20 transition-all">
+        <!-- Live Status Pill -->
+        <div class="hidden sm:flex items-center gap-2 px-2.5 py-1 bg-carbon-850 border border-carbon-700 rounded-sm font-telemetry text-[10px] text-telemetry-muted">
+          <span class="w-2 h-2 rounded-full bg-lime animate-pulse"></span>
+          <span>SYS // ACTIVE</span>
+        </div>
+
+        <!-- Timer CTA in Lando Norris Style Button -->
+        <a href="#burpees" class="px-4 py-2 rounded-sm bg-lime text-carbon-900 font-telemetry font-bold text-xs uppercase tracking-wider hover:bg-white hover:shadow-[0_0_20px_rgba(210,255,0,0.5)] transition-all flex items-center gap-1.5">
           <i data-lucide="timer" class="w-4 h-4"></i>
-          <span>Burpee Timer</span>
+          <span>TIMER STARTEN</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-telemetry-muted hover:text-lime border border-carbon-700 rounded-sm bg-carbon-850" aria-label="Menü öffnen">
+          <i data-lucide="menu" id="menuIcon" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-carbon-950/95 border-b border-carbon-700 px-4 py-6 font-telemetry text-sm">
+      <div class="flex flex-col gap-4">
+        <a href="#hero" onclick="toggleMobileMenu()" class="text-telemetry-cream hover:text-lime flex items-center justify-between py-2 border-b border-carbon-800">
+          <span>00 // STARTSEITE</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-lime"></i>
+        </a>
+        <a href="#video-1" onclick="toggleMobileMenu()" class="text-telemetry-cream hover:text-lime flex items-center justify-between py-2 border-b border-carbon-800">
+          <span>01 // FLOW VIDEO (MIKE SONG)</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-lime"></i>
+        </a>
+        <a href="#video-2" onclick="toggleMobileMenu()" class="text-telemetry-cream hover:text-lime flex items-center justify-between py-2 border-b border-carbon-800">
+          <span>02 // BEACH VIBES (CHRIS LUNO)</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-lime"></i>
+        </a>
+        <a href="#video-3" onclick="toggleMobileMenu()" class="text-telemetry-cream hover:text-lime flex items-center justify-between py-2 border-b border-carbon-800">
+          <span>03 // STREET BATTLE (NYC SHOWDOWN)</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-lime"></i>
+        </a>
+        <a href="#burpees" onclick="toggleMobileMenu()" class="text-lime font-bold flex items-center justify-between py-2 border-b border-carbon-800">
+          <span>04 // BURPEES 8x30s INTERVALL</span>
+          <span class="px-2 py-0.5 bg-lime text-carbon-900 text-[10px] font-bold rounded">HOT</span>
+        </a>
+        <a href="#identitaet" onclick="toggleMobileMenu()" class="text-telemetry-cream hover:text-lime flex items-center justify-between py-2 border-b border-carbon-800">
+          <span>05 // SPORTLERIDENTITÄT (3 SÄULEN)</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-lime"></i>
+        </a>
+        <a href="#koerpersprache" onclick="toggleMobileMenu()" class="text-telemetry-cream hover:text-lime flex items-center justify-between py-2">
+          <span>06 // KÖRPERSPRACHE (CHRISTOPH WALTZ)</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-lime"></i>
         </a>
       </div>
     </div>
   </header>
 
   <!-- ================================================================= -->
-  <!-- 1. HERO SECTION: MUSKULÖSE ATHLETEN & GROSSER TITEL              -->
+  <!-- 1. HERO SECTION: MASSIVE MOTORSPORT/ATHLETE IMPACT               -->
   <!-- ================================================================= -->
-  <section id="hero" class="relative min-h-[92vh] flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-    <!-- Dramatic Athletic Background with overlay -->
+  <section id="hero" class="relative min-h-[96vh] flex flex-col justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-carbon-950">
+    
+    <!-- Hero Athletic Background with Lando-style High-Contrast Grading -->
     <div class="absolute inset-0 z-0">
       <img 
         src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1920&auto=format&fit=crop" 
         alt="Muskulöse Calisthenics Athleten im Training" 
-        class="w-full h-full object-cover object-center filter brightness-[0.45] contrast-125 scale-105 transform"
+        class="w-full h-full object-cover object-center filter brightness-[0.25] contrast-150 saturate-75 scale-105"
       />
-      <!-- Ambient overlay -->
-      <div class="absolute inset-0 bg-radial from-orange-500/10 via-transparent to-zinc-950/90"></div>
-      <div class="hero-gradient absolute inset-0"></div>
-      <!-- Subtle Grid Pattern -->
-      <div class="absolute inset-0 opacity-15 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+      <!-- Telemetry Tech Grid & Ambient Lime Glow -->
+      <div class="absolute inset-0 bg-telemetry-grid opacity-30"></div>
+      <div class="absolute inset-0 bg-racing-stripes opacity-20"></div>
+      <!-- Radial gradient for center focus -->
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(210,255,0,0.08)_0%,rgba(13,15,12,0.75)_60%,#0d0f0c_100%)]"></div>
+      <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-carbon-900 to-transparent"></div>
     </div>
 
-    <div class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
+    <!-- Technical HUD Crosshairs on corners of the viewport -->
+    <div class="absolute top-20 left-6 text-lime/40 font-mono text-[10px] hidden md:block">
+      + LAT: 52.5200° N // ATHLETE: MOUNIR
+    </div>
+    <div class="absolute top-20 right-6 text-lime/40 font-mono text-[10px] hidden md:block">
+      + PROTOCOL: CALISTHENICS 2026 // ED. 01
+    </div>
+
+    <div class="relative z-10 max-w-6xl mx-auto w-full flex flex-col items-center text-center my-auto">
       
-      <!-- Top Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel border border-orange-500/30 text-orange-400 text-xs sm:text-sm font-semibold mb-6 tracking-wider uppercase">
-        <i data-lucide="shield-check" class="w-4 h-4 text-orange-400"></i>
-        <span>Offizieller Trainings-Leitfaden</span>
+      <!-- Top Driver/Athlete Badge -->
+      <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-sm bg-carbon-850/90 border border-lime/40 text-lime text-xs font-telemetry font-bold tracking-widest uppercase mb-6 shadow-[0_0_15px_rgba(210,255,0,0.15)]">
+        <span class="w-2 h-2 rounded-full bg-lime animate-ping"></span>
+        <span>OFFIZIELLER TRAININGS-LEITFADEN</span>
+        <span class="text-carbon-600">//</span>
+        <span class="text-telemetry-white">EDITION 2026</span>
       </div>
 
-      <!-- Main Headline: Munirs Calisthenics Ablauf -->
-      <h1 class="font-athletic text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-400 tracking-tight leading-none drop-shadow-2xl">
-        MUNIRS <br class="hidden sm:inline" />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500">
-          CALISTHENICS ABLAUF
-        </span>
-      </h1>
+      <!-- Massive Headline in Lando Norris Oversized Typographic Aesthetic -->
+      <div class="relative w-full">
+        <!-- Subtle giant background outline text -->
+        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-full select-none pointer-events-none opacity-10 font-racing text-7xl sm:text-9xl md:text-[13rem] font-black tracking-tighter text-stroke-lime leading-none">
+          PERFORM
+        </div>
 
-      <p class="mt-6 text-lg sm:text-2xl text-zinc-300 font-medium max-w-3xl leading-relaxed drop-shadow">
+        <h1 class="relative font-racing text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white tracking-tight leading-[0.92] drop-shadow-2xl">
+          MOUNIRS <br />
+          <span class="text-lime">CALISTHENICS</span><br class="sm:hidden" />
+          <span class="text-stroke-title text-transparent hover:text-white transition-colors">ABLAUF</span>
+        </h1>
+      </div>
+
+      <!-- High-Impact Subtitle -->
+      <p class="mt-8 text-base sm:text-xl md:text-2xl text-telemetry-cream font-medium max-w-3xl leading-relaxed">
         Kraft, Rhythmus, stählerne Disziplin und maximale Körperspannung.
-        Schritt für Schritt durch Munirs Calisthenics-Trainingsablauf.
+        <span class="text-telemetry-muted">Schritt für Schritt durch Mounirs Calisthenics-Trainingsablauf.</span>
       </p>
 
-      <!-- Quick Highlights Grid -->
-      <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 w-full max-w-3xl">
-        <div class="glass-panel p-3.5 rounded-xl border border-zinc-800 text-center">
-          <div class="text-orange-400 font-bold text-xl sm:text-2xl font-athletic">4 Videos</div>
-          <div class="text-xs text-zinc-400">Direkt integriert</div>
+      <!-- Telemetry Dashboard Metrics (4 Grid Columns) -->
+      <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-4xl font-telemetry">
+        
+        <div class="telemetry-card crosshair-corner p-4 rounded-sm text-left">
+          <div class="text-[10px] text-telemetry-muted uppercase tracking-widest flex items-center justify-between">
+            <span>// STAGE MEDIA</span>
+            <span class="text-lime font-mono">01</span>
+          </div>
+          <div class="text-2xl sm:text-3xl font-racing font-bold text-white mt-1">4 VIDEOS</div>
+          <div class="text-[11px] text-telemetry-muted mt-0.5">Direkt integriert</div>
         </div>
-        <div class="glass-panel p-3.5 rounded-xl border border-zinc-800 text-center">
-          <div class="text-orange-400 font-bold text-xl sm:text-2xl font-athletic">8 x 30s</div>
-          <div class="text-xs text-zinc-400">Burpee Power</div>
+
+        <div class="telemetry-card crosshair-corner p-4 rounded-sm text-left border-lime/40 shadow-[0_0_15px_rgba(210,255,0,0.1)]">
+          <div class="text-[10px] text-lime uppercase tracking-widest flex items-center justify-between">
+            <span>// INTERVAL ENGINE</span>
+            <span class="text-lime font-mono">02</span>
+          </div>
+          <div class="text-2xl sm:text-3xl font-racing font-bold text-lime mt-1">8 x 30s</div>
+          <div class="text-[11px] text-telemetry-muted mt-0.5">Burpee Power</div>
         </div>
-        <div class="glass-panel p-3.5 rounded-xl border border-zinc-800 text-center">
-          <div class="text-orange-400 font-bold text-xl sm:text-2xl font-athletic">3 Säulen</div>
-          <div class="text-xs text-zinc-400">Sportleridentität</div>
+
+        <div class="telemetry-card crosshair-corner p-4 rounded-sm text-left">
+          <div class="text-[10px] text-telemetry-muted uppercase tracking-widest flex items-center justify-between">
+            <span>// ATHLETE CORE</span>
+            <span class="text-lime font-mono">03</span>
+          </div>
+          <div class="text-2xl sm:text-3xl font-racing font-bold text-white mt-1">3 SÄULEN</div>
+          <div class="text-[11px] text-telemetry-muted mt-0.5">Sportleridentität</div>
         </div>
-        <div class="glass-panel p-3.5 rounded-xl border border-zinc-800 text-center">
-          <div class="text-orange-400 font-bold text-xl sm:text-2xl font-athletic">Präsenz</div>
-          <div class="text-xs text-zinc-400">Körpersprache</div>
+
+        <div class="telemetry-card crosshair-corner p-4 rounded-sm text-left">
+          <div class="text-[10px] text-telemetry-muted uppercase tracking-widest flex items-center justify-between">
+            <span>// PRESENCE & FORM</span>
+            <span class="text-lime font-mono">04</span>
+          </div>
+          <div class="text-2xl sm:text-3xl font-racing font-bold text-white mt-1">PRÄSENZ</div>
+          <div class="text-[11px] text-telemetry-muted mt-0.5">Körpersprache</div>
         </div>
+
       </div>
 
-      <!-- Hero Call-to-Actions -->
-      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-        <a href="#video-1" class="px-8 py-4 rounded-xl text-base sm:text-lg font-bold bg-gradient-to-r from-orange-500 to-amber-500 text-zinc-950 hover:brightness-110 shadow-xl shadow-orange-500/25 transition-all flex items-center gap-3">
-          <i data-lucide="play-circle" class="w-6 h-6"></i>
-          <span>Workout starten</span>
+      <!-- Hero Call-to-Actions (Racing Driver Styled Buttons) -->
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4 font-telemetry">
+        <a href="#video-1" class="px-8 py-4 rounded-sm text-sm sm:text-base font-bold bg-lime text-carbon-900 hover:bg-white hover:shadow-[0_0_30px_rgba(210,255,0,0.6)] uppercase tracking-wider transition-all flex items-center gap-3 group">
+          <i data-lucide="play" class="w-5 h-5 fill-current group-hover:scale-110 transition-transform"></i>
+          <span>Workout Starten</span>
         </a>
-        <a href="#burpees" class="px-6 py-4 rounded-xl text-base sm:text-lg font-bold glass-panel hover:bg-zinc-800/80 border border-zinc-700 text-zinc-200 transition-all flex items-center gap-2">
-          <i data-lucide="flame" class="w-5 h-5 text-orange-400"></i>
+        <a href="#burpees" class="px-7 py-4 rounded-sm text-sm sm:text-base font-bold bg-carbon-850 hover:bg-carbon-800 border border-lime/40 text-lime uppercase tracking-wider transition-all flex items-center gap-2 group hover:border-lime">
+          <i data-lucide="flame" class="w-5 h-5 text-lime group-hover:animate-pulse"></i>
           <span>Direkt zu den Burpees</span>
         </a>
       </div>
 
       <!-- Scroll Indicator -->
-      <div class="mt-12 flex flex-col items-center gap-2 text-zinc-500 text-xs">
-        <span class="tracking-widest uppercase text-[11px]">Nach unten scrollen</span>
-        <i data-lucide="chevron-down" class="w-5 h-5 text-orange-400 animate-bounce"></i>
+      <div class="mt-12 flex flex-col items-center gap-1.5 text-telemetry-muted font-telemetry text-[11px] uppercase tracking-widest">
+        <span>Scroll to explore protocol</span>
+        <i data-lucide="chevron-down" class="w-4 h-4 text-lime animate-bounce"></i>
       </div>
+
     </div>
   </section>
 
   <!-- ================================================================= -->
-  <!-- 2. SEKTION: 1. VIDEO (Mike Song / Flow & Rhythmus)               -->
+  <!-- HIGH-SPEED MARQUEE TICKER (LANDO NORRIS SIGNATURE MOTIF)          -->
   <!-- ================================================================= -->
-  <section id="video-1" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-zinc-900 relative">
+  <div class="w-full bg-lime text-carbon-900 py-3 overflow-hidden select-none border-y-2 border-carbon-950 font-racing font-extrabold text-sm sm:text-base uppercase tracking-wider relative z-20">
+    <div class="flex whitespace-nowrap animate-marquee">
+      <!-- Repeated ticker block 1 -->
+      <div class="flex items-center gap-6 shrink-0">
+        <span>MOUNIR CALISTHENICS</span>
+        <span class="text-carbon-900/40">///</span>
+        <span>DISZIPLIN ÜBER MOTIVATION</span>
+        <span class="text-carbon-900/40">///</span>
+        <span>8 x 30s BURPEES POWER ENGINE</span>
+        <span class="text-carbon-900/40">///</span>
+        <span>MAXIMALE KÖRPERSPANNUNG</span>
+        <span class="text-carbon-900/40">///</span>
+        <span>STREET WORKOUT REINE KRAFT</span>
+        <span class="text-carbon-900/40">///</span>
+        <span>KEINE AUSREDEN</span>
+        <span class="text-carbon-900/40">///</span>
+        <span>SPORTLERIDENTITÄT & PRÄSENZ</span>
+        <span class="text-carbon-900/40">///</span>
+      </div>
+      <!-- Repeated ticker block 2 (for seamless loop) -->
+      <div class="flex items-center gap-6 shrink-0">
+        <span>MOUNIR CALISTHENICS</span>
+        <span class="text-carbon-900/40">///</span>
+        <span>DISZIPLIN ÜBER MOTIVATION</span>
+        <span class="text-carbon-900/40">///</span>
+        <span>8 x 30s BURPEES POWER ENGINE</span>
+        <span class="text-carbon-900/40">///</span>
+        <span>MAXIMALE KÖRPERSPANNUNG</span>
+        <span class="text-carbon-900/40">///</span>
+        <span>STREET WORKOUT REINE KRAFT</span>
+        <span class="text-carbon-900/40">///</span>
+        <span>KEINE AUSREDEN</span>
+        <span class="text-carbon-900/40">///</span>
+        <span>SPORTLERIDENTITÄT & PRÄSENZ</span>
+        <span class="text-carbon-900/40">///</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 2. SEKTION: 1. VIDEO (MIKE SONG // FLOW & RHYTHMUS)               -->
+  <!-- ================================================================= -->
+  <section id="video-1" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-carbon-800 relative bg-carbon-900">
     <div class="max-w-5xl mx-auto">
       
-      <!-- Section Header -->
+      <!-- Stage Header with Lando-style Index Badges -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
         <div>
-          <div class="inline-flex items-center gap-2 text-orange-400 text-sm font-semibold tracking-wider uppercase mb-2">
-            <span class="w-6 h-0.5 bg-orange-500"></span>
-            <span>Sektion 01 • Erstes Video</span>
+          <div class="inline-flex items-center gap-2 text-lime text-xs font-telemetry font-bold tracking-widest uppercase mb-2">
+            <span class="w-6 h-0.5 bg-lime"></span>
+            <span>STAGE 01 // ERSTES VIDEO</span>
           </div>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+          <h2 class="font-racing text-3xl sm:text-4xl md:text-5xl font-black text-white">
             Flow, Rhythmus & Körperkontrolle
           </h2>
-          <p class="text-zinc-400 text-sm sm:text-base mt-2 max-w-2xl">
-            Das erste Video für Munirs Ablauf: Starte mit Fokus auf Koordination, Rhythmusgefühl und fließende Bewegung. Direkt hier per Klick abspielen.
+          <p class="text-telemetry-muted text-sm sm:text-base mt-2 max-w-2xl font-sans">
+            Das erste Video für Mounirs Ablauf: Starte mit Fokus auf Koordination, Rhythmusgefühl und fließende Bewegung. Direkt hier per Klick abspielen.
           </p>
         </div>
-        <div class="flex items-center gap-2 text-xs font-mono text-zinc-400 glass-panel px-3 py-1.5 rounded-lg w-fit">
-          <i data-lucide="film" class="w-4 h-4 text-orange-400"></i>
+
+        <div class="flex items-center gap-2 text-xs font-telemetry text-telemetry-cream bg-carbon-850 border border-carbon-700 px-3.5 py-2 rounded-sm w-fit shrink-0">
+          <i data-lucide="film" class="w-4 h-4 text-lime"></i>
           <span>Mike Song • It Runs Through Me</span>
         </div>
       </div>
 
-      <!-- Video Embed Card -->
-      <div class="video-card glass-panel rounded-2xl p-2 sm:p-4 border border-zinc-800 shadow-2xl shadow-black/60 relative overflow-hidden">
-        <div class="relative w-full overflow-hidden rounded-xl bg-zinc-950 aspect-video">
+      <!-- Video Bezel Card (Technical Cockpit Style) -->
+      <div class="telemetry-card crosshair-corner rounded-sm p-3 sm:p-5 border border-carbon-700 shadow-2xl relative overflow-hidden">
+        
+        <!-- Video Header Telemetry Strip -->
+        <div class="mb-3 px-1 flex items-center justify-between font-telemetry text-[11px] text-telemetry-muted uppercase">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-lime animate-ping"></span>
+            <span class="text-lime font-bold">MEDIA SOURCE // 4K EMBED</span>
+          </div>
+          <span class="font-mono text-telemetry-dark">[ 01 // 04 ]</span>
+        </div>
+
+        <!-- Video Iframe -->
+        <div class="relative w-full overflow-hidden bg-carbon-950 aspect-video rounded-sm border border-carbon-800">
           <iframe 
-            class="absolute top-0 left-0 w-full h-full rounded-xl"
+            class="absolute top-0 left-0 w-full h-full"
             src="https://www.youtube-nocookie.com/embed/g9FJhH9dOeU?rel=0" 
             title="1. Video: Mike Song choreography to It Runs Through Me" 
             frameborder="0" 
@@ -239,15 +541,20 @@
           </iframe>
         </div>
         
-        <!-- Video Details Footer -->
-        <div class="mt-4 px-2 py-1 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-400">
-          <div class="flex items-center gap-2">
-            <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
-            <span class="text-zinc-300 font-medium">Bereit zum Abspielen</span>
+        <!-- Video Details Footer HUD -->
+        <div class="mt-4 px-2 py-1 flex flex-wrap items-center justify-between gap-3 text-xs font-telemetry text-telemetry-muted">
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-1.5 text-telemetry-cream">
+              <i data-lucide="activity" class="w-3.5 h-3.5 text-lime"></i>
+              <span>FOKUS: KOORDINATION & RHYTHMUS</span>
+            </div>
+            <span class="text-carbon-700">|</span>
+            <span class="text-telemetry-muted">BEREIT ZUM ABSPIELEN</span>
           </div>
-          <a href="https://youtu.be/g9FJhH9dOeU" target="_blank" rel="noopener noreferrer" class="hover:text-orange-400 flex items-center gap-1 transition-colors">
+
+          <a href="https://youtu.be/g9FJhH9dOeU" target="_blank" rel="noopener noreferrer" class="text-telemetry-cream hover:text-lime flex items-center gap-1.5 transition-colors group">
             <span>Auf YouTube ansehen</span>
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <i data-lucide="external-link" class="w-3.5 h-3.5 text-lime group-hover:translate-x-0.5 transition-transform"></i>
           </a>
         </div>
       </div>
@@ -256,36 +563,46 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 3. SEKTION: 2. VIDEO (Beach Vibes / House Music & Flow)          -->
+  <!-- 3. SEKTION: 2. VIDEO (CHRIS LUNO // BEACH VIBES)                  -->
   <!-- ================================================================= -->
-  <section id="video-2" class="py-20 px-4 sm:px-6 lg:px-8 bg-zinc-950/70 border-t border-zinc-900 relative">
+  <section id="video-2" class="py-24 px-4 sm:px-6 lg:px-8 bg-carbon-950 border-t border-carbon-800 relative">
     <div class="max-w-5xl mx-auto">
       
-      <!-- Section Header -->
+      <!-- Stage Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
         <div>
-          <div class="inline-flex items-center gap-2 text-amber-400 text-sm font-semibold tracking-wider uppercase mb-2">
-            <span class="w-6 h-0.5 bg-amber-500"></span>
-            <span>Sektion 02 • Zweites Video</span>
+          <div class="inline-flex items-center gap-2 text-lime text-xs font-telemetry font-bold tracking-widest uppercase mb-2">
+            <span class="w-6 h-0.5 bg-lime"></span>
+            <span>STAGE 02 // ZWEITES VIDEO</span>
           </div>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+          <h2 class="font-racing text-3xl sm:text-4xl md:text-5xl font-black text-white">
             Vibe, Ausdauer & Beach Energy
           </h2>
-          <p class="text-zinc-400 text-sm sm:text-base mt-2 max-w-2xl">
+          <p class="text-telemetry-muted text-sm sm:text-base mt-2 max-w-2xl font-sans">
             Zweites Video im Ablauf: Den richtigen Beat und die Leichtigkeit mitnehmen. Schaffe dir die ideale Trainingsatmosphäre.
           </p>
         </div>
-        <div class="flex items-center gap-2 text-xs font-mono text-zinc-400 glass-panel px-3 py-1.5 rounded-lg w-fit">
-          <i data-lucide="music" class="w-4 h-4 text-amber-400"></i>
+
+        <div class="flex items-center gap-2 text-xs font-telemetry text-telemetry-cream bg-carbon-850 border border-carbon-700 px-3.5 py-2 rounded-sm w-fit shrink-0">
+          <i data-lucide="music" class="w-4 h-4 text-lime"></i>
           <span>Chris Luno • Beach House Music</span>
         </div>
       </div>
 
-      <!-- Video Embed Card -->
-      <div class="video-card glass-panel rounded-2xl p-2 sm:p-4 border border-zinc-800 shadow-2xl shadow-black/60 relative overflow-hidden">
-        <div class="relative w-full overflow-hidden rounded-xl bg-zinc-950 aspect-video">
+      <!-- Video Bezel Card -->
+      <div class="telemetry-card crosshair-corner rounded-sm p-3 sm:p-5 border border-carbon-700 shadow-2xl relative overflow-hidden">
+        
+        <div class="mb-3 px-1 flex items-center justify-between font-telemetry text-[11px] text-telemetry-muted uppercase">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-lime"></span>
+            <span class="text-lime font-bold">ATMOSPHERE & FREQUENCY</span>
+          </div>
+          <span class="font-mono text-telemetry-dark">[ 02 // 04 ]</span>
+        </div>
+
+        <div class="relative w-full overflow-hidden bg-carbon-950 aspect-video rounded-sm border border-carbon-800">
           <iframe 
-            class="absolute top-0 left-0 w-full h-full rounded-xl"
+            class="absolute top-0 left-0 w-full h-full"
             src="https://www.youtube-nocookie.com/embed/ja2dGXXmFV4?rel=0" 
             title="2. Video: playing house music on the beach until people dance" 
             frameborder="0" 
@@ -295,14 +612,19 @@
           </iframe>
         </div>
 
-        <div class="mt-4 px-2 py-1 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-400">
-          <div class="flex items-center gap-2">
-            <span class="inline-block w-2.5 h-2.5 rounded-full bg-amber-500"></span>
-            <span class="text-zinc-300 font-medium">Soundtrack & Energie</span>
+        <div class="mt-4 px-2 py-1 flex flex-wrap items-center justify-between gap-3 text-xs font-telemetry text-telemetry-muted">
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-1.5 text-telemetry-cream">
+              <i data-lucide="radio" class="w-3.5 h-3.5 text-lime"></i>
+              <span>SOUNDTRACK & AUSDAUER FLOW</span>
+            </div>
+            <span class="text-carbon-700">|</span>
+            <span class="text-telemetry-muted">DEEP FOCUS VIBES</span>
           </div>
-          <a href="https://youtu.be/ja2dGXXmFV4" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 flex items-center gap-1 transition-colors">
+
+          <a href="https://youtu.be/ja2dGXXmFV4" target="_blank" rel="noopener noreferrer" class="text-telemetry-cream hover:text-lime flex items-center gap-1.5 transition-colors group">
             <span>Auf YouTube ansehen</span>
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <i data-lucide="external-link" class="w-3.5 h-3.5 text-lime group-hover:translate-x-0.5 transition-transform"></i>
           </a>
         </div>
       </div>
@@ -311,36 +633,46 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 4. SEKTION: 3. VIDEO (NYC Street Workout Battle)                 -->
+  <!-- 4. SEKTION: 3. VIDEO (NYC STREET WORKOUT BATTLE)                  -->
   <!-- ================================================================= -->
-  <section id="video-3" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-zinc-900 relative">
+  <section id="video-3" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-carbon-800 relative bg-carbon-900">
     <div class="max-w-5xl mx-auto">
       
-      <!-- Section Header -->
+      <!-- Stage Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
         <div>
-          <div class="inline-flex items-center gap-2 text-red-500 text-sm font-semibold tracking-wider uppercase mb-2">
-            <span class="w-6 h-0.5 bg-red-500"></span>
-            <span>Sektion 03 • Drittes Video</span>
+          <div class="inline-flex items-center gap-2 text-lime text-xs font-telemetry font-bold tracking-widest uppercase mb-2">
+            <span class="w-6 h-0.5 bg-lime"></span>
+            <span>STAGE 03 // DRITTES VIDEO</span>
           </div>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+          <h2 class="font-racing text-3xl sm:text-4xl md:text-5xl font-black text-white">
             Street Workout Battle & Hardcore Calisthenics
           </h2>
-          <p class="text-zinc-400 text-sm sm:text-base mt-2 max-w-2xl">
+          <p class="text-telemetry-muted text-sm sm:text-base mt-2 max-w-2xl font-sans">
             Drittes Video im Ablauf: Die Essenz von reinem Calisthenics – Bars, Dips, Muscle-Ups und der unerbittliche Wettkampfgeist im Park.
           </p>
         </div>
-        <div class="flex items-center gap-2 text-xs font-mono text-zinc-400 glass-panel px-3 py-1.5 rounded-lg w-fit">
-          <i data-lucide="flame" class="w-4 h-4 text-red-500"></i>
+
+        <div class="flex items-center gap-2 text-xs font-telemetry text-telemetry-cream bg-carbon-850 border border-carbon-700 px-3.5 py-2 rounded-sm w-fit shrink-0">
+          <i data-lucide="flame" class="w-4 h-4 text-lime"></i>
           <span>NYC Street Workout Battle • Goku Pump</span>
         </div>
       </div>
 
-      <!-- Video Embed Card -->
-      <div class="video-card glass-panel rounded-2xl p-2 sm:p-4 border border-zinc-800 shadow-2xl shadow-black/60 relative overflow-hidden">
-        <div class="relative w-full overflow-hidden rounded-xl bg-zinc-950 aspect-video">
+      <!-- Video Bezel Card -->
+      <div class="telemetry-card crosshair-corner rounded-sm p-3 sm:p-5 border border-carbon-700 shadow-2xl relative overflow-hidden">
+        
+        <div class="mb-3 px-1 flex items-center justify-between font-telemetry text-[11px] text-telemetry-muted uppercase">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-lime"></span>
+            <span class="text-lime font-bold">HIGH INTENSITY BATTLEFIELD</span>
+          </div>
+          <span class="font-mono text-telemetry-dark">[ 03 // 04 ]</span>
+        </div>
+
+        <div class="relative w-full overflow-hidden bg-carbon-950 aspect-video rounded-sm border border-carbon-800">
           <iframe 
-            class="absolute top-0 left-0 w-full h-full rounded-xl"
+            class="absolute top-0 left-0 w-full h-full"
             src="https://www.youtube-nocookie.com/embed/UMYm2cBjZIY?rel=0" 
             title="3. Video: NYC Street Workout Battle | Calisthenics Showdown in the Park" 
             frameborder="0" 
@@ -350,14 +682,19 @@
           </iframe>
         </div>
 
-        <div class="mt-4 px-2 py-1 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-400">
-          <div class="flex items-center gap-2">
-            <span class="inline-block w-2.5 h-2.5 rounded-full bg-red-500"></span>
-            <span class="text-zinc-300 font-medium">Maximale Intensität</span>
+        <div class="mt-4 px-2 py-1 flex flex-wrap items-center justify-between gap-3 text-xs font-telemetry text-telemetry-muted">
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-1.5 text-telemetry-cream">
+              <i data-lucide="swords" class="w-3.5 h-3.5 text-lime"></i>
+              <span>REINE BARS, REINE KRAFT, ZERO COMPROMISE</span>
+            </div>
+            <span class="text-carbon-700">|</span>
+            <span class="text-telemetry-muted">MAXIMALER PUMP</span>
           </div>
-          <a href="https://youtu.be/UMYm2cBjZIY" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 flex items-center gap-1 transition-colors">
+
+          <a href="https://youtu.be/UMYm2cBjZIY" target="_blank" rel="noopener noreferrer" class="text-telemetry-cream hover:text-lime flex items-center gap-1.5 transition-colors group">
             <span>Auf YouTube ansehen</span>
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <i data-lucide="external-link" class="w-3.5 h-3.5 text-lime group-hover:translate-x-0.5 transition-transform"></i>
           </a>
         </div>
       </div>
@@ -366,95 +703,149 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 5. BURPEES SEKTION (VOR SPORTLERIDENTITÄT)                        -->
+  <!-- 5. BURPEES SEKTION (THE ENGINE // FORMULA 1 REV-COUNTER TIMER)    -->
   <!-- "wo einfach nur Burpees, da steht dann einfach Burpees,           -->
   <!-- 8 x 30 Sekunden Burpees machen. Groß, klar, kenntlich, schön designt."-->
   <!-- ================================================================= -->
-  <section id="burpees" class="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-zinc-950 via-[#180e05] to-zinc-950 border-y-2 border-orange-500/40">
+  <section id="burpees" class="py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-carbon-950 border-y-2 border-lime/40">
     
-    <!-- Atmospheric background glowing elements -->
-    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-orange-600/15 blur-[120px] rounded-full pointer-events-none"></div>
-    <div class="absolute -bottom-32 right-10 w-[400px] h-[250px] bg-amber-600/15 blur-[100px] rounded-full pointer-events-none"></div>
+    <!-- Atmospheric Lando-style High-Voltage Glow Elements -->
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-lime/10 blur-[140px] rounded-full pointer-events-none"></div>
+    <div class="absolute -bottom-40 right-10 w-[500px] h-[300px] bg-lime/5 blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="absolute inset-0 bg-telemetry-grid opacity-20 pointer-events-none"></div>
 
     <div class="max-w-5xl mx-auto relative z-10">
       
-      <!-- Massive Hero-Style Card for Burpees -->
-      <div class="glass-panel border-2 border-orange-500/60 rounded-3xl p-6 sm:p-12 md:p-16 text-center shadow-[0_0_50px_rgba(249,115,22,0.25)] relative overflow-hidden">
+      <!-- Cockpit Telemetry Box for Burpees -->
+      <div class="telemetry-card crosshair-corner rounded-sm p-6 sm:p-12 md:p-16 text-center border-2 border-lime/50 shadow-[0_0_60px_rgba(210,255,0,0.15)] relative overflow-hidden bg-carbon-900/90">
         
-        <!-- Top Callout Tag -->
-        <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/20 border border-orange-500/50 text-orange-400 text-sm font-bold uppercase tracking-widest mb-6">
-          <i data-lucide="flame" class="w-5 h-5 text-orange-400 animate-pulse"></i>
-          <span>Pulsbeschleuniger & Willenskraft</span>
+        <!-- Top Telemetry Pill -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-sm bg-lime/10 border border-lime/50 text-lime text-xs font-telemetry font-bold uppercase tracking-widest mb-6">
+          <i data-lucide="zap" class="w-4 h-4 text-lime fill-current"></i>
+          <span>PULSBESCHLEUNIGER & WILLENSKRAFT // PROTOCOL 04</span>
         </div>
 
-        <!-- RIESIGER TITEL: BURPEES -->
-        <h2 class="font-athletic text-6xl sm:text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-orange-100 to-orange-400 tracking-wider leading-none drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
+        <!-- RIESIGER TITEL: BURPEES (Lando Norris brutalist aesthetic) -->
+        <h2 class="font-racing text-6xl sm:text-8xl md:text-9xl font-black text-white tracking-tighter leading-none drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)]">
           BURPEES
         </h2>
 
         <!-- KLARE ANWEISUNG: 8 x 30 Sekunden Burpees machen -->
         <div class="mt-6 mb-8">
-          <p class="font-athletic text-3xl sm:text-5xl md:text-6xl font-bold text-white tracking-wide">
-            8 x 30 SEKUNDEN <span class="text-orange-400">BURPEES</span> MACHEN
+          <p class="font-racing text-2xl sm:text-4xl md:text-5xl font-black text-lime tracking-tight">
+            8 x 30 SEKUNDEN <span class="text-white">BURPEES</span> MACHEN
           </p>
-          <p class="text-zinc-300 text-base sm:text-xl mt-3 max-w-2xl mx-auto font-medium">
+          <p class="text-telemetry-muted text-base sm:text-xl mt-3 max-w-2xl mx-auto font-medium font-sans">
             Voller Körpereinsatz. Jeder Sprung zählt. Keine Kompromisse.
           </p>
         </div>
 
-        <!-- 8 Set Round Badges visual indicator -->
-        <div class="my-8 max-w-2xl mx-auto">
-          <div class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-3">8 Runden Übersicht</div>
+        <!-- F1-Pitwall Rev-Counter (8 LED Rounds Progress Indicator) -->
+        <div class="my-8 max-w-3xl mx-auto font-telemetry">
+          <div class="flex items-center justify-between text-xs uppercase tracking-widest text-telemetry-muted font-bold mb-3 px-1">
+            <span class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-lime"></span>
+              <span>8 RUNDEN TELEMETRIE // TACHOMETER</span>
+            </span>
+            <span id="f1StatusText" class="text-lime font-mono">STANDBY</span>
+          </div>
+
+          <!-- 8 Segmented LED Bar -->
           <div class="grid grid-cols-4 sm:grid-cols-8 gap-2" id="roundBadges">
-            <div class="set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-300 transition-all" data-round="1">R1 (30s)</div>
-            <div class="set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-300 transition-all" data-round="2">R2 (30s)</div>
-            <div class="set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-300 transition-all" data-round="3">R3 (30s)</div>
-            <div class="set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-300 transition-all" data-round="4">R4 (30s)</div>
-            <div class="set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-300 transition-all" data-round="5">R5 (30s)</div>
-            <div class="set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-300 transition-all" data-round="6">R6 (30s)</div>
-            <div class="set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-300 transition-all" data-round="7">R7 (30s)</div>
-            <div class="set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-300 transition-all" data-round="8">R8 (30s)</div>
+            <!-- Round 1 -->
+            <div class="set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1" data-round="1">
+              <span class="text-[10px] text-telemetry-dark font-mono">01</span>
+              <span>R1 (30s)</span>
+            </div>
+            <!-- Round 2 -->
+            <div class="set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1" data-round="2">
+              <span class="text-[10px] text-telemetry-dark font-mono">02</span>
+              <span>R2 (30s)</span>
+            </div>
+            <!-- Round 3 -->
+            <div class="set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1" data-round="3">
+              <span class="text-[10px] text-telemetry-dark font-mono">03</span>
+              <span>R3 (30s)</span>
+            </div>
+            <!-- Round 4 -->
+            <div class="set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1" data-round="4">
+              <span class="text-[10px] text-telemetry-dark font-mono">04</span>
+              <span>R4 (30s)</span>
+            </div>
+            <!-- Round 5 -->
+            <div class="set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1" data-round="5">
+              <span class="text-[10px] text-telemetry-dark font-mono">05</span>
+              <span>R5 (30s)</span>
+            </div>
+            <!-- Round 6 -->
+            <div class="set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1" data-round="6">
+              <span class="text-[10px] text-telemetry-dark font-mono">06</span>
+              <span>R6 (30s)</span>
+            </div>
+            <!-- Round 7 -->
+            <div class="set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1" data-round="7">
+              <span class="text-[10px] text-telemetry-dark font-mono">07</span>
+              <span>R7 (30s)</span>
+            </div>
+            <!-- Round 8 -->
+            <div class="set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1" data-round="8">
+              <span class="text-[10px] text-telemetry-dark font-mono">08</span>
+              <span>R8 (30s)</span>
+            </div>
           </div>
         </div>
 
-        <!-- Interactive Workout Interval Timer -->
-        <div class="bg-zinc-950/80 border border-zinc-800/90 rounded-2xl p-6 max-w-xl mx-auto shadow-inner">
-          <div class="flex items-center justify-between text-xs text-zinc-400 mb-2 font-mono uppercase">
-            <span id="timerModeLabel" class="text-orange-400 font-bold flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span>
-              Intervall-Timer
+        <!-- Cockpit Digital LCD Timer Display -->
+        <div class="bg-carbon-950 border border-carbon-700 rounded-sm p-6 sm:p-8 max-w-xl mx-auto shadow-inner relative">
+          
+          <!-- Subtle technical bezel crosshairs inside -->
+          <div class="absolute top-2 left-3 font-mono text-[9px] text-telemetry-dark">TIMER_ID // PITWALL-8x30</div>
+          <div class="absolute top-2 right-3 font-mono text-[9px] text-telemetry-dark">BEEP: WEBAUDIO_API</div>
+
+          <div class="flex items-center justify-between text-xs text-telemetry-muted mb-2 font-telemetry uppercase pt-2">
+            <span id="timerModeLabel" class="text-lime font-bold flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-lime animate-ping"></span>
+              <span>INTERVALL-TIMER BEREIT</span>
             </span>
-            <span id="roundDisplay">Runde: <strong class="text-white font-mono">1 / 8</strong></span>
+            <span id="roundDisplay" class="text-telemetry-cream font-mono">RUNDE: <strong class="text-lime font-bold text-sm">1 / 8</strong></span>
           </div>
 
-          <!-- Big Countdown Display -->
-          <div class="font-athletic text-7xl sm:text-8xl font-black text-white my-2 tracking-tight" id="timeRemaining">
+          <!-- Big LCD Countdown Display -->
+          <div class="font-racing text-7xl sm:text-8xl md:text-9xl font-black text-white my-3 tracking-tighter" id="timeRemaining">
             00:30
           </div>
           
-          <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden mb-6">
-            <div id="timerProgress" class="bg-gradient-to-r from-orange-500 to-amber-400 h-full w-full transition-all duration-300"></div>
+          <!-- Speedometer Progress Bar -->
+          <div class="w-full bg-carbon-850 h-3 rounded-none overflow-hidden mb-6 border border-carbon-700">
+            <div id="timerProgress" class="bg-lime h-full w-full transition-all duration-300 shadow-[0_0_15px_#d2ff00]"></div>
           </div>
 
-          <!-- Timer Controls -->
-          <div class="flex items-center justify-center gap-3">
-            <button id="startTimerBtn" onclick="toggleTimer()" class="px-6 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-zinc-950 font-bold text-base flex items-center gap-2 shadow-lg shadow-orange-500/30 transition-all">
+          <!-- Timer Controls (Cockpit Buttons) -->
+          <div class="flex flex-wrap items-center justify-center gap-3 font-telemetry">
+            <button id="startTimerBtn" onclick="toggleTimer()" class="px-7 py-3.5 rounded-sm bg-lime hover:bg-white text-carbon-900 font-bold text-sm sm:text-base flex items-center gap-2 uppercase tracking-wider shadow-[0_0_20px_rgba(210,255,0,0.35)] transition-all">
               <i data-lucide="play" class="w-5 h-5 fill-current"></i>
               <span id="startBtnText">Starten</span>
             </button>
-            <button onclick="resetTimer()" class="px-5 py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-semibold text-sm flex items-center gap-2 border border-zinc-700 transition-all">
+            <button onclick="resetTimer()" class="px-5 py-3.5 rounded-sm bg-carbon-850 hover:bg-carbon-800 text-telemetry-cream font-semibold text-xs uppercase tracking-wider flex items-center gap-2 border border-carbon-700 transition-all hover:border-telemetry-muted">
               <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
               <span>Zurücksetzen</span>
             </button>
-            <button id="soundToggleBtn" onclick="toggleAudio()" class="p-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-orange-400 border border-zinc-700 transition-all" title="Audio-Signal an/aus">
+            <button id="soundToggleBtn" onclick="toggleAudio()" class="p-3.5 rounded-sm bg-carbon-850 hover:bg-carbon-800 text-telemetry-muted hover:text-lime border border-carbon-700 transition-all" title="Audio-Signal an/aus">
               <i data-lucide="volume-2" id="soundIcon" class="w-5 h-5"></i>
             </button>
           </div>
         </div>
 
-        <div class="mt-8 text-sm text-zinc-400 flex items-center justify-center gap-6">
-          <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-orange-400"></i> Brust berührt den Boden</span>
-          <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-orange-400"></i> Voller Strecksprung oben</span>
+        <!-- High-Impact Form Criteria Checklist -->
+        <div class="mt-8 text-xs sm:text-sm text-telemetry-cream font-telemetry flex flex-wrap items-center justify-center gap-6">
+          <div class="flex items-center gap-2 bg-carbon-850 px-3.5 py-1.5 border border-carbon-700 rounded-sm">
+            <i data-lucide="check" class="w-4 h-4 text-lime stroke-[3]"></i>
+            <span class="font-bold">BRUST BERÜHRT DEN BODEN</span>
+          </div>
+          <div class="flex items-center gap-2 bg-carbon-850 px-3.5 py-1.5 border border-carbon-700 rounded-sm">
+            <i data-lucide="check" class="w-4 h-4 text-lime stroke-[3]"></i>
+            <span class="font-bold">VOLLER STRECKSPRUNG OBEN</span>
+          </div>
         </div>
 
       </div>
@@ -463,105 +854,127 @@
   </section>
 
   <!-- ================================================================= -->
-  <!-- 6. SEKTION: MUNIRS SPORTLERIDENTITÄT                             -->
-  <!-- "Titel: Munirs Sportleridentität"                                 -->
+  <!-- 6. SEKTION: MOUNIRS SPORTLERIDENTITÄT                             -->
+  <!-- "Titel: Mounirs Sportleridentität"                                 -->
   <!-- "Subtext: laut die drei Säulen dieser Sportleridentität benennen" -->
   <!-- ================================================================= -->
-  <section id="identitaet" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-zinc-900 relative">
+  <section id="identitaet" class="py-28 px-4 sm:px-6 lg:px-8 border-t border-carbon-800 relative bg-carbon-900">
     <div class="max-w-6xl mx-auto">
       
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <div class="inline-flex items-center gap-2 text-orange-400 text-sm font-semibold tracking-wider uppercase mb-3">
-          <i data-lucide="crown" class="w-4 h-4 text-orange-400"></i>
-          <span>Mindset & Fundament</span>
+        <div class="inline-flex items-center gap-2 text-lime text-xs font-telemetry font-bold tracking-widest uppercase mb-3">
+          <i data-lucide="shield" class="w-4 h-4 text-lime"></i>
+          <span>MINDSET & FUNDAMENT // PROTOCOL 05</span>
         </div>
         
-        <!-- Titel: Munirs Sportleridentität -->
-        <h2 class="font-athletic text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-wide">
-          MUNIRS SPORTLERIDENTITÄT
+        <!-- Titel: Mounirs Sportleridentität -->
+        <h2 class="font-racing text-4xl sm:text-6xl md:text-7xl font-black text-white tracking-tight">
+          MOUNIRS SPORTLERIDENTITÄT
         </h2>
 
         <!-- Subtext: laut die drei Säulen dieser Sportleridentität benennen -->
-        <p class="mt-4 text-lg sm:text-2xl text-orange-300 font-semibold tracking-wide uppercase">
+        <p class="mt-4 text-lg sm:text-2xl text-lime font-telemetry font-bold tracking-wide uppercase">
           Laut die drei Säulen dieser Sportleridentität benennen
         </p>
 
-        <p class="text-zinc-400 text-sm sm:text-base mt-2">
+        <p class="text-telemetry-muted text-sm sm:text-base mt-2 font-sans">
           Sag sie mit klarer, fester Stimme vor jedem Durchgang auf. Verankere sie in deinem Geist.
         </p>
       </div>
 
-      <!-- The 3 Pillars Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- The 3 Pillars Cards Grid (Motorsport Telemetry Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-telemetry">
         
         <!-- Säule 1 -->
-        <div class="glass-panel rounded-2xl p-8 border border-zinc-800 hover:border-orange-500/70 transition-all duration-300 relative group flex flex-col justify-between">
-          <div class="absolute -top-4 left-6 px-3 py-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg text-zinc-950 font-athletic font-bold text-xs tracking-wider shadow-md">
-            SÄULE 01
+        <div class="telemetry-card crosshair-corner rounded-sm p-8 border border-carbon-700 relative group flex flex-col justify-between overflow-hidden">
+          <!-- Big Background Numeral like LN4 -->
+          <div class="absolute -right-2 -bottom-6 text-8xl font-racing font-black text-carbon-800/40 select-none pointer-events-none group-hover:text-lime/10 transition-colors">
+            01
           </div>
+
           <div>
-            <div class="w-14 h-14 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center mb-6 text-orange-400 group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-zinc-950 transition-all">
-              <i data-lucide="target" class="w-7 h-7 stroke-[2]"></i>
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-2.5 py-1 bg-lime text-carbon-900 font-telemetry font-bold text-xs rounded-sm">
+                SÄULE 01
+              </span>
+              <span class="text-telemetry-dark text-xs font-mono">// CORE SPEC</span>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2">
+
+            <h3 class="font-racing text-2xl font-bold text-white mb-3 group-hover:text-lime transition-colors">
               Eiserne Disziplin & Fokus
             </h3>
-            <p class="text-zinc-400 text-sm leading-relaxed mb-4">
+            
+            <p class="text-telemetry-muted text-sm leading-relaxed mb-6 font-sans">
               Kein Zaudern, keine Ausreden. Dein Geist lenkt deinen Körper. Jeder Moment an der Stange gehört zu 100% deinem Ziel.
             </p>
           </div>
-          <div class="pt-4 border-t border-zinc-800/80">
-            <button onclick="speakPillar(1)" class="w-full py-2.5 rounded-lg bg-zinc-800/80 hover:bg-orange-500 hover:text-zinc-950 text-xs font-bold uppercase tracking-wider text-zinc-300 transition-all flex items-center justify-center gap-2">
-              <i data-lucide="volume-2" class="w-4 h-4"></i>
+
+          <div class="pt-4 border-t border-carbon-700/80 relative z-10">
+            <button onclick="speakPillar(1)" class="w-full py-3 rounded-sm bg-carbon-850 hover:bg-lime hover:text-carbon-900 text-xs font-bold uppercase tracking-wider text-telemetry-cream transition-all flex items-center justify-center gap-2 border border-carbon-700 hover:border-lime group/btn">
+              <i data-lucide="volume-2" class="w-4 h-4 text-lime group-hover/btn:text-carbon-900"></i>
               <span>Säule 1 laut aussprechen</span>
             </button>
           </div>
         </div>
 
         <!-- Säule 2 -->
-        <div class="glass-panel rounded-2xl p-8 border border-zinc-800 hover:border-orange-500/70 transition-all duration-300 relative group flex flex-col justify-between">
-          <div class="absolute -top-4 left-6 px-3 py-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg text-zinc-950 font-athletic font-bold text-xs tracking-wider shadow-md">
-            SÄULE 02
+        <div class="telemetry-card crosshair-corner rounded-sm p-8 border border-carbon-700 relative group flex flex-col justify-between overflow-hidden">
+          <div class="absolute -right-2 -bottom-6 text-8xl font-racing font-black text-carbon-800/40 select-none pointer-events-none group-hover:text-lime/10 transition-colors">
+            02
           </div>
+
           <div>
-            <div class="w-14 h-14 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center mb-6 text-orange-400 group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-zinc-950 transition-all">
-              <i data-lucide="activity" class="w-7 h-7 stroke-[2]"></i>
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-2.5 py-1 bg-lime text-carbon-900 font-telemetry font-bold text-xs rounded-sm">
+                SÄULE 02
+              </span>
+              <span class="text-telemetry-dark text-xs font-mono">// CORE SPEC</span>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2">
+
+            <h3 class="font-racing text-2xl font-bold text-white mb-3 group-hover:text-lime transition-colors">
               Maximale Körperspannung & Form
             </h3>
-            <p class="text-zinc-400 text-sm leading-relaxed mb-4">
+            
+            <p class="text-telemetry-muted text-sm leading-relaxed mb-6 font-sans">
               Jede Wiederholung in perfekter Ausführung. Reine Calisthenics-Kontrolle von den Fingerspitzen bis zu den Zehen. Ästhetik trifft rohe Kraft.
             </p>
           </div>
-          <div class="pt-4 border-t border-zinc-800/80">
-            <button onclick="speakPillar(2)" class="w-full py-2.5 rounded-lg bg-zinc-800/80 hover:bg-orange-500 hover:text-zinc-950 text-xs font-bold uppercase tracking-wider text-zinc-300 transition-all flex items-center justify-center gap-2">
-              <i data-lucide="volume-2" class="w-4 h-4"></i>
+
+          <div class="pt-4 border-t border-carbon-700/80 relative z-10">
+            <button onclick="speakPillar(2)" class="w-full py-3 rounded-sm bg-carbon-850 hover:bg-lime hover:text-carbon-900 text-xs font-bold uppercase tracking-wider text-telemetry-cream transition-all flex items-center justify-center gap-2 border border-carbon-700 hover:border-lime group/btn">
+              <i data-lucide="volume-2" class="w-4 h-4 text-lime group-hover/btn:text-carbon-900"></i>
               <span>Säule 2 laut aussprechen</span>
             </button>
           </div>
         </div>
 
         <!-- Säule 3 -->
-        <div class="glass-panel rounded-2xl p-8 border border-zinc-800 hover:border-orange-500/70 transition-all duration-300 relative group flex flex-col justify-between">
-          <div class="absolute -top-4 left-6 px-3 py-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg text-zinc-950 font-athletic font-bold text-xs tracking-wider shadow-md">
-            SÄULE 03
+        <div class="telemetry-card crosshair-corner rounded-sm p-8 border border-carbon-700 relative group flex flex-col justify-between overflow-hidden">
+          <div class="absolute -right-2 -bottom-6 text-8xl font-racing font-black text-carbon-800/40 select-none pointer-events-none group-hover:text-lime/10 transition-colors">
+            03
           </div>
+
           <div>
-            <div class="w-14 h-14 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center mb-6 text-orange-400 group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-zinc-950 transition-all">
-              <i data-lucide="award" class="w-7 h-7 stroke-[2]"></i>
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-2.5 py-1 bg-lime text-carbon-900 font-telemetry font-bold text-xs rounded-sm">
+                SÄULE 03
+              </span>
+              <span class="text-telemetry-dark text-xs font-mono">// CORE SPEC</span>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2">
+
+            <h3 class="font-racing text-2xl font-bold text-white mb-3 group-hover:text-lime transition-colors">
               Unaufhaltsamer Wille & No Excuses
             </h3>
-            <p class="text-zinc-400 text-sm leading-relaxed mb-4">
+            
+            <p class="text-telemetry-muted text-sm leading-relaxed mb-6 font-sans">
               Wenn die Muskeln brennen, fängt der Satz erst an. Ein wahrer Athlet gibt niemals auf. Kontinuität Tag für Tag.
             </p>
           </div>
-          <div class="pt-4 border-t border-zinc-800/80">
-            <button onclick="speakPillar(3)" class="w-full py-2.5 rounded-lg bg-zinc-800/80 hover:bg-orange-500 hover:text-zinc-950 text-xs font-bold uppercase tracking-wider text-zinc-300 transition-all flex items-center justify-center gap-2">
-              <i data-lucide="volume-2" class="w-4 h-4"></i>
+
+          <div class="pt-4 border-t border-carbon-700/80 relative z-10">
+            <button onclick="speakPillar(3)" class="w-full py-3 rounded-sm bg-carbon-850 hover:bg-lime hover:text-carbon-900 text-xs font-bold uppercase tracking-wider text-telemetry-cream transition-all flex items-center justify-center gap-2 border border-carbon-700 hover:border-lime group/btn">
+              <i data-lucide="volume-2" class="w-4 h-4 text-lime group-hover/btn:text-carbon-900"></i>
               <span>Säule 3 laut aussprechen</span>
             </button>
           </div>
@@ -569,21 +982,33 @@
 
       </div>
 
-      <!-- Combined Vocal Callout Bar -->
-      <div class="mt-12 glass-panel p-6 rounded-2xl border border-orange-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <!-- Combined Vocal Callout Cockpit Bar -->
+      <div class="mt-12 telemetry-card crosshair-corner p-6 rounded-sm border border-lime/30 flex flex-col sm:flex-row items-center justify-between gap-6 font-telemetry">
         <div class="flex items-center gap-4 text-left">
-          <div class="w-12 h-12 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center shrink-0">
-            <i data-lucide="mic" class="w-6 h-6"></i>
+          <div class="w-12 h-12 rounded-sm bg-lime/10 border border-lime/30 text-lime flex items-center justify-center shrink-0">
+            <i data-lucide="megaphone" class="w-6 h-6"></i>
           </div>
           <div>
-            <h4 class="text-white font-bold text-base">Alle drei Säulen nacheinander skandieren</h4>
-            <p class="text-zinc-400 text-xs">Sprich sie laut und deutlich vor dem nächsten Satz aus.</p>
+            <h4 class="text-white font-racing font-bold text-lg">Alle drei Säulen nacheinander skandieren</h4>
+            <p class="text-telemetry-muted text-xs font-sans">Sprich sie laut und deutlich vor dem nächsten Satz aus oder höre die Audio-Synthese an.</p>
           </div>
         </div>
-        <button onclick="speakAllPillars()" class="px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-zinc-950 font-bold text-sm tracking-wide uppercase hover:opacity-95 shadow-lg shadow-orange-500/20 shrink-0 flex items-center gap-2">
-          <i data-lucide="megaphone" class="w-4 h-4"></i>
-          <span>Alle 3 laut aufsagen</span>
-        </button>
+
+        <div class="flex items-center gap-3 shrink-0 w-full sm:w-auto">
+          <!-- Live speech equalizer indicator -->
+          <div id="speechVisualizer" class="hidden items-center gap-1 h-6 px-2">
+            <div class="w-1 bg-lime rounded-full sound-wave-bar"></div>
+            <div class="w-1 bg-lime rounded-full sound-wave-bar"></div>
+            <div class="w-1 bg-lime rounded-full sound-wave-bar"></div>
+            <div class="w-1 bg-lime rounded-full sound-wave-bar"></div>
+            <div class="w-1 bg-lime rounded-full sound-wave-bar"></div>
+          </div>
+
+          <button onclick="speakAllPillars()" class="w-full sm:w-auto px-6 py-3 rounded-sm bg-lime hover:bg-white text-carbon-900 font-bold text-xs tracking-wider uppercase shadow-[0_0_20px_rgba(210,255,0,0.3)] transition-all flex items-center justify-center gap-2">
+            <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+            <span>Alle 3 laut aufsagen</span>
+          </button>
+        </div>
       </div>
 
     </div>
@@ -597,34 +1022,44 @@
   <!-- da das Christoph Waltz Video sieht, das soll auch eingebettet     -->
   <!-- werden, sodass man dann einfach da auf Play klicken kann."         -->
   <!-- ================================================================= -->
-  <section id="koerpersprache" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-zinc-900 bg-zinc-950/80 relative">
+  <section id="koerpersprache" class="py-28 px-4 sm:px-6 lg:px-8 border-t border-carbon-800 bg-carbon-950 relative">
     <div class="max-w-5xl mx-auto">
       
-      <!-- Section Header -->
+      <!-- Stage Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
         <div>
-          <div class="inline-flex items-center gap-2 text-orange-400 text-sm font-semibold tracking-wider uppercase mb-2">
-            <span class="w-6 h-0.5 bg-orange-500"></span>
-            <span>Sektion 04 • Viertes Video</span>
+          <div class="inline-flex items-center gap-2 text-lime text-xs font-telemetry font-bold tracking-widest uppercase mb-2">
+            <span class="w-6 h-0.5 bg-lime"></span>
+            <span>STAGE 04 // VIERTES VIDEO</span>
           </div>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+          <h2 class="font-racing text-3xl sm:text-4xl md:text-5xl font-black text-white">
             Körpersprache
           </h2>
-          <p class="text-zinc-400 text-sm sm:text-base mt-2 max-w-2xl">
+          <p class="text-telemetry-muted text-sm sm:text-base mt-2 max-w-2xl font-sans">
             Präsenz, Haltung, Mimik und Gestik – wie du dich trägst, definiert deine innere Stärke und Wirkung. Hier direkt das Christoph Waltz Video ansehen.
           </p>
         </div>
-        <div class="flex items-center gap-2 text-xs font-mono text-zinc-400 glass-panel px-3 py-1.5 rounded-lg w-fit">
-          <i data-lucide="user-check" class="w-4 h-4 text-orange-400"></i>
+
+        <div class="flex items-center gap-2 text-xs font-telemetry text-telemetry-cream bg-carbon-850 border border-carbon-700 px-3.5 py-2 rounded-sm w-fit shrink-0">
+          <i data-lucide="user-check" class="w-4 h-4 text-lime"></i>
           <span>Christoph Waltz • Ausstrahlung & Haltung</span>
         </div>
       </div>
 
-      <!-- Video Embed Card -->
-      <div class="video-card glass-panel rounded-2xl p-2 sm:p-4 border border-zinc-800 shadow-2xl shadow-black/60 relative overflow-hidden">
-        <div class="relative w-full overflow-hidden rounded-xl bg-zinc-950 aspect-video">
+      <!-- Video Bezel Card -->
+      <div class="telemetry-card crosshair-corner rounded-sm p-3 sm:p-5 border border-carbon-700 shadow-2xl relative overflow-hidden">
+        
+        <div class="mb-3 px-1 flex items-center justify-between font-telemetry text-[11px] text-telemetry-muted uppercase">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-lime"></span>
+            <span class="text-lime font-bold">BODY LANGUAGE & CHARISMA MASTERCLASS</span>
+          </div>
+          <span class="font-mono text-telemetry-dark">[ 04 // 04 ]</span>
+        </div>
+
+        <div class="relative w-full overflow-hidden bg-carbon-950 aspect-video rounded-sm border border-carbon-800">
           <iframe 
-            class="absolute top-0 left-0 w-full h-full rounded-xl"
+            class="absolute top-0 left-0 w-full h-full"
             src="https://www.youtube-nocookie.com/embed/sBRbMvTlUok?rel=0" 
             title="4. Video: Christoph Waltz - Körpersprache, Präsenz & Ausstrahlung" 
             frameborder="0" 
@@ -634,96 +1069,136 @@
           </iframe>
         </div>
 
-        <div class="mt-4 px-2 py-1 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-400">
-          <div class="flex items-center gap-2">
-            <span class="inline-block w-2.5 h-2.5 rounded-full bg-orange-500"></span>
-            <span class="text-zinc-300 font-medium">Körpersprache & Charisma</span>
+        <div class="mt-4 px-2 py-1 flex flex-wrap items-center justify-between gap-3 text-xs font-telemetry text-telemetry-muted">
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-1.5 text-telemetry-cream">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-lime"></i>
+              <span>KÖRPERSPRACHE, PRÄSENZ & SOUVERÄNITÄT</span>
+            </div>
+            <span class="text-carbon-700">|</span>
+            <span class="text-telemetry-muted">ATHLETISCHE WIRKUNG</span>
           </div>
-          <a href="https://youtu.be/sBRbMvTlUok" target="_blank" rel="noopener noreferrer" class="hover:text-orange-400 flex items-center gap-1 transition-colors">
+
+          <a href="https://youtu.be/sBRbMvTlUok" target="_blank" rel="noopener noreferrer" class="text-telemetry-cream hover:text-lime flex items-center gap-1.5 transition-colors group">
             <span>Auf YouTube ansehen</span>
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <i data-lucide="external-link" class="w-3.5 h-3.5 text-lime group-hover:translate-x-0.5 transition-transform"></i>
           </a>
         </div>
       </div>
 
-      <!-- Body Language Key Takeaways for Calisthenics Athletes -->
-      <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div class="glass-panel p-4 rounded-xl border border-zinc-800/80">
-          <div class="flex items-center gap-2 text-white font-bold text-sm mb-1">
-            <i data-lucide="crosshair" class="w-4 h-4 text-orange-400"></i>
+      <!-- Body Language Key Takeaways (Diagnostic Telemetry Cards) -->
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 font-telemetry">
+        
+        <div class="telemetry-card crosshair-corner p-5 rounded-sm border border-carbon-700">
+          <div class="flex items-center gap-2 text-white font-racing font-bold text-base mb-1.5">
+            <i data-lucide="crosshair" class="w-4 h-4 text-lime"></i>
             <span>Aufrechte Haltung</span>
           </div>
-          <p class="text-zinc-400 text-xs leading-relaxed">
+          <p class="text-telemetry-muted text-xs leading-relaxed font-sans">
             Schultern nach hinten und unten, Brust stolz öffnen. Das signalisiert Dominanz und sofortige Rumpfspannung.
           </p>
         </div>
-        <div class="glass-panel p-4 rounded-xl border border-zinc-800/80">
-          <div class="flex items-center gap-2 text-white font-bold text-sm mb-1">
-            <i data-lucide="eye" class="w-4 h-4 text-orange-400"></i>
+
+        <div class="telemetry-card crosshair-corner p-5 rounded-sm border border-carbon-700">
+          <div class="flex items-center gap-2 text-white font-racing font-bold text-base mb-1.5">
+            <i data-lucide="eye" class="w-4 h-4 text-lime"></i>
             <span>Ruhiger Blickkontakt</span>
           </div>
-          <p class="text-zinc-400 text-xs leading-relaxed">
+          <p class="text-telemetry-muted text-xs leading-relaxed font-sans">
             Kein hastiges Umherblicken. Volle Kontrolle über die Atmung und eine fokussierte, unerschütterliche Präsenz.
           </p>
         </div>
-        <div class="glass-panel p-4 rounded-xl border border-zinc-800/80">
-          <div class="flex items-center gap-2 text-white font-bold text-sm mb-1">
-            <i data-lucide="shield" class="w-4 h-4 text-orange-400"></i>
+
+        <div class="telemetry-card crosshair-corner p-5 rounded-sm border border-carbon-700">
+          <div class="flex items-center gap-2 text-white font-racing font-bold text-base mb-1.5">
+            <i data-lucide="shield-check" class="w-4 h-4 text-lime"></i>
             <span>Souveräne Gestik</span>
           </div>
-          <p class="text-zinc-400 text-xs leading-relaxed">
+          <p class="text-telemetry-muted text-xs leading-relaxed font-sans">
             Bewusste, präzise Bewegungen – sowohl an der Calisthenics-Stange als auch im Alltag und Gespräch.
           </p>
         </div>
+
       </div>
 
     </div>
   </section>
 
   <!-- ================================================================= -->
-  <!-- FOOTER                                                           -->
+  <!-- FOOTER: RACING PADDOCK STYLE                                      -->
   <!-- ================================================================= -->
-  <footer class="py-12 px-4 sm:px-6 lg:px-8 border-t border-zinc-900 bg-[#070709] text-center">
-    <div class="max-w-4xl mx-auto flex flex-col items-center">
-      <div class="flex items-center gap-2 mb-4">
-        <div class="w-8 h-8 rounded-lg bg-orange-500 flex items-center justify-center text-zinc-950 font-bold">
-          <i data-lucide="zap" class="w-4 h-4 stroke-[3]"></i>
+  <footer class="py-16 px-4 sm:px-6 lg:px-8 border-t border-carbon-700 bg-carbon-950 relative overflow-hidden font-telemetry">
+    <div class="max-w-6xl mx-auto flex flex-col items-center text-center relative z-10">
+      
+      <!-- Brand Logotype in Footer -->
+      <div class="flex items-center gap-3 mb-4">
+        <div class="px-2.5 py-1 bg-lime text-carbon-900 font-telemetry font-bold text-xs tracking-wider rounded-sm">
+          <span>MC // 01</span>
         </div>
-        <span class="font-athletic text-xl font-bold tracking-wider text-white">MUNIR CALISTHENICS</span>
+        <span class="font-racing text-2xl sm:text-3xl font-black tracking-tight text-white">
+          MOUNIR <span class="text-lime">CALISTHENICS</span>
+        </span>
       </div>
-      <p class="text-zinc-400 text-sm max-w-md mb-6">
+
+      <p class="text-telemetry-muted text-sm max-w-md mb-8 font-sans">
         „Disziplin ist die Brücke zwischen deinen Zielen und deinen Erfolgen.“
       </p>
-      <div class="flex flex-wrap justify-center gap-4 text-xs text-zinc-400">
-        <a href="#hero" class="hover:text-orange-400 transition-colors">Startseite</a>
-        <span>•</span>
-        <a href="#video-1" class="hover:text-orange-400 transition-colors">Video 1 (Flow)</a>
-        <span>•</span>
-        <a href="#video-2" class="hover:text-orange-400 transition-colors">Video 2 (Beach)</a>
-        <span>•</span>
-        <a href="#video-3" class="hover:text-orange-400 transition-colors">Video 3 (Battle)</a>
-        <span>•</span>
-        <a href="#burpees" class="hover:text-orange-400 transition-colors">Burpees</a>
-        <span>•</span>
-        <a href="#identitaet" class="hover:text-orange-400 transition-colors">Sportleridentität</a>
-        <span>•</span>
-        <a href="#koerpersprache" class="hover:text-orange-400 transition-colors">Körpersprache</a>
+
+      <!-- Navigation Grid in Footer -->
+      <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs uppercase tracking-wider text-telemetry-muted mb-8">
+        <a href="#hero" class="hover:text-lime transition-colors">Startseite</a>
+        <span class="text-carbon-700">•</span>
+        <a href="#video-1" class="hover:text-lime transition-colors">Video 1 (Flow)</a>
+        <span class="text-carbon-700">•</span>
+        <a href="#video-2" class="hover:text-lime transition-colors">Video 2 (Beach)</a>
+        <span class="text-carbon-700">•</span>
+        <a href="#video-3" class="hover:text-lime transition-colors">Video 3 (Battle)</a>
+        <span class="text-carbon-700">•</span>
+        <a href="#burpees" class="text-lime hover:underline font-bold">Burpees 8x30s</a>
+        <span class="text-carbon-700">•</span>
+        <a href="#identitaet" class="hover:text-lime transition-colors">Sportleridentität</a>
+        <span class="text-carbon-700">•</span>
+        <a href="#koerpersprache" class="hover:text-lime transition-colors">Körpersprache</a>
       </div>
-      <div class="mt-8 text-xs text-zinc-400">
-        © 2026 Munir Calisthenics Ablauf • All Rights Reserved.
+
+      <!-- Bottom telemetry line -->
+      <div class="pt-8 border-t border-carbon-800 w-full flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-telemetry-dark font-mono">
+        <div>
+          © 2026 MOUNIR CALISTHENICS PROTOCOL // ALL RIGHTS RESERVED
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-lime"></span>
+          <span>HIGH VOLTAGE RACING PERFORMANCE</span>
+        </div>
+        <a href="#hero" class="hover:text-lime transition-colors flex items-center gap-1">
+          <span>BACK TO TOP</span>
+          <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+        </a>
       </div>
+
     </div>
   </footer>
 
   <!-- ================================================================= -->
-  <!-- JAVASCRIPT: INTERAKTIVER BURPEE TIMER & SPRACHSYNTHESE            -->
+  <!-- JAVASCRIPT: BURPEE TIMER & SPEECH SYNTHESIS                       -->
   <!-- ================================================================= -->
   <script>
     // Initialize Lucide Icons
     lucide.createIcons();
 
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const isHidden = menu.classList.contains('hidden');
+      if (isHidden) {
+        menu.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+      }
+    }
+
     // -------------------------------------------------------------
-    // BURPEES 8 x 30s INTERVAL TIMER LOGIC
+    // BURPEES 8 x 30s INTERVAL TIMER LOGIC (F1 RACING PITWALL)
     // -------------------------------------------------------------
     const TOTAL_ROUNDS = 8;
     const WORK_SECONDS = 30;
@@ -742,8 +1217,9 @@
     const timerModeLabel = document.getElementById('timerModeLabel');
     const startBtnText = document.getElementById('startBtnText');
     const soundIcon = document.getElementById('soundIcon');
+    const f1StatusText = document.getElementById('f1StatusText');
 
-    // Web Audio API beep sound synthesizer (no external audio files needed)
+    // Web Audio API beep sound synthesizer
     let audioCtx = null;
     function playBeep(freq = 600, duration = 0.15) {
       if (!audioEnabled) return;
@@ -765,7 +1241,7 @@
         osc.start();
         osc.stop(audioCtx.currentTime + duration);
       } catch (e) {
-        console.warn('Audio could not be played:', e);
+        console.warn('Audio error:', e);
       }
     }
 
@@ -780,19 +1256,24 @@
       lucide.createIcons();
     }
 
+    // F1 Rev Counter Badges update
     function updateRoundBadges() {
       const badges = document.querySelectorAll('.set-badge');
       badges.forEach(badge => {
         const r = parseInt(badge.getAttribute('data-round'));
+        const roundNumStr = r.toString().padStart(2, '0');
         if (r < currentRound) {
-          badge.className = 'set-badge py-2 px-1 rounded-lg bg-emerald-950/60 border border-emerald-500 text-xs font-bold text-emerald-400 transition-all';
-          badge.innerHTML = `✓ R${r}`;
+          // Completed Lap: Solid Lime with Checkmark
+          badge.className = 'set-badge py-3 px-1.5 rounded-sm bg-lime/20 border border-lime text-xs font-bold text-lime transition-all text-center flex flex-col items-center justify-center gap-1 shadow-[0_0_10px_rgba(210,255,0,0.2)]';
+          badge.innerHTML = `<span class="text-[10px] text-lime font-mono">✓ COMPLETED</span><span>R${r}</span>`;
         } else if (r === currentRound) {
-          badge.className = 'set-badge py-2 px-1 rounded-lg bg-orange-500 border border-orange-400 text-xs font-bold text-zinc-950 shadow-lg shadow-orange-500/30 scale-105 transition-all animate-pulse';
-          badge.innerHTML = `R${r} (30s)`;
+          // Active Lap: High-voltage Electric Lime with pulsing glow
+          badge.className = 'set-badge py-3 px-1.5 rounded-sm bg-lime border-2 border-white text-xs font-black text-carbon-900 transition-all text-center flex flex-col items-center justify-center gap-1 shadow-[0_0_25px_#d2ff00] scale-105';
+          badge.innerHTML = `<span class="text-[10px] text-carbon-900 font-mono font-black animate-pulse">● LIVE LAP</span><span>R${r} (30s)</span>`;
         } else {
-          badge.className = 'set-badge py-2 px-1 rounded-lg bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-400 transition-all';
-          badge.innerHTML = `R${r} (30s)`;
+          // Future Lap: Neutral Dark Carbon
+          badge.className = 'set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1';
+          badge.innerHTML = `<span class="text-[10px] text-telemetry-dark font-mono">${roundNumStr}</span><span>R${r} (30s)</span>`;
         }
       });
     }
@@ -807,14 +1288,18 @@
       timerProgress.style.width = `${progressPercent}%`;
 
       if (isWorking) {
-        timerModeLabel.innerHTML = `<span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span> <span class="text-orange-400">BURPEE POWER (RUNDE ${currentRound})</span>`;
-        timerProgress.className = 'bg-gradient-to-r from-orange-500 to-amber-400 h-full transition-all duration-300';
+        timerModeLabel.innerHTML = `<span class="w-2 h-2 rounded-full bg-lime animate-ping"></span> <span class="text-lime font-bold">BURPEE POWER // LAP ${currentRound} VON ${TOTAL_ROUNDS}</span>`;
+        timerProgress.className = 'bg-lime h-full transition-all duration-300 shadow-[0_0_15px_#d2ff00]';
+        timeRemaining.className = 'font-racing text-7xl sm:text-8xl md:text-9xl font-black text-lime my-3 tracking-tighter drop-shadow-[0_0_20px_rgba(210,255,0,0.3)]';
+        f1StatusText.innerHTML = `<span class="text-lime">GREEN FLAG // PUSH LAP ${currentRound}</span>`;
       } else {
-        timerModeLabel.innerHTML = `<span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span> <span class="text-blue-400">KURZE VERSCHNAUFPAUSE</span>`;
-        timerProgress.className = 'bg-gradient-to-r from-blue-500 to-cyan-400 h-full transition-all duration-300';
+        timerModeLabel.innerHTML = `<span class="w-2 h-2 rounded-full bg-telemetry-white animate-pulse"></span> <span class="text-telemetry-white font-bold">BOXENSTOPP // RECOVERY PAUSE</span>`;
+        timerProgress.className = 'bg-telemetry-white h-full transition-all duration-300 shadow-[0_0_15px_#ffffff]';
+        timeRemaining.className = 'font-racing text-7xl sm:text-8xl md:text-9xl font-black text-telemetry-white my-3 tracking-tighter';
+        f1StatusText.innerHTML = `<span class="text-telemetry-white">YELLOW FLAG // PAUSE 15s</span>`;
       }
 
-      roundDisplay.innerHTML = `Runde: <strong class="text-white font-mono">${currentRound} / ${TOTAL_ROUNDS}</strong>`;
+      roundDisplay.innerHTML = `RUNDE: <strong class="text-lime font-bold font-mono text-sm">${currentRound} / ${TOTAL_ROUNDS}</strong>`;
       updateRoundBadges();
     }
 
@@ -823,6 +1308,7 @@
         clearInterval(timerInterval);
         isRunning = false;
         startBtnText.textContent = 'Fortsetzen';
+        f1StatusText.innerHTML = `<span class="text-telemetry-muted">SESSION PAUSED</span>`;
       } else {
         isRunning = true;
         startBtnText.textContent = 'Pause';
@@ -831,30 +1317,32 @@
           if (timeLeft > 0) {
             timeLeft--;
             if (timeLeft <= 3 && timeLeft > 0) {
-              playBeep(440, 0.1); // Countdown beep
+              playBeep(520, 0.1); // Countdown beep
             }
             updateDisplay();
           } else {
             // Switch between work and rest or advance round
             if (isWorking) {
-              playBeep(1200, 0.4); // Completion of work
+              playBeep(1050, 0.35); // Completion of work phase
               if (currentRound >= TOTAL_ROUNDS) {
-                // Workout done!
+                // Workout fully completed!
                 clearInterval(timerInterval);
                 isRunning = false;
-                startBtnText.textContent = 'Fertig!';
-                timerModeLabel.innerHTML = `<span class="text-emerald-400 font-bold">HERVORRAGEND! 8x30s BURPEES GESCHAFFT!</span>`;
+                startBtnText.textContent = 'Geschafft!';
+                timerModeLabel.innerHTML = `<span class="text-lime font-bold">CHEQUERED FLAG! 8x30s BURPEES MEISTERHAFT BEENDET!</span>`;
                 timeRemaining.textContent = "00:00";
+                timeRemaining.className = "font-racing text-7xl sm:text-8xl md:text-9xl font-black text-white my-3 tracking-tighter";
                 timerProgress.style.width = "100%";
-                timerProgress.className = "bg-emerald-500 h-full";
-                confettiEffect();
+                timerProgress.className = "bg-lime h-full shadow-[0_0_25px_#d2ff00]";
+                f1StatusText.innerHTML = `<span class="text-lime font-bold">P1 FINISH // PROTOCOL COMPLETE</span>`;
+                celebrateFinish();
                 return;
               }
               isWorking = false;
               timeLeft = REST_SECONDS;
             } else {
-              // End of rest, start next round
-              playBeep(900, 0.3);
+              // End of rest, advance to next lap
+              playBeep(920, 0.25);
               isWorking = true;
               currentRound++;
               timeLeft = WORK_SECONDS;
@@ -872,6 +1360,7 @@
       currentRound = 1;
       timeLeft = WORK_SECONDS;
       startBtnText.textContent = 'Starten';
+      f1StatusText.innerHTML = `<span class="text-lime font-mono">STANDBY</span>`;
       updateDisplay();
     }
 
@@ -887,13 +1376,34 @@
       3: "Säule drei: Unaufhaltsamer Wille und No Excuses. Durchziehen bis zum Schluss!"
     };
 
+    function showVisualizer() {
+      const vis = document.getElementById('speechVisualizer');
+      if (vis) {
+        vis.classList.remove('hidden');
+        vis.classList.add('flex');
+      }
+    }
+
+    function hideVisualizer() {
+      const vis = document.getElementById('speechVisualizer');
+      if (vis) {
+        vis.classList.add('hidden');
+        vis.classList.remove('flex');
+      }
+    }
+
     function speakText(text) {
       if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel(); // Stop any pending speech
+        window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'de-DE';
-        utterance.rate = 0.95; // Clear & powerful cadence
+        utterance.rate = 0.95; // Crisp, disciplined cadence
         utterance.pitch = 1.0;
+        
+        showVisualizer();
+        utterance.onend = hideVisualizer;
+        utterance.onerror = hideVisualizer;
+        
         window.speechSynthesis.speak(utterance);
       } else {
         alert(text);
@@ -907,19 +1417,20 @@
     }
 
     function speakAllPillars() {
-      const full = "Munirs drei Säulen der Sportleridentität. " +
+      const full = "Mounirs drei Säulen der Sportleridentität. " +
         "Erstens: Eiserne Disziplin und Fokus. " +
         "Zweitens: Maximale Körperspannung und perfekte Form. " +
         "Drittens: Unaufhaltsamer Wille, keine Ausreden!";
       speakText(full);
     }
 
-    // Simple celebration effect on finish
-    function confettiEffect() {
+    // Celebration finish fanfare
+    function celebrateFinish() {
       try {
-        playBeep(1000, 0.15);
-        setTimeout(() => playBeep(1200, 0.2), 160);
-        setTimeout(() => playBeep(1500, 0.35), 350);
+        playBeep(880, 0.15);
+        setTimeout(() => playBeep(1100, 0.15), 150);
+        setTimeout(() => playBeep(1320, 0.2), 300);
+        setTimeout(() => playBeep(1760, 0.4), 500);
       } catch(e) {}
     }
   </script>
