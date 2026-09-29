@@ -1,1438 +1,1130 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MOUNIR // CALISTHENICS — Performance, Burpees & Mindset</title>
-  <meta name="description" content="Mounirs Calisthenics Trainingsablauf: High-Performance Workout-Phasen, 8x30s Burpees Intervall-Engine, Sportleridentität und Körpersprache." />
-
-  <!-- Tailwind CSS CDN -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mounir Calisthenics</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            lime: {
-              DEFAULT: '#d2ff00',
-              50: '#f9ffe5',
-              100: '#f3ffcc',
-              200: '#e5ff99',
-              300: '#d7ff66',
-              400: '#d2ff00',
-              500: '#b8e000',
-              600: '#94b300',
-              700: '#6f8600',
-              800: '#4a5a00',
-              900: '#262d00',
-            },
-            papaya: '#ff6b00',
-            carbon: {
-              950: '#090a08',
-              900: '#0d0f0c',
-              850: '#121510',
-              800: '#171a13',
-              750: '#1d2118',
-              700: '#252a20',
-              600: '#343b2d',
-            },
-            telemetry: {
-              white: '#f4f4ed',
-              cream: '#ebeee0',
-              muted: '#9ca190',
-              dark: '#53574b',
-            }
-          },
-          fontFamily: {
-            display: ['Syne', 'Oswald', 'sans-serif'],
-            mono: ['Space Grotesk', 'monospace'],
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          },
-          animation: {
-            'marquee': 'marquee 22s linear infinite',
-            'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
-            'blink': 'blink 1.2s infinite',
-          },
-          keyframes: {
-            marquee: {
-              '0%': { transform: 'translateX(0%)' },
-              '100%': { transform: 'translateX(-50%)' },
-            },
-            pulseGlow: {
-              '0%, 100%': { boxShadow: '0 0 15px rgba(210, 255, 0, 0.25), inset 0 0 10px rgba(210, 255, 0, 0.1)' },
-              '50%': { boxShadow: '0 0 35px rgba(210, 255, 0, 0.55), inset 0 0 20px rgba(210, 255, 0, 0.25)' },
-            },
-            blink: {
-              '0%, 100%': { opacity: 1 },
-              '50%': { opacity: 0.2 },
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Google Fonts: Syne (Ultra Edgy Grotesque), Space Grotesk (Telemetry Mono), Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
-
   <style>
     :root {
-      --color-lime: #d2ff00;
-      --color-dark: #0d0f0c;
-      --color-white: #f4f4ed;
+  --start-0: polygon(78.91% 40.99%, 82.08% 77.17%, 49.10% 61.97%);
+  --start-1: polygon(70.73% 25.45%, 48.00% 57.74%, 31.25% 21.98%);
+  --start-2: polygon(49.75% 55.71%, 21.52% 40.67%, 48.59% 23.63%);
+  --start-3: polygon(23.41% 43.06%, 5.77% 7.18%, 45.67% 9.67%);
+  --start-4: polygon(32.43% 100.00%, 5.96% 82.67%, 36.46% 69.63%);
+  --start-5: polygon(18.31% 37.11%, 36.37% 62.41%, 5.45% 65.53%);
+  --start-6: polygon(95.49% 64.08%, 67.57% 52.12%, 91.80% 33.81%);
+  --start-7: polygon(13.02% 45.79%, 14.10% 23.59%, 32.84% 35.54%);
+  --start-8: polygon(31.64% 47.84%, 4.28% 58.04%, 9.00% 29.22%);
+  --start-9: polygon(79.09% 5.33%, 100.00% 41.45%, 59.21% 43.30%);
+  --start-10: polygon(9.78% 6.35%, 25.10% 14.76%, 10.20% 23.89%);
+  --start-11: polygon(34.33% 89.44%, 3.49% 68.45%, 37.01% 52.09%);
+  --start-12: polygon(35.57% 77.21%, 1.67% 72.46%, 22.62% 45.39%);
+  --start-13: polygon(76.01% 49.01%, 81.64% 27.73%, 97.32% 43.17%);
+  --start-14: polygon(96.16% 40.12%, 80.56% 68.93%, 63.29% 41.09%);
+  --start-15: polygon(57.47% 61.97%, 34.70% 31.24%, 72.68% 26.72%);
+  --start-16: polygon(84.21% 2.44%, 88.81% 24.89%, 67.04% 17.75%);
+  --start-17: polygon(84.04% 35.02%, 68.09% 4.23%, 100.00% 5.66%);
+  --start-18: polygon(87.16% 80.38%, 65.49% 100.00%, 57.31% 72.56%);
+  --start-19: polygon(7.20% 88.43%, 0.00% 46.60%, 39.15% 59.83%);
+  --start-20: polygon(16.61% 37.15%, 3.65% 20.37%, 24.65% 17.44%);
+  --start-21: polygon(68.60% 79.95%, 77.02% 55.17%, 94.36% 74.77%);
+  --start-22: polygon(12.42% 19.58%, 25.33% 32.93%, 7.33% 37.52%);
+  --start-23: polygon(24.76% 24.91%, 30.74% 51.62%, 4.58% 43.55%);
+  --start-24: polygon(33.01% 0.00%, 47.28% 28.34%, 9.84% 23.38%);
+  --start-25: polygon(51.81% 23.98%, 72.43% 14.05%, 70.82% 36.88%);
+  --start-26: polygon(40.94% 26.49%, 11.46% 30.62%, 22.50% 2.97%);
+  --start-27: polygon(63.52% 70.53%, 88.92% 74.73%, 72.67% 94.70%);
+  --start-28: polygon(47.31% 57.70%, 87.60% 48.92%, 75.23% 88.26%);
+  --start-29: polygon(58.12% 0.00%, 86.13% 24.15%, 50.92% 36.29%);
+  --start-30: polygon(72.76% 15.41%, 90.71% 4.17%, 91.57% 25.33%);
+  --start-31: polygon(61.96% 56.52%, 41.54% 45.33%, 61.39% 33.15%);
+  --start-32: polygon(55.32% 46.60%, 34.15% 45.69%, 45.45% 27.76%);
+  --start-33: polygon(8.29% 4.81%, 27.17% 14.23%, 9.63% 25.95%);
+  --start-34: polygon(50.58% 15.84%, 27.74% 47.42%, 11.66% 11.92%);
+  --start-35: polygon(19.97% 46.04%, 32.14% 66.90%, 7.98% 67.12%);
+  --start-36: polygon(40.96% 13.81%, 14.97% 41.27%, 4.03% 5.08%);
+  --start-37: polygon(81.10% 53.76%, 69.91% 72.73%, 58.99% 53.61%);
+  --start-38: polygon(24.97% 34.11%, 24.59% 16.11%, 40.41% 24.71%);
+  --start-39: polygon(58.58% 29.51%, 80.43% 27.81%, 71.06% 47.62%);
+  --start-40: polygon(100.00% 34.14%, 73.85% 62.58%, 63.45% 23.46%);
+  --start-41: polygon(70.77% 53.17%, 68.80% 17.97%, 100.00% 33.73%);
+  --start-42: polygon(19.16% 5.36%, 37.47% 34.01%, 3.51% 35.69%);
+  --start-43: polygon(93.62% 44.77%, 72.24% 37.63%, 89.04% 22.62%);
+  --start-44: polygon(26.09% 99.43%, 19.41% 74.44%, 44.42% 81.05%);
+  --flow-0: polygon(57.32% 22.50%, 69.04% 50.70%, 38.74% 46.88%);
+  --flow-1: polygon(71.83% 49.27%, 78.41% 66.91%, 59.82% 63.88%);
+  --flow-2: polygon(9.62% 43.41%, 34.01% 32.44%, 31.43% 59.06%);
+  --flow-3: polygon(55.62% 53.40%, 64.76% 71.29%, 44.70% 70.36%);
+  --flow-4: polygon(30.96% 29.97%, 50.06% 48.95%, 24.10% 56.11%);
+  --flow-5: polygon(11.75% 44.88%, 27.34% 26.07%, 35.93% 48.94%);
+  --flow-6: polygon(29.79% 80.05%, 48.16% 59.29%, 57.07% 85.54%);
+  --flow-7: polygon(25.34% 65.71%, 46.65% 51.92%, 48.06% 77.27%);
+  --flow-8: polygon(38.74% 52.56%, 15.96% 60.66%, 20.23% 36.86%);
+  --flow-9: polygon(57.04% 60.15%, 38.89% 70.38%, 39.02% 49.55%);
+  --flow-10: polygon(79.13% 51.01%, 40.95% 51.15%, 59.77% 17.93%);
+  --flow-11: polygon(37.25% 77.60%, 11.12% 57.56%, 41.49% 44.82%);
+  --flow-12: polygon(47.56% 37.18%, 36.29% 9.35%, 66.05% 13.38%);
+  --flow-13: polygon(36.32% 6.77%, 61.99% 38.34%, 21.85% 44.96%);
+  --flow-14: polygon(63.23% 49.42%, 90.02% 55.03%, 71.86% 75.51%);
+  --flow-15: polygon(66.06% 80.47%, 29.80% 90.57%, 39.02% 54.08%);
+  --flow-16: polygon(42.74% 79.70%, 22.74% 71.91%, 39.43% 58.41%);
+  --flow-17: polygon(33.02% 41.19%, 45.57% 21.53%, 56.41% 42.18%);
+  --flow-18: polygon(31.68% 41.30%, 17.41% 56.97%, 10.89% 36.81%);
+  --flow-19: polygon(13.18% 58.40%, 14.89% 20.61%, 46.85% 40.84%);
+  --flow-20: polygon(46.27% 62.96%, 24.44% 29.71%, 64.14% 27.25%);
+  --flow-21: polygon(53.33% 91.77%, 38.13% 77.05%, 58.45% 71.16%);
+  --flow-22: polygon(64.80% 75.08%, 37.04% 61.02%, 63.02% 43.90%);
+  --flow-23: polygon(73.80% 48.78%, 70.38% 73.21%, 50.86% 58.11%);
+  --flow-24: polygon(33.03% 56.00%, 18.95% 42.17%, 37.94% 36.81%);
+  --flow-25: polygon(38.24% 30.65%, 54.07% 0.16%, 72.68% 29.04%);
+  --flow-26: polygon(44.85% 33.74%, 61.13% 26.82%, 59.06% 44.39%);
+  --flow-27: polygon(39.69% 65.58%, 70.77% 66.38%, 54.66% 92.97%);
+  --flow-28: polygon(47.34% 56.24%, 75.83% 27.23%, 86.87% 66.36%);
+  --flow-29: polygon(44.57% 41.17%, 60.36% 49.66%, 45.15% 59.16%);
+  --flow-30: polygon(72.71% 40.95%, 95.81% 55.64%, 71.60% 68.41%);
+  --flow-31: polygon(74.76% 47.12%, 43.35% 61.10%, 46.80% 26.90%);
+  --flow-32: polygon(43.06% 85.04%, 40.39% 56.51%, 66.48% 68.35%);
+  --flow-33: polygon(65.52% 30.60%, 28.75% 20.74%, 55.56% 0.00%);
+  --flow-34: polygon(37.50% 51.77%, 70.83% 48.89%, 56.79% 79.25%);
+  --flow-35: polygon(69.97% 93.82%, 28.09% 90.48%, 51.77% 55.78%);
+  --flow-36: polygon(44.96% 63.32%, 27.18% 67.00%, 32.80% 49.73%);
+  --flow-37: polygon(85.89% 57.54%, 63.05% 55.71%, 75.97% 36.79%);
+  --flow-38: polygon(34.91% 92.91%, 50.62% 67.97%, 64.47% 93.98%);
+  --flow-39: polygon(43.18% 25.40%, 51.10% 50.01%, 25.80% 44.67%);
+  --flow-40: polygon(51.00% 33.80%, 33.19% 6.54%, 65.69% 4.60%);
+  --flow-41: polygon(82.03% 63.49%, 59.06% 99.84%, 38.90% 61.86%);
+  --flow-42: polygon(56.58% 22.25%, 38.50% 48.24%, 24.90% 19.65%);
+  --flow-43: polygon(53.81% 33.33%, 73.20% 45.42%, 53.09% 56.25%);
+  --flow-44: polygon(72.65% 62.06%, 36.97% 78.64%, 40.28% 39.44%);
+  --beach-0: polygon(48.95% 28.43%, 41.26% 46.03%, 29.80% 30.62%);
+  --beach-1: polygon(33.24% 92.79%, 2.33% 85.15%, 24.30% 62.10%);
+  --beach-2: polygon(49.21% 58.02%, 27.27% 34.71%, 58.39% 27.23%);
+  --beach-3: polygon(35.84% 59.76%, 41.07% 37.21%, 58.05% 52.94%);
+  --beach-4: polygon(66.29% 89.53%, 78.53% 63.36%, 95.17% 86.98%);
+  --beach-5: polygon(58.03% 0.00%, 51.44% 28.68%, 25.59% 6.32%);
+  --beach-6: polygon(71.42% 47.19%, 52.44% 53.83%, 56.09% 34.05%);
+  --beach-7: polygon(49.05% 57.47%, 57.75% 17.48%, 88.15% 44.88%);
+  --beach-8: polygon(65.12% 93.61%, 35.02% 93.86%, 49.74% 67.60%);
+  --beach-9: polygon(55.07% 71.67%, 44.84% 54.27%, 65.02% 54.02%);
+  --beach-10: polygon(56.61% 76.54%, 29.22% 69.35%, 49.05% 49.14%);
+  --beach-11: polygon(60.54% 45.99%, 33.29% 69.83%, 26.12% 34.34%);
+  --beach-12: polygon(60.18% 55.49%, 53.21% 78.56%, 36.64% 61.06%);
+  --beach-13: polygon(15.66% 53.02%, 46.31% 39.20%, 43.11% 72.67%);
+  --beach-14: polygon(94.87% 41.72%, 99.11% 65.82%, 76.09% 57.55%);
+  --beach-15: polygon(46.83% 67.99%, 78.16% 93.83%, 40.18% 100.00%);
+  --beach-16: polygon(32.98% 60.70%, 25.52% 23.63%, 61.40% 35.54%);
+  --beach-17: polygon(64.26% 73.91%, 48.22% 95.40%, 37.51% 70.81%);
+  --beach-18: polygon(56.77% 28.48%, 44.81% 48.46%, 33.41% 28.16%);
+  --beach-19: polygon(27.18% 39.98%, 50.72% 36.36%, 42.18% 58.60%);
+  --beach-20: polygon(0.00% 48.97%, 20.54% 48.71%, 10.23% 67.27%);
+  --beach-21: polygon(40.33% 80.77%, 15.52% 73.62%, 34.04% 55.63%);
+  --beach-22: polygon(55.69% 18.79%, 85.63% 3.84%, 83.76% 37.25%);
+  --beach-23: polygon(4.70% 58.18%, 13.00% 37.00%, 27.28% 54.72%);
+  --beach-24: polygon(84.72% 56.89%, 93.38% 88.08%, 62.00% 80.13%);
+  --beach-25: polygon(82.69% 50.55%, 88.07% 86.33%, 54.34% 73.25%);
+  --beach-26: polygon(61.56% 78.11%, 50.98% 48.03%, 82.35% 53.77%);
+  --beach-27: polygon(35.13% 39.88%, 63.03% 53.94%, 36.98% 71.18%);
+  --beach-28: polygon(74.75% 36.14%, 100.00% 47.97%, 78.27% 65.87%);
+  --beach-29: polygon(63.73% 41.20%, 45.28% 39.51%, 55.91% 24.33%);
+  --beach-30: polygon(24.48% 37.86%, 21.58% 13.82%, 43.88% 23.23%);
+  --beach-31: polygon(29.25% 93.08%, 57.62% 70.46%, 63.19% 100.00%);
+  --beach-32: polygon(64.72% 79.02%, 30.53% 70.82%, 54.61% 45.20%);
+  --beach-33: polygon(45.22% 30.77%, 67.87% 36.09%, 52.01% 53.11%);
+  --beach-34: polygon(67.28% 56.11%, 47.94% 65.11%, 49.72% 43.85%);
+  --beach-35: polygon(32.20% 67.45%, 16.90% 31.43%, 55.76% 36.01%);
+  --beach-36: polygon(24.01% 89.63%, 20.27% 62.54%, 45.65% 72.73%);
+  --beach-37: polygon(57.81% 38.13%, 76.47% 11.04%, 90.73% 40.68%);
+  --beach-38: polygon(38.95% 36.94%, 62.48% 39.40%, 48.67% 58.61%);
+  --beach-39: polygon(50.04% 45.86%, 65.40% 55.24%, 49.64% 63.91%);
+  --beach-40: polygon(61.29% 28.01%, 69.77% 47.07%, 49.02% 44.98%);
+  --beach-41: polygon(61.52% 35.15%, 61.52% 74.86%, 27.04% 55.15%);
+  --beach-42: polygon(59.80% 81.21%, 23.59% 69.81%, 51.45% 44.02%);
+  --beach-43: polygon(35.08% 54.32%, 61.14% 30.57%, 68.83% 64.97%);
+  --beach-44: polygon(63.31% 52.99%, 45.14% 67.56%, 41.51% 44.55%);
+  --battle-0: polygon(19.70% 51.26%, 20.99% 17.99%, 49.24% 35.62%);
+  --battle-1: polygon(21.45% 22.42%, 60.13% 25.14%, 38.57% 57.36%);
+  --battle-2: polygon(72.11% 58.50%, 46.61% 56.29%, 61.18% 35.25%);
+  --battle-3: polygon(26.16% 12.03%, 40.03% 39.92%, 8.93% 38.12%);
+  --battle-4: polygon(100.00% 100.00%, 71.75% 91.67%, 100.00% 61.50%);
+  --battle-5: polygon(65.93% 59.66%, 45.54% 62.18%, 53.47% 43.22%);
+  --battle-6: polygon(100.00% 97.48%, 78.10% 95.76%, 90.90% 76.80%);
+  --battle-7: polygon(24.14% 19.63%, 53.73% 33.20%, 27.27% 52.15%);
+  --battle-8: polygon(74.28% 70.76%, 98.34% 75.27%, 82.49% 93.93%);
+  --battle-9: polygon(74.19% 83.46%, 71.20% 58.28%, 94.54% 68.17%);
+  --battle-10: polygon(0.00% 90.13%, 16.46% 91.09%, 0.00% 100.00%);
+  --battle-11: polygon(66.78% 49.55%, 47.15% 21.85%, 80.94% 18.55%);
+  --battle-12: polygon(11.89% 22.18%, 5.97% 1.26%, 27.07% 6.50%);
+  --battle-13: polygon(21.08% 18.55%, 0.00% 7.90%, 16.05% 0.00%);
+  --battle-14: polygon(29.99% 89.90%, 5.24% 64.46%, 39.61% 55.60%);
+  --battle-15: polygon(57.85% 36.97%, 17.61% 46.38%, 29.41% 6.77%);
+  --battle-16: polygon(100.00% 0.00%, 100.00% 16.76%, 77.14% 6.22%);
+  --battle-17: polygon(49.87% 65.72%, 15.18% 74.41%, 24.84% 39.98%);
+  --battle-18: polygon(26.37% 23.09%, 9.82% 16.51%, 23.74% 5.41%);
+  --battle-19: polygon(78.47% 62.88%, 48.33% 74.61%, 53.11% 42.62%);
+  --battle-20: polygon(0.01% 67.93%, 31.71% 53.68%, 28.36% 88.27%);
+  --battle-21: polygon(56.19% 57.51%, 61.65% 19.32%, 92.10% 43.01%);
+  --battle-22: polygon(30.91% 82.97%, 0.00% 96.69%, 1.94% 60.48%);
+  --battle-23: polygon(42.32% 49.20%, 45.82% 28.77%, 61.82% 41.94%);
+  --battle-24: polygon(16.06% 16.31%, 40.12% 9.73%, 33.89% 33.88%);
+  --battle-25: polygon(65.78% 44.43%, 48.94% 35.34%, 65.19% 25.23%);
+  --battle-26: polygon(76.61% 95.96%, 41.04% 74.68%, 77.17% 54.36%);
+  --battle-27: polygon(100.00% 96.84%, 92.53% 100.00%, 95.58% 83.86%);
+  --battle-28: polygon(19.12% 48.24%, 0.26% 12.70%, 40.47% 13.96%);
+  --battle-29: polygon(93.77% 72.74%, 100.00% 90.01%, 85.07% 92.28%);
+  --battle-30: polygon(34.16% 49.04%, 14.54% 12.35%, 56.14% 13.52%);
+  --battle-31: polygon(90.77% 0.00%, 100.00% 0.00%, 100.00% 9.95%);
+  --battle-32: polygon(100.00% 100.00%, 84.37% 86.52%, 100.00% 78.16%);
+  --battle-33: polygon(33.21% 24.86%, 0.00% 18.44%, 18.56% 0.00%);
+  --battle-34: polygon(79.08% 63.13%, 83.28% 84.43%, 62.71% 77.51%);
+  --battle-35: polygon(30.68% 20.44%, 30.48% 39.68%, 13.87% 29.96%);
+  --battle-36: polygon(0.00% 31.52%, 14.27% 0.00%, 34.41% 30.25%);
+  --battle-37: polygon(92.99% 91.94%, 100.00% 97.92%, 96.61% 100.00%);
+  --battle-38: polygon(69.35% 45.25%, 46.46% 38.03%, 64.08% 21.74%);
+  --battle-39: polygon(86.71% 18.53%, 74.80% 38.38%, 63.48% 18.19%);
+  --battle-40: polygon(7.49% 28.70%, 26.14% 0.48%, 41.39% 30.68%);
+  --battle-41: polygon(44.98% 74.33%, 21.95% 69.03%, 37.97% 51.67%);
+  --battle-42: polygon(21.35% 52.90%, 55.42% 47.34%, 43.34% 79.67%);
+  --battle-43: polygon(84.97% 100.00%, 59.11% 83.79%, 95.76% 74.95%);
+  --battle-44: polygon(51.22% 69.15%, 44.59% 44.70%, 69.11% 51.07%);
+  --burpees-0: polygon(48.31% 76.56%, 71.92% 59.73%, 74.82% 88.59%);
+  --burpees-1: polygon(48.21% 51.81%, 28.81% 29.44%, 57.86% 23.70%);
+  --burpees-2: polygon(24.76% 9.33%, 48.14% 0.00%, 47.16% 23.47%);
+  --burpees-3: polygon(70.98% 100.00%, 30.02% 100.00%, 48.85% 66.33%);
+  --burpees-4: polygon(55.73% 86.29%, 37.35% 74.37%, 56.82% 64.33%);
+  --burpees-5: polygon(52.98% 23.40%, 14.45% 18.96%, 37.42% 0.00%);
+  --burpees-6: polygon(36.01% 0.00%, 55.03% 32.62%, 14.11% 31.13%);
+  --burpees-7: polygon(46.60% 17.74%, 47.37% 41.81%, 26.09% 30.53%);
+  --burpees-8: polygon(64.54% 72.59%, 69.72% 100.00%, 30.85% 98.15%);
+  --burpees-9: polygon(73.03% 100.00%, 52.10% 78.26%, 84.73% 72.80%);
+  --burpees-10: polygon(38.74% 11.73%, 55.29% 18.67%, 41.05% 29.59%);
+  --burpees-11: polygon(59.46% 27.72%, 39.81% 43.68%, 35.70% 18.70%);
+  --burpees-12: polygon(48.78% 58.08%, 24.29% 46.13%, 46.81% 30.80%);
+  --burpees-13: polygon(58.36% 10.44%, 82.14% 45.77%, 39.67% 48.88%);
+  --burpees-14: polygon(25.70% 82.16%, 57.04% 69.66%, 52.35% 100.00%);
+  --burpees-15: polygon(64.98% 42.71%, 39.01% 32.36%, 60.89% 14.95%);
+  --burpees-16: polygon(63.20% 95.30%, 40.78% 67.70%, 75.87% 61.94%);
+  --burpees-17: polygon(47.45% 31.46%, 18.87% 25.12%, 38.56% 3.45%);
+  --burpees-18: polygon(88.64% 65.54%, 73.30% 100.00%, 48.08% 71.28%);
+  --burpees-19: polygon(61.99% 63.78%, 28.95% 65.40%, 43.94% 35.90%);
+  --burpees-20: polygon(60.37% 64.22%, 45.53% 74.39%, 44.07% 56.47%);
+  --burpees-21: polygon(35.23% 30.90%, 71.51% 8.05%, 73.35% 50.88%);
+  --burpees-22: polygon(48.46% 53.51%, 39.03% 31.96%, 62.42% 34.47%);
+  --burpees-23: polygon(40.83% 45.73%, 22.79% 34.74%, 41.28% 24.53%);
+  --burpees-24: polygon(63.90% 31.74%, 31.71% 6.94%, 69.21% 0.00%);
+  --burpees-25: polygon(72.56% 63.36%, 45.31% 42.45%, 76.98% 29.16%);
+  --burpees-26: polygon(57.05% 100.00%, 56.58% 81.03%, 81.31% 94.62%);
+  --burpees-27: polygon(79.25% 12.08%, 64.81% 36.30%, 50.94% 11.75%);
+  --burpees-28: polygon(36.99% 7.59%, 52.27% 23.55%, 30.83% 28.89%);
+  --burpees-29: polygon(60.46% 26.13%, 36.35% 37.86%, 38.13% 11.11%);
+  --burpees-30: polygon(23.75% 10.28%, 52.16% 3.23%, 44.18% 31.40%);
+  --burpees-31: polygon(22.96% 32.54%, 58.07% 17.09%, 54.07% 55.24%);
+  --burpees-32: polygon(82.96% 67.14%, 67.26% 100.00%, 44.80% 71.05%);
+  --burpees-33: polygon(52.04% 20.30%, 32.56% 11.00%, 50.30% 0.00%);
+  --burpees-34: polygon(60.68% 94.47%, 58.92% 76.55%, 75.35% 83.91%);
+  --burpees-35: polygon(56.76% 62.41%, 58.31% 36.68%, 79.88% 50.80%);
+  --burpees-36: polygon(63.82% 100.00%, 62.20% 83.42%, 83.92% 93.97%);
+  --burpees-37: polygon(45.12% 17.69%, 33.92% 0.00%, 55.87% 0.00%);
+  --burpees-38: polygon(51.13% 75.85%, 87.31% 73.16%, 71.69% 100.00%);
+  --burpees-39: polygon(30.48% 10.93%, 55.74% 4.42%, 48.86% 29.58%);
+  --burpees-40: polygon(84.83% 81.70%, 65.51% 99.52%, 59.63% 73.89%);
+  --burpees-41: polygon(40.03% 11.02%, 73.36% 0.00%, 66.71% 34.23%);
+  --burpees-42: polygon(62.08% 49.03%, 36.17% 46.01%, 51.65% 25.01%);
+  --burpees-43: polygon(81.30% 75.57%, 60.76% 96.35%, 52.91% 68.20%);
+  --burpees-44: polygon(43.56% 54.91%, 66.30% 71.89%, 40.27% 83.21%);
+  --mindset-0: polygon(23.47% 75.66%, 50.77% 48.50%, 60.81% 85.68%);
+  --mindset-1: polygon(86.16% 58.03%, 60.55% 86.83%, 48.25% 50.31%);
+  --mindset-2: polygon(24.66% 33.86%, 51.01% 60.85%, 14.49% 70.33%);
+  --mindset-3: polygon(87.48% 73.20%, 51.07% 87.93%, 56.34% 49.01%);
+  --mindset-4: polygon(57.44% 85.65%, 25.24% 73.04%, 52.17% 51.34%);
+  --mindset-5: polygon(17.76% 87.09%, 0.00% 95.04%, 0.33% 72.95%);
+  --mindset-6: polygon(44.91% 45.20%, 84.68% 61.72%, 50.60% 88.06%);
+  --mindset-7: polygon(30.06% 97.76%, 29.52% 62.56%, 60.34% 79.55%);
+  --mindset-8: polygon(55.54% 71.33%, 40.56% 47.37%, 68.79% 46.25%);
+  --mindset-9: polygon(57.91% 54.07%, 44.95% 93.45%, 17.19% 62.66%);
+  --mindset-10: polygon(15.38% 76.37%, 7.34% 98.29%, 0.00% 80.44%);
+  --mindset-11: polygon(24.48% 62.66%, 48.53% 33.39%, 62.01% 68.79%);
+  --mindset-12: polygon(60.01% 42.57%, 36.52% 71.05%, 23.45% 36.53%);
+  --mindset-13: polygon(58.19% 62.56%, 73.64% 48.48%, 78.20% 68.87%);
+  --mindset-14: polygon(46.60% 87.28%, 44.16% 54.13%, 74.15% 68.46%);
+  --mindset-15: polygon(38.49% 50.99%, 33.61% 71.84%, 17.93% 57.25%);
+  --mindset-16: polygon(16.32% 90.98%, 31.59% 70.16%, 42.09% 93.75%);
+  --mindset-17: polygon(33.38% 43.92%, 66.66% 26.77%, 65.04% 64.17%);
+  --mindset-18: polygon(25.88% 97.05%, 40.88% 74.24%, 53.24% 98.59%);
+  --mindset-19: polygon(72.05% 86.05%, 51.91% 75.64%, 70.94% 63.31%);
+  --mindset-20: polygon(54.02% 61.83%, 22.77% 56.30%, 43.08% 31.92%);
+  --mindset-21: polygon(26.15% 100.00%, 10.63% 74.50%, 53.07% 80.88%);
+  --mindset-22: polygon(59.15% 78.58%, 32.47% 46.90%, 73.21% 39.46%);
+  --mindset-23: polygon(65.78% 88.40%, 99.07% 62.28%, 100.00% 100.00%);
+  --mindset-24: polygon(1.07% 81.15%, 20.91% 67.33%, 23.06% 91.42%);
+  --mindset-25: polygon(20.44% 67.63%, 12.42% 100.00%, 0.00% 80.51%);
+  --mindset-26: polygon(94.61% 78.24%, 62.45% 90.41%, 67.84% 56.46%);
+  --mindset-27: polygon(57.14% 65.99%, 70.44% 96.29%, 37.53% 92.80%);
+  --mindset-28: polygon(5.90% 63.92%, 24.79% 65.11%, 14.39% 80.93%);
+  --mindset-29: polygon(41.54% 15.30%, 68.16% 49.25%, 25.47% 55.52%);
+  --mindset-30: polygon(81.50% 83.87%, 53.45% 92.40%, 59.96% 63.82%);
+  --mindset-31: polygon(64.85% 85.61%, 83.85% 83.37%, 76.37% 100.00%);
+  --mindset-32: polygon(43.15% 35.99%, 55.68% 16.74%, 66.18% 37.17%);
+  --mindset-33: polygon(72.67% 36.76%, 44.70% 49.47%, 47.55% 18.88%);
+  --mindset-34: polygon(35.57% 87.46%, 12.08% 66.17%, 42.21% 56.34%);
+  --mindset-35: polygon(39.43% 75.79%, 50.22% 57.95%, 60.36% 76.17%);
+  --mindset-36: polygon(53.42% 53.50%, 47.67% 89.84%, 18.97% 66.81%);
+  --mindset-37: polygon(64.90% 32.42%, 56.67% 52.35%, 43.44% 35.32%);
+  --mindset-38: polygon(37.42% 65.18%, 20.61% 44.57%, 46.85% 40.20%);
+  --mindset-39: polygon(85.84% 52.92%, 56.47% 74.13%, 52.63% 38.10%);
+  --mindset-40: polygon(28.46% 80.22%, 51.82% 46.23%, 69.74% 83.38%);
+  --mindset-41: polygon(60.71% 71.02%, 40.66% 90.61%, 33.60% 63.48%);
+  --mindset-42: polygon(61.32% 88.60%, 90.49% 74.48%, 88.27% 100.00%);
+  --mindset-43: polygon(34.19% 52.03%, 63.56% 30.93%, 67.31% 66.90%);
+  --mindset-44: polygon(33.67% 86.71%, 56.62% 69.97%, 59.76% 98.20%);
+  --presence-0: polygon(35.22% 19.94%, 47.97% 42.66%, 21.92% 42.46%);
+  --presence-1: polygon(80.47% 38.89%, 50.80% 58.32%, 48.66% 22.93%);
+  --presence-2: polygon(0.00% 64.07%, 4.67% 30.98%, 29.16% 54.80%);
+  --presence-3: polygon(20.46% 71.94%, 16.88% 50.14%, 37.59% 57.85%);
+  --presence-4: polygon(74.41% 87.61%, 34.42% 85.59%, 56.01% 51.88%);
+  --presence-5: polygon(98.50% 41.13%, 74.18% 62.98%, 67.28% 31.03%);
+  --presence-6: polygon(63.13% 7.79%, 50.94% 49.28%, 20.97% 18.11%);
+  --presence-7: polygon(20.39% 46.52%, 35.85% 74.51%, 3.88% 74.05%);
+  --presence-8: polygon(32.66% 24.35%, 27.31% 58.75%, 0.09% 37.04%);
+  --presence-9: polygon(72.20% 67.80%, 51.52% 74.21%, 56.22% 53.07%);
+  --presence-10: polygon(81.66% 49.36%, 60.43% 52.96%, 67.84% 32.74%);
+  --presence-11: polygon(36.23% 32.77%, 37.53% 56.48%, 16.30% 45.84%);
+  --presence-12: polygon(67.24% 37.35%, 91.03% 68.84%, 51.89% 73.87%);
+  --presence-13: polygon(84.97% 42.42%, 51.79% 36.83%, 73.10% 10.80%);
+  --presence-14: polygon(61.64% 46.36%, 85.99% 59.51%, 62.49% 74.13%);
+  --presence-15: polygon(70.19% 59.09%, 80.12% 25.16%, 100.00% 50.61%);
+  --presence-16: polygon(53.09% 63.84%, 18.35% 66.32%, 33.43% 34.93%);
+  --presence-17: polygon(51.93% 38.70%, 26.53% 36.04%, 41.44% 15.31%);
+  --presence-18: polygon(0.86% 54.20%, 6.55% 32.49%, 22.57% 48.21%);
+  --presence-19: polygon(78.24% 47.97%, 81.43% 30.18%, 95.29% 41.78%);
+  --presence-20: polygon(56.10% 64.77%, 65.28% 49.91%, 73.62% 65.25%);
+  --presence-21: polygon(57.38% 36.76%, 82.21% 18.83%, 85.46% 49.28%);
+  --presence-22: polygon(65.59% 80.04%, 45.37% 81.69%, 53.97% 63.32%);
+  --presence-23: polygon(76.50% 56.37%, 63.65% 91.09%, 39.88% 62.70%);
+  --presence-24: polygon(86.39% 63.54%, 61.94% 60.65%, 76.58% 40.85%);
+  --presence-25: polygon(57.56% 86.59%, 21.22% 84.50%, 41.07% 53.98%);
+  --presence-26: polygon(54.92% 53.57%, 38.18% 76.15%, 26.89% 50.41%);
+  --presence-27: polygon(80.41% 35.46%, 49.48% 52.49%, 50.04% 17.19%);
+  --presence-28: polygon(74.84% 22.48%, 54.83% 39.13%, 50.30% 13.50%);
+  --presence-29: polygon(72.33% 37.31%, 93.62% 30.34%, 89.11% 52.28%);
+  --presence-30: polygon(18.49% 64.66%, 8.03% 41.41%, 33.40% 43.86%);
+  --presence-31: polygon(57.11% 21.42%, 43.30% 56.60%, 19.61% 27.15%);
+  --presence-32: polygon(17.13% 60.74%, 0.00% 43.38%, 19.95% 30.87%);
+  --presence-33: polygon(68.05% 29.39%, 34.09% 50.31%, 32.78% 10.45%);
+  --presence-34: polygon(77.21% 59.51%, 75.53% 81.46%, 57.30% 69.12%);
+  --presence-35: polygon(82.37% 41.43%, 78.79% 60.65%, 63.88% 48.00%);
+  --presence-36: polygon(0.00% 47.18%, 32.79% 33.30%, 28.15% 69.39%);
+  --presence-37: polygon(69.07% 62.61%, 81.95% 29.92%, 100.00% 57.32%);
+  --presence-38: polygon(60.91% 14.56%, 50.51% 51.48%, 23.62% 24.13%);
+  --presence-39: polygon(97.66% 31.28%, 94.97% 70.28%, 62.45% 48.59%);
+  --presence-40: polygon(44.79% 49.76%, 34.69% 66.10%, 25.51% 49.23%);
+  --presence-41: polygon(31.21% 48.96%, 28.37% 82.69%, 0.49% 63.49%);
+  --presence-42: polygon(51.35% 65.24%, 19.20% 83.41%, 19.37% 46.49%);
+  --presence-43: polygon(76.81% 70.19%, 49.09% 45.89%, 83.94% 33.88%);
+  --presence-44: polygon(17.88% 17.36%, 51.33% 33.23%, 20.95% 54.40%);
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    
     body {
+      margin: 0; padding: 0; overflow: hidden;
       font-family: 'Inter', sans-serif;
-      background-color: #0d0f0c;
-      color: #f4f4ed;
-      overflow-x: hidden;
+      transition: background-color 1.2s cubic-bezier(0.86, 0, 0.07, 1);
+      color: #fff;
     }
 
-    ::selection {
-      background-color: #d2ff00;
-      color: #0d0f0c;
+    h1, h2, h3, .oswald { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+    
+    /* Graphic Container */
+    #graphic-container {
+      position: absolute; top: 50%; left: calc(50% - 200px);
+      transform: translate(-50%, -50%);
+      width: 500px; height: 500px;
+      pointer-events: none; z-index: 10;
+      transition: left 0.8s cubic-bezier(0.86, 0, 0.07, 1);
     }
-    ::-moz-selection {
-      background-color: #d2ff00;
-      color: #0d0f0c;
+    
+    /* When drawer opens, shift graphic left */
+    body.drawer-open #graphic-container {
+      left: calc(30%);
     }
-
-    .font-racing {
-      font-family: 'Syne', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: -0.03em;
+    
+    .shard {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      transition: clip-path 1.2s cubic-bezier(0.86, 0, 0.07, 1), background-color 1.2s ease;
+      opacity: 0.85; mix-blend-mode: hard-light;
     }
-
-    .font-telemetry {
-      font-family: 'Space Grotesk', monospace;
-      letter-spacing: 0.05em;
+    
+body[data-section='0'] { background-color: #1a1a2e; }
+body[data-section='0'] .shard { background-color: #e94560; }
+body[data-section='0'] .shard-0 { clip-path: var(--start-0); }
+body[data-section='0'] .shard-1 { clip-path: var(--start-1); }
+body[data-section='0'] .shard-2 { clip-path: var(--start-2); }
+body[data-section='0'] .shard-3 { clip-path: var(--start-3); }
+body[data-section='0'] .shard-4 { clip-path: var(--start-4); }
+body[data-section='0'] .shard-5 { clip-path: var(--start-5); }
+body[data-section='0'] .shard-6 { clip-path: var(--start-6); }
+body[data-section='0'] .shard-7 { clip-path: var(--start-7); }
+body[data-section='0'] .shard-8 { clip-path: var(--start-8); }
+body[data-section='0'] .shard-9 { clip-path: var(--start-9); }
+body[data-section='0'] .shard-10 { clip-path: var(--start-10); }
+body[data-section='0'] .shard-11 { clip-path: var(--start-11); }
+body[data-section='0'] .shard-12 { clip-path: var(--start-12); }
+body[data-section='0'] .shard-13 { clip-path: var(--start-13); }
+body[data-section='0'] .shard-14 { clip-path: var(--start-14); }
+body[data-section='0'] .shard-15 { clip-path: var(--start-15); }
+body[data-section='0'] .shard-16 { clip-path: var(--start-16); }
+body[data-section='0'] .shard-17 { clip-path: var(--start-17); }
+body[data-section='0'] .shard-18 { clip-path: var(--start-18); }
+body[data-section='0'] .shard-19 { clip-path: var(--start-19); }
+body[data-section='0'] .shard-20 { clip-path: var(--start-20); }
+body[data-section='0'] .shard-21 { clip-path: var(--start-21); }
+body[data-section='0'] .shard-22 { clip-path: var(--start-22); }
+body[data-section='0'] .shard-23 { clip-path: var(--start-23); }
+body[data-section='0'] .shard-24 { clip-path: var(--start-24); }
+body[data-section='0'] .shard-25 { clip-path: var(--start-25); }
+body[data-section='0'] .shard-26 { clip-path: var(--start-26); }
+body[data-section='0'] .shard-27 { clip-path: var(--start-27); }
+body[data-section='0'] .shard-28 { clip-path: var(--start-28); }
+body[data-section='0'] .shard-29 { clip-path: var(--start-29); }
+body[data-section='0'] .shard-30 { clip-path: var(--start-30); }
+body[data-section='0'] .shard-31 { clip-path: var(--start-31); }
+body[data-section='0'] .shard-32 { clip-path: var(--start-32); }
+body[data-section='0'] .shard-33 { clip-path: var(--start-33); }
+body[data-section='0'] .shard-34 { clip-path: var(--start-34); }
+body[data-section='0'] .shard-35 { clip-path: var(--start-35); }
+body[data-section='0'] .shard-36 { clip-path: var(--start-36); }
+body[data-section='0'] .shard-37 { clip-path: var(--start-37); }
+body[data-section='0'] .shard-38 { clip-path: var(--start-38); }
+body[data-section='0'] .shard-39 { clip-path: var(--start-39); }
+body[data-section='0'] .shard-40 { clip-path: var(--start-40); }
+body[data-section='0'] .shard-41 { clip-path: var(--start-41); }
+body[data-section='0'] .shard-42 { clip-path: var(--start-42); }
+body[data-section='0'] .shard-43 { clip-path: var(--start-43); }
+body[data-section='0'] .shard-44 { clip-path: var(--start-44); }
+body[data-section='1'] { background-color: #16213e; }
+body[data-section='1'] .shard { background-color: #0f3460; }
+body[data-section='1'] .shard-0 { clip-path: var(--flow-0); }
+body[data-section='1'] .shard-1 { clip-path: var(--flow-1); }
+body[data-section='1'] .shard-2 { clip-path: var(--flow-2); }
+body[data-section='1'] .shard-3 { clip-path: var(--flow-3); }
+body[data-section='1'] .shard-4 { clip-path: var(--flow-4); }
+body[data-section='1'] .shard-5 { clip-path: var(--flow-5); }
+body[data-section='1'] .shard-6 { clip-path: var(--flow-6); }
+body[data-section='1'] .shard-7 { clip-path: var(--flow-7); }
+body[data-section='1'] .shard-8 { clip-path: var(--flow-8); }
+body[data-section='1'] .shard-9 { clip-path: var(--flow-9); }
+body[data-section='1'] .shard-10 { clip-path: var(--flow-10); }
+body[data-section='1'] .shard-11 { clip-path: var(--flow-11); }
+body[data-section='1'] .shard-12 { clip-path: var(--flow-12); }
+body[data-section='1'] .shard-13 { clip-path: var(--flow-13); }
+body[data-section='1'] .shard-14 { clip-path: var(--flow-14); }
+body[data-section='1'] .shard-15 { clip-path: var(--flow-15); }
+body[data-section='1'] .shard-16 { clip-path: var(--flow-16); }
+body[data-section='1'] .shard-17 { clip-path: var(--flow-17); }
+body[data-section='1'] .shard-18 { clip-path: var(--flow-18); }
+body[data-section='1'] .shard-19 { clip-path: var(--flow-19); }
+body[data-section='1'] .shard-20 { clip-path: var(--flow-20); }
+body[data-section='1'] .shard-21 { clip-path: var(--flow-21); }
+body[data-section='1'] .shard-22 { clip-path: var(--flow-22); }
+body[data-section='1'] .shard-23 { clip-path: var(--flow-23); }
+body[data-section='1'] .shard-24 { clip-path: var(--flow-24); }
+body[data-section='1'] .shard-25 { clip-path: var(--flow-25); }
+body[data-section='1'] .shard-26 { clip-path: var(--flow-26); }
+body[data-section='1'] .shard-27 { clip-path: var(--flow-27); }
+body[data-section='1'] .shard-28 { clip-path: var(--flow-28); }
+body[data-section='1'] .shard-29 { clip-path: var(--flow-29); }
+body[data-section='1'] .shard-30 { clip-path: var(--flow-30); }
+body[data-section='1'] .shard-31 { clip-path: var(--flow-31); }
+body[data-section='1'] .shard-32 { clip-path: var(--flow-32); }
+body[data-section='1'] .shard-33 { clip-path: var(--flow-33); }
+body[data-section='1'] .shard-34 { clip-path: var(--flow-34); }
+body[data-section='1'] .shard-35 { clip-path: var(--flow-35); }
+body[data-section='1'] .shard-36 { clip-path: var(--flow-36); }
+body[data-section='1'] .shard-37 { clip-path: var(--flow-37); }
+body[data-section='1'] .shard-38 { clip-path: var(--flow-38); }
+body[data-section='1'] .shard-39 { clip-path: var(--flow-39); }
+body[data-section='1'] .shard-40 { clip-path: var(--flow-40); }
+body[data-section='1'] .shard-41 { clip-path: var(--flow-41); }
+body[data-section='1'] .shard-42 { clip-path: var(--flow-42); }
+body[data-section='1'] .shard-43 { clip-path: var(--flow-43); }
+body[data-section='1'] .shard-44 { clip-path: var(--flow-44); }
+body[data-section='2'] { background-color: #f9a826; }
+body[data-section='2'] .shard { background-color: #e15f41; }
+body[data-section='2'] .shard-0 { clip-path: var(--beach-0); }
+body[data-section='2'] .shard-1 { clip-path: var(--beach-1); }
+body[data-section='2'] .shard-2 { clip-path: var(--beach-2); }
+body[data-section='2'] .shard-3 { clip-path: var(--beach-3); }
+body[data-section='2'] .shard-4 { clip-path: var(--beach-4); }
+body[data-section='2'] .shard-5 { clip-path: var(--beach-5); }
+body[data-section='2'] .shard-6 { clip-path: var(--beach-6); }
+body[data-section='2'] .shard-7 { clip-path: var(--beach-7); }
+body[data-section='2'] .shard-8 { clip-path: var(--beach-8); }
+body[data-section='2'] .shard-9 { clip-path: var(--beach-9); }
+body[data-section='2'] .shard-10 { clip-path: var(--beach-10); }
+body[data-section='2'] .shard-11 { clip-path: var(--beach-11); }
+body[data-section='2'] .shard-12 { clip-path: var(--beach-12); }
+body[data-section='2'] .shard-13 { clip-path: var(--beach-13); }
+body[data-section='2'] .shard-14 { clip-path: var(--beach-14); }
+body[data-section='2'] .shard-15 { clip-path: var(--beach-15); }
+body[data-section='2'] .shard-16 { clip-path: var(--beach-16); }
+body[data-section='2'] .shard-17 { clip-path: var(--beach-17); }
+body[data-section='2'] .shard-18 { clip-path: var(--beach-18); }
+body[data-section='2'] .shard-19 { clip-path: var(--beach-19); }
+body[data-section='2'] .shard-20 { clip-path: var(--beach-20); }
+body[data-section='2'] .shard-21 { clip-path: var(--beach-21); }
+body[data-section='2'] .shard-22 { clip-path: var(--beach-22); }
+body[data-section='2'] .shard-23 { clip-path: var(--beach-23); }
+body[data-section='2'] .shard-24 { clip-path: var(--beach-24); }
+body[data-section='2'] .shard-25 { clip-path: var(--beach-25); }
+body[data-section='2'] .shard-26 { clip-path: var(--beach-26); }
+body[data-section='2'] .shard-27 { clip-path: var(--beach-27); }
+body[data-section='2'] .shard-28 { clip-path: var(--beach-28); }
+body[data-section='2'] .shard-29 { clip-path: var(--beach-29); }
+body[data-section='2'] .shard-30 { clip-path: var(--beach-30); }
+body[data-section='2'] .shard-31 { clip-path: var(--beach-31); }
+body[data-section='2'] .shard-32 { clip-path: var(--beach-32); }
+body[data-section='2'] .shard-33 { clip-path: var(--beach-33); }
+body[data-section='2'] .shard-34 { clip-path: var(--beach-34); }
+body[data-section='2'] .shard-35 { clip-path: var(--beach-35); }
+body[data-section='2'] .shard-36 { clip-path: var(--beach-36); }
+body[data-section='2'] .shard-37 { clip-path: var(--beach-37); }
+body[data-section='2'] .shard-38 { clip-path: var(--beach-38); }
+body[data-section='2'] .shard-39 { clip-path: var(--beach-39); }
+body[data-section='2'] .shard-40 { clip-path: var(--beach-40); }
+body[data-section='2'] .shard-41 { clip-path: var(--beach-41); }
+body[data-section='2'] .shard-42 { clip-path: var(--beach-42); }
+body[data-section='2'] .shard-43 { clip-path: var(--beach-43); }
+body[data-section='2'] .shard-44 { clip-path: var(--beach-44); }
+body[data-section='3'] { background-color: #2c3e50; }
+body[data-section='3'] .shard { background-color: #e74c3c; }
+body[data-section='3'] .shard-0 { clip-path: var(--battle-0); }
+body[data-section='3'] .shard-1 { clip-path: var(--battle-1); }
+body[data-section='3'] .shard-2 { clip-path: var(--battle-2); }
+body[data-section='3'] .shard-3 { clip-path: var(--battle-3); }
+body[data-section='3'] .shard-4 { clip-path: var(--battle-4); }
+body[data-section='3'] .shard-5 { clip-path: var(--battle-5); }
+body[data-section='3'] .shard-6 { clip-path: var(--battle-6); }
+body[data-section='3'] .shard-7 { clip-path: var(--battle-7); }
+body[data-section='3'] .shard-8 { clip-path: var(--battle-8); }
+body[data-section='3'] .shard-9 { clip-path: var(--battle-9); }
+body[data-section='3'] .shard-10 { clip-path: var(--battle-10); }
+body[data-section='3'] .shard-11 { clip-path: var(--battle-11); }
+body[data-section='3'] .shard-12 { clip-path: var(--battle-12); }
+body[data-section='3'] .shard-13 { clip-path: var(--battle-13); }
+body[data-section='3'] .shard-14 { clip-path: var(--battle-14); }
+body[data-section='3'] .shard-15 { clip-path: var(--battle-15); }
+body[data-section='3'] .shard-16 { clip-path: var(--battle-16); }
+body[data-section='3'] .shard-17 { clip-path: var(--battle-17); }
+body[data-section='3'] .shard-18 { clip-path: var(--battle-18); }
+body[data-section='3'] .shard-19 { clip-path: var(--battle-19); }
+body[data-section='3'] .shard-20 { clip-path: var(--battle-20); }
+body[data-section='3'] .shard-21 { clip-path: var(--battle-21); }
+body[data-section='3'] .shard-22 { clip-path: var(--battle-22); }
+body[data-section='3'] .shard-23 { clip-path: var(--battle-23); }
+body[data-section='3'] .shard-24 { clip-path: var(--battle-24); }
+body[data-section='3'] .shard-25 { clip-path: var(--battle-25); }
+body[data-section='3'] .shard-26 { clip-path: var(--battle-26); }
+body[data-section='3'] .shard-27 { clip-path: var(--battle-27); }
+body[data-section='3'] .shard-28 { clip-path: var(--battle-28); }
+body[data-section='3'] .shard-29 { clip-path: var(--battle-29); }
+body[data-section='3'] .shard-30 { clip-path: var(--battle-30); }
+body[data-section='3'] .shard-31 { clip-path: var(--battle-31); }
+body[data-section='3'] .shard-32 { clip-path: var(--battle-32); }
+body[data-section='3'] .shard-33 { clip-path: var(--battle-33); }
+body[data-section='3'] .shard-34 { clip-path: var(--battle-34); }
+body[data-section='3'] .shard-35 { clip-path: var(--battle-35); }
+body[data-section='3'] .shard-36 { clip-path: var(--battle-36); }
+body[data-section='3'] .shard-37 { clip-path: var(--battle-37); }
+body[data-section='3'] .shard-38 { clip-path: var(--battle-38); }
+body[data-section='3'] .shard-39 { clip-path: var(--battle-39); }
+body[data-section='3'] .shard-40 { clip-path: var(--battle-40); }
+body[data-section='3'] .shard-41 { clip-path: var(--battle-41); }
+body[data-section='3'] .shard-42 { clip-path: var(--battle-42); }
+body[data-section='3'] .shard-43 { clip-path: var(--battle-43); }
+body[data-section='3'] .shard-44 { clip-path: var(--battle-44); }
+body[data-section='4'] { background-color: #c0392b; }
+body[data-section='4'] .shard { background-color: #f1c40f; }
+body[data-section='4'] .shard-0 { clip-path: var(--burpees-0); }
+body[data-section='4'] .shard-1 { clip-path: var(--burpees-1); }
+body[data-section='4'] .shard-2 { clip-path: var(--burpees-2); }
+body[data-section='4'] .shard-3 { clip-path: var(--burpees-3); }
+body[data-section='4'] .shard-4 { clip-path: var(--burpees-4); }
+body[data-section='4'] .shard-5 { clip-path: var(--burpees-5); }
+body[data-section='4'] .shard-6 { clip-path: var(--burpees-6); }
+body[data-section='4'] .shard-7 { clip-path: var(--burpees-7); }
+body[data-section='4'] .shard-8 { clip-path: var(--burpees-8); }
+body[data-section='4'] .shard-9 { clip-path: var(--burpees-9); }
+body[data-section='4'] .shard-10 { clip-path: var(--burpees-10); }
+body[data-section='4'] .shard-11 { clip-path: var(--burpees-11); }
+body[data-section='4'] .shard-12 { clip-path: var(--burpees-12); }
+body[data-section='4'] .shard-13 { clip-path: var(--burpees-13); }
+body[data-section='4'] .shard-14 { clip-path: var(--burpees-14); }
+body[data-section='4'] .shard-15 { clip-path: var(--burpees-15); }
+body[data-section='4'] .shard-16 { clip-path: var(--burpees-16); }
+body[data-section='4'] .shard-17 { clip-path: var(--burpees-17); }
+body[data-section='4'] .shard-18 { clip-path: var(--burpees-18); }
+body[data-section='4'] .shard-19 { clip-path: var(--burpees-19); }
+body[data-section='4'] .shard-20 { clip-path: var(--burpees-20); }
+body[data-section='4'] .shard-21 { clip-path: var(--burpees-21); }
+body[data-section='4'] .shard-22 { clip-path: var(--burpees-22); }
+body[data-section='4'] .shard-23 { clip-path: var(--burpees-23); }
+body[data-section='4'] .shard-24 { clip-path: var(--burpees-24); }
+body[data-section='4'] .shard-25 { clip-path: var(--burpees-25); }
+body[data-section='4'] .shard-26 { clip-path: var(--burpees-26); }
+body[data-section='4'] .shard-27 { clip-path: var(--burpees-27); }
+body[data-section='4'] .shard-28 { clip-path: var(--burpees-28); }
+body[data-section='4'] .shard-29 { clip-path: var(--burpees-29); }
+body[data-section='4'] .shard-30 { clip-path: var(--burpees-30); }
+body[data-section='4'] .shard-31 { clip-path: var(--burpees-31); }
+body[data-section='4'] .shard-32 { clip-path: var(--burpees-32); }
+body[data-section='4'] .shard-33 { clip-path: var(--burpees-33); }
+body[data-section='4'] .shard-34 { clip-path: var(--burpees-34); }
+body[data-section='4'] .shard-35 { clip-path: var(--burpees-35); }
+body[data-section='4'] .shard-36 { clip-path: var(--burpees-36); }
+body[data-section='4'] .shard-37 { clip-path: var(--burpees-37); }
+body[data-section='4'] .shard-38 { clip-path: var(--burpees-38); }
+body[data-section='4'] .shard-39 { clip-path: var(--burpees-39); }
+body[data-section='4'] .shard-40 { clip-path: var(--burpees-40); }
+body[data-section='4'] .shard-41 { clip-path: var(--burpees-41); }
+body[data-section='4'] .shard-42 { clip-path: var(--burpees-42); }
+body[data-section='4'] .shard-43 { clip-path: var(--burpees-43); }
+body[data-section='4'] .shard-44 { clip-path: var(--burpees-44); }
+body[data-section='5'] { background-color: #00b894; }
+body[data-section='5'] .shard { background-color: #ffeaa7; }
+body[data-section='5'] .shard-0 { clip-path: var(--mindset-0); }
+body[data-section='5'] .shard-1 { clip-path: var(--mindset-1); }
+body[data-section='5'] .shard-2 { clip-path: var(--mindset-2); }
+body[data-section='5'] .shard-3 { clip-path: var(--mindset-3); }
+body[data-section='5'] .shard-4 { clip-path: var(--mindset-4); }
+body[data-section='5'] .shard-5 { clip-path: var(--mindset-5); }
+body[data-section='5'] .shard-6 { clip-path: var(--mindset-6); }
+body[data-section='5'] .shard-7 { clip-path: var(--mindset-7); }
+body[data-section='5'] .shard-8 { clip-path: var(--mindset-8); }
+body[data-section='5'] .shard-9 { clip-path: var(--mindset-9); }
+body[data-section='5'] .shard-10 { clip-path: var(--mindset-10); }
+body[data-section='5'] .shard-11 { clip-path: var(--mindset-11); }
+body[data-section='5'] .shard-12 { clip-path: var(--mindset-12); }
+body[data-section='5'] .shard-13 { clip-path: var(--mindset-13); }
+body[data-section='5'] .shard-14 { clip-path: var(--mindset-14); }
+body[data-section='5'] .shard-15 { clip-path: var(--mindset-15); }
+body[data-section='5'] .shard-16 { clip-path: var(--mindset-16); }
+body[data-section='5'] .shard-17 { clip-path: var(--mindset-17); }
+body[data-section='5'] .shard-18 { clip-path: var(--mindset-18); }
+body[data-section='5'] .shard-19 { clip-path: var(--mindset-19); }
+body[data-section='5'] .shard-20 { clip-path: var(--mindset-20); }
+body[data-section='5'] .shard-21 { clip-path: var(--mindset-21); }
+body[data-section='5'] .shard-22 { clip-path: var(--mindset-22); }
+body[data-section='5'] .shard-23 { clip-path: var(--mindset-23); }
+body[data-section='5'] .shard-24 { clip-path: var(--mindset-24); }
+body[data-section='5'] .shard-25 { clip-path: var(--mindset-25); }
+body[data-section='5'] .shard-26 { clip-path: var(--mindset-26); }
+body[data-section='5'] .shard-27 { clip-path: var(--mindset-27); }
+body[data-section='5'] .shard-28 { clip-path: var(--mindset-28); }
+body[data-section='5'] .shard-29 { clip-path: var(--mindset-29); }
+body[data-section='5'] .shard-30 { clip-path: var(--mindset-30); }
+body[data-section='5'] .shard-31 { clip-path: var(--mindset-31); }
+body[data-section='5'] .shard-32 { clip-path: var(--mindset-32); }
+body[data-section='5'] .shard-33 { clip-path: var(--mindset-33); }
+body[data-section='5'] .shard-34 { clip-path: var(--mindset-34); }
+body[data-section='5'] .shard-35 { clip-path: var(--mindset-35); }
+body[data-section='5'] .shard-36 { clip-path: var(--mindset-36); }
+body[data-section='5'] .shard-37 { clip-path: var(--mindset-37); }
+body[data-section='5'] .shard-38 { clip-path: var(--mindset-38); }
+body[data-section='5'] .shard-39 { clip-path: var(--mindset-39); }
+body[data-section='5'] .shard-40 { clip-path: var(--mindset-40); }
+body[data-section='5'] .shard-41 { clip-path: var(--mindset-41); }
+body[data-section='5'] .shard-42 { clip-path: var(--mindset-42); }
+body[data-section='5'] .shard-43 { clip-path: var(--mindset-43); }
+body[data-section='5'] .shard-44 { clip-path: var(--mindset-44); }
+body[data-section='6'] { background-color: #2d3436; }
+body[data-section='6'] .shard { background-color: #00cec9; }
+body[data-section='6'] .shard-0 { clip-path: var(--presence-0); }
+body[data-section='6'] .shard-1 { clip-path: var(--presence-1); }
+body[data-section='6'] .shard-2 { clip-path: var(--presence-2); }
+body[data-section='6'] .shard-3 { clip-path: var(--presence-3); }
+body[data-section='6'] .shard-4 { clip-path: var(--presence-4); }
+body[data-section='6'] .shard-5 { clip-path: var(--presence-5); }
+body[data-section='6'] .shard-6 { clip-path: var(--presence-6); }
+body[data-section='6'] .shard-7 { clip-path: var(--presence-7); }
+body[data-section='6'] .shard-8 { clip-path: var(--presence-8); }
+body[data-section='6'] .shard-9 { clip-path: var(--presence-9); }
+body[data-section='6'] .shard-10 { clip-path: var(--presence-10); }
+body[data-section='6'] .shard-11 { clip-path: var(--presence-11); }
+body[data-section='6'] .shard-12 { clip-path: var(--presence-12); }
+body[data-section='6'] .shard-13 { clip-path: var(--presence-13); }
+body[data-section='6'] .shard-14 { clip-path: var(--presence-14); }
+body[data-section='6'] .shard-15 { clip-path: var(--presence-15); }
+body[data-section='6'] .shard-16 { clip-path: var(--presence-16); }
+body[data-section='6'] .shard-17 { clip-path: var(--presence-17); }
+body[data-section='6'] .shard-18 { clip-path: var(--presence-18); }
+body[data-section='6'] .shard-19 { clip-path: var(--presence-19); }
+body[data-section='6'] .shard-20 { clip-path: var(--presence-20); }
+body[data-section='6'] .shard-21 { clip-path: var(--presence-21); }
+body[data-section='6'] .shard-22 { clip-path: var(--presence-22); }
+body[data-section='6'] .shard-23 { clip-path: var(--presence-23); }
+body[data-section='6'] .shard-24 { clip-path: var(--presence-24); }
+body[data-section='6'] .shard-25 { clip-path: var(--presence-25); }
+body[data-section='6'] .shard-26 { clip-path: var(--presence-26); }
+body[data-section='6'] .shard-27 { clip-path: var(--presence-27); }
+body[data-section='6'] .shard-28 { clip-path: var(--presence-28); }
+body[data-section='6'] .shard-29 { clip-path: var(--presence-29); }
+body[data-section='6'] .shard-30 { clip-path: var(--presence-30); }
+body[data-section='6'] .shard-31 { clip-path: var(--presence-31); }
+body[data-section='6'] .shard-32 { clip-path: var(--presence-32); }
+body[data-section='6'] .shard-33 { clip-path: var(--presence-33); }
+body[data-section='6'] .shard-34 { clip-path: var(--presence-34); }
+body[data-section='6'] .shard-35 { clip-path: var(--presence-35); }
+body[data-section='6'] .shard-36 { clip-path: var(--presence-36); }
+body[data-section='6'] .shard-37 { clip-path: var(--presence-37); }
+body[data-section='6'] .shard-38 { clip-path: var(--presence-38); }
+body[data-section='6'] .shard-39 { clip-path: var(--presence-39); }
+body[data-section='6'] .shard-40 { clip-path: var(--presence-40); }
+body[data-section='6'] .shard-41 { clip-path: var(--presence-41); }
+body[data-section='6'] .shard-42 { clip-path: var(--presence-42); }
+body[data-section='6'] .shard-43 { clip-path: var(--presence-43); }
+body[data-section='6'] .shard-44 { clip-path: var(--presence-44); }
+    
+    /* Navigation UI */
+    #ui {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 20;
     }
-
-    /* Subtle grid texture overlay like telemetry display */
-    .bg-telemetry-grid {
-      background-size: 32px 32px;
-      background-image: 
-        linear-gradient(to right, rgba(210, 255, 0, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(210, 255, 0, 0.04) 1px, transparent 1px);
+    
+    .nav-dots {
+      position: absolute; left: 40px; top: 50%;
+      transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 20px;
+      pointer-events: auto;
     }
-
-    /* Diagonal racing lines */
-    .bg-racing-stripes {
-      background: repeating-linear-gradient(
-        -45deg,
-        rgba(210, 255, 0, 0.03),
-        rgba(210, 255, 0, 0.03) 12px,
-        transparent 12px,
-        transparent 24px
-      );
-    }
-
-    /* Chamfered corners (Lando Norris HUD aesthetic) */
-    .corner-chamfer {
-      clip-path: polygon(
-        0 14px,
-        14px 0,
-        calc(100% - 14px) 0,
-        100% 14px,
-        100% calc(100% - 14px),
-        calc(100% - 14px) 100%,
-        14px 100%,
-        0 calc(100% - 14px)
-      );
-    }
-
-    /* Card Hover micro-interaction */
-    .telemetry-card {
+    .dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      cursor: pointer; transition: all 0.4s;
       position: relative;
-      background: #131610;
-      border: 1px solid #252a20;
-      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    .telemetry-card:hover {
-      border-color: rgba(210, 255, 0, 0.6);
-      transform: translateY(-3px);
-      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(210, 255, 0, 0.15);
+    .dot::after {
+      content: attr(data-title);
+      position: absolute; left: 25px; top: 50%; transform: translateY(-50%);
+      white-space: nowrap; font-size: 11px; letter-spacing: 2px;
+      opacity: 0; transition: opacity 0.3s; pointer-events: none;
+      text-transform: uppercase; font-family: 'Oswald', sans-serif;
     }
-
-    /* Corner crosshair markers (+) */
-    .crosshair-corner {
-      position: relative;
+    .dot:hover::after { opacity: 1; }
+    .dot.active { background: #fff; transform: scale(1.5); }
+    .dot.active::after { opacity: 1; }
+    
+    #title-display {
+      position: absolute; bottom: 80px; left: calc(50% - 200px);
+      transform: translateX(-50%);
+      font-size: 40px; font-weight: 700; letter-spacing: 6px;
+      text-transform: uppercase; font-family: 'Oswald', sans-serif;
+      opacity: 0; transition: opacity 0.5s, left 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+      white-space: nowrap;
     }
-    .crosshair-corner::before,
-    .crosshair-corner::after {
-      content: '+';
-      position: absolute;
-      font-family: 'Space Grotesk', monospace;
-      font-size: 11px;
-      line-height: 1;
-      color: rgba(210, 255, 0, 0.4);
-      pointer-events: none;
-      transition: color 0.25s ease;
+    body.drawer-open #title-display { left: calc(30%); }
+    
+    .btn-explore {
+      position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+      background: #fff; color: #111; padding: 25px 40px;
+      font-size: 16px; font-weight: bold; cursor: pointer;
+      pointer-events: auto; border: none; letter-spacing: 3px;
+      text-transform: uppercase; font-family: 'Oswald', sans-serif;
+      transition: background 0.3s, right 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+      clip-path: polygon(15px 0, 100% 0, 100% 100%, 0 100%);
     }
-    .crosshair-corner::before {
-      top: 6px;
-      left: 8px;
+    .btn-explore:hover { background: #f0f0f0; padding-right: 50px; }
+    
+    /* Side Panel */
+    #drawer {
+      position: absolute; top: 0; right: -700px;
+      width: 700px; height: 100%;
+      background: #ffffff; color: #111;
+      transition: right 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+      z-index: 30; pointer-events: auto;
+      overflow-y: auto;
+      box-shadow: -15px 0 50px rgba(0,0,0,0.4);
     }
-    .crosshair-corner::after {
-      bottom: 6px;
-      right: 8px;
+    body.drawer-open #drawer { right: 0; }
+    body.drawer-open .btn-explore { right: 700px; }
+    
+    .drawer-content { display: none; padding: 80px 60px; }
+    .drawer-content.active { display: block; animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    .crosshair-corner:hover::before,
-    .crosshair-corner:hover::after {
-      color: #d2ff00;
+    
+    .close-btn {
+      position: absolute; top: 30px; right: 40px;
+      background: none; border: none; cursor: pointer;
+      color: #111; padding: 10px; z-index: 50;
     }
-
-    /* Custom audio wave visualizer */
-    .sound-wave-bar {
-      animation: soundWave 0.8s ease-in-out infinite alternate;
-    }
-    .sound-wave-bar:nth-child(2) { animation-delay: 0.15s; }
-    .sound-wave-bar:nth-child(3) { animation-delay: 0.3s; }
-    .sound-wave-bar:nth-child(4) { animation-delay: 0.45s; }
-    .sound-wave-bar:nth-child(5) { animation-delay: 0.2s; }
-    @keyframes soundWave {
-      0% { height: 4px; }
-      100% { height: 22px; }
-    }
-
-    /* Outline headline stroke effect */
-    .text-stroke-title {
-      -webkit-text-stroke: 1.5px rgba(244, 244, 237, 0.35);
-      color: transparent;
-    }
-    .text-stroke-lime {
-      -webkit-text-stroke: 1.5px rgba(210, 255, 0, 0.5);
-      color: transparent;
-    }
+    .close-btn:hover { opacity: 0.5; }
   </style>
 </head>
-<body class="bg-carbon-900 text-telemetry-white antialiased selection:bg-lime selection:text-carbon-900">
+<body data-section="0">
 
-  <!-- ================================================================= -->
-  <!-- 0. TOP RACING HUD / NAVIGATION BAR                                -->
-  <!-- ================================================================= -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-carbon-950/85 backdrop-blur-md border-b border-carbon-700/70">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      
-      <!-- Brand / Logo -->
-      <a href="#hero" class="flex items-center gap-3 group">
-        <!-- Racing Tag Box -->
-        <div class="px-2 py-1 bg-lime text-carbon-900 font-telemetry font-bold text-xs tracking-wider rounded-sm flex items-center gap-1 group-hover:bg-white transition-colors">
-          <span>MC</span>
-          <span class="text-carbon-900/60 font-mono">//</span>
-          <span>01</span>
-        </div>
-        <div class="flex flex-col">
-          <span class="font-racing text-lg sm:text-xl font-black tracking-tight text-white group-hover:text-lime transition-colors">
-            MOUNIR <span class="text-lime">CALISTHENICS</span>
-          </span>
-          <div class="flex items-center gap-2 -mt-1">
-            <span class="text-[9px] font-telemetry uppercase tracking-widest text-telemetry-muted">TRAINING PROTOCOL</span>
-            <span class="w-1 h-1 rounded-full bg-lime animate-ping"></span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Desktop Nav with Telemetry Index Numbers -->
-      <nav class="hidden lg:flex items-center gap-6 font-telemetry text-xs uppercase tracking-wider text-telemetry-muted">
-        <a href="#hero" class="hover:text-lime transition-colors flex items-center gap-1">
-          <span class="text-lime/60 font-mono">00.</span> Start
-        </a>
-        <a href="#video-1" class="hover:text-lime transition-colors flex items-center gap-1">
-          <span class="text-lime/60 font-mono">01.</span> Flow
-        </a>
-        <a href="#video-2" class="hover:text-lime transition-colors flex items-center gap-1">
-          <span class="text-lime/60 font-mono">02.</span> Beach
-        </a>
-        <a href="#video-3" class="hover:text-lime transition-colors flex items-center gap-1">
-          <span class="text-lime/60 font-mono">03.</span> Battle
-        </a>
-        <a href="#burpees" class="px-3 py-1.5 rounded-sm bg-lime/10 border border-lime/30 text-lime font-bold hover:bg-lime hover:text-carbon-900 transition-all flex items-center gap-1.5 shadow-[0_0_12px_rgba(210,255,0,0.15)]">
-          <i data-lucide="zap" class="w-3.5 h-3.5 fill-current"></i>
-          <span>04. BURPEES 8x30s</span>
-        </a>
-        <a href="#identitaet" class="hover:text-lime transition-colors flex items-center gap-1">
-          <span class="text-lime/60 font-mono">05.</span> Identität
-        </a>
-        <a href="#koerpersprache" class="hover:text-lime transition-colors flex items-center gap-1">
-          <span class="text-lime/60 font-mono">06.</span> Präsenz
-        </a>
-      </nav>
-
-      <!-- Action Button & Telemetry Status -->
-      <div class="flex items-center gap-3">
-        <!-- Live Status Pill -->
-        <div class="hidden sm:flex items-center gap-2 px-2.5 py-1 bg-carbon-850 border border-carbon-700 rounded-sm font-telemetry text-[10px] text-telemetry-muted">
-          <span class="w-2 h-2 rounded-full bg-lime animate-pulse"></span>
-          <span>SYS // ACTIVE</span>
-        </div>
-
-        <!-- Timer CTA in Lando Norris Style Button -->
-        <a href="#burpees" class="px-4 py-2 rounded-sm bg-lime text-carbon-900 font-telemetry font-bold text-xs uppercase tracking-wider hover:bg-white hover:shadow-[0_0_20px_rgba(210,255,0,0.5)] transition-all flex items-center gap-1.5">
-          <i data-lucide="timer" class="w-4 h-4"></i>
-          <span>TIMER STARTEN</span>
-        </a>
-
-        <!-- Mobile Menu Toggle Button -->
-        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-telemetry-muted hover:text-lime border border-carbon-700 rounded-sm bg-carbon-850" aria-label="Menü öffnen">
-          <i data-lucide="menu" id="menuIcon" class="w-5 h-5"></i>
-        </button>
-      </div>
-
-    </div>
-
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-carbon-950/95 border-b border-carbon-700 px-4 py-6 font-telemetry text-sm">
-      <div class="flex flex-col gap-4">
-        <a href="#hero" onclick="toggleMobileMenu()" class="text-telemetry-cream hover:text-lime flex items-center justify-between py-2 border-b border-carbon-800">
-          <span>00 // STARTSEITE</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-lime"></i>
-        </a>
-        <a href="#video-1" onclick="toggleMobileMenu()" class="text-telemetry-cream hover:text-lime flex items-center justify-between py-2 border-b border-carbon-800">
-          <span>01 // FLOW VIDEO (MIKE SONG)</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-lime"></i>
-        </a>
-        <a href="#video-2" onclick="toggleMobileMenu()" class="text-telemetry-cream hover:text-lime flex items-center justify-between py-2 border-b border-carbon-800">
-          <span>02 // BEACH VIBES (CHRIS LUNO)</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-lime"></i>
-        </a>
-        <a href="#video-3" onclick="toggleMobileMenu()" class="text-telemetry-cream hover:text-lime flex items-center justify-between py-2 border-b border-carbon-800">
-          <span>03 // STREET BATTLE (NYC SHOWDOWN)</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-lime"></i>
-        </a>
-        <a href="#burpees" onclick="toggleMobileMenu()" class="text-lime font-bold flex items-center justify-between py-2 border-b border-carbon-800">
-          <span>04 // BURPEES 8x30s INTERVALL</span>
-          <span class="px-2 py-0.5 bg-lime text-carbon-900 text-[10px] font-bold rounded">HOT</span>
-        </a>
-        <a href="#identitaet" onclick="toggleMobileMenu()" class="text-telemetry-cream hover:text-lime flex items-center justify-between py-2 border-b border-carbon-800">
-          <span>05 // SPORTLERIDENTITÄT (3 SÄULEN)</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-lime"></i>
-        </a>
-        <a href="#koerpersprache" onclick="toggleMobileMenu()" class="text-telemetry-cream hover:text-lime flex items-center justify-between py-2">
-          <span>06 // KÖRPERSPRACHE (CHRISTOPH WALTZ)</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-lime"></i>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- ================================================================= -->
-  <!-- 1. HERO SECTION: MASSIVE MOTORSPORT/ATHLETE IMPACT               -->
-  <!-- ================================================================= -->
-  <section id="hero" class="relative min-h-[96vh] flex flex-col justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-carbon-950">
+  <div id="graphic-container">
+    <div class="shard shard-0"></div>
+    <div class="shard shard-1"></div>
+    <div class="shard shard-2"></div>
+    <div class="shard shard-3"></div>
+    <div class="shard shard-4"></div>
+    <div class="shard shard-5"></div>
+    <div class="shard shard-6"></div>
+    <div class="shard shard-7"></div>
+    <div class="shard shard-8"></div>
+    <div class="shard shard-9"></div>
+    <div class="shard shard-10"></div>
+    <div class="shard shard-11"></div>
+    <div class="shard shard-12"></div>
+    <div class="shard shard-13"></div>
+    <div class="shard shard-14"></div>
+    <div class="shard shard-15"></div>
+    <div class="shard shard-16"></div>
+    <div class="shard shard-17"></div>
+    <div class="shard shard-18"></div>
+    <div class="shard shard-19"></div>
+    <div class="shard shard-20"></div>
+    <div class="shard shard-21"></div>
+    <div class="shard shard-22"></div>
+    <div class="shard shard-23"></div>
+    <div class="shard shard-24"></div>
+    <div class="shard shard-25"></div>
+    <div class="shard shard-26"></div>
+    <div class="shard shard-27"></div>
+    <div class="shard shard-28"></div>
+    <div class="shard shard-29"></div>
+    <div class="shard shard-30"></div>
+    <div class="shard shard-31"></div>
+    <div class="shard shard-32"></div>
+    <div class="shard shard-33"></div>
+    <div class="shard shard-34"></div>
+    <div class="shard shard-35"></div>
+    <div class="shard shard-36"></div>
+    <div class="shard shard-37"></div>
+    <div class="shard shard-38"></div>
+    <div class="shard shard-39"></div>
+    <div class="shard shard-40"></div>
+    <div class="shard shard-41"></div>
+    <div class="shard shard-42"></div>
+    <div class="shard shard-43"></div>
+    <div class="shard shard-44"></div>
+  </div>
+  
+  <div id="ui">
+    <div class="nav-dots" id="dots"></div>
+    <div id="title-display">MOUNIR CALISTHENICS</div>
+    <button class="btn-explore" onclick="toggleDrawer()">EXPLORE <i data-lucide="chevron-right" class="inline w-5 h-5 ml-2 -mt-1"></i></button>
+  </div>
+  
+  <!-- Content Drawer -->
+  <div id="drawer">
+    <button class="close-btn" onclick="toggleDrawer()"><i data-lucide="x" class="w-8 h-8"></i></button>
     
-    <!-- Hero Athletic Background with Lando-style High-Contrast Grading -->
-    <div class="absolute inset-0 z-0">
-      <img 
-        src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1920&auto=format&fit=crop" 
-        alt="Muskulöse Calisthenics Athleten im Training" 
-        class="w-full h-full object-cover object-center filter brightness-[0.25] contrast-150 saturate-75 scale-105"
-      />
-      <!-- Telemetry Tech Grid & Ambient Lime Glow -->
-      <div class="absolute inset-0 bg-telemetry-grid opacity-30"></div>
-      <div class="absolute inset-0 bg-racing-stripes opacity-20"></div>
-      <!-- Radial gradient for center focus -->
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(210,255,0,0.08)_0%,rgba(13,15,12,0.75)_60%,#0d0f0c_100%)]"></div>
-      <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-carbon-900 to-transparent"></div>
-    </div>
-
-    <!-- Technical HUD Crosshairs on corners of the viewport -->
-    <div class="absolute top-20 left-6 text-lime/40 font-mono text-[10px] hidden md:block">
-      + LAT: 52.5200° N // ATHLETE: MOUNIR
-    </div>
-    <div class="absolute top-20 right-6 text-lime/40 font-mono text-[10px] hidden md:block">
-      + PROTOCOL: CALISTHENICS 2026 // ED. 01
-    </div>
-
-    <div class="relative z-10 max-w-6xl mx-auto w-full flex flex-col items-center text-center my-auto">
-      
-      <!-- Top Driver/Athlete Badge -->
-      <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-sm bg-carbon-850/90 border border-lime/40 text-lime text-xs font-telemetry font-bold tracking-widest uppercase mb-6 shadow-[0_0_15px_rgba(210,255,0,0.15)]">
-        <span class="w-2 h-2 rounded-full bg-lime animate-ping"></span>
-        <span>OFFIZIELLER TRAININGS-LEITFADEN</span>
-        <span class="text-carbon-600">//</span>
-        <span class="text-telemetry-white">EDITION 2026</span>
-      </div>
-
-      <!-- Massive Headline in Lando Norris Oversized Typographic Aesthetic -->
-      <div class="relative w-full">
-        <!-- Subtle giant background outline text -->
-        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-full select-none pointer-events-none opacity-10 font-racing text-7xl sm:text-9xl md:text-[13rem] font-black tracking-tighter text-stroke-lime leading-none">
-          PERFORM
-        </div>
-
-        <h1 class="relative font-racing text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white tracking-tight leading-[0.92] drop-shadow-2xl">
-          MOUNIRS <br />
-          <span class="text-lime">CALISTHENICS</span><br class="sm:hidden" />
-          <span class="text-stroke-title text-transparent hover:text-white transition-colors">ABLAUF</span>
-        </h1>
-      </div>
-
-      <!-- High-Impact Subtitle -->
-      <p class="mt-8 text-base sm:text-xl md:text-2xl text-telemetry-cream font-medium max-w-3xl leading-relaxed">
+    <!-- 0. Start -->
+    <div class="drawer-content" data-idx="0">
+      <div class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">00. PROTOCOL</div>
+      <h2 class="text-6xl font-bold mb-8 tracking-tighter">MOUNIR<br>CALISTHENICS</h2>
+      <p class="text-xl text-gray-600 leading-relaxed mb-8">
         Kraft, Rhythmus, stählerne Disziplin und maximale Körperspannung.
-        <span class="text-telemetry-muted">Schritt für Schritt durch Mounirs Calisthenics-Trainingsablauf.</span>
+        Dies ist dein offizieller Trainings-Leitfaden.
       </p>
-
-      <!-- Telemetry Dashboard Metrics (4 Grid Columns) -->
-      <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-4xl font-telemetry">
+      <div class="border-t border-gray-200 pt-8 mt-8">
+        <h3 class="text-xl font-bold mb-4 oswald">Was dich erwartet:</h3>
+        <ul class="space-y-4 text-gray-600">
+          <li class="flex items-center gap-3"><i data-lucide="play-circle" class="w-5 h-5 text-black"></i> 3 Core Videos (Flow, Endurance, Battle)</li>
+          <li class="flex items-center gap-3"><i data-lucide="timer" class="w-5 h-5 text-black"></i> 8x30s Burpees Intervall-Engine</li>
+          <li class="flex items-center gap-3"><i data-lucide="brain" class="w-5 h-5 text-black"></i> Mindset & Sportleridentität (3 Säulen)</li>
+          <li class="flex items-center gap-3"><i data-lucide="user" class="w-5 h-5 text-black"></i> Präsenz & Körpersprache</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- 1. Flow -->
+    <div class="drawer-content" data-idx="1">
+      <div class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">01. STAGE MEDIA</div>
+      <h2 class="text-5xl font-bold mb-6 tracking-tighter">FLOW & RHYTHMUS</h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Das erste Video für Mounirs Ablauf: Starte mit Fokus auf Koordination, Rhythmusgefühl und fließende Bewegung.
+      </p>
+      <div class="aspect-video bg-black rounded-lg overflow-hidden shadow-2xl">
+        <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/g9FJhH9dOeU?rel=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <p class="text-sm text-gray-400 mt-4 uppercase tracking-widest text-center">Mike Song • It Runs Through Me</p>
+    </div>
+    
+    <!-- 2. Beach -->
+    <div class="drawer-content" data-idx="2">
+      <div class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">02. STAGE MEDIA</div>
+      <h2 class="text-5xl font-bold mb-6 tracking-tighter">ENDURANCE VIBES</h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Zweites Video im Ablauf: Den richtigen Beat und die Leichtigkeit mitnehmen. Schaffe dir die ideale Trainingsatmosphäre.
+      </p>
+      <div class="aspect-video bg-black rounded-lg overflow-hidden shadow-2xl">
+        <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/ja2dGXXmFV4?rel=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <p class="text-sm text-gray-400 mt-4 uppercase tracking-widest text-center">Chris Luno • Beach House</p>
+    </div>
+    
+    <!-- 3. Battle -->
+    <div class="drawer-content" data-idx="3">
+      <div class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">03. STAGE MEDIA</div>
+      <h2 class="text-5xl font-bold mb-6 tracking-tighter">STREET BATTLE</h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Die Essenz von reinem Calisthenics – Bars, Dips, Muscle-Ups und der unerbittliche Wettkampfgeist im Park.
+      </p>
+      <div class="aspect-video bg-black rounded-lg overflow-hidden shadow-2xl">
+        <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/UMYm2cBjZIY?rel=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <p class="text-sm text-gray-400 mt-4 uppercase tracking-widest text-center">NYC Street Workout Showdown</p>
+    </div>
+    
+    <!-- 4. Burpees -->
+    <div class="drawer-content" data-idx="4">
+      <div class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">04. CORE ENGINE</div>
+      <h2 class="text-6xl font-bold mb-2 tracking-tighter">BURPEES</h2>
+      <p class="text-xl text-red-600 font-bold mb-8 oswald tracking-wide">8 RUNDEN × 30 SEKUNDEN</p>
+      
+      <div class="bg-gray-50 border border-gray-200 rounded-xl p-8 text-center shadow-lg">
+        <div class="flex justify-between items-center mb-6 oswald text-gray-500 tracking-widest">
+          <span id="timerStatus">READY</span>
+          <span id="roundDisplay">ROUND 1/8</span>
+        </div>
         
-        <div class="telemetry-card crosshair-corner p-4 rounded-sm text-left">
-          <div class="text-[10px] text-telemetry-muted uppercase tracking-widest flex items-center justify-between">
-            <span>// STAGE MEDIA</span>
-            <span class="text-lime font-mono">01</span>
-          </div>
-          <div class="text-2xl sm:text-3xl font-racing font-bold text-white mt-1">4 VIDEOS</div>
-          <div class="text-[11px] text-telemetry-muted mt-0.5">Direkt integriert</div>
+        <div id="timeRemaining" class="text-7xl font-bold tracking-tighter mb-8 oswald text-gray-900">
+          00:30
         </div>
-
-        <div class="telemetry-card crosshair-corner p-4 rounded-sm text-left border-lime/40 shadow-[0_0_15px_rgba(210,255,0,0.1)]">
-          <div class="text-[10px] text-lime uppercase tracking-widest flex items-center justify-between">
-            <span>// INTERVAL ENGINE</span>
-            <span class="text-lime font-mono">02</span>
-          </div>
-          <div class="text-2xl sm:text-3xl font-racing font-bold text-lime mt-1">8 x 30s</div>
-          <div class="text-[11px] text-telemetry-muted mt-0.5">Burpee Power</div>
+        
+        <div class="w-full bg-gray-200 h-2 mb-8 rounded-full overflow-hidden">
+          <div id="timerProgress" class="h-full bg-red-600 w-full transition-all duration-300"></div>
         </div>
-
-        <div class="telemetry-card crosshair-corner p-4 rounded-sm text-left">
-          <div class="text-[10px] text-telemetry-muted uppercase tracking-widest flex items-center justify-between">
-            <span>// ATHLETE CORE</span>
-            <span class="text-lime font-mono">03</span>
-          </div>
-          <div class="text-2xl sm:text-3xl font-racing font-bold text-white mt-1">3 SÄULEN</div>
-          <div class="text-[11px] text-telemetry-muted mt-0.5">Sportleridentität</div>
+        
+        <div class="flex justify-center gap-4">
+          <button id="startTimerBtn" onclick="toggleTimer()" class="bg-red-600 text-white px-8 py-4 rounded font-bold oswald tracking-widest hover:bg-red-700 transition-colors w-full">START</button>
+          <button onclick="resetTimer()" class="bg-gray-200 text-gray-700 px-6 py-4 rounded hover:bg-gray-300 transition-colors"><i data-lucide="rotate-ccw"></i></button>
         </div>
-
-        <div class="telemetry-card crosshair-corner p-4 rounded-sm text-left">
-          <div class="text-[10px] text-telemetry-muted uppercase tracking-widest flex items-center justify-between">
-            <span>// PRESENCE & FORM</span>
-            <span class="text-lime font-mono">04</span>
-          </div>
-          <div class="text-2xl sm:text-3xl font-racing font-bold text-white mt-1">PRÄSENZ</div>
-          <div class="text-[11px] text-telemetry-muted mt-0.5">Körpersprache</div>
-        </div>
-
       </div>
-
-      <!-- Hero Call-to-Actions (Racing Driver Styled Buttons) -->
-      <div class="mt-10 flex flex-wrap items-center justify-center gap-4 font-telemetry">
-        <a href="#video-1" class="px-8 py-4 rounded-sm text-sm sm:text-base font-bold bg-lime text-carbon-900 hover:bg-white hover:shadow-[0_0_30px_rgba(210,255,0,0.6)] uppercase tracking-wider transition-all flex items-center gap-3 group">
-          <i data-lucide="play" class="w-5 h-5 fill-current group-hover:scale-110 transition-transform"></i>
-          <span>Workout Starten</span>
-        </a>
-        <a href="#burpees" class="px-7 py-4 rounded-sm text-sm sm:text-base font-bold bg-carbon-850 hover:bg-carbon-800 border border-lime/40 text-lime uppercase tracking-wider transition-all flex items-center gap-2 group hover:border-lime">
-          <i data-lucide="flame" class="w-5 h-5 text-lime group-hover:animate-pulse"></i>
-          <span>Direkt zu den Burpees</span>
-        </a>
-      </div>
-
-      <!-- Scroll Indicator -->
-      <div class="mt-12 flex flex-col items-center gap-1.5 text-telemetry-muted font-telemetry text-[11px] uppercase tracking-widest">
-        <span>Scroll to explore protocol</span>
-        <i data-lucide="chevron-down" class="w-4 h-4 text-lime animate-bounce"></i>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================================= -->
-  <!-- HIGH-SPEED MARQUEE TICKER (LANDO NORRIS SIGNATURE MOTIF)          -->
-  <!-- ================================================================= -->
-  <div class="w-full bg-lime text-carbon-900 py-3 overflow-hidden select-none border-y-2 border-carbon-950 font-racing font-extrabold text-sm sm:text-base uppercase tracking-wider relative z-20">
-    <div class="flex whitespace-nowrap animate-marquee">
-      <!-- Repeated ticker block 1 -->
-      <div class="flex items-center gap-6 shrink-0">
-        <span>MOUNIR CALISTHENICS</span>
-        <span class="text-carbon-900/40">///</span>
-        <span>DISZIPLIN ÜBER MOTIVATION</span>
-        <span class="text-carbon-900/40">///</span>
-        <span>8 x 30s BURPEES POWER ENGINE</span>
-        <span class="text-carbon-900/40">///</span>
-        <span>MAXIMALE KÖRPERSPANNUNG</span>
-        <span class="text-carbon-900/40">///</span>
-        <span>STREET WORKOUT REINE KRAFT</span>
-        <span class="text-carbon-900/40">///</span>
-        <span>KEINE AUSREDEN</span>
-        <span class="text-carbon-900/40">///</span>
-        <span>SPORTLERIDENTITÄT & PRÄSENZ</span>
-        <span class="text-carbon-900/40">///</span>
-      </div>
-      <!-- Repeated ticker block 2 (for seamless loop) -->
-      <div class="flex items-center gap-6 shrink-0">
-        <span>MOUNIR CALISTHENICS</span>
-        <span class="text-carbon-900/40">///</span>
-        <span>DISZIPLIN ÜBER MOTIVATION</span>
-        <span class="text-carbon-900/40">///</span>
-        <span>8 x 30s BURPEES POWER ENGINE</span>
-        <span class="text-carbon-900/40">///</span>
-        <span>MAXIMALE KÖRPERSPANNUNG</span>
-        <span class="text-carbon-900/40">///</span>
-        <span>STREET WORKOUT REINE KRAFT</span>
-        <span class="text-carbon-900/40">///</span>
-        <span>KEINE AUSREDEN</span>
-        <span class="text-carbon-900/40">///</span>
-        <span>SPORTLERIDENTITÄT & PRÄSENZ</span>
-        <span class="text-carbon-900/40">///</span>
+      
+      <div class="mt-8 flex flex-col gap-4">
+        <div class="flex items-center gap-3 text-gray-600 font-semibold"><i data-lucide="check-circle-2" class="text-green-500"></i> Brust berührt den Boden</div>
+        <div class="flex items-center gap-3 text-gray-600 font-semibold"><i data-lucide="check-circle-2" class="text-green-500"></i> Voller Strecksprung oben</div>
       </div>
     </div>
+    
+    <!-- 5. Mindset -->
+    <div class="drawer-content" data-idx="5">
+      <div class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">05. ATHLETE CORE</div>
+      <h2 class="text-5xl font-bold mb-10 tracking-tighter">3 SÄULEN DER IDENTITÄT</h2>
+      
+      <div class="space-y-8">
+        <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500">
+          <h3 class="text-2xl font-bold mb-2 oswald">1. Disziplin & Fokus</h3>
+          <p class="text-gray-600">Kein Zaudern, keine Ausreden. Dein Geist lenkt deinen Körper. Jeder Moment gehört deinem Ziel.</p>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500">
+          <h3 class="text-2xl font-bold mb-2 oswald">2. Maximale Körperspannung</h3>
+          <p class="text-gray-600">Jede Wiederholung in perfekter Ausführung. Calisthenics-Kontrolle von den Fingerspitzen bis zu den Zehen.</p>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500">
+          <h3 class="text-2xl font-bold mb-2 oswald">3. Unaufhaltsamer Wille</h3>
+          <p class="text-gray-600">Wenn die Muskeln brennen, fängt der Satz erst an. Ein wahrer Athlet gibt niemals auf.</p>
+        </div>
+      </div>
+      
+      <button onclick="speakAllPillars()" class="mt-10 w-full bg-blue-600 text-white px-8 py-5 rounded font-bold oswald tracking-widest hover:bg-blue-700 transition-colors flex justify-center items-center gap-3">
+        <i data-lucide="volume-2"></i> ALLE 3 LAUT AUFSAGEN
+      </button>
+    </div>
+    
+    <!-- 6. Presence -->
+    <div class="drawer-content" data-idx="6">
+      <div class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">06. PRESENCE & FORM</div>
+      <h2 class="text-5xl font-bold mb-6 tracking-tighter">KÖRPERSPRACHE</h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Präsenz, Haltung, Mimik und Gestik – wie du dich trägst, definiert deine innere Stärke und Wirkung.
+      </p>
+      <div class="aspect-video bg-black rounded-lg overflow-hidden shadow-2xl">
+        <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/sBRbMvTlUok?rel=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+      
+      <div class="mt-8 space-y-4 text-gray-600 font-semibold">
+        <div class="flex items-center gap-3"><div class="w-2 h-2 bg-black rounded-full"></div> Aufrechte Haltung, offene Brust</div>
+        <div class="flex items-center gap-3"><div class="w-2 h-2 bg-black rounded-full"></div> Ruhiger Blickkontakt</div>
+        <div class="flex items-center gap-3"><div class="w-2 h-2 bg-black rounded-full"></div> Souveräne, präzise Gestik</div>
+      </div>
+    </div>
+    
   </div>
 
-  <!-- ================================================================= -->
-  <!-- 2. SEKTION: 1. VIDEO (MIKE SONG // FLOW & RHYTHMUS)               -->
-  <!-- ================================================================= -->
-  <section id="video-1" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-carbon-800 relative bg-carbon-900">
-    <div class="max-w-5xl mx-auto">
-      
-      <!-- Stage Header with Lando-style Index Badges -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-        <div>
-          <div class="inline-flex items-center gap-2 text-lime text-xs font-telemetry font-bold tracking-widest uppercase mb-2">
-            <span class="w-6 h-0.5 bg-lime"></span>
-            <span>STAGE 01 // ERSTES VIDEO</span>
-          </div>
-          <h2 class="font-racing text-3xl sm:text-4xl md:text-5xl font-black text-white">
-            Flow, Rhythmus & Körperkontrolle
-          </h2>
-          <p class="text-telemetry-muted text-sm sm:text-base mt-2 max-w-2xl font-sans">
-            Das erste Video für Mounirs Ablauf: Starte mit Fokus auf Koordination, Rhythmusgefühl und fließende Bewegung. Direkt hier per Klick abspielen.
-          </p>
-        </div>
-
-        <div class="flex items-center gap-2 text-xs font-telemetry text-telemetry-cream bg-carbon-850 border border-carbon-700 px-3.5 py-2 rounded-sm w-fit shrink-0">
-          <i data-lucide="film" class="w-4 h-4 text-lime"></i>
-          <span>Mike Song • It Runs Through Me</span>
-        </div>
-      </div>
-
-      <!-- Video Bezel Card (Technical Cockpit Style) -->
-      <div class="telemetry-card crosshair-corner rounded-sm p-3 sm:p-5 border border-carbon-700 shadow-2xl relative overflow-hidden">
-        
-        <!-- Video Header Telemetry Strip -->
-        <div class="mb-3 px-1 flex items-center justify-between font-telemetry text-[11px] text-telemetry-muted uppercase">
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-lime animate-ping"></span>
-            <span class="text-lime font-bold">MEDIA SOURCE // 4K EMBED</span>
-          </div>
-          <span class="font-mono text-telemetry-dark">[ 01 // 04 ]</span>
-        </div>
-
-        <!-- Video Iframe -->
-        <div class="relative w-full overflow-hidden bg-carbon-950 aspect-video rounded-sm border border-carbon-800">
-          <iframe 
-            class="absolute top-0 left-0 w-full h-full"
-            src="https://www.youtube-nocookie.com/embed/g9FJhH9dOeU?rel=0" 
-            title="1. Video: Mike Song choreography to It Runs Through Me" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen>
-          </iframe>
-        </div>
-        
-        <!-- Video Details Footer HUD -->
-        <div class="mt-4 px-2 py-1 flex flex-wrap items-center justify-between gap-3 text-xs font-telemetry text-telemetry-muted">
-          <div class="flex items-center gap-4">
-            <div class="flex items-center gap-1.5 text-telemetry-cream">
-              <i data-lucide="activity" class="w-3.5 h-3.5 text-lime"></i>
-              <span>FOKUS: KOORDINATION & RHYTHMUS</span>
-            </div>
-            <span class="text-carbon-700">|</span>
-            <span class="text-telemetry-muted">BEREIT ZUM ABSPIELEN</span>
-          </div>
-
-          <a href="https://youtu.be/g9FJhH9dOeU" target="_blank" rel="noopener noreferrer" class="text-telemetry-cream hover:text-lime flex items-center gap-1.5 transition-colors group">
-            <span>Auf YouTube ansehen</span>
-            <i data-lucide="external-link" class="w-3.5 h-3.5 text-lime group-hover:translate-x-0.5 transition-transform"></i>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================================= -->
-  <!-- 3. SEKTION: 2. VIDEO (CHRIS LUNO // BEACH VIBES)                  -->
-  <!-- ================================================================= -->
-  <section id="video-2" class="py-24 px-4 sm:px-6 lg:px-8 bg-carbon-950 border-t border-carbon-800 relative">
-    <div class="max-w-5xl mx-auto">
-      
-      <!-- Stage Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-        <div>
-          <div class="inline-flex items-center gap-2 text-lime text-xs font-telemetry font-bold tracking-widest uppercase mb-2">
-            <span class="w-6 h-0.5 bg-lime"></span>
-            <span>STAGE 02 // ZWEITES VIDEO</span>
-          </div>
-          <h2 class="font-racing text-3xl sm:text-4xl md:text-5xl font-black text-white">
-            Vibe, Ausdauer & Beach Energy
-          </h2>
-          <p class="text-telemetry-muted text-sm sm:text-base mt-2 max-w-2xl font-sans">
-            Zweites Video im Ablauf: Den richtigen Beat und die Leichtigkeit mitnehmen. Schaffe dir die ideale Trainingsatmosphäre.
-          </p>
-        </div>
-
-        <div class="flex items-center gap-2 text-xs font-telemetry text-telemetry-cream bg-carbon-850 border border-carbon-700 px-3.5 py-2 rounded-sm w-fit shrink-0">
-          <i data-lucide="music" class="w-4 h-4 text-lime"></i>
-          <span>Chris Luno • Beach House Music</span>
-        </div>
-      </div>
-
-      <!-- Video Bezel Card -->
-      <div class="telemetry-card crosshair-corner rounded-sm p-3 sm:p-5 border border-carbon-700 shadow-2xl relative overflow-hidden">
-        
-        <div class="mb-3 px-1 flex items-center justify-between font-telemetry text-[11px] text-telemetry-muted uppercase">
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-lime"></span>
-            <span class="text-lime font-bold">ATMOSPHERE & FREQUENCY</span>
-          </div>
-          <span class="font-mono text-telemetry-dark">[ 02 // 04 ]</span>
-        </div>
-
-        <div class="relative w-full overflow-hidden bg-carbon-950 aspect-video rounded-sm border border-carbon-800">
-          <iframe 
-            class="absolute top-0 left-0 w-full h-full"
-            src="https://www.youtube-nocookie.com/embed/ja2dGXXmFV4?rel=0" 
-            title="2. Video: playing house music on the beach until people dance" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <div class="mt-4 px-2 py-1 flex flex-wrap items-center justify-between gap-3 text-xs font-telemetry text-telemetry-muted">
-          <div class="flex items-center gap-4">
-            <div class="flex items-center gap-1.5 text-telemetry-cream">
-              <i data-lucide="radio" class="w-3.5 h-3.5 text-lime"></i>
-              <span>SOUNDTRACK & AUSDAUER FLOW</span>
-            </div>
-            <span class="text-carbon-700">|</span>
-            <span class="text-telemetry-muted">DEEP FOCUS VIBES</span>
-          </div>
-
-          <a href="https://youtu.be/ja2dGXXmFV4" target="_blank" rel="noopener noreferrer" class="text-telemetry-cream hover:text-lime flex items-center gap-1.5 transition-colors group">
-            <span>Auf YouTube ansehen</span>
-            <i data-lucide="external-link" class="w-3.5 h-3.5 text-lime group-hover:translate-x-0.5 transition-transform"></i>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================================= -->
-  <!-- 4. SEKTION: 3. VIDEO (NYC STREET WORKOUT BATTLE)                  -->
-  <!-- ================================================================= -->
-  <section id="video-3" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-carbon-800 relative bg-carbon-900">
-    <div class="max-w-5xl mx-auto">
-      
-      <!-- Stage Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-        <div>
-          <div class="inline-flex items-center gap-2 text-lime text-xs font-telemetry font-bold tracking-widest uppercase mb-2">
-            <span class="w-6 h-0.5 bg-lime"></span>
-            <span>STAGE 03 // DRITTES VIDEO</span>
-          </div>
-          <h2 class="font-racing text-3xl sm:text-4xl md:text-5xl font-black text-white">
-            Street Workout Battle & Hardcore Calisthenics
-          </h2>
-          <p class="text-telemetry-muted text-sm sm:text-base mt-2 max-w-2xl font-sans">
-            Drittes Video im Ablauf: Die Essenz von reinem Calisthenics – Bars, Dips, Muscle-Ups und der unerbittliche Wettkampfgeist im Park.
-          </p>
-        </div>
-
-        <div class="flex items-center gap-2 text-xs font-telemetry text-telemetry-cream bg-carbon-850 border border-carbon-700 px-3.5 py-2 rounded-sm w-fit shrink-0">
-          <i data-lucide="flame" class="w-4 h-4 text-lime"></i>
-          <span>NYC Street Workout Battle • Goku Pump</span>
-        </div>
-      </div>
-
-      <!-- Video Bezel Card -->
-      <div class="telemetry-card crosshair-corner rounded-sm p-3 sm:p-5 border border-carbon-700 shadow-2xl relative overflow-hidden">
-        
-        <div class="mb-3 px-1 flex items-center justify-between font-telemetry text-[11px] text-telemetry-muted uppercase">
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-lime"></span>
-            <span class="text-lime font-bold">HIGH INTENSITY BATTLEFIELD</span>
-          </div>
-          <span class="font-mono text-telemetry-dark">[ 03 // 04 ]</span>
-        </div>
-
-        <div class="relative w-full overflow-hidden bg-carbon-950 aspect-video rounded-sm border border-carbon-800">
-          <iframe 
-            class="absolute top-0 left-0 w-full h-full"
-            src="https://www.youtube-nocookie.com/embed/UMYm2cBjZIY?rel=0" 
-            title="3. Video: NYC Street Workout Battle | Calisthenics Showdown in the Park" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <div class="mt-4 px-2 py-1 flex flex-wrap items-center justify-between gap-3 text-xs font-telemetry text-telemetry-muted">
-          <div class="flex items-center gap-4">
-            <div class="flex items-center gap-1.5 text-telemetry-cream">
-              <i data-lucide="swords" class="w-3.5 h-3.5 text-lime"></i>
-              <span>REINE BARS, REINE KRAFT, ZERO COMPROMISE</span>
-            </div>
-            <span class="text-carbon-700">|</span>
-            <span class="text-telemetry-muted">MAXIMALER PUMP</span>
-          </div>
-
-          <a href="https://youtu.be/UMYm2cBjZIY" target="_blank" rel="noopener noreferrer" class="text-telemetry-cream hover:text-lime flex items-center gap-1.5 transition-colors group">
-            <span>Auf YouTube ansehen</span>
-            <i data-lucide="external-link" class="w-3.5 h-3.5 text-lime group-hover:translate-x-0.5 transition-transform"></i>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================================= -->
-  <!-- 5. BURPEES SEKTION (THE ENGINE // FORMULA 1 REV-COUNTER TIMER)    -->
-  <!-- "wo einfach nur Burpees, da steht dann einfach Burpees,           -->
-  <!-- 8 x 30 Sekunden Burpees machen. Groß, klar, kenntlich, schön designt."-->
-  <!-- ================================================================= -->
-  <section id="burpees" class="py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-carbon-950 border-y-2 border-lime/40">
-    
-    <!-- Atmospheric Lando-style High-Voltage Glow Elements -->
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-lime/10 blur-[140px] rounded-full pointer-events-none"></div>
-    <div class="absolute -bottom-40 right-10 w-[500px] h-[300px] bg-lime/5 blur-[120px] rounded-full pointer-events-none"></div>
-    <div class="absolute inset-0 bg-telemetry-grid opacity-20 pointer-events-none"></div>
-
-    <div class="max-w-5xl mx-auto relative z-10">
-      
-      <!-- Cockpit Telemetry Box for Burpees -->
-      <div class="telemetry-card crosshair-corner rounded-sm p-6 sm:p-12 md:p-16 text-center border-2 border-lime/50 shadow-[0_0_60px_rgba(210,255,0,0.15)] relative overflow-hidden bg-carbon-900/90">
-        
-        <!-- Top Telemetry Pill -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-sm bg-lime/10 border border-lime/50 text-lime text-xs font-telemetry font-bold uppercase tracking-widest mb-6">
-          <i data-lucide="zap" class="w-4 h-4 text-lime fill-current"></i>
-          <span>PULSBESCHLEUNIGER & WILLENSKRAFT // PROTOCOL 04</span>
-        </div>
-
-        <!-- RIESIGER TITEL: BURPEES (Lando Norris brutalist aesthetic) -->
-        <h2 class="font-racing text-6xl sm:text-8xl md:text-9xl font-black text-white tracking-tighter leading-none drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)]">
-          BURPEES
-        </h2>
-
-        <!-- KLARE ANWEISUNG: 8 x 30 Sekunden Burpees machen -->
-        <div class="mt-6 mb-8">
-          <p class="font-racing text-2xl sm:text-4xl md:text-5xl font-black text-lime tracking-tight">
-            8 x 30 SEKUNDEN <span class="text-white">BURPEES</span> MACHEN
-          </p>
-          <p class="text-telemetry-muted text-base sm:text-xl mt-3 max-w-2xl mx-auto font-medium font-sans">
-            Voller Körpereinsatz. Jeder Sprung zählt. Keine Kompromisse.
-          </p>
-        </div>
-
-        <!-- F1-Pitwall Rev-Counter (8 LED Rounds Progress Indicator) -->
-        <div class="my-8 max-w-3xl mx-auto font-telemetry">
-          <div class="flex items-center justify-between text-xs uppercase tracking-widest text-telemetry-muted font-bold mb-3 px-1">
-            <span class="flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-lime"></span>
-              <span>8 RUNDEN TELEMETRIE // TACHOMETER</span>
-            </span>
-            <span id="f1StatusText" class="text-lime font-mono">STANDBY</span>
-          </div>
-
-          <!-- 8 Segmented LED Bar -->
-          <div class="grid grid-cols-4 sm:grid-cols-8 gap-2" id="roundBadges">
-            <!-- Round 1 -->
-            <div class="set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1" data-round="1">
-              <span class="text-[10px] text-telemetry-dark font-mono">01</span>
-              <span>R1 (30s)</span>
-            </div>
-            <!-- Round 2 -->
-            <div class="set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1" data-round="2">
-              <span class="text-[10px] text-telemetry-dark font-mono">02</span>
-              <span>R2 (30s)</span>
-            </div>
-            <!-- Round 3 -->
-            <div class="set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1" data-round="3">
-              <span class="text-[10px] text-telemetry-dark font-mono">03</span>
-              <span>R3 (30s)</span>
-            </div>
-            <!-- Round 4 -->
-            <div class="set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1" data-round="4">
-              <span class="text-[10px] text-telemetry-dark font-mono">04</span>
-              <span>R4 (30s)</span>
-            </div>
-            <!-- Round 5 -->
-            <div class="set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1" data-round="5">
-              <span class="text-[10px] text-telemetry-dark font-mono">05</span>
-              <span>R5 (30s)</span>
-            </div>
-            <!-- Round 6 -->
-            <div class="set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1" data-round="6">
-              <span class="text-[10px] text-telemetry-dark font-mono">06</span>
-              <span>R6 (30s)</span>
-            </div>
-            <!-- Round 7 -->
-            <div class="set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1" data-round="7">
-              <span class="text-[10px] text-telemetry-dark font-mono">07</span>
-              <span>R7 (30s)</span>
-            </div>
-            <!-- Round 8 -->
-            <div class="set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1" data-round="8">
-              <span class="text-[10px] text-telemetry-dark font-mono">08</span>
-              <span>R8 (30s)</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cockpit Digital LCD Timer Display -->
-        <div class="bg-carbon-950 border border-carbon-700 rounded-sm p-6 sm:p-8 max-w-xl mx-auto shadow-inner relative">
-          
-          <!-- Subtle technical bezel crosshairs inside -->
-          <div class="absolute top-2 left-3 font-mono text-[9px] text-telemetry-dark">TIMER_ID // PITWALL-8x30</div>
-          <div class="absolute top-2 right-3 font-mono text-[9px] text-telemetry-dark">BEEP: WEBAUDIO_API</div>
-
-          <div class="flex items-center justify-between text-xs text-telemetry-muted mb-2 font-telemetry uppercase pt-2">
-            <span id="timerModeLabel" class="text-lime font-bold flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-lime animate-ping"></span>
-              <span>INTERVALL-TIMER BEREIT</span>
-            </span>
-            <span id="roundDisplay" class="text-telemetry-cream font-mono">RUNDE: <strong class="text-lime font-bold text-sm">1 / 8</strong></span>
-          </div>
-
-          <!-- Big LCD Countdown Display -->
-          <div class="font-racing text-7xl sm:text-8xl md:text-9xl font-black text-white my-3 tracking-tighter" id="timeRemaining">
-            00:30
-          </div>
-          
-          <!-- Speedometer Progress Bar -->
-          <div class="w-full bg-carbon-850 h-3 rounded-none overflow-hidden mb-6 border border-carbon-700">
-            <div id="timerProgress" class="bg-lime h-full w-full transition-all duration-300 shadow-[0_0_15px_#d2ff00]"></div>
-          </div>
-
-          <!-- Timer Controls (Cockpit Buttons) -->
-          <div class="flex flex-wrap items-center justify-center gap-3 font-telemetry">
-            <button id="startTimerBtn" onclick="toggleTimer()" class="px-7 py-3.5 rounded-sm bg-lime hover:bg-white text-carbon-900 font-bold text-sm sm:text-base flex items-center gap-2 uppercase tracking-wider shadow-[0_0_20px_rgba(210,255,0,0.35)] transition-all">
-              <i data-lucide="play" class="w-5 h-5 fill-current"></i>
-              <span id="startBtnText">Starten</span>
-            </button>
-            <button onclick="resetTimer()" class="px-5 py-3.5 rounded-sm bg-carbon-850 hover:bg-carbon-800 text-telemetry-cream font-semibold text-xs uppercase tracking-wider flex items-center gap-2 border border-carbon-700 transition-all hover:border-telemetry-muted">
-              <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
-              <span>Zurücksetzen</span>
-            </button>
-            <button id="soundToggleBtn" onclick="toggleAudio()" class="p-3.5 rounded-sm bg-carbon-850 hover:bg-carbon-800 text-telemetry-muted hover:text-lime border border-carbon-700 transition-all" title="Audio-Signal an/aus">
-              <i data-lucide="volume-2" id="soundIcon" class="w-5 h-5"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- High-Impact Form Criteria Checklist -->
-        <div class="mt-8 text-xs sm:text-sm text-telemetry-cream font-telemetry flex flex-wrap items-center justify-center gap-6">
-          <div class="flex items-center gap-2 bg-carbon-850 px-3.5 py-1.5 border border-carbon-700 rounded-sm">
-            <i data-lucide="check" class="w-4 h-4 text-lime stroke-[3]"></i>
-            <span class="font-bold">BRUST BERÜHRT DEN BODEN</span>
-          </div>
-          <div class="flex items-center gap-2 bg-carbon-850 px-3.5 py-1.5 border border-carbon-700 rounded-sm">
-            <i data-lucide="check" class="w-4 h-4 text-lime stroke-[3]"></i>
-            <span class="font-bold">VOLLER STRECKSPRUNG OBEN</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================================= -->
-  <!-- 6. SEKTION: MOUNIRS SPORTLERIDENTITÄT                             -->
-  <!-- "Titel: Mounirs Sportleridentität"                                 -->
-  <!-- "Subtext: laut die drei Säulen dieser Sportleridentität benennen" -->
-  <!-- ================================================================= -->
-  <section id="identitaet" class="py-28 px-4 sm:px-6 lg:px-8 border-t border-carbon-800 relative bg-carbon-900">
-    <div class="max-w-6xl mx-auto">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <div class="inline-flex items-center gap-2 text-lime text-xs font-telemetry font-bold tracking-widest uppercase mb-3">
-          <i data-lucide="shield" class="w-4 h-4 text-lime"></i>
-          <span>MINDSET & FUNDAMENT // PROTOCOL 05</span>
-        </div>
-        
-        <!-- Titel: Mounirs Sportleridentität -->
-        <h2 class="font-racing text-4xl sm:text-6xl md:text-7xl font-black text-white tracking-tight">
-          MOUNIRS SPORTLERIDENTITÄT
-        </h2>
-
-        <!-- Subtext: laut die drei Säulen dieser Sportleridentität benennen -->
-        <p class="mt-4 text-lg sm:text-2xl text-lime font-telemetry font-bold tracking-wide uppercase">
-          Laut die drei Säulen dieser Sportleridentität benennen
-        </p>
-
-        <p class="text-telemetry-muted text-sm sm:text-base mt-2 font-sans">
-          Sag sie mit klarer, fester Stimme vor jedem Durchgang auf. Verankere sie in deinem Geist.
-        </p>
-      </div>
-
-      <!-- The 3 Pillars Cards Grid (Motorsport Telemetry Cards) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-telemetry">
-        
-        <!-- Säule 1 -->
-        <div class="telemetry-card crosshair-corner rounded-sm p-8 border border-carbon-700 relative group flex flex-col justify-between overflow-hidden">
-          <!-- Big Background Numeral like LN4 -->
-          <div class="absolute -right-2 -bottom-6 text-8xl font-racing font-black text-carbon-800/40 select-none pointer-events-none group-hover:text-lime/10 transition-colors">
-            01
-          </div>
-
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="px-2.5 py-1 bg-lime text-carbon-900 font-telemetry font-bold text-xs rounded-sm">
-                SÄULE 01
-              </span>
-              <span class="text-telemetry-dark text-xs font-mono">// CORE SPEC</span>
-            </div>
-
-            <h3 class="font-racing text-2xl font-bold text-white mb-3 group-hover:text-lime transition-colors">
-              Eiserne Disziplin & Fokus
-            </h3>
-            
-            <p class="text-telemetry-muted text-sm leading-relaxed mb-6 font-sans">
-              Kein Zaudern, keine Ausreden. Dein Geist lenkt deinen Körper. Jeder Moment an der Stange gehört zu 100% deinem Ziel.
-            </p>
-          </div>
-
-          <div class="pt-4 border-t border-carbon-700/80 relative z-10">
-            <button onclick="speakPillar(1)" class="w-full py-3 rounded-sm bg-carbon-850 hover:bg-lime hover:text-carbon-900 text-xs font-bold uppercase tracking-wider text-telemetry-cream transition-all flex items-center justify-center gap-2 border border-carbon-700 hover:border-lime group/btn">
-              <i data-lucide="volume-2" class="w-4 h-4 text-lime group-hover/btn:text-carbon-900"></i>
-              <span>Säule 1 laut aussprechen</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Säule 2 -->
-        <div class="telemetry-card crosshair-corner rounded-sm p-8 border border-carbon-700 relative group flex flex-col justify-between overflow-hidden">
-          <div class="absolute -right-2 -bottom-6 text-8xl font-racing font-black text-carbon-800/40 select-none pointer-events-none group-hover:text-lime/10 transition-colors">
-            02
-          </div>
-
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="px-2.5 py-1 bg-lime text-carbon-900 font-telemetry font-bold text-xs rounded-sm">
-                SÄULE 02
-              </span>
-              <span class="text-telemetry-dark text-xs font-mono">// CORE SPEC</span>
-            </div>
-
-            <h3 class="font-racing text-2xl font-bold text-white mb-3 group-hover:text-lime transition-colors">
-              Maximale Körperspannung & Form
-            </h3>
-            
-            <p class="text-telemetry-muted text-sm leading-relaxed mb-6 font-sans">
-              Jede Wiederholung in perfekter Ausführung. Reine Calisthenics-Kontrolle von den Fingerspitzen bis zu den Zehen. Ästhetik trifft rohe Kraft.
-            </p>
-          </div>
-
-          <div class="pt-4 border-t border-carbon-700/80 relative z-10">
-            <button onclick="speakPillar(2)" class="w-full py-3 rounded-sm bg-carbon-850 hover:bg-lime hover:text-carbon-900 text-xs font-bold uppercase tracking-wider text-telemetry-cream transition-all flex items-center justify-center gap-2 border border-carbon-700 hover:border-lime group/btn">
-              <i data-lucide="volume-2" class="w-4 h-4 text-lime group-hover/btn:text-carbon-900"></i>
-              <span>Säule 2 laut aussprechen</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Säule 3 -->
-        <div class="telemetry-card crosshair-corner rounded-sm p-8 border border-carbon-700 relative group flex flex-col justify-between overflow-hidden">
-          <div class="absolute -right-2 -bottom-6 text-8xl font-racing font-black text-carbon-800/40 select-none pointer-events-none group-hover:text-lime/10 transition-colors">
-            03
-          </div>
-
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="px-2.5 py-1 bg-lime text-carbon-900 font-telemetry font-bold text-xs rounded-sm">
-                SÄULE 03
-              </span>
-              <span class="text-telemetry-dark text-xs font-mono">// CORE SPEC</span>
-            </div>
-
-            <h3 class="font-racing text-2xl font-bold text-white mb-3 group-hover:text-lime transition-colors">
-              Unaufhaltsamer Wille & No Excuses
-            </h3>
-            
-            <p class="text-telemetry-muted text-sm leading-relaxed mb-6 font-sans">
-              Wenn die Muskeln brennen, fängt der Satz erst an. Ein wahrer Athlet gibt niemals auf. Kontinuität Tag für Tag.
-            </p>
-          </div>
-
-          <div class="pt-4 border-t border-carbon-700/80 relative z-10">
-            <button onclick="speakPillar(3)" class="w-full py-3 rounded-sm bg-carbon-850 hover:bg-lime hover:text-carbon-900 text-xs font-bold uppercase tracking-wider text-telemetry-cream transition-all flex items-center justify-center gap-2 border border-carbon-700 hover:border-lime group/btn">
-              <i data-lucide="volume-2" class="w-4 h-4 text-lime group-hover/btn:text-carbon-900"></i>
-              <span>Säule 3 laut aussprechen</span>
-            </button>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Combined Vocal Callout Cockpit Bar -->
-      <div class="mt-12 telemetry-card crosshair-corner p-6 rounded-sm border border-lime/30 flex flex-col sm:flex-row items-center justify-between gap-6 font-telemetry">
-        <div class="flex items-center gap-4 text-left">
-          <div class="w-12 h-12 rounded-sm bg-lime/10 border border-lime/30 text-lime flex items-center justify-center shrink-0">
-            <i data-lucide="megaphone" class="w-6 h-6"></i>
-          </div>
-          <div>
-            <h4 class="text-white font-racing font-bold text-lg">Alle drei Säulen nacheinander skandieren</h4>
-            <p class="text-telemetry-muted text-xs font-sans">Sprich sie laut und deutlich vor dem nächsten Satz aus oder höre die Audio-Synthese an.</p>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-3 shrink-0 w-full sm:w-auto">
-          <!-- Live speech equalizer indicator -->
-          <div id="speechVisualizer" class="hidden items-center gap-1 h-6 px-2">
-            <div class="w-1 bg-lime rounded-full sound-wave-bar"></div>
-            <div class="w-1 bg-lime rounded-full sound-wave-bar"></div>
-            <div class="w-1 bg-lime rounded-full sound-wave-bar"></div>
-            <div class="w-1 bg-lime rounded-full sound-wave-bar"></div>
-            <div class="w-1 bg-lime rounded-full sound-wave-bar"></div>
-          </div>
-
-          <button onclick="speakAllPillars()" class="w-full sm:w-auto px-6 py-3 rounded-sm bg-lime hover:bg-white text-carbon-900 font-bold text-xs tracking-wider uppercase shadow-[0_0_20px_rgba(210,255,0,0.3)] transition-all flex items-center justify-center gap-2">
-            <i data-lucide="play" class="w-4 h-4 fill-current"></i>
-            <span>Alle 3 laut aufsagen</span>
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================================= -->
-  <!-- 7. SEKTION: KÖRPERSPRACHE & CHRISTOPH WALTZ VIDEO                 -->
-  <!-- "Nach der Sportleridentität kommt dann das Thema mit der         -->
-  <!-- Körpersprache und da wird dann das Thema eingebettet, das Video   -->
-  <!-- eingebettet, das hier als das vierte Video geteilt wurde, wo man   -->
-  <!-- da das Christoph Waltz Video sieht, das soll auch eingebettet     -->
-  <!-- werden, sodass man dann einfach da auf Play klicken kann."         -->
-  <!-- ================================================================= -->
-  <section id="koerpersprache" class="py-28 px-4 sm:px-6 lg:px-8 border-t border-carbon-800 bg-carbon-950 relative">
-    <div class="max-w-5xl mx-auto">
-      
-      <!-- Stage Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-        <div>
-          <div class="inline-flex items-center gap-2 text-lime text-xs font-telemetry font-bold tracking-widest uppercase mb-2">
-            <span class="w-6 h-0.5 bg-lime"></span>
-            <span>STAGE 04 // VIERTES VIDEO</span>
-          </div>
-          <h2 class="font-racing text-3xl sm:text-4xl md:text-5xl font-black text-white">
-            Körpersprache
-          </h2>
-          <p class="text-telemetry-muted text-sm sm:text-base mt-2 max-w-2xl font-sans">
-            Präsenz, Haltung, Mimik und Gestik – wie du dich trägst, definiert deine innere Stärke und Wirkung. Hier direkt das Christoph Waltz Video ansehen.
-          </p>
-        </div>
-
-        <div class="flex items-center gap-2 text-xs font-telemetry text-telemetry-cream bg-carbon-850 border border-carbon-700 px-3.5 py-2 rounded-sm w-fit shrink-0">
-          <i data-lucide="user-check" class="w-4 h-4 text-lime"></i>
-          <span>Christoph Waltz • Ausstrahlung & Haltung</span>
-        </div>
-      </div>
-
-      <!-- Video Bezel Card -->
-      <div class="telemetry-card crosshair-corner rounded-sm p-3 sm:p-5 border border-carbon-700 shadow-2xl relative overflow-hidden">
-        
-        <div class="mb-3 px-1 flex items-center justify-between font-telemetry text-[11px] text-telemetry-muted uppercase">
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-lime"></span>
-            <span class="text-lime font-bold">BODY LANGUAGE & CHARISMA MASTERCLASS</span>
-          </div>
-          <span class="font-mono text-telemetry-dark">[ 04 // 04 ]</span>
-        </div>
-
-        <div class="relative w-full overflow-hidden bg-carbon-950 aspect-video rounded-sm border border-carbon-800">
-          <iframe 
-            class="absolute top-0 left-0 w-full h-full"
-            src="https://www.youtube-nocookie.com/embed/sBRbMvTlUok?rel=0" 
-            title="4. Video: Christoph Waltz - Körpersprache, Präsenz & Ausstrahlung" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <div class="mt-4 px-2 py-1 flex flex-wrap items-center justify-between gap-3 text-xs font-telemetry text-telemetry-muted">
-          <div class="flex items-center gap-4">
-            <div class="flex items-center gap-1.5 text-telemetry-cream">
-              <i data-lucide="eye" class="w-3.5 h-3.5 text-lime"></i>
-              <span>KÖRPERSPRACHE, PRÄSENZ & SOUVERÄNITÄT</span>
-            </div>
-            <span class="text-carbon-700">|</span>
-            <span class="text-telemetry-muted">ATHLETISCHE WIRKUNG</span>
-          </div>
-
-          <a href="https://youtu.be/sBRbMvTlUok" target="_blank" rel="noopener noreferrer" class="text-telemetry-cream hover:text-lime flex items-center gap-1.5 transition-colors group">
-            <span>Auf YouTube ansehen</span>
-            <i data-lucide="external-link" class="w-3.5 h-3.5 text-lime group-hover:translate-x-0.5 transition-transform"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Body Language Key Takeaways (Diagnostic Telemetry Cards) -->
-      <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 font-telemetry">
-        
-        <div class="telemetry-card crosshair-corner p-5 rounded-sm border border-carbon-700">
-          <div class="flex items-center gap-2 text-white font-racing font-bold text-base mb-1.5">
-            <i data-lucide="crosshair" class="w-4 h-4 text-lime"></i>
-            <span>Aufrechte Haltung</span>
-          </div>
-          <p class="text-telemetry-muted text-xs leading-relaxed font-sans">
-            Schultern nach hinten und unten, Brust stolz öffnen. Das signalisiert Dominanz und sofortige Rumpfspannung.
-          </p>
-        </div>
-
-        <div class="telemetry-card crosshair-corner p-5 rounded-sm border border-carbon-700">
-          <div class="flex items-center gap-2 text-white font-racing font-bold text-base mb-1.5">
-            <i data-lucide="eye" class="w-4 h-4 text-lime"></i>
-            <span>Ruhiger Blickkontakt</span>
-          </div>
-          <p class="text-telemetry-muted text-xs leading-relaxed font-sans">
-            Kein hastiges Umherblicken. Volle Kontrolle über die Atmung und eine fokussierte, unerschütterliche Präsenz.
-          </p>
-        </div>
-
-        <div class="telemetry-card crosshair-corner p-5 rounded-sm border border-carbon-700">
-          <div class="flex items-center gap-2 text-white font-racing font-bold text-base mb-1.5">
-            <i data-lucide="shield-check" class="w-4 h-4 text-lime"></i>
-            <span>Souveräne Gestik</span>
-          </div>
-          <p class="text-telemetry-muted text-xs leading-relaxed font-sans">
-            Bewusste, präzise Bewegungen – sowohl an der Calisthenics-Stange als auch im Alltag und Gespräch.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================================= -->
-  <!-- FOOTER: RACING PADDOCK STYLE                                      -->
-  <!-- ================================================================= -->
-  <footer class="py-16 px-4 sm:px-6 lg:px-8 border-t border-carbon-700 bg-carbon-950 relative overflow-hidden font-telemetry">
-    <div class="max-w-6xl mx-auto flex flex-col items-center text-center relative z-10">
-      
-      <!-- Brand Logotype in Footer -->
-      <div class="flex items-center gap-3 mb-4">
-        <div class="px-2.5 py-1 bg-lime text-carbon-900 font-telemetry font-bold text-xs tracking-wider rounded-sm">
-          <span>MC // 01</span>
-        </div>
-        <span class="font-racing text-2xl sm:text-3xl font-black tracking-tight text-white">
-          MOUNIR <span class="text-lime">CALISTHENICS</span>
-        </span>
-      </div>
-
-      <p class="text-telemetry-muted text-sm max-w-md mb-8 font-sans">
-        „Disziplin ist die Brücke zwischen deinen Zielen und deinen Erfolgen.“
-      </p>
-
-      <!-- Navigation Grid in Footer -->
-      <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs uppercase tracking-wider text-telemetry-muted mb-8">
-        <a href="#hero" class="hover:text-lime transition-colors">Startseite</a>
-        <span class="text-carbon-700">•</span>
-        <a href="#video-1" class="hover:text-lime transition-colors">Video 1 (Flow)</a>
-        <span class="text-carbon-700">•</span>
-        <a href="#video-2" class="hover:text-lime transition-colors">Video 2 (Beach)</a>
-        <span class="text-carbon-700">•</span>
-        <a href="#video-3" class="hover:text-lime transition-colors">Video 3 (Battle)</a>
-        <span class="text-carbon-700">•</span>
-        <a href="#burpees" class="text-lime hover:underline font-bold">Burpees 8x30s</a>
-        <span class="text-carbon-700">•</span>
-        <a href="#identitaet" class="hover:text-lime transition-colors">Sportleridentität</a>
-        <span class="text-carbon-700">•</span>
-        <a href="#koerpersprache" class="hover:text-lime transition-colors">Körpersprache</a>
-      </div>
-
-      <!-- Bottom telemetry line -->
-      <div class="pt-8 border-t border-carbon-800 w-full flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-telemetry-dark font-mono">
-        <div>
-          © 2026 MOUNIR CALISTHENICS PROTOCOL // ALL RIGHTS RESERVED
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 rounded-full bg-lime"></span>
-          <span>HIGH VOLTAGE RACING PERFORMANCE</span>
-        </div>
-        <a href="#hero" class="hover:text-lime transition-colors flex items-center gap-1">
-          <span>BACK TO TOP</span>
-          <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
-        </a>
-      </div>
-
-    </div>
-  </footer>
-
-  <!-- ================================================================= -->
-  <!-- JAVASCRIPT: BURPEE TIMER & SPEECH SYNTHESIS                       -->
-  <!-- ================================================================= -->
   <script>
-    // Initialize Lucide Icons
     lucide.createIcons();
+    
+    const titles = [
+      "MOUNIR CALISTHENICS",
+      "FLOW & RHYTHMUS",
+      "ENDURANCE VIBES",
+      "STREET BATTLE",
+      "BURPEES ENGINE",
+      "MINDSET SÄULEN",
+      "PRÄSENZ & WIRKUNG"
+    ];
+    let currentIdx = 0;
+    
+    const dotsContainer = document.getElementById('dots');
+    for(let i=0; i<7; i++) {{
+      let d = document.createElement('div');
+      d.className = 'dot' + (i===0?' active':'');
+      d.setAttribute('data-title', titles[i]);
+      d.onclick = () => goTo(i);
+      dotsContainer.appendChild(d);
+    }}
+    
+    function goTo(idx) {{
+      currentIdx = idx;
+      document.body.setAttribute('data-section', idx);
+      
+      document.querySelectorAll('.dot').forEach((d, i) => {{
+        d.className = 'dot' + (i===idx ? ' active' : '');
+      }});
+      
+      const titleEl = document.getElementById('title-display');
+      titleEl.style.opacity = 0;
+      setTimeout(() => {{
+        titleEl.textContent = titles[idx];
+        titleEl.style.opacity = 1;
+      }}, 400);
+      
+      document.querySelectorAll('.drawer-content').forEach(el => el.classList.remove('active'));
+      document.querySelector(`.drawer-content[data-idx="${{idx}}"]`).classList.add('active');
+    }}
+    
+    function toggleDrawer() {{
+      document.body.classList.toggle('drawer-open');
+    }}
+    
+    // Smooth scrolling
+    let isScrolling = false;
+    window.addEventListener('wheel', (e) => {{
+      if(document.body.classList.contains('drawer-open')) return;
+      if(isScrolling) return;
+      if(Math.abs(e.deltaY) < 30) return; // threshold
+      
+      if(e.deltaY > 0 && currentIdx < 6) {{
+        goTo(currentIdx + 1);
+        isScrolling = true;
+        setTimeout(() => isScrolling = false, 1200);
+      }} else if (e.deltaY < 0 && currentIdx > 0) {{
+        goTo(currentIdx - 1);
+        isScrolling = true;
+        setTimeout(() => isScrolling = false, 1200);
+      }}
+    }});
+    
+    // Key bindings
+    window.addEventListener('keydown', (e) => {{
+      if(document.body.classList.contains('drawer-open')) {{
+        if(e.key === 'Escape') toggleDrawer();
+        return;
+      }}
+      if(e.key === 'ArrowDown' || e.key === 'ArrowRight') {{
+        if(currentIdx < 6) goTo(currentIdx + 1);
+      }}
+      if(e.key === 'ArrowUp' || e.key === 'ArrowLeft') {{
+        if(currentIdx > 0) goTo(currentIdx - 1);
+      }}
+    }});
 
-    // Mobile Menu Toggle
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
-      const isHidden = menu.classList.contains('hidden');
-      if (isHidden) {
-        menu.classList.remove('hidden');
-      } else {
-        menu.classList.add('hidden');
-      }
-    }
-
-    // -------------------------------------------------------------
-    // BURPEES 8 x 30s INTERVAL TIMER LOGIC (F1 RACING PITWALL)
-    // -------------------------------------------------------------
+    // Timer Logic
     const TOTAL_ROUNDS = 8;
     const WORK_SECONDS = 30;
-    const REST_SECONDS = 15; // standard rest interval between 30s bouts
-
-    let currentRound = 1;
-    let isWorking = true; // true = Work (30s), false = Rest (15s)
-    let timeLeft = WORK_SECONDS;
-    let timerInterval = null;
-    let isRunning = false;
-    let audioEnabled = true;
-
+    const REST_SECONDS = 15;
+    let currentRound = 1, isWorking = true, timeLeft = WORK_SECONDS, timerInterval = null, isRunning = false;
+    
     const roundDisplay = document.getElementById('roundDisplay');
     const timeRemaining = document.getElementById('timeRemaining');
     const timerProgress = document.getElementById('timerProgress');
-    const timerModeLabel = document.getElementById('timerModeLabel');
-    const startBtnText = document.getElementById('startBtnText');
-    const soundIcon = document.getElementById('soundIcon');
-    const f1StatusText = document.getElementById('f1StatusText');
-
-    // Web Audio API beep sound synthesizer
-    let audioCtx = null;
-    function playBeep(freq = 600, duration = 0.15) {
-      if (!audioEnabled) return;
-      try {
-        if (!audioCtx) {
-          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        }
-        if (audioCtx.state === 'suspended') {
-          audioCtx.resume();
-        }
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = 'sine';
-        osc.frequency.value = freq;
-        gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + duration);
-      } catch (e) {
-        console.warn('Audio error:', e);
-      }
-    }
-
-    function toggleAudio() {
-      audioEnabled = !audioEnabled;
-      if (audioEnabled) {
-        soundIcon.setAttribute('data-lucide', 'volume-2');
-        playBeep(880, 0.1);
-      } else {
-        soundIcon.setAttribute('data-lucide', 'volume-x');
-      }
-      lucide.createIcons();
-    }
-
-    // F1 Rev Counter Badges update
-    function updateRoundBadges() {
-      const badges = document.querySelectorAll('.set-badge');
-      badges.forEach(badge => {
-        const r = parseInt(badge.getAttribute('data-round'));
-        const roundNumStr = r.toString().padStart(2, '0');
-        if (r < currentRound) {
-          // Completed Lap: Solid Lime with Checkmark
-          badge.className = 'set-badge py-3 px-1.5 rounded-sm bg-lime/20 border border-lime text-xs font-bold text-lime transition-all text-center flex flex-col items-center justify-center gap-1 shadow-[0_0_10px_rgba(210,255,0,0.2)]';
-          badge.innerHTML = `<span class="text-[10px] text-lime font-mono">✓ COMPLETED</span><span>R${r}</span>`;
-        } else if (r === currentRound) {
-          // Active Lap: High-voltage Electric Lime with pulsing glow
-          badge.className = 'set-badge py-3 px-1.5 rounded-sm bg-lime border-2 border-white text-xs font-black text-carbon-900 transition-all text-center flex flex-col items-center justify-center gap-1 shadow-[0_0_25px_#d2ff00] scale-105';
-          badge.innerHTML = `<span class="text-[10px] text-carbon-900 font-mono font-black animate-pulse">● LIVE LAP</span><span>R${r} (30s)</span>`;
-        } else {
-          // Future Lap: Neutral Dark Carbon
-          badge.className = 'set-badge py-3 px-1.5 rounded-sm bg-carbon-800 border border-carbon-700 text-xs font-bold text-telemetry-muted transition-all text-center flex flex-col items-center justify-center gap-1';
-          badge.innerHTML = `<span class="text-[10px] text-telemetry-dark font-mono">${roundNumStr}</span><span>R${r} (30s)</span>`;
-        }
-      });
-    }
-
-    function updateDisplay() {
-      const mins = Math.floor(timeLeft / 60);
-      const secs = timeLeft % 60;
-      timeRemaining.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-
-      const totalPhaseTime = isWorking ? WORK_SECONDS : REST_SECONDS;
-      const progressPercent = (timeLeft / totalPhaseTime) * 100;
-      timerProgress.style.width = `${progressPercent}%`;
-
-      if (isWorking) {
-        timerModeLabel.innerHTML = `<span class="w-2 h-2 rounded-full bg-lime animate-ping"></span> <span class="text-lime font-bold">BURPEE POWER // LAP ${currentRound} VON ${TOTAL_ROUNDS}</span>`;
-        timerProgress.className = 'bg-lime h-full transition-all duration-300 shadow-[0_0_15px_#d2ff00]';
-        timeRemaining.className = 'font-racing text-7xl sm:text-8xl md:text-9xl font-black text-lime my-3 tracking-tighter drop-shadow-[0_0_20px_rgba(210,255,0,0.3)]';
-        f1StatusText.innerHTML = `<span class="text-lime">GREEN FLAG // PUSH LAP ${currentRound}</span>`;
-      } else {
-        timerModeLabel.innerHTML = `<span class="w-2 h-2 rounded-full bg-telemetry-white animate-pulse"></span> <span class="text-telemetry-white font-bold">BOXENSTOPP // RECOVERY PAUSE</span>`;
-        timerProgress.className = 'bg-telemetry-white h-full transition-all duration-300 shadow-[0_0_15px_#ffffff]';
-        timeRemaining.className = 'font-racing text-7xl sm:text-8xl md:text-9xl font-black text-telemetry-white my-3 tracking-tighter';
-        f1StatusText.innerHTML = `<span class="text-telemetry-white">YELLOW FLAG // PAUSE 15s</span>`;
-      }
-
-      roundDisplay.innerHTML = `RUNDE: <strong class="text-lime font-bold font-mono text-sm">${currentRound} / ${TOTAL_ROUNDS}</strong>`;
-      updateRoundBadges();
-    }
-
-    function toggleTimer() {
-      if (isRunning) {
-        clearInterval(timerInterval);
-        isRunning = false;
-        startBtnText.textContent = 'Fortsetzen';
-        f1StatusText.innerHTML = `<span class="text-telemetry-muted">SESSION PAUSED</span>`;
-      } else {
-        isRunning = true;
-        startBtnText.textContent = 'Pause';
-        playBeep(880, 0.2); // Start beep
-        timerInterval = setInterval(() => {
-          if (timeLeft > 0) {
+    const timerStatus = document.getElementById('timerStatus');
+    const startTimerBtn = document.getElementById('startTimerBtn');
+    
+    function playBeep(freq, duration) {{
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine'; osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+      osc.connect(gain); gain.connect(audioCtx.destination);
+      osc.start(); osc.stop(audioCtx.currentTime + duration);
+    }}
+    
+    function updateDisplay() {{
+      timeRemaining.textContent = `00:${{timeLeft.toString().padStart(2, '0')}}`;
+      timerProgress.style.width = `${{(timeLeft / (isWorking ? WORK_SECONDS : REST_SECONDS)) * 100}}%`;
+      if(isWorking) {{
+        timerStatus.textContent = "WORK";
+        timerStatus.className = "text-red-600 font-bold";
+        timerProgress.className = "h-full bg-red-600 w-full transition-all duration-300";
+      }} else {{
+        timerStatus.textContent = "REST";
+        timerStatus.className = "text-blue-500 font-bold";
+        timerProgress.className = "h-full bg-blue-500 w-full transition-all duration-300";
+      }}
+      roundDisplay.textContent = `ROUND ${{currentRound}}/${{TOTAL_ROUNDS}}`;
+    }}
+    
+    function toggleTimer() {{
+      if(isRunning) {{
+        clearInterval(timerInterval); isRunning = false; startTimerBtn.textContent = 'RESUME';
+      }} else {{
+        isRunning = true; startTimerBtn.textContent = 'PAUSE'; playBeep(880, 0.2);
+        timerInterval = setInterval(() => {{
+          if(timeLeft > 0) {{
             timeLeft--;
-            if (timeLeft <= 3 && timeLeft > 0) {
-              playBeep(520, 0.1); // Countdown beep
-            }
+            if(timeLeft <= 3 && timeLeft > 0) playBeep(520, 0.1);
             updateDisplay();
-          } else {
-            // Switch between work and rest or advance round
-            if (isWorking) {
-              playBeep(1050, 0.35); // Completion of work phase
-              if (currentRound >= TOTAL_ROUNDS) {
-                // Workout fully completed!
-                clearInterval(timerInterval);
-                isRunning = false;
-                startBtnText.textContent = 'Geschafft!';
-                timerModeLabel.innerHTML = `<span class="text-lime font-bold">CHEQUERED FLAG! 8x30s BURPEES MEISTERHAFT BEENDET!</span>`;
-                timeRemaining.textContent = "00:00";
-                timeRemaining.className = "font-racing text-7xl sm:text-8xl md:text-9xl font-black text-white my-3 tracking-tighter";
-                timerProgress.style.width = "100%";
-                timerProgress.className = "bg-lime h-full shadow-[0_0_25px_#d2ff00]";
-                f1StatusText.innerHTML = `<span class="text-lime font-bold">P1 FINISH // PROTOCOL COMPLETE</span>`;
-                celebrateFinish();
-                return;
-              }
-              isWorking = false;
-              timeLeft = REST_SECONDS;
-            } else {
-              // End of rest, advance to next lap
+          }} else {{
+            if(isWorking) {{
+              playBeep(1050, 0.35);
+              if(currentRound >= TOTAL_ROUNDS) {{
+                clearInterval(timerInterval); isRunning = false;
+                startTimerBtn.textContent = 'DONE!'; timerStatus.textContent = "FINISHED";
+                timeRemaining.textContent = "00:00"; return;
+              }}
+              isWorking = false; timeLeft = REST_SECONDS;
+            }} else {{
               playBeep(920, 0.25);
-              isWorking = true;
-              currentRound++;
-              timeLeft = WORK_SECONDS;
-            }
+              isWorking = true; currentRound++; timeLeft = WORK_SECONDS;
+            }}
             updateDisplay();
-          }
-        }, 1000);
-      }
-    }
-
-    function resetTimer() {
-      clearInterval(timerInterval);
-      isRunning = false;
-      isWorking = true;
-      currentRound = 1;
-      timeLeft = WORK_SECONDS;
-      startBtnText.textContent = 'Starten';
-      f1StatusText.innerHTML = `<span class="text-lime font-mono">STANDBY</span>`;
+          }}
+        }}, 1000);
+      }}
+    }}
+    
+    function resetTimer() {{
+      clearInterval(timerInterval); isRunning = false; isWorking = true;
+      currentRound = 1; timeLeft = WORK_SECONDS; startTimerBtn.textContent = 'START';
       updateDisplay();
-    }
-
-    // Initialize display state
-    updateDisplay();
-
-    // -------------------------------------------------------------
-    // THREE PILLARS (SPORTLERIDENTITÄT) VOICE / SPEECH SYNTHESIS
-    // -------------------------------------------------------------
-    const pillarsText = {
-      1: "Säule eins: Eiserne Disziplin und Fokus. Kein Tag ohne Hingabe. Der Geist lenkt den Körper.",
-      2: "Säule zwei: Maximale Körperspannung und Form. Jede Wiederholung sauber und kontrolliert.",
-      3: "Säule drei: Unaufhaltsamer Wille und No Excuses. Durchziehen bis zum Schluss!"
-    };
-
-    function showVisualizer() {
-      const vis = document.getElementById('speechVisualizer');
-      if (vis) {
-        vis.classList.remove('hidden');
-        vis.classList.add('flex');
-      }
-    }
-
-    function hideVisualizer() {
-      const vis = document.getElementById('speechVisualizer');
-      if (vis) {
-        vis.classList.add('hidden');
-        vis.classList.remove('flex');
-      }
-    }
-
-    function speakText(text) {
-      if ('speechSynthesis' in window) {
+    }}
+    
+    // Speech Logic
+    function speakAllPillars() {{
+      const text = "Mounirs drei Säulen der Sportleridentität. Erstens: Eiserne Disziplin und Fokus. Zweitens: Maximale Körperspannung und perfekte Form. Drittens: Unaufhaltsamer Wille, keine Ausreden!";
+      if ('speechSynthesis' in window) {{
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'de-DE';
-        utterance.rate = 0.95; // Crisp, disciplined cadence
-        utterance.pitch = 1.0;
-        
-        showVisualizer();
-        utterance.onend = hideVisualizer;
-        utterance.onerror = hideVisualizer;
-        
         window.speechSynthesis.speak(utterance);
-      } else {
-        alert(text);
-      }
-    }
-
-    function speakPillar(index) {
-      if (pillarsText[index]) {
-        speakText(pillarsText[index]);
-      }
-    }
-
-    function speakAllPillars() {
-      const full = "Mounirs drei Säulen der Sportleridentität. " +
-        "Erstens: Eiserne Disziplin und Fokus. " +
-        "Zweitens: Maximale Körperspannung und perfekte Form. " +
-        "Drittens: Unaufhaltsamer Wille, keine Ausreden!";
-      speakText(full);
-    }
-
-    // Celebration finish fanfare
-    function celebrateFinish() {
-      try {
-        playBeep(880, 0.15);
-        setTimeout(() => playBeep(1100, 0.15), 150);
-        setTimeout(() => playBeep(1320, 0.2), 300);
-        setTimeout(() => playBeep(1760, 0.4), 500);
-      } catch(e) {}
-    }
+      }} else {{ alert(text); }}
+    }}
+    
+    goTo(0);
   </script>
 </body>
 </html>
