@@ -8,323 +8,249 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    :root {
-  --start-0: polygon(78.91% 40.99%, 82.08% 77.17%, 49.10% 61.97%);
-  --start-1: polygon(70.73% 25.45%, 48.00% 57.74%, 31.25% 21.98%);
-  --start-2: polygon(49.75% 55.71%, 21.52% 40.67%, 48.59% 23.63%);
-  --start-3: polygon(23.41% 43.06%, 5.77% 7.18%, 45.67% 9.67%);
-  --start-4: polygon(32.43% 100.00%, 5.96% 82.67%, 36.46% 69.63%);
-  --start-5: polygon(18.31% 37.11%, 36.37% 62.41%, 5.45% 65.53%);
-  --start-6: polygon(95.49% 64.08%, 67.57% 52.12%, 91.80% 33.81%);
-  --start-7: polygon(13.02% 45.79%, 14.10% 23.59%, 32.84% 35.54%);
-  --start-8: polygon(31.64% 47.84%, 4.28% 58.04%, 9.00% 29.22%);
-  --start-9: polygon(79.09% 5.33%, 100.00% 41.45%, 59.21% 43.30%);
-  --start-10: polygon(9.78% 6.35%, 25.10% 14.76%, 10.20% 23.89%);
-  --start-11: polygon(34.33% 89.44%, 3.49% 68.45%, 37.01% 52.09%);
-  --start-12: polygon(35.57% 77.21%, 1.67% 72.46%, 22.62% 45.39%);
-  --start-13: polygon(76.01% 49.01%, 81.64% 27.73%, 97.32% 43.17%);
-  --start-14: polygon(96.16% 40.12%, 80.56% 68.93%, 63.29% 41.09%);
-  --start-15: polygon(57.47% 61.97%, 34.70% 31.24%, 72.68% 26.72%);
-  --start-16: polygon(84.21% 2.44%, 88.81% 24.89%, 67.04% 17.75%);
-  --start-17: polygon(84.04% 35.02%, 68.09% 4.23%, 100.00% 5.66%);
-  --start-18: polygon(87.16% 80.38%, 65.49% 100.00%, 57.31% 72.56%);
-  --start-19: polygon(7.20% 88.43%, 0.00% 46.60%, 39.15% 59.83%);
-  --start-20: polygon(16.61% 37.15%, 3.65% 20.37%, 24.65% 17.44%);
-  --start-21: polygon(68.60% 79.95%, 77.02% 55.17%, 94.36% 74.77%);
-  --start-22: polygon(12.42% 19.58%, 25.33% 32.93%, 7.33% 37.52%);
-  --start-23: polygon(24.76% 24.91%, 30.74% 51.62%, 4.58% 43.55%);
-  --start-24: polygon(33.01% 0.00%, 47.28% 28.34%, 9.84% 23.38%);
-  --start-25: polygon(51.81% 23.98%, 72.43% 14.05%, 70.82% 36.88%);
-  --start-26: polygon(40.94% 26.49%, 11.46% 30.62%, 22.50% 2.97%);
-  --start-27: polygon(63.52% 70.53%, 88.92% 74.73%, 72.67% 94.70%);
-  --start-28: polygon(47.31% 57.70%, 87.60% 48.92%, 75.23% 88.26%);
-  --start-29: polygon(58.12% 0.00%, 86.13% 24.15%, 50.92% 36.29%);
-  --start-30: polygon(72.76% 15.41%, 90.71% 4.17%, 91.57% 25.33%);
-  --start-31: polygon(61.96% 56.52%, 41.54% 45.33%, 61.39% 33.15%);
-  --start-32: polygon(55.32% 46.60%, 34.15% 45.69%, 45.45% 27.76%);
-  --start-33: polygon(8.29% 4.81%, 27.17% 14.23%, 9.63% 25.95%);
-  --start-34: polygon(50.58% 15.84%, 27.74% 47.42%, 11.66% 11.92%);
-  --start-35: polygon(19.97% 46.04%, 32.14% 66.90%, 7.98% 67.12%);
-  --start-36: polygon(40.96% 13.81%, 14.97% 41.27%, 4.03% 5.08%);
-  --start-37: polygon(81.10% 53.76%, 69.91% 72.73%, 58.99% 53.61%);
-  --start-38: polygon(24.97% 34.11%, 24.59% 16.11%, 40.41% 24.71%);
-  --start-39: polygon(58.58% 29.51%, 80.43% 27.81%, 71.06% 47.62%);
-  --start-40: polygon(100.00% 34.14%, 73.85% 62.58%, 63.45% 23.46%);
-  --start-41: polygon(70.77% 53.17%, 68.80% 17.97%, 100.00% 33.73%);
-  --start-42: polygon(19.16% 5.36%, 37.47% 34.01%, 3.51% 35.69%);
-  --start-43: polygon(93.62% 44.77%, 72.24% 37.63%, 89.04% 22.62%);
-  --start-44: polygon(26.09% 99.43%, 19.41% 74.44%, 44.42% 81.05%);
-  --flow-0: polygon(57.32% 22.50%, 69.04% 50.70%, 38.74% 46.88%);
-  --flow-1: polygon(71.83% 49.27%, 78.41% 66.91%, 59.82% 63.88%);
-  --flow-2: polygon(9.62% 43.41%, 34.01% 32.44%, 31.43% 59.06%);
-  --flow-3: polygon(55.62% 53.40%, 64.76% 71.29%, 44.70% 70.36%);
-  --flow-4: polygon(30.96% 29.97%, 50.06% 48.95%, 24.10% 56.11%);
-  --flow-5: polygon(11.75% 44.88%, 27.34% 26.07%, 35.93% 48.94%);
-  --flow-6: polygon(29.79% 80.05%, 48.16% 59.29%, 57.07% 85.54%);
-  --flow-7: polygon(25.34% 65.71%, 46.65% 51.92%, 48.06% 77.27%);
-  --flow-8: polygon(38.74% 52.56%, 15.96% 60.66%, 20.23% 36.86%);
-  --flow-9: polygon(57.04% 60.15%, 38.89% 70.38%, 39.02% 49.55%);
-  --flow-10: polygon(79.13% 51.01%, 40.95% 51.15%, 59.77% 17.93%);
-  --flow-11: polygon(37.25% 77.60%, 11.12% 57.56%, 41.49% 44.82%);
-  --flow-12: polygon(47.56% 37.18%, 36.29% 9.35%, 66.05% 13.38%);
-  --flow-13: polygon(36.32% 6.77%, 61.99% 38.34%, 21.85% 44.96%);
-  --flow-14: polygon(63.23% 49.42%, 90.02% 55.03%, 71.86% 75.51%);
-  --flow-15: polygon(66.06% 80.47%, 29.80% 90.57%, 39.02% 54.08%);
-  --flow-16: polygon(42.74% 79.70%, 22.74% 71.91%, 39.43% 58.41%);
-  --flow-17: polygon(33.02% 41.19%, 45.57% 21.53%, 56.41% 42.18%);
-  --flow-18: polygon(31.68% 41.30%, 17.41% 56.97%, 10.89% 36.81%);
-  --flow-19: polygon(13.18% 58.40%, 14.89% 20.61%, 46.85% 40.84%);
-  --flow-20: polygon(46.27% 62.96%, 24.44% 29.71%, 64.14% 27.25%);
-  --flow-21: polygon(53.33% 91.77%, 38.13% 77.05%, 58.45% 71.16%);
-  --flow-22: polygon(64.80% 75.08%, 37.04% 61.02%, 63.02% 43.90%);
-  --flow-23: polygon(73.80% 48.78%, 70.38% 73.21%, 50.86% 58.11%);
-  --flow-24: polygon(33.03% 56.00%, 18.95% 42.17%, 37.94% 36.81%);
-  --flow-25: polygon(38.24% 30.65%, 54.07% 0.16%, 72.68% 29.04%);
-  --flow-26: polygon(44.85% 33.74%, 61.13% 26.82%, 59.06% 44.39%);
-  --flow-27: polygon(39.69% 65.58%, 70.77% 66.38%, 54.66% 92.97%);
-  --flow-28: polygon(47.34% 56.24%, 75.83% 27.23%, 86.87% 66.36%);
-  --flow-29: polygon(44.57% 41.17%, 60.36% 49.66%, 45.15% 59.16%);
-  --flow-30: polygon(72.71% 40.95%, 95.81% 55.64%, 71.60% 68.41%);
-  --flow-31: polygon(74.76% 47.12%, 43.35% 61.10%, 46.80% 26.90%);
-  --flow-32: polygon(43.06% 85.04%, 40.39% 56.51%, 66.48% 68.35%);
-  --flow-33: polygon(65.52% 30.60%, 28.75% 20.74%, 55.56% 0.00%);
-  --flow-34: polygon(37.50% 51.77%, 70.83% 48.89%, 56.79% 79.25%);
-  --flow-35: polygon(69.97% 93.82%, 28.09% 90.48%, 51.77% 55.78%);
-  --flow-36: polygon(44.96% 63.32%, 27.18% 67.00%, 32.80% 49.73%);
-  --flow-37: polygon(85.89% 57.54%, 63.05% 55.71%, 75.97% 36.79%);
-  --flow-38: polygon(34.91% 92.91%, 50.62% 67.97%, 64.47% 93.98%);
-  --flow-39: polygon(43.18% 25.40%, 51.10% 50.01%, 25.80% 44.67%);
-  --flow-40: polygon(51.00% 33.80%, 33.19% 6.54%, 65.69% 4.60%);
-  --flow-41: polygon(82.03% 63.49%, 59.06% 99.84%, 38.90% 61.86%);
-  --flow-42: polygon(56.58% 22.25%, 38.50% 48.24%, 24.90% 19.65%);
-  --flow-43: polygon(53.81% 33.33%, 73.20% 45.42%, 53.09% 56.25%);
-  --flow-44: polygon(72.65% 62.06%, 36.97% 78.64%, 40.28% 39.44%);
-  --beach-0: polygon(48.95% 28.43%, 41.26% 46.03%, 29.80% 30.62%);
-  --beach-1: polygon(33.24% 92.79%, 2.33% 85.15%, 24.30% 62.10%);
-  --beach-2: polygon(49.21% 58.02%, 27.27% 34.71%, 58.39% 27.23%);
-  --beach-3: polygon(35.84% 59.76%, 41.07% 37.21%, 58.05% 52.94%);
-  --beach-4: polygon(66.29% 89.53%, 78.53% 63.36%, 95.17% 86.98%);
-  --beach-5: polygon(58.03% 0.00%, 51.44% 28.68%, 25.59% 6.32%);
-  --beach-6: polygon(71.42% 47.19%, 52.44% 53.83%, 56.09% 34.05%);
-  --beach-7: polygon(49.05% 57.47%, 57.75% 17.48%, 88.15% 44.88%);
-  --beach-8: polygon(65.12% 93.61%, 35.02% 93.86%, 49.74% 67.60%);
-  --beach-9: polygon(55.07% 71.67%, 44.84% 54.27%, 65.02% 54.02%);
-  --beach-10: polygon(56.61% 76.54%, 29.22% 69.35%, 49.05% 49.14%);
-  --beach-11: polygon(60.54% 45.99%, 33.29% 69.83%, 26.12% 34.34%);
-  --beach-12: polygon(60.18% 55.49%, 53.21% 78.56%, 36.64% 61.06%);
-  --beach-13: polygon(15.66% 53.02%, 46.31% 39.20%, 43.11% 72.67%);
-  --beach-14: polygon(94.87% 41.72%, 99.11% 65.82%, 76.09% 57.55%);
-  --beach-15: polygon(46.83% 67.99%, 78.16% 93.83%, 40.18% 100.00%);
-  --beach-16: polygon(32.98% 60.70%, 25.52% 23.63%, 61.40% 35.54%);
-  --beach-17: polygon(64.26% 73.91%, 48.22% 95.40%, 37.51% 70.81%);
-  --beach-18: polygon(56.77% 28.48%, 44.81% 48.46%, 33.41% 28.16%);
-  --beach-19: polygon(27.18% 39.98%, 50.72% 36.36%, 42.18% 58.60%);
-  --beach-20: polygon(0.00% 48.97%, 20.54% 48.71%, 10.23% 67.27%);
-  --beach-21: polygon(40.33% 80.77%, 15.52% 73.62%, 34.04% 55.63%);
-  --beach-22: polygon(55.69% 18.79%, 85.63% 3.84%, 83.76% 37.25%);
-  --beach-23: polygon(4.70% 58.18%, 13.00% 37.00%, 27.28% 54.72%);
-  --beach-24: polygon(84.72% 56.89%, 93.38% 88.08%, 62.00% 80.13%);
-  --beach-25: polygon(82.69% 50.55%, 88.07% 86.33%, 54.34% 73.25%);
-  --beach-26: polygon(61.56% 78.11%, 50.98% 48.03%, 82.35% 53.77%);
-  --beach-27: polygon(35.13% 39.88%, 63.03% 53.94%, 36.98% 71.18%);
-  --beach-28: polygon(74.75% 36.14%, 100.00% 47.97%, 78.27% 65.87%);
-  --beach-29: polygon(63.73% 41.20%, 45.28% 39.51%, 55.91% 24.33%);
-  --beach-30: polygon(24.48% 37.86%, 21.58% 13.82%, 43.88% 23.23%);
-  --beach-31: polygon(29.25% 93.08%, 57.62% 70.46%, 63.19% 100.00%);
-  --beach-32: polygon(64.72% 79.02%, 30.53% 70.82%, 54.61% 45.20%);
-  --beach-33: polygon(45.22% 30.77%, 67.87% 36.09%, 52.01% 53.11%);
-  --beach-34: polygon(67.28% 56.11%, 47.94% 65.11%, 49.72% 43.85%);
-  --beach-35: polygon(32.20% 67.45%, 16.90% 31.43%, 55.76% 36.01%);
-  --beach-36: polygon(24.01% 89.63%, 20.27% 62.54%, 45.65% 72.73%);
-  --beach-37: polygon(57.81% 38.13%, 76.47% 11.04%, 90.73% 40.68%);
-  --beach-38: polygon(38.95% 36.94%, 62.48% 39.40%, 48.67% 58.61%);
-  --beach-39: polygon(50.04% 45.86%, 65.40% 55.24%, 49.64% 63.91%);
-  --beach-40: polygon(61.29% 28.01%, 69.77% 47.07%, 49.02% 44.98%);
-  --beach-41: polygon(61.52% 35.15%, 61.52% 74.86%, 27.04% 55.15%);
-  --beach-42: polygon(59.80% 81.21%, 23.59% 69.81%, 51.45% 44.02%);
-  --beach-43: polygon(35.08% 54.32%, 61.14% 30.57%, 68.83% 64.97%);
-  --beach-44: polygon(63.31% 52.99%, 45.14% 67.56%, 41.51% 44.55%);
-  --battle-0: polygon(19.70% 51.26%, 20.99% 17.99%, 49.24% 35.62%);
-  --battle-1: polygon(21.45% 22.42%, 60.13% 25.14%, 38.57% 57.36%);
-  --battle-2: polygon(72.11% 58.50%, 46.61% 56.29%, 61.18% 35.25%);
-  --battle-3: polygon(26.16% 12.03%, 40.03% 39.92%, 8.93% 38.12%);
-  --battle-4: polygon(100.00% 100.00%, 71.75% 91.67%, 100.00% 61.50%);
-  --battle-5: polygon(65.93% 59.66%, 45.54% 62.18%, 53.47% 43.22%);
-  --battle-6: polygon(100.00% 97.48%, 78.10% 95.76%, 90.90% 76.80%);
-  --battle-7: polygon(24.14% 19.63%, 53.73% 33.20%, 27.27% 52.15%);
-  --battle-8: polygon(74.28% 70.76%, 98.34% 75.27%, 82.49% 93.93%);
-  --battle-9: polygon(74.19% 83.46%, 71.20% 58.28%, 94.54% 68.17%);
-  --battle-10: polygon(0.00% 90.13%, 16.46% 91.09%, 0.00% 100.00%);
-  --battle-11: polygon(66.78% 49.55%, 47.15% 21.85%, 80.94% 18.55%);
-  --battle-12: polygon(11.89% 22.18%, 5.97% 1.26%, 27.07% 6.50%);
-  --battle-13: polygon(21.08% 18.55%, 0.00% 7.90%, 16.05% 0.00%);
-  --battle-14: polygon(29.99% 89.90%, 5.24% 64.46%, 39.61% 55.60%);
-  --battle-15: polygon(57.85% 36.97%, 17.61% 46.38%, 29.41% 6.77%);
-  --battle-16: polygon(100.00% 0.00%, 100.00% 16.76%, 77.14% 6.22%);
-  --battle-17: polygon(49.87% 65.72%, 15.18% 74.41%, 24.84% 39.98%);
-  --battle-18: polygon(26.37% 23.09%, 9.82% 16.51%, 23.74% 5.41%);
-  --battle-19: polygon(78.47% 62.88%, 48.33% 74.61%, 53.11% 42.62%);
-  --battle-20: polygon(0.01% 67.93%, 31.71% 53.68%, 28.36% 88.27%);
-  --battle-21: polygon(56.19% 57.51%, 61.65% 19.32%, 92.10% 43.01%);
-  --battle-22: polygon(30.91% 82.97%, 0.00% 96.69%, 1.94% 60.48%);
-  --battle-23: polygon(42.32% 49.20%, 45.82% 28.77%, 61.82% 41.94%);
-  --battle-24: polygon(16.06% 16.31%, 40.12% 9.73%, 33.89% 33.88%);
-  --battle-25: polygon(65.78% 44.43%, 48.94% 35.34%, 65.19% 25.23%);
-  --battle-26: polygon(76.61% 95.96%, 41.04% 74.68%, 77.17% 54.36%);
-  --battle-27: polygon(100.00% 96.84%, 92.53% 100.00%, 95.58% 83.86%);
-  --battle-28: polygon(19.12% 48.24%, 0.26% 12.70%, 40.47% 13.96%);
-  --battle-29: polygon(93.77% 72.74%, 100.00% 90.01%, 85.07% 92.28%);
-  --battle-30: polygon(34.16% 49.04%, 14.54% 12.35%, 56.14% 13.52%);
-  --battle-31: polygon(90.77% 0.00%, 100.00% 0.00%, 100.00% 9.95%);
-  --battle-32: polygon(100.00% 100.00%, 84.37% 86.52%, 100.00% 78.16%);
-  --battle-33: polygon(33.21% 24.86%, 0.00% 18.44%, 18.56% 0.00%);
-  --battle-34: polygon(79.08% 63.13%, 83.28% 84.43%, 62.71% 77.51%);
-  --battle-35: polygon(30.68% 20.44%, 30.48% 39.68%, 13.87% 29.96%);
-  --battle-36: polygon(0.00% 31.52%, 14.27% 0.00%, 34.41% 30.25%);
-  --battle-37: polygon(92.99% 91.94%, 100.00% 97.92%, 96.61% 100.00%);
-  --battle-38: polygon(69.35% 45.25%, 46.46% 38.03%, 64.08% 21.74%);
-  --battle-39: polygon(86.71% 18.53%, 74.80% 38.38%, 63.48% 18.19%);
-  --battle-40: polygon(7.49% 28.70%, 26.14% 0.48%, 41.39% 30.68%);
-  --battle-41: polygon(44.98% 74.33%, 21.95% 69.03%, 37.97% 51.67%);
-  --battle-42: polygon(21.35% 52.90%, 55.42% 47.34%, 43.34% 79.67%);
-  --battle-43: polygon(84.97% 100.00%, 59.11% 83.79%, 95.76% 74.95%);
-  --battle-44: polygon(51.22% 69.15%, 44.59% 44.70%, 69.11% 51.07%);
-  --burpees-0: polygon(48.31% 76.56%, 71.92% 59.73%, 74.82% 88.59%);
-  --burpees-1: polygon(48.21% 51.81%, 28.81% 29.44%, 57.86% 23.70%);
-  --burpees-2: polygon(24.76% 9.33%, 48.14% 0.00%, 47.16% 23.47%);
-  --burpees-3: polygon(70.98% 100.00%, 30.02% 100.00%, 48.85% 66.33%);
-  --burpees-4: polygon(55.73% 86.29%, 37.35% 74.37%, 56.82% 64.33%);
-  --burpees-5: polygon(52.98% 23.40%, 14.45% 18.96%, 37.42% 0.00%);
-  --burpees-6: polygon(36.01% 0.00%, 55.03% 32.62%, 14.11% 31.13%);
-  --burpees-7: polygon(46.60% 17.74%, 47.37% 41.81%, 26.09% 30.53%);
-  --burpees-8: polygon(64.54% 72.59%, 69.72% 100.00%, 30.85% 98.15%);
-  --burpees-9: polygon(73.03% 100.00%, 52.10% 78.26%, 84.73% 72.80%);
-  --burpees-10: polygon(38.74% 11.73%, 55.29% 18.67%, 41.05% 29.59%);
-  --burpees-11: polygon(59.46% 27.72%, 39.81% 43.68%, 35.70% 18.70%);
-  --burpees-12: polygon(48.78% 58.08%, 24.29% 46.13%, 46.81% 30.80%);
-  --burpees-13: polygon(58.36% 10.44%, 82.14% 45.77%, 39.67% 48.88%);
-  --burpees-14: polygon(25.70% 82.16%, 57.04% 69.66%, 52.35% 100.00%);
-  --burpees-15: polygon(64.98% 42.71%, 39.01% 32.36%, 60.89% 14.95%);
-  --burpees-16: polygon(63.20% 95.30%, 40.78% 67.70%, 75.87% 61.94%);
-  --burpees-17: polygon(47.45% 31.46%, 18.87% 25.12%, 38.56% 3.45%);
-  --burpees-18: polygon(88.64% 65.54%, 73.30% 100.00%, 48.08% 71.28%);
-  --burpees-19: polygon(61.99% 63.78%, 28.95% 65.40%, 43.94% 35.90%);
-  --burpees-20: polygon(60.37% 64.22%, 45.53% 74.39%, 44.07% 56.47%);
-  --burpees-21: polygon(35.23% 30.90%, 71.51% 8.05%, 73.35% 50.88%);
-  --burpees-22: polygon(48.46% 53.51%, 39.03% 31.96%, 62.42% 34.47%);
-  --burpees-23: polygon(40.83% 45.73%, 22.79% 34.74%, 41.28% 24.53%);
-  --burpees-24: polygon(63.90% 31.74%, 31.71% 6.94%, 69.21% 0.00%);
-  --burpees-25: polygon(72.56% 63.36%, 45.31% 42.45%, 76.98% 29.16%);
-  --burpees-26: polygon(57.05% 100.00%, 56.58% 81.03%, 81.31% 94.62%);
-  --burpees-27: polygon(79.25% 12.08%, 64.81% 36.30%, 50.94% 11.75%);
-  --burpees-28: polygon(36.99% 7.59%, 52.27% 23.55%, 30.83% 28.89%);
-  --burpees-29: polygon(60.46% 26.13%, 36.35% 37.86%, 38.13% 11.11%);
-  --burpees-30: polygon(23.75% 10.28%, 52.16% 3.23%, 44.18% 31.40%);
-  --burpees-31: polygon(22.96% 32.54%, 58.07% 17.09%, 54.07% 55.24%);
-  --burpees-32: polygon(82.96% 67.14%, 67.26% 100.00%, 44.80% 71.05%);
-  --burpees-33: polygon(52.04% 20.30%, 32.56% 11.00%, 50.30% 0.00%);
-  --burpees-34: polygon(60.68% 94.47%, 58.92% 76.55%, 75.35% 83.91%);
-  --burpees-35: polygon(56.76% 62.41%, 58.31% 36.68%, 79.88% 50.80%);
-  --burpees-36: polygon(63.82% 100.00%, 62.20% 83.42%, 83.92% 93.97%);
-  --burpees-37: polygon(45.12% 17.69%, 33.92% 0.00%, 55.87% 0.00%);
-  --burpees-38: polygon(51.13% 75.85%, 87.31% 73.16%, 71.69% 100.00%);
-  --burpees-39: polygon(30.48% 10.93%, 55.74% 4.42%, 48.86% 29.58%);
-  --burpees-40: polygon(84.83% 81.70%, 65.51% 99.52%, 59.63% 73.89%);
-  --burpees-41: polygon(40.03% 11.02%, 73.36% 0.00%, 66.71% 34.23%);
-  --burpees-42: polygon(62.08% 49.03%, 36.17% 46.01%, 51.65% 25.01%);
-  --burpees-43: polygon(81.30% 75.57%, 60.76% 96.35%, 52.91% 68.20%);
-  --burpees-44: polygon(43.56% 54.91%, 66.30% 71.89%, 40.27% 83.21%);
-  --mindset-0: polygon(23.47% 75.66%, 50.77% 48.50%, 60.81% 85.68%);
-  --mindset-1: polygon(86.16% 58.03%, 60.55% 86.83%, 48.25% 50.31%);
-  --mindset-2: polygon(24.66% 33.86%, 51.01% 60.85%, 14.49% 70.33%);
-  --mindset-3: polygon(87.48% 73.20%, 51.07% 87.93%, 56.34% 49.01%);
-  --mindset-4: polygon(57.44% 85.65%, 25.24% 73.04%, 52.17% 51.34%);
-  --mindset-5: polygon(17.76% 87.09%, 0.00% 95.04%, 0.33% 72.95%);
-  --mindset-6: polygon(44.91% 45.20%, 84.68% 61.72%, 50.60% 88.06%);
-  --mindset-7: polygon(30.06% 97.76%, 29.52% 62.56%, 60.34% 79.55%);
-  --mindset-8: polygon(55.54% 71.33%, 40.56% 47.37%, 68.79% 46.25%);
-  --mindset-9: polygon(57.91% 54.07%, 44.95% 93.45%, 17.19% 62.66%);
-  --mindset-10: polygon(15.38% 76.37%, 7.34% 98.29%, 0.00% 80.44%);
-  --mindset-11: polygon(24.48% 62.66%, 48.53% 33.39%, 62.01% 68.79%);
-  --mindset-12: polygon(60.01% 42.57%, 36.52% 71.05%, 23.45% 36.53%);
-  --mindset-13: polygon(58.19% 62.56%, 73.64% 48.48%, 78.20% 68.87%);
-  --mindset-14: polygon(46.60% 87.28%, 44.16% 54.13%, 74.15% 68.46%);
-  --mindset-15: polygon(38.49% 50.99%, 33.61% 71.84%, 17.93% 57.25%);
-  --mindset-16: polygon(16.32% 90.98%, 31.59% 70.16%, 42.09% 93.75%);
-  --mindset-17: polygon(33.38% 43.92%, 66.66% 26.77%, 65.04% 64.17%);
-  --mindset-18: polygon(25.88% 97.05%, 40.88% 74.24%, 53.24% 98.59%);
-  --mindset-19: polygon(72.05% 86.05%, 51.91% 75.64%, 70.94% 63.31%);
-  --mindset-20: polygon(54.02% 61.83%, 22.77% 56.30%, 43.08% 31.92%);
-  --mindset-21: polygon(26.15% 100.00%, 10.63% 74.50%, 53.07% 80.88%);
-  --mindset-22: polygon(59.15% 78.58%, 32.47% 46.90%, 73.21% 39.46%);
-  --mindset-23: polygon(65.78% 88.40%, 99.07% 62.28%, 100.00% 100.00%);
-  --mindset-24: polygon(1.07% 81.15%, 20.91% 67.33%, 23.06% 91.42%);
-  --mindset-25: polygon(20.44% 67.63%, 12.42% 100.00%, 0.00% 80.51%);
-  --mindset-26: polygon(94.61% 78.24%, 62.45% 90.41%, 67.84% 56.46%);
-  --mindset-27: polygon(57.14% 65.99%, 70.44% 96.29%, 37.53% 92.80%);
-  --mindset-28: polygon(5.90% 63.92%, 24.79% 65.11%, 14.39% 80.93%);
-  --mindset-29: polygon(41.54% 15.30%, 68.16% 49.25%, 25.47% 55.52%);
-  --mindset-30: polygon(81.50% 83.87%, 53.45% 92.40%, 59.96% 63.82%);
-  --mindset-31: polygon(64.85% 85.61%, 83.85% 83.37%, 76.37% 100.00%);
-  --mindset-32: polygon(43.15% 35.99%, 55.68% 16.74%, 66.18% 37.17%);
-  --mindset-33: polygon(72.67% 36.76%, 44.70% 49.47%, 47.55% 18.88%);
-  --mindset-34: polygon(35.57% 87.46%, 12.08% 66.17%, 42.21% 56.34%);
-  --mindset-35: polygon(39.43% 75.79%, 50.22% 57.95%, 60.36% 76.17%);
-  --mindset-36: polygon(53.42% 53.50%, 47.67% 89.84%, 18.97% 66.81%);
-  --mindset-37: polygon(64.90% 32.42%, 56.67% 52.35%, 43.44% 35.32%);
-  --mindset-38: polygon(37.42% 65.18%, 20.61% 44.57%, 46.85% 40.20%);
-  --mindset-39: polygon(85.84% 52.92%, 56.47% 74.13%, 52.63% 38.10%);
-  --mindset-40: polygon(28.46% 80.22%, 51.82% 46.23%, 69.74% 83.38%);
-  --mindset-41: polygon(60.71% 71.02%, 40.66% 90.61%, 33.60% 63.48%);
-  --mindset-42: polygon(61.32% 88.60%, 90.49% 74.48%, 88.27% 100.00%);
-  --mindset-43: polygon(34.19% 52.03%, 63.56% 30.93%, 67.31% 66.90%);
-  --mindset-44: polygon(33.67% 86.71%, 56.62% 69.97%, 59.76% 98.20%);
-  --presence-0: polygon(35.22% 19.94%, 47.97% 42.66%, 21.92% 42.46%);
-  --presence-1: polygon(80.47% 38.89%, 50.80% 58.32%, 48.66% 22.93%);
-  --presence-2: polygon(0.00% 64.07%, 4.67% 30.98%, 29.16% 54.80%);
-  --presence-3: polygon(20.46% 71.94%, 16.88% 50.14%, 37.59% 57.85%);
-  --presence-4: polygon(74.41% 87.61%, 34.42% 85.59%, 56.01% 51.88%);
-  --presence-5: polygon(98.50% 41.13%, 74.18% 62.98%, 67.28% 31.03%);
-  --presence-6: polygon(63.13% 7.79%, 50.94% 49.28%, 20.97% 18.11%);
-  --presence-7: polygon(20.39% 46.52%, 35.85% 74.51%, 3.88% 74.05%);
-  --presence-8: polygon(32.66% 24.35%, 27.31% 58.75%, 0.09% 37.04%);
-  --presence-9: polygon(72.20% 67.80%, 51.52% 74.21%, 56.22% 53.07%);
-  --presence-10: polygon(81.66% 49.36%, 60.43% 52.96%, 67.84% 32.74%);
-  --presence-11: polygon(36.23% 32.77%, 37.53% 56.48%, 16.30% 45.84%);
-  --presence-12: polygon(67.24% 37.35%, 91.03% 68.84%, 51.89% 73.87%);
-  --presence-13: polygon(84.97% 42.42%, 51.79% 36.83%, 73.10% 10.80%);
-  --presence-14: polygon(61.64% 46.36%, 85.99% 59.51%, 62.49% 74.13%);
-  --presence-15: polygon(70.19% 59.09%, 80.12% 25.16%, 100.00% 50.61%);
-  --presence-16: polygon(53.09% 63.84%, 18.35% 66.32%, 33.43% 34.93%);
-  --presence-17: polygon(51.93% 38.70%, 26.53% 36.04%, 41.44% 15.31%);
-  --presence-18: polygon(0.86% 54.20%, 6.55% 32.49%, 22.57% 48.21%);
-  --presence-19: polygon(78.24% 47.97%, 81.43% 30.18%, 95.29% 41.78%);
-  --presence-20: polygon(56.10% 64.77%, 65.28% 49.91%, 73.62% 65.25%);
-  --presence-21: polygon(57.38% 36.76%, 82.21% 18.83%, 85.46% 49.28%);
-  --presence-22: polygon(65.59% 80.04%, 45.37% 81.69%, 53.97% 63.32%);
-  --presence-23: polygon(76.50% 56.37%, 63.65% 91.09%, 39.88% 62.70%);
-  --presence-24: polygon(86.39% 63.54%, 61.94% 60.65%, 76.58% 40.85%);
-  --presence-25: polygon(57.56% 86.59%, 21.22% 84.50%, 41.07% 53.98%);
-  --presence-26: polygon(54.92% 53.57%, 38.18% 76.15%, 26.89% 50.41%);
-  --presence-27: polygon(80.41% 35.46%, 49.48% 52.49%, 50.04% 17.19%);
-  --presence-28: polygon(74.84% 22.48%, 54.83% 39.13%, 50.30% 13.50%);
-  --presence-29: polygon(72.33% 37.31%, 93.62% 30.34%, 89.11% 52.28%);
-  --presence-30: polygon(18.49% 64.66%, 8.03% 41.41%, 33.40% 43.86%);
-  --presence-31: polygon(57.11% 21.42%, 43.30% 56.60%, 19.61% 27.15%);
-  --presence-32: polygon(17.13% 60.74%, 0.00% 43.38%, 19.95% 30.87%);
-  --presence-33: polygon(68.05% 29.39%, 34.09% 50.31%, 32.78% 10.45%);
-  --presence-34: polygon(77.21% 59.51%, 75.53% 81.46%, 57.30% 69.12%);
-  --presence-35: polygon(82.37% 41.43%, 78.79% 60.65%, 63.88% 48.00%);
-  --presence-36: polygon(0.00% 47.18%, 32.79% 33.30%, 28.15% 69.39%);
-  --presence-37: polygon(69.07% 62.61%, 81.95% 29.92%, 100.00% 57.32%);
-  --presence-38: polygon(60.91% 14.56%, 50.51% 51.48%, 23.62% 24.13%);
-  --presence-39: polygon(97.66% 31.28%, 94.97% 70.28%, 62.45% 48.59%);
-  --presence-40: polygon(44.79% 49.76%, 34.69% 66.10%, 25.51% 49.23%);
-  --presence-41: polygon(31.21% 48.96%, 28.37% 82.69%, 0.49% 63.49%);
-  --presence-42: polygon(51.35% 65.24%, 19.20% 83.41%, 19.37% 46.49%);
-  --presence-43: polygon(76.81% 70.19%, 49.09% 45.89%, 83.94% 33.88%);
-  --presence-44: polygon(17.88% 17.36%, 51.33% 33.23%, 20.95% 54.40%);
-    }
+:root {
+  --start-0: polygon(50% 50%, 40% 40%, 60% 40%);
+  --start-1: polygon(50% 50%, 60% 40%, 70% 50%);
+  --start-2: polygon(50% 50%, 70% 50%, 60% 60%);
+  --start-3: polygon(50% 50%, 60% 60%, 40% 60%);
+  --start-4: polygon(50% 50%, 40% 60%, 30% 50%);
+  --start-5: polygon(50% 50%, 30% 50%, 40% 40%);
+  --start-6: polygon(40% 40%, 30% 30%, 60% 40%);
+  --start-7: polygon(60% 40%, 30% 30%, 70% 30%);
+  --start-8: polygon(60% 40%, 70% 30%, 70% 50%);
+  --start-9: polygon(70% 50%, 70% 30%, 85% 45%);
+  --start-10: polygon(70% 50%, 85% 45%, 60% 60%);
+  --start-11: polygon(60% 60%, 85% 45%, 70% 80%);
+  --start-12: polygon(60% 60%, 70% 80%, 40% 60%);
+  --start-13: polygon(40% 60%, 70% 80%, 30% 80%);
+  --start-14: polygon(40% 60%, 30% 80%, 30% 50%);
+  --start-15: polygon(30% 50%, 30% 80%, 15% 50%);
+  --start-16: polygon(30% 50%, 15% 50%, 40% 40%);
+  --start-17: polygon(40% 40%, 15% 50%, 30% 30%);
+  --start-18: polygon(30% 30%, 20% 20%, 70% 30%);
+  --start-19: polygon(70% 30%, 20% 20%, 80% 20%);
+  --start-20: polygon(70% 30%, 80% 20%, 85% 45%);
+  --start-21: polygon(85% 45%, 80% 20%, 95% 40%);
+  --start-22: polygon(85% 45%, 95% 40%, 70% 80%);
+  --start-23: polygon(70% 80%, 95% 40%, 75% 95%);
+  --start-24: polygon(70% 80%, 75% 95%, 30% 80%);
+  --start-25: polygon(30% 80%, 75% 95%, 20% 95%);
+  --start-26: polygon(30% 80%, 20% 95%, 15% 50%);
+  --start-27: polygon(15% 50%, 20% 95%, 5% 50%);
+  --start-28: polygon(15% 50%, 5% 50%, 30% 30%);
+  --start-29: polygon(30% 30%, 5% 50%, 20% 20%);
+  --flow-0: polygon(50% 50%, 45% 35%, 55% 35%);
+  --flow-1: polygon(50% 50%, 55% 35%, 60% 50%);
+  --flow-2: polygon(50% 50%, 60% 50%, 55% 65%);
+  --flow-3: polygon(50% 50%, 55% 65%, 45% 65%);
+  --flow-4: polygon(50% 50%, 45% 65%, 40% 50%);
+  --flow-5: polygon(50% 50%, 40% 50%, 45% 35%);
+  --flow-6: polygon(45% 35%, 40% 15%, 55% 35%);
+  --flow-7: polygon(55% 35%, 40% 15%, 60% 20%);
+  --flow-8: polygon(55% 35%, 60% 20%, 60% 50%);
+  --flow-9: polygon(60% 50%, 60% 20%, 75% 55%);
+  --flow-10: polygon(60% 50%, 75% 55%, 55% 65%);
+  --flow-11: polygon(55% 65%, 75% 55%, 70% 85%);
+  --flow-12: polygon(55% 65%, 70% 85%, 45% 65%);
+  --flow-13: polygon(45% 65%, 70% 85%, 40% 90%);
+  --flow-14: polygon(45% 65%, 40% 90%, 40% 50%);
+  --flow-15: polygon(40% 50%, 40% 90%, 25% 55%);
+  --flow-16: polygon(40% 50%, 25% 55%, 45% 35%);
+  --flow-17: polygon(45% 35%, 25% 55%, 40% 15%);
+  --flow-18: polygon(40% 15%, 35% 5%, 60% 20%);
+  --flow-19: polygon(60% 20%, 35% 5%, 65% 10%);
+  --flow-20: polygon(60% 20%, 65% 10%, 75% 55%);
+  --flow-21: polygon(75% 55%, 65% 10%, 90% 60%);
+  --flow-22: polygon(75% 55%, 90% 60%, 70% 85%);
+  --flow-23: polygon(70% 85%, 90% 60%, 80% 95%);
+  --flow-24: polygon(70% 85%, 80% 95%, 40% 90%);
+  --flow-25: polygon(40% 90%, 80% 95%, 30% 95%);
+  --flow-26: polygon(40% 90%, 30% 95%, 25% 55%);
+  --flow-27: polygon(25% 55%, 30% 95%, 10% 60%);
+  --flow-28: polygon(25% 55%, 10% 60%, 40% 15%);
+  --flow-29: polygon(40% 15%, 10% 60%, 35% 5%);
+  --beach-0: polygon(50% 50%, 50% 35%, 65% 50%);
+  --beach-1: polygon(50% 50%, 65% 50%, 60% 65%);
+  --beach-2: polygon(50% 50%, 60% 65%, 50% 65%);
+  --beach-3: polygon(50% 50%, 50% 65%, 35% 50%);
+  --beach-4: polygon(50% 50%, 35% 50%, 40% 35%);
+  --beach-5: polygon(50% 50%, 40% 35%, 50% 35%);
+  --beach-6: polygon(50% 35%, 50% 15%, 65% 50%);
+  --beach-7: polygon(65% 50%, 50% 15%, 85% 50%);
+  --beach-8: polygon(65% 50%, 85% 50%, 60% 65%);
+  --beach-9: polygon(60% 65%, 85% 50%, 75% 85%);
+  --beach-10: polygon(60% 65%, 75% 85%, 50% 65%);
+  --beach-11: polygon(50% 65%, 75% 85%, 50% 85%);
+  --beach-12: polygon(50% 65%, 50% 85%, 35% 50%);
+  --beach-13: polygon(35% 50%, 50% 85%, 15% 50%);
+  --beach-14: polygon(35% 50%, 15% 50%, 40% 35%);
+  --beach-15: polygon(40% 35%, 15% 50%, 25% 15%);
+  --beach-16: polygon(40% 35%, 25% 15%, 50% 35%);
+  --beach-17: polygon(50% 35%, 25% 15%, 50% 15%);
+  --beach-18: polygon(50% 15%, 50% 0%, 85% 50%);
+  --beach-19: polygon(85% 50%, 50% 0%, 100% 50%);
+  --beach-20: polygon(85% 50%, 100% 50%, 75% 85%);
+  --beach-21: polygon(75% 85%, 100% 50%, 85% 100%);
+  --beach-22: polygon(75% 85%, 85% 100%, 50% 85%);
+  --beach-23: polygon(50% 85%, 85% 100%, 50% 100%);
+  --beach-24: polygon(50% 85%, 50% 100%, 15% 50%);
+  --beach-25: polygon(15% 50%, 50% 100%, 0% 50%);
+  --beach-26: polygon(15% 50%, 0% 50%, 25% 15%);
+  --beach-27: polygon(25% 15%, 0% 50%, 15% 0%);
+  --beach-28: polygon(25% 15%, 15% 0%, 50% 15%);
+  --beach-29: polygon(50% 15%, 15% 0%, 50% 0%);
+  --battle-0: polygon(50% 50%, 45% 40%, 55% 40%);
+  --battle-1: polygon(50% 50%, 55% 40%, 60% 50%);
+  --battle-2: polygon(50% 50%, 60% 50%, 55% 60%);
+  --battle-3: polygon(50% 50%, 55% 60%, 45% 60%);
+  --battle-4: polygon(50% 50%, 45% 60%, 40% 50%);
+  --battle-5: polygon(50% 50%, 40% 50%, 45% 40%);
+  --battle-6: polygon(45% 40%, 25% 25%, 55% 40%);
+  --battle-7: polygon(55% 40%, 25% 25%, 75% 25%);
+  --battle-8: polygon(55% 40%, 75% 25%, 60% 50%);
+  --battle-9: polygon(60% 50%, 75% 25%, 75% 50%);
+  --battle-10: polygon(60% 50%, 75% 50%, 55% 60%);
+  --battle-11: polygon(55% 60%, 75% 50%, 75% 75%);
+  --battle-12: polygon(55% 60%, 75% 75%, 45% 60%);
+  --battle-13: polygon(45% 60%, 75% 75%, 25% 75%);
+  --battle-14: polygon(45% 60%, 25% 75%, 40% 50%);
+  --battle-15: polygon(40% 50%, 25% 75%, 25% 50%);
+  --battle-16: polygon(40% 50%, 25% 50%, 45% 40%);
+  --battle-17: polygon(45% 40%, 25% 50%, 25% 25%);
+  --battle-18: polygon(25% 25%, 10% 10%, 75% 25%);
+  --battle-19: polygon(75% 25%, 10% 10%, 90% 10%);
+  --battle-20: polygon(75% 25%, 90% 10%, 75% 50%);
+  --battle-21: polygon(75% 50%, 90% 10%, 90% 50%);
+  --battle-22: polygon(75% 50%, 90% 50%, 75% 75%);
+  --battle-23: polygon(75% 75%, 90% 50%, 90% 90%);
+  --battle-24: polygon(75% 75%, 90% 90%, 25% 75%);
+  --battle-25: polygon(25% 75%, 90% 90%, 10% 90%);
+  --battle-26: polygon(25% 75%, 10% 90%, 25% 50%);
+  --battle-27: polygon(25% 50%, 10% 90%, 10% 50%);
+  --battle-28: polygon(25% 50%, 10% 50%, 25% 25%);
+  --battle-29: polygon(25% 25%, 10% 50%, 10% 10%);
+  --burpees-0: polygon(50% 50%, 55% 40%, 65% 40%);
+  --burpees-1: polygon(50% 50%, 65% 40%, 55% 50%);
+  --burpees-2: polygon(50% 50%, 55% 50%, 45% 60%);
+  --burpees-3: polygon(50% 50%, 45% 60%, 35% 60%);
+  --burpees-4: polygon(50% 50%, 35% 60%, 45% 50%);
+  --burpees-5: polygon(50% 50%, 45% 50%, 55% 40%);
+  --burpees-6: polygon(55% 40%, 60% 20%, 65% 40%);
+  --burpees-7: polygon(65% 40%, 60% 20%, 80% 20%);
+  --burpees-8: polygon(65% 40%, 80% 20%, 55% 50%);
+  --burpees-9: polygon(55% 50%, 80% 20%, 60% 40%);
+  --burpees-10: polygon(55% 50%, 60% 40%, 45% 60%);
+  --burpees-11: polygon(45% 60%, 60% 40%, 40% 80%);
+  --burpees-12: polygon(45% 60%, 40% 80%, 35% 60%);
+  --burpees-13: polygon(35% 60%, 40% 80%, 20% 80%);
+  --burpees-14: polygon(35% 60%, 20% 80%, 45% 50%);
+  --burpees-15: polygon(45% 50%, 20% 80%, 40% 60%);
+  --burpees-16: polygon(45% 50%, 40% 60%, 55% 40%);
+  --burpees-17: polygon(55% 40%, 40% 60%, 60% 20%);
+  --burpees-18: polygon(60% 20%, 65% 0%, 80% 20%);
+  --burpees-19: polygon(80% 20%, 65% 0%, 95% 0%);
+  --burpees-20: polygon(80% 20%, 95% 0%, 60% 40%);
+  --burpees-21: polygon(60% 40%, 95% 0%, 70% 45%);
+  --burpees-22: polygon(60% 40%, 70% 45%, 40% 80%);
+  --burpees-23: polygon(40% 80%, 70% 45%, 35% 100%);
+  --burpees-24: polygon(40% 80%, 35% 100%, 20% 80%);
+  --burpees-25: polygon(20% 80%, 35% 100%, 5% 100%);
+  --burpees-26: polygon(20% 80%, 5% 100%, 40% 60%);
+  --burpees-27: polygon(40% 60%, 5% 100%, 30% 55%);
+  --burpees-28: polygon(40% 60%, 30% 55%, 60% 20%);
+  --burpees-29: polygon(60% 20%, 30% 55%, 65% 0%);
+  --mindset-0: polygon(50% 50%, 40% 40%, 60% 40%);
+  --mindset-1: polygon(50% 50%, 60% 40%, 70% 55%);
+  --mindset-2: polygon(50% 50%, 70% 55%, 60% 70%);
+  --mindset-3: polygon(50% 50%, 60% 70%, 40% 70%);
+  --mindset-4: polygon(50% 50%, 40% 70%, 30% 55%);
+  --mindset-5: polygon(50% 50%, 30% 55%, 40% 40%);
+  --mindset-6: polygon(40% 40%, 25% 25%, 60% 40%);
+  --mindset-7: polygon(60% 40%, 25% 25%, 75% 25%);
+  --mindset-8: polygon(60% 40%, 75% 25%, 70% 55%);
+  --mindset-9: polygon(70% 55%, 75% 25%, 85% 55%);
+  --mindset-10: polygon(70% 55%, 85% 55%, 60% 70%);
+  --mindset-11: polygon(60% 70%, 85% 55%, 75% 85%);
+  --mindset-12: polygon(60% 70%, 75% 85%, 40% 70%);
+  --mindset-13: polygon(40% 70%, 75% 85%, 25% 85%);
+  --mindset-14: polygon(40% 70%, 25% 85%, 30% 55%);
+  --mindset-15: polygon(30% 55%, 25% 85%, 15% 55%);
+  --mindset-16: polygon(30% 55%, 15% 55%, 40% 40%);
+  --mindset-17: polygon(40% 40%, 15% 55%, 25% 25%);
+  --mindset-18: polygon(25% 25%, 15% 10%, 75% 25%);
+  --mindset-19: polygon(75% 25%, 15% 10%, 85% 10%);
+  --mindset-20: polygon(75% 25%, 85% 10%, 85% 55%);
+  --mindset-21: polygon(85% 55%, 85% 10%, 95% 60%);
+  --mindset-22: polygon(85% 55%, 95% 60%, 75% 85%);
+  --mindset-23: polygon(75% 85%, 95% 60%, 80% 95%);
+  --mindset-24: polygon(75% 85%, 80% 95%, 25% 85%);
+  --mindset-25: polygon(25% 85%, 80% 95%, 20% 95%);
+  --mindset-26: polygon(25% 85%, 20% 95%, 15% 55%);
+  --mindset-27: polygon(15% 55%, 20% 95%, 5% 60%);
+  --mindset-28: polygon(15% 55%, 5% 60%, 25% 25%);
+  --mindset-29: polygon(25% 25%, 5% 60%, 15% 10%);
+  --presence-0: polygon(50% 50%, 45% 45%, 55% 45%);
+  --presence-1: polygon(50% 50%, 55% 45%, 60% 50%);
+  --presence-2: polygon(50% 50%, 60% 50%, 55% 55%);
+  --presence-3: polygon(50% 50%, 55% 55%, 45% 55%);
+  --presence-4: polygon(50% 50%, 45% 55%, 40% 50%);
+  --presence-5: polygon(50% 50%, 40% 50%, 45% 45%);
+  --presence-6: polygon(45% 45%, 30% 35%, 55% 45%);
+  --presence-7: polygon(55% 45%, 30% 35%, 70% 35%);
+  --presence-8: polygon(55% 45%, 70% 35%, 60% 50%);
+  --presence-9: polygon(60% 50%, 70% 35%, 85% 50%);
+  --presence-10: polygon(60% 50%, 85% 50%, 55% 55%);
+  --presence-11: polygon(55% 55%, 85% 50%, 70% 65%);
+  --presence-12: polygon(55% 55%, 70% 65%, 45% 55%);
+  --presence-13: polygon(45% 55%, 70% 65%, 30% 65%);
+  --presence-14: polygon(45% 55%, 30% 65%, 40% 50%);
+  --presence-15: polygon(40% 50%, 30% 65%, 15% 50%);
+  --presence-16: polygon(40% 50%, 15% 50%, 45% 45%);
+  --presence-17: polygon(45% 45%, 15% 50%, 30% 35%);
+  --presence-18: polygon(30% 35%, 10% 30%, 70% 35%);
+  --presence-19: polygon(70% 35%, 10% 30%, 90% 30%);
+  --presence-20: polygon(70% 35%, 90% 30%, 85% 50%);
+  --presence-21: polygon(85% 50%, 90% 30%, 100% 50%);
+  --presence-22: polygon(85% 50%, 100% 50%, 70% 65%);
+  --presence-23: polygon(70% 65%, 100% 50%, 90% 70%);
+  --presence-24: polygon(70% 65%, 90% 70%, 30% 65%);
+  --presence-25: polygon(30% 65%, 90% 70%, 10% 70%);
+  --presence-26: polygon(30% 65%, 10% 70%, 15% 50%);
+  --presence-27: polygon(15% 50%, 10% 70%, 0% 50%);
+  --presence-28: polygon(15% 50%, 0% 50%, 30% 35%);
+  --presence-29: polygon(30% 35%, 0% 50%, 10% 30%);
+  --shade-0: 70%;
+  --shade-1: 37%;
+  --shade-2: 31%;
+  --shade-3: 47%;
+  --shade-4: 45%;
+  --shade-5: 44%;
+  --shade-6: 38%;
+  --shade-7: 36%;
+  --shade-8: 64%;
+  --shade-9: 35%;
+  --shade-10: 67%;
+  --shade-11: 57%;
+  --shade-12: 32%;
+  --shade-13: 31%;
+  --shade-14: 35%;
+  --shade-15: 43%;
+  --shade-16: 44%;
+  --shade-17: 62%;
+  --shade-18: 68%;
+  --shade-19: 31%;
+  --shade-20: 65%;
+  --shade-21: 42%;
+  --shade-22: 64%;
+  --shade-23: 56%;
+  --shade-24: 44%;
+  --shade-25: 58%;
+  --shade-26: 67%;
+  --shade-27: 47%;
+  --shade-28: 30%;
+  --shade-29: 40%;
+}
+
     
     body {
       margin: 0; padding: 0; overflow: hidden;
@@ -335,16 +261,15 @@
 
     h1, h2, h3, .oswald { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
     
-    /* Graphic Container */
     #graphic-container {
       position: absolute; top: 50%; left: calc(50% - 200px);
       transform: translate(-50%, -50%);
-      width: 500px; height: 500px;
+      width: 450px; height: 450px;
       pointer-events: none; z-index: 10;
       transition: left 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+      filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3));
     }
     
-    /* When drawer opens, shift graphic left */
     body.drawer-open #graphic-container {
       left: calc(30%);
     }
@@ -353,338 +278,857 @@
       position: absolute; top: 0; left: 0;
       width: 100%; height: 100%;
       transition: clip-path 1.2s cubic-bezier(0.86, 0, 0.07, 1), background-color 1.2s ease;
-      opacity: 0.85; mix-blend-mode: hard-light;
+      opacity: 0.95;
     }
     
 body[data-section='0'] { background-color: #1a1a2e; }
-body[data-section='0'] .shard { background-color: #e94560; }
-body[data-section='0'] .shard-0 { clip-path: var(--start-0); }
-body[data-section='0'] .shard-1 { clip-path: var(--start-1); }
-body[data-section='0'] .shard-2 { clip-path: var(--start-2); }
-body[data-section='0'] .shard-3 { clip-path: var(--start-3); }
-body[data-section='0'] .shard-4 { clip-path: var(--start-4); }
-body[data-section='0'] .shard-5 { clip-path: var(--start-5); }
-body[data-section='0'] .shard-6 { clip-path: var(--start-6); }
-body[data-section='0'] .shard-7 { clip-path: var(--start-7); }
-body[data-section='0'] .shard-8 { clip-path: var(--start-8); }
-body[data-section='0'] .shard-9 { clip-path: var(--start-9); }
-body[data-section='0'] .shard-10 { clip-path: var(--start-10); }
-body[data-section='0'] .shard-11 { clip-path: var(--start-11); }
-body[data-section='0'] .shard-12 { clip-path: var(--start-12); }
-body[data-section='0'] .shard-13 { clip-path: var(--start-13); }
-body[data-section='0'] .shard-14 { clip-path: var(--start-14); }
-body[data-section='0'] .shard-15 { clip-path: var(--start-15); }
-body[data-section='0'] .shard-16 { clip-path: var(--start-16); }
-body[data-section='0'] .shard-17 { clip-path: var(--start-17); }
-body[data-section='0'] .shard-18 { clip-path: var(--start-18); }
-body[data-section='0'] .shard-19 { clip-path: var(--start-19); }
-body[data-section='0'] .shard-20 { clip-path: var(--start-20); }
-body[data-section='0'] .shard-21 { clip-path: var(--start-21); }
-body[data-section='0'] .shard-22 { clip-path: var(--start-22); }
-body[data-section='0'] .shard-23 { clip-path: var(--start-23); }
-body[data-section='0'] .shard-24 { clip-path: var(--start-24); }
-body[data-section='0'] .shard-25 { clip-path: var(--start-25); }
-body[data-section='0'] .shard-26 { clip-path: var(--start-26); }
-body[data-section='0'] .shard-27 { clip-path: var(--start-27); }
-body[data-section='0'] .shard-28 { clip-path: var(--start-28); }
-body[data-section='0'] .shard-29 { clip-path: var(--start-29); }
-body[data-section='0'] .shard-30 { clip-path: var(--start-30); }
-body[data-section='0'] .shard-31 { clip-path: var(--start-31); }
-body[data-section='0'] .shard-32 { clip-path: var(--start-32); }
-body[data-section='0'] .shard-33 { clip-path: var(--start-33); }
-body[data-section='0'] .shard-34 { clip-path: var(--start-34); }
-body[data-section='0'] .shard-35 { clip-path: var(--start-35); }
-body[data-section='0'] .shard-36 { clip-path: var(--start-36); }
-body[data-section='0'] .shard-37 { clip-path: var(--start-37); }
-body[data-section='0'] .shard-38 { clip-path: var(--start-38); }
-body[data-section='0'] .shard-39 { clip-path: var(--start-39); }
-body[data-section='0'] .shard-40 { clip-path: var(--start-40); }
-body[data-section='0'] .shard-41 { clip-path: var(--start-41); }
-body[data-section='0'] .shard-42 { clip-path: var(--start-42); }
-body[data-section='0'] .shard-43 { clip-path: var(--start-43); }
-body[data-section='0'] .shard-44 { clip-path: var(--start-44); }
+body[data-section='0'] .shard-0 {
+  clip-path: var(--start-0);
+  background-color: hsl(350, 80%, var(--shade-0));
+}
+body[data-section='0'] .shard-1 {
+  clip-path: var(--start-1);
+  background-color: hsl(350, 80%, var(--shade-1));
+}
+body[data-section='0'] .shard-2 {
+  clip-path: var(--start-2);
+  background-color: hsl(350, 80%, var(--shade-2));
+}
+body[data-section='0'] .shard-3 {
+  clip-path: var(--start-3);
+  background-color: hsl(350, 80%, var(--shade-3));
+}
+body[data-section='0'] .shard-4 {
+  clip-path: var(--start-4);
+  background-color: hsl(350, 80%, var(--shade-4));
+}
+body[data-section='0'] .shard-5 {
+  clip-path: var(--start-5);
+  background-color: hsl(350, 80%, var(--shade-5));
+}
+body[data-section='0'] .shard-6 {
+  clip-path: var(--start-6);
+  background-color: hsl(350, 80%, var(--shade-6));
+}
+body[data-section='0'] .shard-7 {
+  clip-path: var(--start-7);
+  background-color: hsl(350, 80%, var(--shade-7));
+}
+body[data-section='0'] .shard-8 {
+  clip-path: var(--start-8);
+  background-color: hsl(350, 80%, var(--shade-8));
+}
+body[data-section='0'] .shard-9 {
+  clip-path: var(--start-9);
+  background-color: hsl(350, 80%, var(--shade-9));
+}
+body[data-section='0'] .shard-10 {
+  clip-path: var(--start-10);
+  background-color: hsl(350, 80%, var(--shade-10));
+}
+body[data-section='0'] .shard-11 {
+  clip-path: var(--start-11);
+  background-color: hsl(350, 80%, var(--shade-11));
+}
+body[data-section='0'] .shard-12 {
+  clip-path: var(--start-12);
+  background-color: hsl(350, 80%, var(--shade-12));
+}
+body[data-section='0'] .shard-13 {
+  clip-path: var(--start-13);
+  background-color: hsl(350, 80%, var(--shade-13));
+}
+body[data-section='0'] .shard-14 {
+  clip-path: var(--start-14);
+  background-color: hsl(350, 80%, var(--shade-14));
+}
+body[data-section='0'] .shard-15 {
+  clip-path: var(--start-15);
+  background-color: hsl(350, 80%, var(--shade-15));
+}
+body[data-section='0'] .shard-16 {
+  clip-path: var(--start-16);
+  background-color: hsl(350, 80%, var(--shade-16));
+}
+body[data-section='0'] .shard-17 {
+  clip-path: var(--start-17);
+  background-color: hsl(350, 80%, var(--shade-17));
+}
+body[data-section='0'] .shard-18 {
+  clip-path: var(--start-18);
+  background-color: hsl(350, 80%, var(--shade-18));
+}
+body[data-section='0'] .shard-19 {
+  clip-path: var(--start-19);
+  background-color: hsl(350, 80%, var(--shade-19));
+}
+body[data-section='0'] .shard-20 {
+  clip-path: var(--start-20);
+  background-color: hsl(350, 80%, var(--shade-20));
+}
+body[data-section='0'] .shard-21 {
+  clip-path: var(--start-21);
+  background-color: hsl(350, 80%, var(--shade-21));
+}
+body[data-section='0'] .shard-22 {
+  clip-path: var(--start-22);
+  background-color: hsl(350, 80%, var(--shade-22));
+}
+body[data-section='0'] .shard-23 {
+  clip-path: var(--start-23);
+  background-color: hsl(350, 80%, var(--shade-23));
+}
+body[data-section='0'] .shard-24 {
+  clip-path: var(--start-24);
+  background-color: hsl(350, 80%, var(--shade-24));
+}
+body[data-section='0'] .shard-25 {
+  clip-path: var(--start-25);
+  background-color: hsl(350, 80%, var(--shade-25));
+}
+body[data-section='0'] .shard-26 {
+  clip-path: var(--start-26);
+  background-color: hsl(350, 80%, var(--shade-26));
+}
+body[data-section='0'] .shard-27 {
+  clip-path: var(--start-27);
+  background-color: hsl(350, 80%, var(--shade-27));
+}
+body[data-section='0'] .shard-28 {
+  clip-path: var(--start-28);
+  background-color: hsl(350, 80%, var(--shade-28));
+}
+body[data-section='0'] .shard-29 {
+  clip-path: var(--start-29);
+  background-color: hsl(350, 80%, var(--shade-29));
+}
 body[data-section='1'] { background-color: #16213e; }
-body[data-section='1'] .shard { background-color: #0f3460; }
-body[data-section='1'] .shard-0 { clip-path: var(--flow-0); }
-body[data-section='1'] .shard-1 { clip-path: var(--flow-1); }
-body[data-section='1'] .shard-2 { clip-path: var(--flow-2); }
-body[data-section='1'] .shard-3 { clip-path: var(--flow-3); }
-body[data-section='1'] .shard-4 { clip-path: var(--flow-4); }
-body[data-section='1'] .shard-5 { clip-path: var(--flow-5); }
-body[data-section='1'] .shard-6 { clip-path: var(--flow-6); }
-body[data-section='1'] .shard-7 { clip-path: var(--flow-7); }
-body[data-section='1'] .shard-8 { clip-path: var(--flow-8); }
-body[data-section='1'] .shard-9 { clip-path: var(--flow-9); }
-body[data-section='1'] .shard-10 { clip-path: var(--flow-10); }
-body[data-section='1'] .shard-11 { clip-path: var(--flow-11); }
-body[data-section='1'] .shard-12 { clip-path: var(--flow-12); }
-body[data-section='1'] .shard-13 { clip-path: var(--flow-13); }
-body[data-section='1'] .shard-14 { clip-path: var(--flow-14); }
-body[data-section='1'] .shard-15 { clip-path: var(--flow-15); }
-body[data-section='1'] .shard-16 { clip-path: var(--flow-16); }
-body[data-section='1'] .shard-17 { clip-path: var(--flow-17); }
-body[data-section='1'] .shard-18 { clip-path: var(--flow-18); }
-body[data-section='1'] .shard-19 { clip-path: var(--flow-19); }
-body[data-section='1'] .shard-20 { clip-path: var(--flow-20); }
-body[data-section='1'] .shard-21 { clip-path: var(--flow-21); }
-body[data-section='1'] .shard-22 { clip-path: var(--flow-22); }
-body[data-section='1'] .shard-23 { clip-path: var(--flow-23); }
-body[data-section='1'] .shard-24 { clip-path: var(--flow-24); }
-body[data-section='1'] .shard-25 { clip-path: var(--flow-25); }
-body[data-section='1'] .shard-26 { clip-path: var(--flow-26); }
-body[data-section='1'] .shard-27 { clip-path: var(--flow-27); }
-body[data-section='1'] .shard-28 { clip-path: var(--flow-28); }
-body[data-section='1'] .shard-29 { clip-path: var(--flow-29); }
-body[data-section='1'] .shard-30 { clip-path: var(--flow-30); }
-body[data-section='1'] .shard-31 { clip-path: var(--flow-31); }
-body[data-section='1'] .shard-32 { clip-path: var(--flow-32); }
-body[data-section='1'] .shard-33 { clip-path: var(--flow-33); }
-body[data-section='1'] .shard-34 { clip-path: var(--flow-34); }
-body[data-section='1'] .shard-35 { clip-path: var(--flow-35); }
-body[data-section='1'] .shard-36 { clip-path: var(--flow-36); }
-body[data-section='1'] .shard-37 { clip-path: var(--flow-37); }
-body[data-section='1'] .shard-38 { clip-path: var(--flow-38); }
-body[data-section='1'] .shard-39 { clip-path: var(--flow-39); }
-body[data-section='1'] .shard-40 { clip-path: var(--flow-40); }
-body[data-section='1'] .shard-41 { clip-path: var(--flow-41); }
-body[data-section='1'] .shard-42 { clip-path: var(--flow-42); }
-body[data-section='1'] .shard-43 { clip-path: var(--flow-43); }
-body[data-section='1'] .shard-44 { clip-path: var(--flow-44); }
+body[data-section='1'] .shard-0 {
+  clip-path: var(--flow-0);
+  background-color: hsl(210, 80%, var(--shade-0));
+}
+body[data-section='1'] .shard-1 {
+  clip-path: var(--flow-1);
+  background-color: hsl(210, 80%, var(--shade-1));
+}
+body[data-section='1'] .shard-2 {
+  clip-path: var(--flow-2);
+  background-color: hsl(210, 80%, var(--shade-2));
+}
+body[data-section='1'] .shard-3 {
+  clip-path: var(--flow-3);
+  background-color: hsl(210, 80%, var(--shade-3));
+}
+body[data-section='1'] .shard-4 {
+  clip-path: var(--flow-4);
+  background-color: hsl(210, 80%, var(--shade-4));
+}
+body[data-section='1'] .shard-5 {
+  clip-path: var(--flow-5);
+  background-color: hsl(210, 80%, var(--shade-5));
+}
+body[data-section='1'] .shard-6 {
+  clip-path: var(--flow-6);
+  background-color: hsl(210, 80%, var(--shade-6));
+}
+body[data-section='1'] .shard-7 {
+  clip-path: var(--flow-7);
+  background-color: hsl(210, 80%, var(--shade-7));
+}
+body[data-section='1'] .shard-8 {
+  clip-path: var(--flow-8);
+  background-color: hsl(210, 80%, var(--shade-8));
+}
+body[data-section='1'] .shard-9 {
+  clip-path: var(--flow-9);
+  background-color: hsl(210, 80%, var(--shade-9));
+}
+body[data-section='1'] .shard-10 {
+  clip-path: var(--flow-10);
+  background-color: hsl(210, 80%, var(--shade-10));
+}
+body[data-section='1'] .shard-11 {
+  clip-path: var(--flow-11);
+  background-color: hsl(210, 80%, var(--shade-11));
+}
+body[data-section='1'] .shard-12 {
+  clip-path: var(--flow-12);
+  background-color: hsl(210, 80%, var(--shade-12));
+}
+body[data-section='1'] .shard-13 {
+  clip-path: var(--flow-13);
+  background-color: hsl(210, 80%, var(--shade-13));
+}
+body[data-section='1'] .shard-14 {
+  clip-path: var(--flow-14);
+  background-color: hsl(210, 80%, var(--shade-14));
+}
+body[data-section='1'] .shard-15 {
+  clip-path: var(--flow-15);
+  background-color: hsl(210, 80%, var(--shade-15));
+}
+body[data-section='1'] .shard-16 {
+  clip-path: var(--flow-16);
+  background-color: hsl(210, 80%, var(--shade-16));
+}
+body[data-section='1'] .shard-17 {
+  clip-path: var(--flow-17);
+  background-color: hsl(210, 80%, var(--shade-17));
+}
+body[data-section='1'] .shard-18 {
+  clip-path: var(--flow-18);
+  background-color: hsl(210, 80%, var(--shade-18));
+}
+body[data-section='1'] .shard-19 {
+  clip-path: var(--flow-19);
+  background-color: hsl(210, 80%, var(--shade-19));
+}
+body[data-section='1'] .shard-20 {
+  clip-path: var(--flow-20);
+  background-color: hsl(210, 80%, var(--shade-20));
+}
+body[data-section='1'] .shard-21 {
+  clip-path: var(--flow-21);
+  background-color: hsl(210, 80%, var(--shade-21));
+}
+body[data-section='1'] .shard-22 {
+  clip-path: var(--flow-22);
+  background-color: hsl(210, 80%, var(--shade-22));
+}
+body[data-section='1'] .shard-23 {
+  clip-path: var(--flow-23);
+  background-color: hsl(210, 80%, var(--shade-23));
+}
+body[data-section='1'] .shard-24 {
+  clip-path: var(--flow-24);
+  background-color: hsl(210, 80%, var(--shade-24));
+}
+body[data-section='1'] .shard-25 {
+  clip-path: var(--flow-25);
+  background-color: hsl(210, 80%, var(--shade-25));
+}
+body[data-section='1'] .shard-26 {
+  clip-path: var(--flow-26);
+  background-color: hsl(210, 80%, var(--shade-26));
+}
+body[data-section='1'] .shard-27 {
+  clip-path: var(--flow-27);
+  background-color: hsl(210, 80%, var(--shade-27));
+}
+body[data-section='1'] .shard-28 {
+  clip-path: var(--flow-28);
+  background-color: hsl(210, 80%, var(--shade-28));
+}
+body[data-section='1'] .shard-29 {
+  clip-path: var(--flow-29);
+  background-color: hsl(210, 80%, var(--shade-29));
+}
 body[data-section='2'] { background-color: #f9a826; }
-body[data-section='2'] .shard { background-color: #e15f41; }
-body[data-section='2'] .shard-0 { clip-path: var(--beach-0); }
-body[data-section='2'] .shard-1 { clip-path: var(--beach-1); }
-body[data-section='2'] .shard-2 { clip-path: var(--beach-2); }
-body[data-section='2'] .shard-3 { clip-path: var(--beach-3); }
-body[data-section='2'] .shard-4 { clip-path: var(--beach-4); }
-body[data-section='2'] .shard-5 { clip-path: var(--beach-5); }
-body[data-section='2'] .shard-6 { clip-path: var(--beach-6); }
-body[data-section='2'] .shard-7 { clip-path: var(--beach-7); }
-body[data-section='2'] .shard-8 { clip-path: var(--beach-8); }
-body[data-section='2'] .shard-9 { clip-path: var(--beach-9); }
-body[data-section='2'] .shard-10 { clip-path: var(--beach-10); }
-body[data-section='2'] .shard-11 { clip-path: var(--beach-11); }
-body[data-section='2'] .shard-12 { clip-path: var(--beach-12); }
-body[data-section='2'] .shard-13 { clip-path: var(--beach-13); }
-body[data-section='2'] .shard-14 { clip-path: var(--beach-14); }
-body[data-section='2'] .shard-15 { clip-path: var(--beach-15); }
-body[data-section='2'] .shard-16 { clip-path: var(--beach-16); }
-body[data-section='2'] .shard-17 { clip-path: var(--beach-17); }
-body[data-section='2'] .shard-18 { clip-path: var(--beach-18); }
-body[data-section='2'] .shard-19 { clip-path: var(--beach-19); }
-body[data-section='2'] .shard-20 { clip-path: var(--beach-20); }
-body[data-section='2'] .shard-21 { clip-path: var(--beach-21); }
-body[data-section='2'] .shard-22 { clip-path: var(--beach-22); }
-body[data-section='2'] .shard-23 { clip-path: var(--beach-23); }
-body[data-section='2'] .shard-24 { clip-path: var(--beach-24); }
-body[data-section='2'] .shard-25 { clip-path: var(--beach-25); }
-body[data-section='2'] .shard-26 { clip-path: var(--beach-26); }
-body[data-section='2'] .shard-27 { clip-path: var(--beach-27); }
-body[data-section='2'] .shard-28 { clip-path: var(--beach-28); }
-body[data-section='2'] .shard-29 { clip-path: var(--beach-29); }
-body[data-section='2'] .shard-30 { clip-path: var(--beach-30); }
-body[data-section='2'] .shard-31 { clip-path: var(--beach-31); }
-body[data-section='2'] .shard-32 { clip-path: var(--beach-32); }
-body[data-section='2'] .shard-33 { clip-path: var(--beach-33); }
-body[data-section='2'] .shard-34 { clip-path: var(--beach-34); }
-body[data-section='2'] .shard-35 { clip-path: var(--beach-35); }
-body[data-section='2'] .shard-36 { clip-path: var(--beach-36); }
-body[data-section='2'] .shard-37 { clip-path: var(--beach-37); }
-body[data-section='2'] .shard-38 { clip-path: var(--beach-38); }
-body[data-section='2'] .shard-39 { clip-path: var(--beach-39); }
-body[data-section='2'] .shard-40 { clip-path: var(--beach-40); }
-body[data-section='2'] .shard-41 { clip-path: var(--beach-41); }
-body[data-section='2'] .shard-42 { clip-path: var(--beach-42); }
-body[data-section='2'] .shard-43 { clip-path: var(--beach-43); }
-body[data-section='2'] .shard-44 { clip-path: var(--beach-44); }
+body[data-section='2'] .shard-0 {
+  clip-path: var(--beach-0);
+  background-color: hsl(45, 90%, var(--shade-0));
+}
+body[data-section='2'] .shard-1 {
+  clip-path: var(--beach-1);
+  background-color: hsl(45, 90%, var(--shade-1));
+}
+body[data-section='2'] .shard-2 {
+  clip-path: var(--beach-2);
+  background-color: hsl(45, 90%, var(--shade-2));
+}
+body[data-section='2'] .shard-3 {
+  clip-path: var(--beach-3);
+  background-color: hsl(45, 90%, var(--shade-3));
+}
+body[data-section='2'] .shard-4 {
+  clip-path: var(--beach-4);
+  background-color: hsl(45, 90%, var(--shade-4));
+}
+body[data-section='2'] .shard-5 {
+  clip-path: var(--beach-5);
+  background-color: hsl(45, 90%, var(--shade-5));
+}
+body[data-section='2'] .shard-6 {
+  clip-path: var(--beach-6);
+  background-color: hsl(45, 90%, var(--shade-6));
+}
+body[data-section='2'] .shard-7 {
+  clip-path: var(--beach-7);
+  background-color: hsl(45, 90%, var(--shade-7));
+}
+body[data-section='2'] .shard-8 {
+  clip-path: var(--beach-8);
+  background-color: hsl(45, 90%, var(--shade-8));
+}
+body[data-section='2'] .shard-9 {
+  clip-path: var(--beach-9);
+  background-color: hsl(45, 90%, var(--shade-9));
+}
+body[data-section='2'] .shard-10 {
+  clip-path: var(--beach-10);
+  background-color: hsl(45, 90%, var(--shade-10));
+}
+body[data-section='2'] .shard-11 {
+  clip-path: var(--beach-11);
+  background-color: hsl(45, 90%, var(--shade-11));
+}
+body[data-section='2'] .shard-12 {
+  clip-path: var(--beach-12);
+  background-color: hsl(45, 90%, var(--shade-12));
+}
+body[data-section='2'] .shard-13 {
+  clip-path: var(--beach-13);
+  background-color: hsl(45, 90%, var(--shade-13));
+}
+body[data-section='2'] .shard-14 {
+  clip-path: var(--beach-14);
+  background-color: hsl(45, 90%, var(--shade-14));
+}
+body[data-section='2'] .shard-15 {
+  clip-path: var(--beach-15);
+  background-color: hsl(45, 90%, var(--shade-15));
+}
+body[data-section='2'] .shard-16 {
+  clip-path: var(--beach-16);
+  background-color: hsl(45, 90%, var(--shade-16));
+}
+body[data-section='2'] .shard-17 {
+  clip-path: var(--beach-17);
+  background-color: hsl(45, 90%, var(--shade-17));
+}
+body[data-section='2'] .shard-18 {
+  clip-path: var(--beach-18);
+  background-color: hsl(45, 90%, var(--shade-18));
+}
+body[data-section='2'] .shard-19 {
+  clip-path: var(--beach-19);
+  background-color: hsl(45, 90%, var(--shade-19));
+}
+body[data-section='2'] .shard-20 {
+  clip-path: var(--beach-20);
+  background-color: hsl(45, 90%, var(--shade-20));
+}
+body[data-section='2'] .shard-21 {
+  clip-path: var(--beach-21);
+  background-color: hsl(45, 90%, var(--shade-21));
+}
+body[data-section='2'] .shard-22 {
+  clip-path: var(--beach-22);
+  background-color: hsl(45, 90%, var(--shade-22));
+}
+body[data-section='2'] .shard-23 {
+  clip-path: var(--beach-23);
+  background-color: hsl(45, 90%, var(--shade-23));
+}
+body[data-section='2'] .shard-24 {
+  clip-path: var(--beach-24);
+  background-color: hsl(45, 90%, var(--shade-24));
+}
+body[data-section='2'] .shard-25 {
+  clip-path: var(--beach-25);
+  background-color: hsl(45, 90%, var(--shade-25));
+}
+body[data-section='2'] .shard-26 {
+  clip-path: var(--beach-26);
+  background-color: hsl(45, 90%, var(--shade-26));
+}
+body[data-section='2'] .shard-27 {
+  clip-path: var(--beach-27);
+  background-color: hsl(45, 90%, var(--shade-27));
+}
+body[data-section='2'] .shard-28 {
+  clip-path: var(--beach-28);
+  background-color: hsl(45, 90%, var(--shade-28));
+}
+body[data-section='2'] .shard-29 {
+  clip-path: var(--beach-29);
+  background-color: hsl(45, 90%, var(--shade-29));
+}
 body[data-section='3'] { background-color: #2c3e50; }
-body[data-section='3'] .shard { background-color: #e74c3c; }
-body[data-section='3'] .shard-0 { clip-path: var(--battle-0); }
-body[data-section='3'] .shard-1 { clip-path: var(--battle-1); }
-body[data-section='3'] .shard-2 { clip-path: var(--battle-2); }
-body[data-section='3'] .shard-3 { clip-path: var(--battle-3); }
-body[data-section='3'] .shard-4 { clip-path: var(--battle-4); }
-body[data-section='3'] .shard-5 { clip-path: var(--battle-5); }
-body[data-section='3'] .shard-6 { clip-path: var(--battle-6); }
-body[data-section='3'] .shard-7 { clip-path: var(--battle-7); }
-body[data-section='3'] .shard-8 { clip-path: var(--battle-8); }
-body[data-section='3'] .shard-9 { clip-path: var(--battle-9); }
-body[data-section='3'] .shard-10 { clip-path: var(--battle-10); }
-body[data-section='3'] .shard-11 { clip-path: var(--battle-11); }
-body[data-section='3'] .shard-12 { clip-path: var(--battle-12); }
-body[data-section='3'] .shard-13 { clip-path: var(--battle-13); }
-body[data-section='3'] .shard-14 { clip-path: var(--battle-14); }
-body[data-section='3'] .shard-15 { clip-path: var(--battle-15); }
-body[data-section='3'] .shard-16 { clip-path: var(--battle-16); }
-body[data-section='3'] .shard-17 { clip-path: var(--battle-17); }
-body[data-section='3'] .shard-18 { clip-path: var(--battle-18); }
-body[data-section='3'] .shard-19 { clip-path: var(--battle-19); }
-body[data-section='3'] .shard-20 { clip-path: var(--battle-20); }
-body[data-section='3'] .shard-21 { clip-path: var(--battle-21); }
-body[data-section='3'] .shard-22 { clip-path: var(--battle-22); }
-body[data-section='3'] .shard-23 { clip-path: var(--battle-23); }
-body[data-section='3'] .shard-24 { clip-path: var(--battle-24); }
-body[data-section='3'] .shard-25 { clip-path: var(--battle-25); }
-body[data-section='3'] .shard-26 { clip-path: var(--battle-26); }
-body[data-section='3'] .shard-27 { clip-path: var(--battle-27); }
-body[data-section='3'] .shard-28 { clip-path: var(--battle-28); }
-body[data-section='3'] .shard-29 { clip-path: var(--battle-29); }
-body[data-section='3'] .shard-30 { clip-path: var(--battle-30); }
-body[data-section='3'] .shard-31 { clip-path: var(--battle-31); }
-body[data-section='3'] .shard-32 { clip-path: var(--battle-32); }
-body[data-section='3'] .shard-33 { clip-path: var(--battle-33); }
-body[data-section='3'] .shard-34 { clip-path: var(--battle-34); }
-body[data-section='3'] .shard-35 { clip-path: var(--battle-35); }
-body[data-section='3'] .shard-36 { clip-path: var(--battle-36); }
-body[data-section='3'] .shard-37 { clip-path: var(--battle-37); }
-body[data-section='3'] .shard-38 { clip-path: var(--battle-38); }
-body[data-section='3'] .shard-39 { clip-path: var(--battle-39); }
-body[data-section='3'] .shard-40 { clip-path: var(--battle-40); }
-body[data-section='3'] .shard-41 { clip-path: var(--battle-41); }
-body[data-section='3'] .shard-42 { clip-path: var(--battle-42); }
-body[data-section='3'] .shard-43 { clip-path: var(--battle-43); }
-body[data-section='3'] .shard-44 { clip-path: var(--battle-44); }
+body[data-section='3'] .shard-0 {
+  clip-path: var(--battle-0);
+  background-color: hsl(280, 60%, var(--shade-0));
+}
+body[data-section='3'] .shard-1 {
+  clip-path: var(--battle-1);
+  background-color: hsl(280, 60%, var(--shade-1));
+}
+body[data-section='3'] .shard-2 {
+  clip-path: var(--battle-2);
+  background-color: hsl(280, 60%, var(--shade-2));
+}
+body[data-section='3'] .shard-3 {
+  clip-path: var(--battle-3);
+  background-color: hsl(280, 60%, var(--shade-3));
+}
+body[data-section='3'] .shard-4 {
+  clip-path: var(--battle-4);
+  background-color: hsl(280, 60%, var(--shade-4));
+}
+body[data-section='3'] .shard-5 {
+  clip-path: var(--battle-5);
+  background-color: hsl(280, 60%, var(--shade-5));
+}
+body[data-section='3'] .shard-6 {
+  clip-path: var(--battle-6);
+  background-color: hsl(280, 60%, var(--shade-6));
+}
+body[data-section='3'] .shard-7 {
+  clip-path: var(--battle-7);
+  background-color: hsl(280, 60%, var(--shade-7));
+}
+body[data-section='3'] .shard-8 {
+  clip-path: var(--battle-8);
+  background-color: hsl(280, 60%, var(--shade-8));
+}
+body[data-section='3'] .shard-9 {
+  clip-path: var(--battle-9);
+  background-color: hsl(280, 60%, var(--shade-9));
+}
+body[data-section='3'] .shard-10 {
+  clip-path: var(--battle-10);
+  background-color: hsl(280, 60%, var(--shade-10));
+}
+body[data-section='3'] .shard-11 {
+  clip-path: var(--battle-11);
+  background-color: hsl(280, 60%, var(--shade-11));
+}
+body[data-section='3'] .shard-12 {
+  clip-path: var(--battle-12);
+  background-color: hsl(280, 60%, var(--shade-12));
+}
+body[data-section='3'] .shard-13 {
+  clip-path: var(--battle-13);
+  background-color: hsl(280, 60%, var(--shade-13));
+}
+body[data-section='3'] .shard-14 {
+  clip-path: var(--battle-14);
+  background-color: hsl(280, 60%, var(--shade-14));
+}
+body[data-section='3'] .shard-15 {
+  clip-path: var(--battle-15);
+  background-color: hsl(280, 60%, var(--shade-15));
+}
+body[data-section='3'] .shard-16 {
+  clip-path: var(--battle-16);
+  background-color: hsl(280, 60%, var(--shade-16));
+}
+body[data-section='3'] .shard-17 {
+  clip-path: var(--battle-17);
+  background-color: hsl(280, 60%, var(--shade-17));
+}
+body[data-section='3'] .shard-18 {
+  clip-path: var(--battle-18);
+  background-color: hsl(280, 60%, var(--shade-18));
+}
+body[data-section='3'] .shard-19 {
+  clip-path: var(--battle-19);
+  background-color: hsl(280, 60%, var(--shade-19));
+}
+body[data-section='3'] .shard-20 {
+  clip-path: var(--battle-20);
+  background-color: hsl(280, 60%, var(--shade-20));
+}
+body[data-section='3'] .shard-21 {
+  clip-path: var(--battle-21);
+  background-color: hsl(280, 60%, var(--shade-21));
+}
+body[data-section='3'] .shard-22 {
+  clip-path: var(--battle-22);
+  background-color: hsl(280, 60%, var(--shade-22));
+}
+body[data-section='3'] .shard-23 {
+  clip-path: var(--battle-23);
+  background-color: hsl(280, 60%, var(--shade-23));
+}
+body[data-section='3'] .shard-24 {
+  clip-path: var(--battle-24);
+  background-color: hsl(280, 60%, var(--shade-24));
+}
+body[data-section='3'] .shard-25 {
+  clip-path: var(--battle-25);
+  background-color: hsl(280, 60%, var(--shade-25));
+}
+body[data-section='3'] .shard-26 {
+  clip-path: var(--battle-26);
+  background-color: hsl(280, 60%, var(--shade-26));
+}
+body[data-section='3'] .shard-27 {
+  clip-path: var(--battle-27);
+  background-color: hsl(280, 60%, var(--shade-27));
+}
+body[data-section='3'] .shard-28 {
+  clip-path: var(--battle-28);
+  background-color: hsl(280, 60%, var(--shade-28));
+}
+body[data-section='3'] .shard-29 {
+  clip-path: var(--battle-29);
+  background-color: hsl(280, 60%, var(--shade-29));
+}
 body[data-section='4'] { background-color: #c0392b; }
-body[data-section='4'] .shard { background-color: #f1c40f; }
-body[data-section='4'] .shard-0 { clip-path: var(--burpees-0); }
-body[data-section='4'] .shard-1 { clip-path: var(--burpees-1); }
-body[data-section='4'] .shard-2 { clip-path: var(--burpees-2); }
-body[data-section='4'] .shard-3 { clip-path: var(--burpees-3); }
-body[data-section='4'] .shard-4 { clip-path: var(--burpees-4); }
-body[data-section='4'] .shard-5 { clip-path: var(--burpees-5); }
-body[data-section='4'] .shard-6 { clip-path: var(--burpees-6); }
-body[data-section='4'] .shard-7 { clip-path: var(--burpees-7); }
-body[data-section='4'] .shard-8 { clip-path: var(--burpees-8); }
-body[data-section='4'] .shard-9 { clip-path: var(--burpees-9); }
-body[data-section='4'] .shard-10 { clip-path: var(--burpees-10); }
-body[data-section='4'] .shard-11 { clip-path: var(--burpees-11); }
-body[data-section='4'] .shard-12 { clip-path: var(--burpees-12); }
-body[data-section='4'] .shard-13 { clip-path: var(--burpees-13); }
-body[data-section='4'] .shard-14 { clip-path: var(--burpees-14); }
-body[data-section='4'] .shard-15 { clip-path: var(--burpees-15); }
-body[data-section='4'] .shard-16 { clip-path: var(--burpees-16); }
-body[data-section='4'] .shard-17 { clip-path: var(--burpees-17); }
-body[data-section='4'] .shard-18 { clip-path: var(--burpees-18); }
-body[data-section='4'] .shard-19 { clip-path: var(--burpees-19); }
-body[data-section='4'] .shard-20 { clip-path: var(--burpees-20); }
-body[data-section='4'] .shard-21 { clip-path: var(--burpees-21); }
-body[data-section='4'] .shard-22 { clip-path: var(--burpees-22); }
-body[data-section='4'] .shard-23 { clip-path: var(--burpees-23); }
-body[data-section='4'] .shard-24 { clip-path: var(--burpees-24); }
-body[data-section='4'] .shard-25 { clip-path: var(--burpees-25); }
-body[data-section='4'] .shard-26 { clip-path: var(--burpees-26); }
-body[data-section='4'] .shard-27 { clip-path: var(--burpees-27); }
-body[data-section='4'] .shard-28 { clip-path: var(--burpees-28); }
-body[data-section='4'] .shard-29 { clip-path: var(--burpees-29); }
-body[data-section='4'] .shard-30 { clip-path: var(--burpees-30); }
-body[data-section='4'] .shard-31 { clip-path: var(--burpees-31); }
-body[data-section='4'] .shard-32 { clip-path: var(--burpees-32); }
-body[data-section='4'] .shard-33 { clip-path: var(--burpees-33); }
-body[data-section='4'] .shard-34 { clip-path: var(--burpees-34); }
-body[data-section='4'] .shard-35 { clip-path: var(--burpees-35); }
-body[data-section='4'] .shard-36 { clip-path: var(--burpees-36); }
-body[data-section='4'] .shard-37 { clip-path: var(--burpees-37); }
-body[data-section='4'] .shard-38 { clip-path: var(--burpees-38); }
-body[data-section='4'] .shard-39 { clip-path: var(--burpees-39); }
-body[data-section='4'] .shard-40 { clip-path: var(--burpees-40); }
-body[data-section='4'] .shard-41 { clip-path: var(--burpees-41); }
-body[data-section='4'] .shard-42 { clip-path: var(--burpees-42); }
-body[data-section='4'] .shard-43 { clip-path: var(--burpees-43); }
-body[data-section='4'] .shard-44 { clip-path: var(--burpees-44); }
+body[data-section='4'] .shard-0 {
+  clip-path: var(--burpees-0);
+  background-color: hsl(15, 90%, var(--shade-0));
+}
+body[data-section='4'] .shard-1 {
+  clip-path: var(--burpees-1);
+  background-color: hsl(15, 90%, var(--shade-1));
+}
+body[data-section='4'] .shard-2 {
+  clip-path: var(--burpees-2);
+  background-color: hsl(15, 90%, var(--shade-2));
+}
+body[data-section='4'] .shard-3 {
+  clip-path: var(--burpees-3);
+  background-color: hsl(15, 90%, var(--shade-3));
+}
+body[data-section='4'] .shard-4 {
+  clip-path: var(--burpees-4);
+  background-color: hsl(15, 90%, var(--shade-4));
+}
+body[data-section='4'] .shard-5 {
+  clip-path: var(--burpees-5);
+  background-color: hsl(15, 90%, var(--shade-5));
+}
+body[data-section='4'] .shard-6 {
+  clip-path: var(--burpees-6);
+  background-color: hsl(15, 90%, var(--shade-6));
+}
+body[data-section='4'] .shard-7 {
+  clip-path: var(--burpees-7);
+  background-color: hsl(15, 90%, var(--shade-7));
+}
+body[data-section='4'] .shard-8 {
+  clip-path: var(--burpees-8);
+  background-color: hsl(15, 90%, var(--shade-8));
+}
+body[data-section='4'] .shard-9 {
+  clip-path: var(--burpees-9);
+  background-color: hsl(15, 90%, var(--shade-9));
+}
+body[data-section='4'] .shard-10 {
+  clip-path: var(--burpees-10);
+  background-color: hsl(15, 90%, var(--shade-10));
+}
+body[data-section='4'] .shard-11 {
+  clip-path: var(--burpees-11);
+  background-color: hsl(15, 90%, var(--shade-11));
+}
+body[data-section='4'] .shard-12 {
+  clip-path: var(--burpees-12);
+  background-color: hsl(15, 90%, var(--shade-12));
+}
+body[data-section='4'] .shard-13 {
+  clip-path: var(--burpees-13);
+  background-color: hsl(15, 90%, var(--shade-13));
+}
+body[data-section='4'] .shard-14 {
+  clip-path: var(--burpees-14);
+  background-color: hsl(15, 90%, var(--shade-14));
+}
+body[data-section='4'] .shard-15 {
+  clip-path: var(--burpees-15);
+  background-color: hsl(15, 90%, var(--shade-15));
+}
+body[data-section='4'] .shard-16 {
+  clip-path: var(--burpees-16);
+  background-color: hsl(15, 90%, var(--shade-16));
+}
+body[data-section='4'] .shard-17 {
+  clip-path: var(--burpees-17);
+  background-color: hsl(15, 90%, var(--shade-17));
+}
+body[data-section='4'] .shard-18 {
+  clip-path: var(--burpees-18);
+  background-color: hsl(15, 90%, var(--shade-18));
+}
+body[data-section='4'] .shard-19 {
+  clip-path: var(--burpees-19);
+  background-color: hsl(15, 90%, var(--shade-19));
+}
+body[data-section='4'] .shard-20 {
+  clip-path: var(--burpees-20);
+  background-color: hsl(15, 90%, var(--shade-20));
+}
+body[data-section='4'] .shard-21 {
+  clip-path: var(--burpees-21);
+  background-color: hsl(15, 90%, var(--shade-21));
+}
+body[data-section='4'] .shard-22 {
+  clip-path: var(--burpees-22);
+  background-color: hsl(15, 90%, var(--shade-22));
+}
+body[data-section='4'] .shard-23 {
+  clip-path: var(--burpees-23);
+  background-color: hsl(15, 90%, var(--shade-23));
+}
+body[data-section='4'] .shard-24 {
+  clip-path: var(--burpees-24);
+  background-color: hsl(15, 90%, var(--shade-24));
+}
+body[data-section='4'] .shard-25 {
+  clip-path: var(--burpees-25);
+  background-color: hsl(15, 90%, var(--shade-25));
+}
+body[data-section='4'] .shard-26 {
+  clip-path: var(--burpees-26);
+  background-color: hsl(15, 90%, var(--shade-26));
+}
+body[data-section='4'] .shard-27 {
+  clip-path: var(--burpees-27);
+  background-color: hsl(15, 90%, var(--shade-27));
+}
+body[data-section='4'] .shard-28 {
+  clip-path: var(--burpees-28);
+  background-color: hsl(15, 90%, var(--shade-28));
+}
+body[data-section='4'] .shard-29 {
+  clip-path: var(--burpees-29);
+  background-color: hsl(15, 90%, var(--shade-29));
+}
 body[data-section='5'] { background-color: #00b894; }
-body[data-section='5'] .shard { background-color: #ffeaa7; }
-body[data-section='5'] .shard-0 { clip-path: var(--mindset-0); }
-body[data-section='5'] .shard-1 { clip-path: var(--mindset-1); }
-body[data-section='5'] .shard-2 { clip-path: var(--mindset-2); }
-body[data-section='5'] .shard-3 { clip-path: var(--mindset-3); }
-body[data-section='5'] .shard-4 { clip-path: var(--mindset-4); }
-body[data-section='5'] .shard-5 { clip-path: var(--mindset-5); }
-body[data-section='5'] .shard-6 { clip-path: var(--mindset-6); }
-body[data-section='5'] .shard-7 { clip-path: var(--mindset-7); }
-body[data-section='5'] .shard-8 { clip-path: var(--mindset-8); }
-body[data-section='5'] .shard-9 { clip-path: var(--mindset-9); }
-body[data-section='5'] .shard-10 { clip-path: var(--mindset-10); }
-body[data-section='5'] .shard-11 { clip-path: var(--mindset-11); }
-body[data-section='5'] .shard-12 { clip-path: var(--mindset-12); }
-body[data-section='5'] .shard-13 { clip-path: var(--mindset-13); }
-body[data-section='5'] .shard-14 { clip-path: var(--mindset-14); }
-body[data-section='5'] .shard-15 { clip-path: var(--mindset-15); }
-body[data-section='5'] .shard-16 { clip-path: var(--mindset-16); }
-body[data-section='5'] .shard-17 { clip-path: var(--mindset-17); }
-body[data-section='5'] .shard-18 { clip-path: var(--mindset-18); }
-body[data-section='5'] .shard-19 { clip-path: var(--mindset-19); }
-body[data-section='5'] .shard-20 { clip-path: var(--mindset-20); }
-body[data-section='5'] .shard-21 { clip-path: var(--mindset-21); }
-body[data-section='5'] .shard-22 { clip-path: var(--mindset-22); }
-body[data-section='5'] .shard-23 { clip-path: var(--mindset-23); }
-body[data-section='5'] .shard-24 { clip-path: var(--mindset-24); }
-body[data-section='5'] .shard-25 { clip-path: var(--mindset-25); }
-body[data-section='5'] .shard-26 { clip-path: var(--mindset-26); }
-body[data-section='5'] .shard-27 { clip-path: var(--mindset-27); }
-body[data-section='5'] .shard-28 { clip-path: var(--mindset-28); }
-body[data-section='5'] .shard-29 { clip-path: var(--mindset-29); }
-body[data-section='5'] .shard-30 { clip-path: var(--mindset-30); }
-body[data-section='5'] .shard-31 { clip-path: var(--mindset-31); }
-body[data-section='5'] .shard-32 { clip-path: var(--mindset-32); }
-body[data-section='5'] .shard-33 { clip-path: var(--mindset-33); }
-body[data-section='5'] .shard-34 { clip-path: var(--mindset-34); }
-body[data-section='5'] .shard-35 { clip-path: var(--mindset-35); }
-body[data-section='5'] .shard-36 { clip-path: var(--mindset-36); }
-body[data-section='5'] .shard-37 { clip-path: var(--mindset-37); }
-body[data-section='5'] .shard-38 { clip-path: var(--mindset-38); }
-body[data-section='5'] .shard-39 { clip-path: var(--mindset-39); }
-body[data-section='5'] .shard-40 { clip-path: var(--mindset-40); }
-body[data-section='5'] .shard-41 { clip-path: var(--mindset-41); }
-body[data-section='5'] .shard-42 { clip-path: var(--mindset-42); }
-body[data-section='5'] .shard-43 { clip-path: var(--mindset-43); }
-body[data-section='5'] .shard-44 { clip-path: var(--mindset-44); }
+body[data-section='5'] .shard-0 {
+  clip-path: var(--mindset-0);
+  background-color: hsl(160, 70%, var(--shade-0));
+}
+body[data-section='5'] .shard-1 {
+  clip-path: var(--mindset-1);
+  background-color: hsl(160, 70%, var(--shade-1));
+}
+body[data-section='5'] .shard-2 {
+  clip-path: var(--mindset-2);
+  background-color: hsl(160, 70%, var(--shade-2));
+}
+body[data-section='5'] .shard-3 {
+  clip-path: var(--mindset-3);
+  background-color: hsl(160, 70%, var(--shade-3));
+}
+body[data-section='5'] .shard-4 {
+  clip-path: var(--mindset-4);
+  background-color: hsl(160, 70%, var(--shade-4));
+}
+body[data-section='5'] .shard-5 {
+  clip-path: var(--mindset-5);
+  background-color: hsl(160, 70%, var(--shade-5));
+}
+body[data-section='5'] .shard-6 {
+  clip-path: var(--mindset-6);
+  background-color: hsl(160, 70%, var(--shade-6));
+}
+body[data-section='5'] .shard-7 {
+  clip-path: var(--mindset-7);
+  background-color: hsl(160, 70%, var(--shade-7));
+}
+body[data-section='5'] .shard-8 {
+  clip-path: var(--mindset-8);
+  background-color: hsl(160, 70%, var(--shade-8));
+}
+body[data-section='5'] .shard-9 {
+  clip-path: var(--mindset-9);
+  background-color: hsl(160, 70%, var(--shade-9));
+}
+body[data-section='5'] .shard-10 {
+  clip-path: var(--mindset-10);
+  background-color: hsl(160, 70%, var(--shade-10));
+}
+body[data-section='5'] .shard-11 {
+  clip-path: var(--mindset-11);
+  background-color: hsl(160, 70%, var(--shade-11));
+}
+body[data-section='5'] .shard-12 {
+  clip-path: var(--mindset-12);
+  background-color: hsl(160, 70%, var(--shade-12));
+}
+body[data-section='5'] .shard-13 {
+  clip-path: var(--mindset-13);
+  background-color: hsl(160, 70%, var(--shade-13));
+}
+body[data-section='5'] .shard-14 {
+  clip-path: var(--mindset-14);
+  background-color: hsl(160, 70%, var(--shade-14));
+}
+body[data-section='5'] .shard-15 {
+  clip-path: var(--mindset-15);
+  background-color: hsl(160, 70%, var(--shade-15));
+}
+body[data-section='5'] .shard-16 {
+  clip-path: var(--mindset-16);
+  background-color: hsl(160, 70%, var(--shade-16));
+}
+body[data-section='5'] .shard-17 {
+  clip-path: var(--mindset-17);
+  background-color: hsl(160, 70%, var(--shade-17));
+}
+body[data-section='5'] .shard-18 {
+  clip-path: var(--mindset-18);
+  background-color: hsl(160, 70%, var(--shade-18));
+}
+body[data-section='5'] .shard-19 {
+  clip-path: var(--mindset-19);
+  background-color: hsl(160, 70%, var(--shade-19));
+}
+body[data-section='5'] .shard-20 {
+  clip-path: var(--mindset-20);
+  background-color: hsl(160, 70%, var(--shade-20));
+}
+body[data-section='5'] .shard-21 {
+  clip-path: var(--mindset-21);
+  background-color: hsl(160, 70%, var(--shade-21));
+}
+body[data-section='5'] .shard-22 {
+  clip-path: var(--mindset-22);
+  background-color: hsl(160, 70%, var(--shade-22));
+}
+body[data-section='5'] .shard-23 {
+  clip-path: var(--mindset-23);
+  background-color: hsl(160, 70%, var(--shade-23));
+}
+body[data-section='5'] .shard-24 {
+  clip-path: var(--mindset-24);
+  background-color: hsl(160, 70%, var(--shade-24));
+}
+body[data-section='5'] .shard-25 {
+  clip-path: var(--mindset-25);
+  background-color: hsl(160, 70%, var(--shade-25));
+}
+body[data-section='5'] .shard-26 {
+  clip-path: var(--mindset-26);
+  background-color: hsl(160, 70%, var(--shade-26));
+}
+body[data-section='5'] .shard-27 {
+  clip-path: var(--mindset-27);
+  background-color: hsl(160, 70%, var(--shade-27));
+}
+body[data-section='5'] .shard-28 {
+  clip-path: var(--mindset-28);
+  background-color: hsl(160, 70%, var(--shade-28));
+}
+body[data-section='5'] .shard-29 {
+  clip-path: var(--mindset-29);
+  background-color: hsl(160, 70%, var(--shade-29));
+}
 body[data-section='6'] { background-color: #2d3436; }
-body[data-section='6'] .shard { background-color: #00cec9; }
-body[data-section='6'] .shard-0 { clip-path: var(--presence-0); }
-body[data-section='6'] .shard-1 { clip-path: var(--presence-1); }
-body[data-section='6'] .shard-2 { clip-path: var(--presence-2); }
-body[data-section='6'] .shard-3 { clip-path: var(--presence-3); }
-body[data-section='6'] .shard-4 { clip-path: var(--presence-4); }
-body[data-section='6'] .shard-5 { clip-path: var(--presence-5); }
-body[data-section='6'] .shard-6 { clip-path: var(--presence-6); }
-body[data-section='6'] .shard-7 { clip-path: var(--presence-7); }
-body[data-section='6'] .shard-8 { clip-path: var(--presence-8); }
-body[data-section='6'] .shard-9 { clip-path: var(--presence-9); }
-body[data-section='6'] .shard-10 { clip-path: var(--presence-10); }
-body[data-section='6'] .shard-11 { clip-path: var(--presence-11); }
-body[data-section='6'] .shard-12 { clip-path: var(--presence-12); }
-body[data-section='6'] .shard-13 { clip-path: var(--presence-13); }
-body[data-section='6'] .shard-14 { clip-path: var(--presence-14); }
-body[data-section='6'] .shard-15 { clip-path: var(--presence-15); }
-body[data-section='6'] .shard-16 { clip-path: var(--presence-16); }
-body[data-section='6'] .shard-17 { clip-path: var(--presence-17); }
-body[data-section='6'] .shard-18 { clip-path: var(--presence-18); }
-body[data-section='6'] .shard-19 { clip-path: var(--presence-19); }
-body[data-section='6'] .shard-20 { clip-path: var(--presence-20); }
-body[data-section='6'] .shard-21 { clip-path: var(--presence-21); }
-body[data-section='6'] .shard-22 { clip-path: var(--presence-22); }
-body[data-section='6'] .shard-23 { clip-path: var(--presence-23); }
-body[data-section='6'] .shard-24 { clip-path: var(--presence-24); }
-body[data-section='6'] .shard-25 { clip-path: var(--presence-25); }
-body[data-section='6'] .shard-26 { clip-path: var(--presence-26); }
-body[data-section='6'] .shard-27 { clip-path: var(--presence-27); }
-body[data-section='6'] .shard-28 { clip-path: var(--presence-28); }
-body[data-section='6'] .shard-29 { clip-path: var(--presence-29); }
-body[data-section='6'] .shard-30 { clip-path: var(--presence-30); }
-body[data-section='6'] .shard-31 { clip-path: var(--presence-31); }
-body[data-section='6'] .shard-32 { clip-path: var(--presence-32); }
-body[data-section='6'] .shard-33 { clip-path: var(--presence-33); }
-body[data-section='6'] .shard-34 { clip-path: var(--presence-34); }
-body[data-section='6'] .shard-35 { clip-path: var(--presence-35); }
-body[data-section='6'] .shard-36 { clip-path: var(--presence-36); }
-body[data-section='6'] .shard-37 { clip-path: var(--presence-37); }
-body[data-section='6'] .shard-38 { clip-path: var(--presence-38); }
-body[data-section='6'] .shard-39 { clip-path: var(--presence-39); }
-body[data-section='6'] .shard-40 { clip-path: var(--presence-40); }
-body[data-section='6'] .shard-41 { clip-path: var(--presence-41); }
-body[data-section='6'] .shard-42 { clip-path: var(--presence-42); }
-body[data-section='6'] .shard-43 { clip-path: var(--presence-43); }
-body[data-section='6'] .shard-44 { clip-path: var(--presence-44); }
+body[data-section='6'] .shard-0 {
+  clip-path: var(--presence-0);
+  background-color: hsl(190, 80%, var(--shade-0));
+}
+body[data-section='6'] .shard-1 {
+  clip-path: var(--presence-1);
+  background-color: hsl(190, 80%, var(--shade-1));
+}
+body[data-section='6'] .shard-2 {
+  clip-path: var(--presence-2);
+  background-color: hsl(190, 80%, var(--shade-2));
+}
+body[data-section='6'] .shard-3 {
+  clip-path: var(--presence-3);
+  background-color: hsl(190, 80%, var(--shade-3));
+}
+body[data-section='6'] .shard-4 {
+  clip-path: var(--presence-4);
+  background-color: hsl(190, 80%, var(--shade-4));
+}
+body[data-section='6'] .shard-5 {
+  clip-path: var(--presence-5);
+  background-color: hsl(190, 80%, var(--shade-5));
+}
+body[data-section='6'] .shard-6 {
+  clip-path: var(--presence-6);
+  background-color: hsl(190, 80%, var(--shade-6));
+}
+body[data-section='6'] .shard-7 {
+  clip-path: var(--presence-7);
+  background-color: hsl(190, 80%, var(--shade-7));
+}
+body[data-section='6'] .shard-8 {
+  clip-path: var(--presence-8);
+  background-color: hsl(190, 80%, var(--shade-8));
+}
+body[data-section='6'] .shard-9 {
+  clip-path: var(--presence-9);
+  background-color: hsl(190, 80%, var(--shade-9));
+}
+body[data-section='6'] .shard-10 {
+  clip-path: var(--presence-10);
+  background-color: hsl(190, 80%, var(--shade-10));
+}
+body[data-section='6'] .shard-11 {
+  clip-path: var(--presence-11);
+  background-color: hsl(190, 80%, var(--shade-11));
+}
+body[data-section='6'] .shard-12 {
+  clip-path: var(--presence-12);
+  background-color: hsl(190, 80%, var(--shade-12));
+}
+body[data-section='6'] .shard-13 {
+  clip-path: var(--presence-13);
+  background-color: hsl(190, 80%, var(--shade-13));
+}
+body[data-section='6'] .shard-14 {
+  clip-path: var(--presence-14);
+  background-color: hsl(190, 80%, var(--shade-14));
+}
+body[data-section='6'] .shard-15 {
+  clip-path: var(--presence-15);
+  background-color: hsl(190, 80%, var(--shade-15));
+}
+body[data-section='6'] .shard-16 {
+  clip-path: var(--presence-16);
+  background-color: hsl(190, 80%, var(--shade-16));
+}
+body[data-section='6'] .shard-17 {
+  clip-path: var(--presence-17);
+  background-color: hsl(190, 80%, var(--shade-17));
+}
+body[data-section='6'] .shard-18 {
+  clip-path: var(--presence-18);
+  background-color: hsl(190, 80%, var(--shade-18));
+}
+body[data-section='6'] .shard-19 {
+  clip-path: var(--presence-19);
+  background-color: hsl(190, 80%, var(--shade-19));
+}
+body[data-section='6'] .shard-20 {
+  clip-path: var(--presence-20);
+  background-color: hsl(190, 80%, var(--shade-20));
+}
+body[data-section='6'] .shard-21 {
+  clip-path: var(--presence-21);
+  background-color: hsl(190, 80%, var(--shade-21));
+}
+body[data-section='6'] .shard-22 {
+  clip-path: var(--presence-22);
+  background-color: hsl(190, 80%, var(--shade-22));
+}
+body[data-section='6'] .shard-23 {
+  clip-path: var(--presence-23);
+  background-color: hsl(190, 80%, var(--shade-23));
+}
+body[data-section='6'] .shard-24 {
+  clip-path: var(--presence-24);
+  background-color: hsl(190, 80%, var(--shade-24));
+}
+body[data-section='6'] .shard-25 {
+  clip-path: var(--presence-25);
+  background-color: hsl(190, 80%, var(--shade-25));
+}
+body[data-section='6'] .shard-26 {
+  clip-path: var(--presence-26);
+  background-color: hsl(190, 80%, var(--shade-26));
+}
+body[data-section='6'] .shard-27 {
+  clip-path: var(--presence-27);
+  background-color: hsl(190, 80%, var(--shade-27));
+}
+body[data-section='6'] .shard-28 {
+  clip-path: var(--presence-28);
+  background-color: hsl(190, 80%, var(--shade-28));
+}
+body[data-section='6'] .shard-29 {
+  clip-path: var(--presence-29);
+  background-color: hsl(190, 80%, var(--shade-29));
+}
+
     
     /* Navigation UI */
     #ui {
@@ -798,21 +1242,7 @@ body[data-section='6'] .shard-44 { clip-path: var(--presence-44); }
     <div class="shard shard-27"></div>
     <div class="shard shard-28"></div>
     <div class="shard shard-29"></div>
-    <div class="shard shard-30"></div>
-    <div class="shard shard-31"></div>
-    <div class="shard shard-32"></div>
-    <div class="shard shard-33"></div>
-    <div class="shard shard-34"></div>
-    <div class="shard shard-35"></div>
-    <div class="shard shard-36"></div>
-    <div class="shard shard-37"></div>
-    <div class="shard shard-38"></div>
-    <div class="shard shard-39"></div>
-    <div class="shard shard-40"></div>
-    <div class="shard shard-41"></div>
-    <div class="shard shard-42"></div>
-    <div class="shard shard-43"></div>
-    <div class="shard shard-44"></div>
+
   </div>
   
   <div id="ui">
