@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<html lang="de" class="scroll-smooth bg-black text-white">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mounir Calisthenics | Editions</title>
+  <title>Mounir Calisthenics | Filmstrip Edition</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -12,156 +12,360 @@
       font-family: 'Inter', sans-serif;
       background-color: #000;
       color: #fff;
+      overflow-x: hidden;
+      /* Body height will be set dynamically via JS to allow scrolling */
     }
     h1, h2, h3, h4, .oswald {
       font-family: 'Oswald', sans-serif;
     }
     
-    /* Stop-Scroll Specifics */
-    .hero-sticky {
-      position: sticky;
+    /* Fixed container for the filmstrip */
+    #sticky-container {
+      position: fixed;
       top: 0;
+      left: 0;
+      width: 100vw;
       height: 100vh;
       overflow: hidden;
+      z-index: 10;
+    }
+
+    #filmstrip {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      width: max-content;
+      /* Start and end padding so first and last slides can be centered */
+      padding: 0 50vw; 
+      will-change: transform;
+    }
+
+    .slide {
+      position: relative;
+      width: 25vw;
+      min-width: 300px;
+      height: 60vh;
+      margin: 0 4vw;
+      flex-shrink: 0;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 1rem;
+      transform-origin: center center;
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s;
+      filter: grayscale(100%) brightness(0.5);
     }
     
-    .fade-in-section {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+    .slide:hover {
+      filter: grayscale(0%) brightness(1);
+      transform: scale(1.05);
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      will-change: transform;
+    }
+
+    .slide-title {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      right: 2rem;
+      pointer-events: none;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    }
+
+    .slide-title h3 {
+      font-size: 0.875rem;
+      letter-spacing: 0.2em;
+      color: #d1d5db;
+      margin-bottom: 0.5rem;
     }
     
-    .fade-in-section.is-visible {
-      opacity: 1;
+    .slide-title h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    /* Modal Styling */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #050505;
+      z-index: 50;
+      transform: translateY(100%);
+      transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .modal.active {
       transform: translateY(0);
+    }
+
+    .modal-close {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      z-index: 60;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 50%;
+      width: 3.5rem;
+      height: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .modal.active ~ .modal-close, .modal.active .modal-close {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-close:hover {
+      background: rgba(255,255,255,0.2);
+      transform: scale(1.1);
+    }
+
+    /* Progress bar */
+    #progress-bar {
+      position: fixed;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 250px;
+      height: 2px;
+      background: rgba(255,255,255,0.2);
+      z-index: 20;
+    }
+    #progress-fill {
+      height: 100%;
+      background: #fff;
+      width: 0%;
+      will-change: width;
+    }
+    
+    .instruction-text {
+      position: fixed;
+      bottom: 4rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    /* Hide scrollbar for modals */
+    .modal::-webkit-scrollbar {
+      width: 8px;
+    }
+    .modal::-webkit-scrollbar-track {
+      background: #000;
+    }
+    .modal::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 4px;
     }
   </style>
 </head>
-<body class="antialiased">
+<body>
 
-  <!-- Stop Scroll Hero Section -->
-  <section id="hero-scroll" class="relative w-full" style="height: 400vh;">
-    <div class="hero-sticky flex flex-col justify-center items-center bg-black">
+  <div class="instruction-text oswald">SCROLL TO EXPLORE</div>
+
+  <div id="sticky-container">
+    <div id="filmstrip">
+      <!-- Slides -->
       
-      <!-- Background Image that scales/fades -->
-      <div id="hero-img-wrapper" class="absolute inset-0 z-0 flex items-center justify-center transform origin-center transition-transform duration-75 ease-out overflow-hidden">
-        <img id="hero-img" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=2000&q=80" class="object-cover w-full h-full opacity-60 grayscale contrast-125 scale-110" alt="Calisthenics Classic">
-        <div class="absolute inset-0 bg-black/40"></div>
-      </div>
-
-      <!-- Text Layer 1 -->
-      <div id="text-layer-1" class="absolute z-10 text-center px-4 flex flex-col items-center justify-center w-full h-full pointer-events-none">
+      <!-- Intro Slide (Not clickable, just title) -->
+      <div class="slide !w-[50vw] !bg-transparent border-none grayscale-0 flex items-center justify-center flex-col text-center" style="filter:none; cursor:default;">
         <p class="text-sm md:text-lg tracking-[0.3em] uppercase text-gray-400 mb-6 font-semibold">The Ultimate Protocol</p>
-        <h1 class="text-7xl md:text-[10rem] font-bold uppercase tracking-tighter mb-4 leading-none text-white">Mounir<br>Calisthenics</h1>
-        <p class="text-xl md:text-2xl tracking-widest uppercase text-white mt-8 border-b pb-2 border-white/30">Winter 2026 Edition</p>
+        <h1 class="text-6xl md:text-[8rem] font-bold uppercase tracking-tighter mb-4 leading-none text-white oswald">Mounir<br>Calisthenics</h1>
+        <p class="text-xl md:text-2xl tracking-widest uppercase text-white mt-8 border-b pb-2 border-white/30">Winter 2026</p>
       </div>
 
-      <!-- Text Layer 2 -->
-      <div id="text-layer-2" class="absolute z-10 text-center px-4 flex flex-col items-center justify-center w-full h-full opacity-0 pointer-events-none translate-y-20">
-        <h2 class="text-6xl md:text-8xl font-bold uppercase tracking-tighter mb-6 text-white">Classic<br>Aesthetic</h2>
-        <p class="text-xl md:text-3xl text-gray-200 max-w-3xl mx-auto font-light leading-relaxed">
-          Kraft, Rhythmus und stählerne Disziplin. Dein Geist formt den Körper, wie Marmor.
-        </p>
+      <!-- Slide 1: Overview -->
+      <div class="slide" onclick="openModal('modal-1')">
+        <img src="https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&w=800&q=80" alt="Overview">
+        <div class="slide-title">
+          <h3 class="oswald">00. OVERVIEW</h3>
+          <h2 class="oswald">ARCHITECTURE OF MOVEMENT</h2>
+        </div>
       </div>
 
-      <!-- Text Layer 3 -->
-      <div id="text-layer-3" class="absolute z-10 text-center px-4 flex flex-col items-center justify-center w-full h-full opacity-0 pointer-events-none translate-y-20">
-        <h2 class="text-5xl md:text-7xl font-bold uppercase tracking-tighter text-white mb-8">Unleash the Routine</h2>
-        <div class="w-[1px] h-24 bg-white mx-auto animate-bounce mt-8"></div>
+      <!-- Slide 2: Flow -->
+      <div class="slide" onclick="openModal('modal-2')">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80" alt="Flow">
+        <div class="slide-title">
+          <h3 class="oswald">01. STAGE MEDIA</h3>
+          <h2 class="oswald">FLOW & RHYTHMUS</h2>
+        </div>
+      </div>
+
+      <!-- Slide 3: Endurance -->
+      <div class="slide" onclick="openModal('modal-3')">
+        <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=800&q=80" alt="Endurance">
+        <div class="slide-title">
+          <h3 class="oswald">02. STAGE MEDIA</h3>
+          <h2 class="oswald">ENDURANCE VIBES</h2>
+        </div>
+      </div>
+
+      <!-- Slide 4: Street Battle -->
+      <div class="slide" onclick="openModal('modal-4')">
+        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=800&q=80" alt="Street Battle">
+        <div class="slide-title">
+          <h3 class="oswald">03. STAGE MEDIA</h3>
+          <h2 class="oswald">STREET BATTLE</h2>
+        </div>
+      </div>
+
+      <!-- Slide 5: Burpees -->
+      <div class="slide" onclick="openModal('modal-5')">
+        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" alt="Burpees">
+        <div class="slide-title">
+          <h3 class="oswald">04. CORE ENGINE</h3>
+          <h2 class="oswald">BURPEES</h2>
+        </div>
+      </div>
+
+      <!-- Slide 6: Mindset -->
+      <div class="slide" onclick="openModal('modal-6')">
+        <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=800&q=80" alt="Mindset">
+        <div class="slide-title">
+          <h3 class="oswald">05. ATHLETE CORE</h3>
+          <h2 class="oswald">3 SÄULEN DER IDENTITÄT</h2>
+        </div>
+      </div>
+
+      <!-- Slide 7: Presence -->
+      <div class="slide" onclick="openModal('modal-7')">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Presence">
+        <div class="slide-title">
+          <h3 class="oswald">06. FORM</h3>
+          <h2 class="oswald">PRÄSENZ & WIRKUNG</h2>
+        </div>
+      </div>
+      
+      <!-- Outro Slide -->
+      <div class="slide !w-[40vw] !bg-transparent border-none grayscale-0 flex items-center justify-center flex-col text-center" style="filter:none; cursor:default;">
+        <h2 class="text-4xl font-bold oswald tracking-widest mb-6">MOUNIR CALISTHENICS</h2>
+        <p class="text-gray-500 tracking-widest text-sm uppercase">© 2026 Editions - The Classic Aesthetic</p>
       </div>
 
     </div>
-  </section>
+  </div>
 
-  <!-- Main Content Sections -->
-  <main class="relative z-20 bg-white text-black rounded-t-[3rem] -mt-10 overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
-    
-    <!-- Intro / Overview -->
-    <section class="py-32 px-6 max-w-7xl mx-auto fade-in-section">
+  <div id="progress-bar">
+    <div id="progress-fill"></div>
+  </div>
+
+  <!-- MODALS -->
+
+  <!-- Modal Close Button -->
+  <div class="modal-close" onclick="closeModal()">
+    <i data-lucide="x" class="text-white w-8 h-8"></i>
+  </div>
+
+  <!-- Modal 1: Overview -->
+  <div id="modal-1" class="modal">
+    <div class="min-h-screen py-32 px-6 max-w-7xl mx-auto flex flex-col justify-center">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <div>
           <h3 class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">00. OVERVIEW</h3>
-          <h2 class="text-5xl md:text-7xl font-bold mb-8 tracking-tighter leading-none">THE<br>ARCHITECTURE<br>OF MOVEMENT</h2>
-          <p class="text-xl text-gray-600 leading-relaxed mb-8">
+          <h2 class="text-5xl md:text-7xl font-bold mb-8 tracking-tighter leading-none oswald">THE<br>ARCHITECTURE<br>OF MOVEMENT</h2>
+          <p class="text-xl text-gray-400 leading-relaxed mb-8">
             Das Mounir-Protokoll ist kein gewöhnliches Workout. Es ist eine Synergie aus Rhythmus, Ausdauer und Straßenkampf-Mentalität. Entwickelt für die, die keine Ausreden kennen.
           </p>
-          <a href="#burpees" class="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full font-bold oswald tracking-widest hover:bg-gray-800 transition-colors">
+          <button onclick="closeModal(); setTimeout(() => openModal('modal-5'), 800)" class="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold oswald tracking-widest hover:bg-gray-200 transition-colors">
             START PROTOCOL <i data-lucide="arrow-right"></i>
-          </a>
+          </button>
         </div>
         <div class="relative">
           <img src="https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&w=800&q=80" class="rounded-2xl grayscale contrast-125 w-full h-auto" alt="Architecture of movement">
-          <div class="absolute -bottom-8 -left-8 bg-black text-white p-8 rounded-xl shadow-2xl">
+          <div class="absolute -bottom-8 -left-8 bg-white text-black p-8 rounded-xl shadow-2xl">
             <div class="text-4xl font-bold oswald">100%</div>
-            <div class="text-sm tracking-widest uppercase text-gray-400">Bodyweight</div>
+            <div class="text-sm tracking-widest uppercase text-gray-600">Bodyweight</div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- 01. Flow -->
-    <section class="py-32 px-6 bg-gray-50 border-t border-gray-100 fade-in-section">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <h3 class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">01. STAGE MEDIA</h3>
-          <h2 class="text-5xl md:text-7xl font-bold tracking-tighter">FLOW & RHYTHMUS</h2>
-          <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">Koordination und fließende Bewegung. Das Fundament der Kontrolle.</p>
-        </div>
-        
-        <div class="aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl max-w-5xl mx-auto group relative">
-          <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/g9FJhH9dOeU?rel=0&controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="relative z-10"></iframe>
-        </div>
-        <p class="text-sm text-gray-400 mt-6 uppercase tracking-widest text-center">Mike Song • It Runs Through Me</p>
+  <!-- Modal 2: Flow -->
+  <div id="modal-2" class="modal">
+    <div class="min-h-screen py-32 px-6 max-w-7xl mx-auto flex flex-col justify-center">
+      <div class="text-center mb-16">
+        <h3 class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">01. STAGE MEDIA</h3>
+        <h2 class="text-5xl md:text-7xl font-bold tracking-tighter oswald">FLOW & RHYTHMUS</h2>
+        <p class="text-lg text-gray-400 mt-6 max-w-2xl mx-auto">Koordination und fließende Bewegung. Das Fundament der Kontrolle.</p>
       </div>
-    </section>
-
-    <!-- 02. Endurance -->
-    <section class="py-32 px-6 bg-white fade-in-section">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <h3 class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">02. STAGE MEDIA</h3>
-          <h2 class="text-5xl md:text-7xl font-bold tracking-tighter">ENDURANCE VIBES</h2>
-          <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">Leichtigkeit bei maximaler Ausdauer. Der Beat hält dich im Rhythmus.</p>
-        </div>
-        
-        <div class="aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl max-w-5xl mx-auto">
-          <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/ja2dGXXmFV4?rel=0&controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <p class="text-sm text-gray-400 mt-6 uppercase tracking-widest text-center">Chris Luno • Beach House</p>
+      <div class="aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl max-w-5xl mx-auto w-full border border-gray-800">
+        <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/g9FJhH9dOeU?rel=0&controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-    </section>
+      <p class="text-sm text-gray-500 mt-6 uppercase tracking-widest text-center">Mike Song • It Runs Through Me</p>
+    </div>
+  </div>
 
-    <!-- 03. Battle -->
-    <section class="py-32 px-6 bg-black text-white fade-in-section">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <h3 class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">03. STAGE MEDIA</h3>
-          <h2 class="text-5xl md:text-7xl font-bold tracking-tighter">STREET BATTLE</h2>
-          <p class="text-lg text-gray-400 mt-6 max-w-2xl mx-auto">Die Essenz von reinem Calisthenics. Unerbittlicher Wettkampfgeist.</p>
-        </div>
-        
-        <div class="aspect-video bg-gray-900 rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(255,255,255,0.1)] max-w-5xl mx-auto border border-gray-800">
-          <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/UMYm2cBjZIY?rel=0&controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <p class="text-sm text-gray-500 mt-6 uppercase tracking-widest text-center">NYC Street Workout Showdown</p>
+  <!-- Modal 3: Endurance -->
+  <div id="modal-3" class="modal">
+    <div class="min-h-screen py-32 px-6 max-w-7xl mx-auto flex flex-col justify-center">
+      <div class="text-center mb-16">
+        <h3 class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">02. STAGE MEDIA</h3>
+        <h2 class="text-5xl md:text-7xl font-bold tracking-tighter oswald">ENDURANCE VIBES</h2>
+        <p class="text-lg text-gray-400 mt-6 max-w-2xl mx-auto">Leichtigkeit bei maximaler Ausdauer. Der Beat hält dich im Rhythmus.</p>
       </div>
-    </section>
+      <div class="aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl max-w-5xl mx-auto w-full border border-gray-800">
+        <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/ja2dGXXmFV4?rel=0&controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="text-sm text-gray-500 mt-6 uppercase tracking-widest text-center">Chris Luno • Beach House</p>
+    </div>
+  </div>
 
-    <!-- 04. Burpees Engine -->
-    <section id="burpees" class="py-32 px-6 bg-white fade-in-section relative overflow-hidden">
-      <!-- Decorative background text -->
-      <div class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none overflow-hidden whitespace-nowrap">
+  <!-- Modal 4: Street Battle -->
+  <div id="modal-4" class="modal">
+    <div class="min-h-screen py-32 px-6 max-w-7xl mx-auto flex flex-col justify-center">
+      <div class="text-center mb-16">
+        <h3 class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">03. STAGE MEDIA</h3>
+        <h2 class="text-5xl md:text-7xl font-bold tracking-tighter oswald">STREET BATTLE</h2>
+        <p class="text-lg text-gray-400 mt-6 max-w-2xl mx-auto">Die Essenz von reinem Calisthenics. Unerbittlicher Wettkampfgeist.</p>
+      </div>
+      <div class="aspect-video bg-gray-900 rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(255,255,255,0.1)] max-w-5xl mx-auto w-full border border-gray-800">
+        <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/UMYm2cBjZIY?rel=0&controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="text-sm text-gray-500 mt-6 uppercase tracking-widest text-center">NYC Street Workout Showdown</p>
+    </div>
+  </div>
+
+  <!-- Modal 5: Burpees Engine -->
+  <div id="modal-5" class="modal">
+    <div class="min-h-screen py-32 px-6 flex flex-col justify-center relative overflow-hidden">
+      <div class="absolute inset-0 flex items-center justify-center opacity-[0.02] pointer-events-none select-none overflow-hidden whitespace-nowrap">
         <span class="text-[30rem] font-bold oswald leading-none">ENGINE</span>
       </div>
 
-      <div class="max-w-5xl mx-auto relative z-10">
+      <div class="max-w-5xl mx-auto w-full relative z-10">
         <div class="text-center mb-16">
           <h3 class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">04. CORE ENGINE</h3>
-          <h2 class="text-6xl md:text-8xl font-bold tracking-tighter mb-4">BURPEES</h2>
-          <p class="text-2xl font-bold oswald tracking-widest border border-black inline-block px-6 py-2 rounded-full">8 RUNDEN × 30 SEKUNDEN</p>
+          <h2 class="text-6xl md:text-8xl font-bold tracking-tighter mb-4 oswald">BURPEES</h2>
+          <p class="text-2xl font-bold oswald tracking-widest border border-white inline-block px-6 py-2 rounded-full">8 RUNDEN × 30 SEKUNDEN</p>
         </div>
         
-        <div class="bg-black text-white rounded-[3rem] p-8 md:p-16 shadow-2xl">
+        <div class="bg-gray-900 text-white rounded-[3rem] p-8 md:p-16 shadow-2xl border border-gray-800">
           <div class="flex justify-between items-center mb-12 oswald text-gray-400 tracking-widest text-xl">
             <span id="timerStatus" class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-white animate-pulse"></div> READY</span>
             <span id="roundDisplay" class="border border-gray-700 px-4 py-1 rounded-full">ROUND 1/8</span>
@@ -173,195 +377,229 @@
              </div>
           </div>
           
-          <div class="w-full bg-gray-800 h-2 md:h-4 mb-12 rounded-full overflow-hidden">
+          <div class="w-full bg-black h-2 md:h-4 mb-12 rounded-full overflow-hidden border border-gray-800">
             <div id="timerProgress" class="h-full bg-white w-full transition-all duration-300"></div>
           </div>
           
           <div class="flex flex-col md:flex-row justify-center gap-6">
             <button id="startTimerBtn" onclick="toggleTimer()" class="bg-white text-black px-12 py-5 rounded-full font-bold text-xl oswald tracking-widest hover:bg-gray-200 transition-colors flex-1 md:flex-none">START ENGINE</button>
-            <button onclick="resetTimer()" class="bg-gray-800 text-white px-8 py-5 rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"><i data-lucide="rotate-ccw"></i></button>
+            <button onclick="resetTimer()" class="bg-black border border-gray-700 text-white px-8 py-5 rounded-full hover:bg-gray-800 transition-colors flex items-center justify-center"><i data-lucide="rotate-ccw"></i></button>
           </div>
         </div>
 
         <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-          <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-2xl">
-            <i data-lucide="check-circle" class="w-8 h-8 text-black shrink-0"></i>
+          <div class="flex items-start gap-4 p-6 bg-gray-900 rounded-2xl border border-gray-800">
+            <i data-lucide="check-circle" class="w-8 h-8 text-white shrink-0"></i>
             <div>
-              <h4 class="font-bold oswald text-xl mb-1">Brust zum Boden</h4>
-              <p class="text-gray-600">Keine halben Sachen. Der Körper berührt vollständig den Untergrund.</p>
+              <h4 class="font-bold oswald text-xl mb-1 text-white">Brust zum Boden</h4>
+              <p class="text-gray-400">Keine halben Sachen. Der Körper berührt vollständig den Untergrund.</p>
             </div>
           </div>
-          <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-2xl">
-            <i data-lucide="check-circle" class="w-8 h-8 text-black shrink-0"></i>
+          <div class="flex items-start gap-4 p-6 bg-gray-900 rounded-2xl border border-gray-800">
+            <i data-lucide="check-circle" class="w-8 h-8 text-white shrink-0"></i>
             <div>
-              <h4 class="font-bold oswald text-xl mb-1">Volle Streckung</h4>
-              <p class="text-gray-600">Explosiver Sprung nach oben, Hände hinter dem Kopf zusammen.</p>
+              <h4 class="font-bold oswald text-xl mb-1 text-white">Volle Streckung</h4>
+              <p class="text-gray-400">Explosiver Sprung nach oben, Hände hinter dem Kopf zusammen.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- 05. Mindset -->
-    <section class="py-32 px-6 bg-gray-100 fade-in-section">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+  <!-- Modal 6: Mindset -->
+  <div id="modal-6" class="modal">
+    <div class="min-h-screen py-32 px-6 max-w-7xl mx-auto flex flex-col justify-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
-          <h3 class="text-sm font-bold tracking-widest text-gray-500 mb-4 oswald">05. ATHLETE CORE</h3>
-          <h2 class="text-5xl md:text-7xl font-bold tracking-tighter mb-12">DIE 3 SÄULEN<br>DER IDENTITÄT</h2>
+          <h3 class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">05. ATHLETE CORE</h3>
+          <h2 class="text-5xl md:text-7xl font-bold tracking-tighter mb-12 oswald">DIE 3 SÄULEN<br>DER IDENTITÄT</h2>
           
           <div class="space-y-6">
-            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 transition-transform hover:-translate-y-1">
-              <h3 class="text-3xl font-bold mb-3 oswald flex items-center gap-4"><span class="text-gray-300">01</span> Disziplin & Fokus</h3>
-              <p class="text-gray-600 text-lg">Kein Zaudern, keine Ausreden. Dein Geist lenkt deinen Körper. Jeder Moment gehört deinem Ziel.</p>
+            <div class="bg-gray-900 p-8 rounded-3xl shadow-sm border border-gray-800 transition-transform hover:-translate-y-1">
+              <h3 class="text-3xl font-bold mb-3 oswald flex items-center gap-4 text-white"><span class="text-gray-600">01</span> Disziplin & Fokus</h3>
+              <p class="text-gray-400 text-lg">Kein Zaudern, keine Ausreden. Dein Geist lenkt deinen Körper. Jeder Moment gehört deinem Ziel.</p>
             </div>
             
-            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 transition-transform hover:-translate-y-1">
-              <h3 class="text-3xl font-bold mb-3 oswald flex items-center gap-4"><span class="text-gray-300">02</span> Körperspannung</h3>
-              <p class="text-gray-600 text-lg">Jede Wiederholung in perfekter Ausführung. Calisthenics-Kontrolle von den Fingerspitzen bis zu den Zehen.</p>
+            <div class="bg-gray-900 p-8 rounded-3xl shadow-sm border border-gray-800 transition-transform hover:-translate-y-1">
+              <h3 class="text-3xl font-bold mb-3 oswald flex items-center gap-4 text-white"><span class="text-gray-600">02</span> Körperspannung</h3>
+              <p class="text-gray-400 text-lg">Jede Wiederholung in perfekter Ausführung. Calisthenics-Kontrolle von den Fingerspitzen bis zu den Zehen.</p>
             </div>
             
-            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 transition-transform hover:-translate-y-1">
-              <h3 class="text-3xl font-bold mb-3 oswald flex items-center gap-4"><span class="text-gray-300">03</span> Unaufhaltsamer Wille</h3>
-              <p class="text-gray-600 text-lg">Wenn die Muskeln brennen, fängt der Satz erst an. Ein wahrer Athlet gibt niemals auf.</p>
+            <div class="bg-gray-900 p-8 rounded-3xl shadow-sm border border-gray-800 transition-transform hover:-translate-y-1">
+              <h3 class="text-3xl font-bold mb-3 oswald flex items-center gap-4 text-white"><span class="text-gray-600">03</span> Unaufhaltsamer Wille</h3>
+              <p class="text-gray-400 text-lg">Wenn die Muskeln brennen, fängt der Satz erst an. Ein wahrer Athlet gibt niemals auf.</p>
             </div>
           </div>
           
-          <button onclick="speakAllPillars()" class="mt-12 bg-black text-white px-8 py-5 rounded-full font-bold oswald tracking-widest hover:bg-gray-800 transition-colors flex items-center gap-3 w-full md:w-auto justify-center">
+          <button onclick="speakAllPillars()" class="mt-12 bg-white text-black px-8 py-5 rounded-full font-bold oswald tracking-widest hover:bg-gray-200 transition-colors flex items-center gap-3 w-full md:w-auto justify-center">
             <i data-lucide="volume-2"></i> ALLE 3 LAUT AUFSAGEN
           </button>
         </div>
-        <div class="h-full">
-          <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1000&q=80" alt="Mindset" class="w-full h-full object-cover rounded-3xl grayscale contrast-125 min-h-[500px]">
+        <div class="h-full hidden lg:block">
+          <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=1000&q=80" alt="Mindset" class="w-full h-full object-cover rounded-3xl grayscale contrast-125 min-h-[500px]">
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- 06. Presence -->
-    <section class="py-32 px-6 bg-white fade-in-section">
-      <div class="max-w-5xl mx-auto text-center">
-        <h3 class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">06. FORM</h3>
-        <h2 class="text-5xl md:text-7xl font-bold tracking-tighter mb-12">PRÄSENZ & WIRKUNG</h2>
-        <div class="aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl mb-12 relative group">
-          <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/sBRbMvTlUok?rel=0&controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="relative z-10"></iframe>
+  <!-- Modal 7: Form -->
+  <div id="modal-7" class="modal">
+    <div class="min-h-screen py-32 px-6 max-w-5xl mx-auto flex flex-col justify-center text-center">
+      <h3 class="text-sm font-bold tracking-widest text-gray-400 mb-4 oswald">06. FORM</h3>
+      <h2 class="text-5xl md:text-7xl font-bold tracking-tighter mb-12 oswald">PRÄSENZ & WIRKUNG</h2>
+      <div class="aspect-video bg-gray-900 rounded-3xl overflow-hidden shadow-2xl mb-12 relative w-full border border-gray-800">
+        <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/sBRbMvTlUok?rel=0&controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+        <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800">
+          <i data-lucide="scan" class="w-10 h-10 mb-6 text-white"></i>
+          <h4 class="text-xl font-bold oswald mb-3 text-white">Aufrechte Haltung</h4>
+          <p class="text-gray-400">Offene Brust, Schultern zurück. Die physische Manifestation von Selbstbewusstsein.</p>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-          <div class="p-8 bg-gray-50 rounded-2xl">
-            <i data-lucide="scan" class="w-10 h-10 mb-6 text-black"></i>
-            <h4 class="text-xl font-bold oswald mb-3">Aufrechte Haltung</h4>
-            <p class="text-gray-600">Offene Brust, Schultern zurück. Die physische Manifestation von Selbstbewusstsein.</p>
-          </div>
-          <div class="p-8 bg-gray-50 rounded-2xl">
-            <i data-lucide="eye" class="w-10 h-10 mb-6 text-black"></i>
-            <h4 class="text-xl font-bold oswald mb-3">Ruhiger Blickkontakt</h4>
-            <p class="text-gray-600">Fokus nach außen, unerschütterlich von Ablenkungen.</p>
-          </div>
-          <div class="p-8 bg-gray-50 rounded-2xl">
-            <i data-lucide="hand" class="w-10 h-10 mb-6 text-black"></i>
-            <h4 class="text-xl font-bold oswald mb-3">Souveräne Gestik</h4>
-            <p class="text-gray-600">Präzise, bewusste Bewegungen. Keine Hektik, reine Kontrolle.</p>
-          </div>
+        <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800">
+          <i data-lucide="eye" class="w-10 h-10 mb-6 text-white"></i>
+          <h4 class="text-xl font-bold oswald mb-3 text-white">Ruhiger Blickkontakt</h4>
+          <p class="text-gray-400">Fokus nach außen, unerschütterlich von Ablenkungen.</p>
+        </div>
+        <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800">
+          <i data-lucide="hand" class="w-10 h-10 mb-6 text-white"></i>
+          <h4 class="text-xl font-bold oswald mb-3 text-white">Souveräne Gestik</h4>
+          <p class="text-gray-400">Präzise, bewusste Bewegungen. Keine Hektik, reine Kontrolle.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <footer class="bg-black text-white py-16 text-center border-t border-gray-900">
-      <h2 class="text-4xl font-bold oswald tracking-widest mb-6">MOUNIR CALISTHENICS</h2>
-      <p class="text-gray-500 tracking-widest text-sm uppercase">© 2026 Editions - The Classic Aesthetic</p>
-    </footer>
-
-  </main>
 
   <script>
     lucide.createIcons();
 
-    // Intersection Observer for scroll fade-ins
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-        }
-      });
-    }, { threshold: 0.1 });
+    // Horizontal Scroll Logic
+    const stickyContainer = document.getElementById('sticky-container');
+    const filmstrip = document.getElementById('filmstrip');
+    const progressFill = document.getElementById('progress-fill');
     
-    document.querySelectorAll('.fade-in-section').forEach(section => {
-      observer.observe(section);
+    function updateBodyHeight() {
+      const filmstripWidth = filmstrip.scrollWidth;
+      const windowWidth = window.innerWidth;
+      const scrollableDistance = filmstripWidth - windowWidth;
+      document.body.style.height = `${scrollableDistance + window.innerHeight}px`;
+    }
+
+    window.addEventListener('resize', updateBodyHeight);
+    updateBodyHeight();
+    setTimeout(updateBodyHeight, 100); 
+    setTimeout(updateBodyHeight, 500); // safety for lazy load
+
+    // Smooth scroll interpolation variables
+    let currentScrollY = window.scrollY;
+    let targetScrollY = window.scrollY;
+    let isModalOpen = false;
+
+    // Linear interpolation function for smoothness
+    function lerp(start, end, factor) {
+      return start + (end - start) * factor;
+    }
+
+    // Animation loop
+    function animate() {
+      if (!isModalOpen) {
+        // Update target from actual scroll
+        targetScrollY = window.scrollY;
+      }
+      
+      // Interpolate current scroll towards target (smoothness factor 0.08)
+      currentScrollY = lerp(currentScrollY, targetScrollY, 0.08);
+      
+      // Calculate max scroll
+      const maxScroll = Math.max(0, document.body.scrollHeight - window.innerHeight);
+      
+      if (maxScroll > 0) {
+        // Calculate progress (0 to 1)
+        const progress = Math.max(0, Math.min(1, currentScrollY / maxScroll));
+        
+        // Translate filmstrip
+        const filmstripScrollable = filmstrip.scrollWidth - window.innerWidth;
+        const translateX = -(progress * filmstripScrollable);
+        
+        // Apply transform
+        filmstrip.style.transform = `translate3d(${translateX}px, 0, 0)`;
+        
+        // Update progress bar
+        progressFill.style.width = `${progress * 100}%`;
+        
+        // Parallax effect on images inside slides
+        const slides = document.querySelectorAll('.slide');
+        slides.forEach(slide => {
+          const img = slide.querySelector('img');
+          if (img) {
+            const rect = slide.getBoundingClientRect();
+            const slideCenter = rect.left + rect.width / 2;
+            const windowCenter = window.innerWidth / 2;
+            const offsetFromCenter = slideCenter - windowCenter;
+            
+            // Map offset to a parallax translation (-20% to 20%)
+            const parallaxOffset = (offsetFromCenter / window.innerWidth) * 20;
+            img.style.transform = `scale(1.2) translateX(${parallaxOffset}%)`;
+          }
+        });
+      }
+
+      requestAnimationFrame(animate);
+    }
+    
+    // Start animation loop
+    animate();
+
+    // Modal Logic
+    function openModal(id) {
+      isModalOpen = true;
+      document.body.style.overflow = 'hidden'; // Prevent main scrolling
+      
+      // Pause YouTube videos in other modals if any
+      document.querySelectorAll('.modal iframe').forEach(iframe => {
+        const src = iframe.src;
+        iframe.src = src; 
+      });
+
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.add('active');
+        // Reset scroll position within modal
+        modal.scrollTop = 0;
+      }
+    }
+
+    function closeModal() {
+      isModalOpen = false;
+      document.body.style.overflow = ''; // Restore scrolling
+      
+      document.querySelectorAll('.modal').forEach(modal => {
+        modal.classList.remove('active');
+      });
+      
+      // Stop all youtube videos
+      document.querySelectorAll('.modal iframe').forEach(iframe => {
+        const src = iframe.src;
+        iframe.src = src; 
+      });
+      
+      // Pause timer if running
+      if(isRunning) {
+        toggleTimer();
+      }
+    }
+
+    // Escape key to close modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isModalOpen) {
+        closeModal();
+      }
     });
 
-    // Stop-Scroll Animation Logic for Hero Section
-    window.addEventListener('scroll', () => {
-      const scrollSection = document.getElementById('hero-scroll');
-      const rect = scrollSection.getBoundingClientRect();
-      
-      // Calculate progress from 0 to 1
-      let progress = 0;
-      if (rect.top <= 0) {
-        const totalScroll = scrollSection.offsetHeight - window.innerHeight;
-        progress = Math.abs(rect.top) / totalScroll;
-      }
-      progress = Math.max(0, Math.min(1, progress));
-
-      const imgWrapper = document.getElementById('hero-img-wrapper');
-      const innerImg = document.getElementById('hero-img');
-      const text1 = document.getElementById('text-layer-1');
-      const text2 = document.getElementById('text-layer-2');
-      const text3 = document.getElementById('text-layer-3');
-
-      // 1. Image shrinks and gets rounded corners
-      // Progress 0 to 0.4: scale down
-      const scaleAmount = Math.max(0.7, 1 - (progress * 0.6));
-      const borderRadius = Math.min(48, progress * 100); 
-      
-      // Add slight parallax to image inside wrapper
-      const innerScale = 1.1 + (progress * 0.15);
-      innerImg.style.transform = "scale(" + innerScale + ")";
-      
-      if (progress < 1) {
-        imgWrapper.style.transform = "scale(" + scaleAmount + ")";
-        imgWrapper.style.borderRadius = borderRadius + "px";
-      }
-
-      // 2. Text Layer 1: Fades out quickly (0 to 0.2)
-      if(progress < 0.2) {
-        const p1 = progress / 0.2;
-        text1.style.opacity = 1 - p1;
-        text1.style.transform = "translateY(" + (p1 * -50) + "px)";
-      } else {
-        text1.style.opacity = 0;
-      }
-
-      // 3. Text Layer 2: Fades in (0.2 to 0.4), stays, fades out (0.6 to 0.8)
-      if (progress > 0.2 && progress < 0.8) {
-        let p2 = 0;
-        if (progress <= 0.4) {
-          p2 = (progress - 0.2) / 0.2; // 0 to 1
-          text2.style.transform = "translateY(" + ((1-p2)*50) + "px)";
-        } else if (progress >= 0.6) {
-          p2 = 1 - ((progress - 0.6) / 0.2); // 1 to 0
-          text2.style.transform = "translateY(" + ((1-p2) * -50) + "px)";
-        } else {
-          p2 = 1;
-          text2.style.transform = "translateY(0px)";
-        }
-        text2.style.opacity = p2;
-      } else {
-        text2.style.opacity = 0;
-      }
-
-      // 4. Text Layer 3: Fades in (0.8 to 1.0)
-      if (progress >= 0.8) {
-        const p3 = (progress - 0.8) / 0.2;
-        text3.style.opacity = p3;
-        text3.style.transform = "translateY(" + ((1-p3) * 50) + "px) scale(" + (0.9 + p3*0.1) + ")";
-      } else {
-        text3.style.opacity = 0;
-      }
-    });
-
-    // Initial Trigger for the scroll handler so it paints correctly before user scrolls
-    window.dispatchEvent(new Event('scroll'));
-
-    // Burpee Timer Logic
+    // --- Timer Logic ---
     const TOTAL_ROUNDS = 8;
     const WORK_SECONDS = 30;
     const REST_SECONDS = 15;
@@ -397,9 +635,9 @@
         timerProgress.style.backgroundColor = "white";
         document.getElementById('timeRemaining').style.color = "white";
       } else {
-        timerStatus.innerHTML = '<div class="w-3 h-3 rounded-full bg-gray-500 animate-pulse"></div> REST';
-        timerProgress.style.backgroundColor = "#6b7280";
-        document.getElementById('timeRemaining').style.color = "#9ca3af";
+        timerStatus.innerHTML = '<div class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></div> REST';
+        timerProgress.style.backgroundColor = "#ef4444"; 
+        document.getElementById('timeRemaining').style.color = "#ef4444";
       }
       roundDisplay.textContent = "ROUND " + currentRound + "/" + TOTAL_ROUNDS;
     }
