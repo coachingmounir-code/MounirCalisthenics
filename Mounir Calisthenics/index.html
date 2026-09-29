@@ -977,68 +977,71 @@ body[data-section='6'] .shard-44 { clip-path: var(--presence-44); }
     let currentIdx = 0;
     
     const dotsContainer = document.getElementById('dots');
-    for(let i=0; i<7; i++) {{
+    for(let i=0; i<7; i++) {
       let d = document.createElement('div');
       d.className = 'dot' + (i===0?' active':'');
       d.setAttribute('data-title', titles[i]);
       d.onclick = () => goTo(i);
       dotsContainer.appendChild(d);
-    }}
+    }
     
-    function goTo(idx) {{
+    function goTo(idx) {
       currentIdx = idx;
       document.body.setAttribute('data-section', idx);
       
-      document.querySelectorAll('.dot').forEach((d, i) => {{
+      document.querySelectorAll('.dot').forEach((d, i) => {
         d.className = 'dot' + (i===idx ? ' active' : '');
-      }});
+      });
       
       const titleEl = document.getElementById('title-display');
       titleEl.style.opacity = 0;
-      setTimeout(() => {{
+      setTimeout(() => {
         titleEl.textContent = titles[idx];
         titleEl.style.opacity = 1;
-      }}, 400);
+      }, 400);
       
       document.querySelectorAll('.drawer-content').forEach(el => el.classList.remove('active'));
-      document.querySelector(`.drawer-content[data-idx="${{idx}}"]`).classList.add('active');
-    }}
+      document.querySelector(`.drawer-content[data-idx="${idx}"]`).classList.add('active');
+    }
     
-    function toggleDrawer() {{
+    function toggleDrawer() {
       document.body.classList.toggle('drawer-open');
-    }}
+    }
     
     // Smooth scrolling
     let isScrolling = false;
-    window.addEventListener('wheel', (e) => {{
+    window.addEventListener('wheel', (e) => {
       if(document.body.classList.contains('drawer-open')) return;
       if(isScrolling) return;
       if(Math.abs(e.deltaY) < 30) return; // threshold
       
-      if(e.deltaY > 0 && currentIdx < 6) {{
+      if(e.deltaY > 0 && currentIdx < 6) {
         goTo(currentIdx + 1);
         isScrolling = true;
         setTimeout(() => isScrolling = false, 1200);
-      }} else if (e.deltaY < 0 && currentIdx > 0) {{
+      } else if (e.deltaY < 0 && currentIdx > 0) {
         goTo(currentIdx - 1);
         isScrolling = true;
         setTimeout(() => isScrolling = false, 1200);
-      }}
-    }});
+      }
+    });
     
     // Key bindings
-    window.addEventListener('keydown', (e) => {{
-      if(document.body.classList.contains('drawer-open')) {{
+    window.addEventListener('keydown', (e) => {
+      if(document.body.classList.contains('drawer-open')) {
         if(e.key === 'Escape') toggleDrawer();
         return;
-      }}
-      if(e.key === 'ArrowDown' || e.key === 'ArrowRight') {{
+      }
+      if(e.key === 'ArrowDown' || e.key === 'ArrowRight') {
         if(currentIdx < 6) goTo(currentIdx + 1);
-      }}
-      if(e.key === 'ArrowUp' || e.key === 'ArrowLeft') {{
+      }
+      if(e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
         if(currentIdx > 0) goTo(currentIdx - 1);
-      }}
-    }});
+      }
+      if(e.key === 'Enter') {
+        toggleDrawer();
+      }
+    });
 
     // Timer Logic
     const TOTAL_ROUNDS = 8;
@@ -1052,7 +1055,7 @@ body[data-section='6'] .shard-44 { clip-path: var(--presence-44); }
     const timerStatus = document.getElementById('timerStatus');
     const startTimerBtn = document.getElementById('startTimerBtn');
     
-    function playBeep(freq, duration) {{
+    function playBeep(freq, duration) {
       const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
       const osc = audioCtx.createOscillator();
       const gain = audioCtx.createGain();
@@ -1061,68 +1064,68 @@ body[data-section='6'] .shard-44 { clip-path: var(--presence-44); }
       gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
       osc.connect(gain); gain.connect(audioCtx.destination);
       osc.start(); osc.stop(audioCtx.currentTime + duration);
-    }}
+    }
     
-    function updateDisplay() {{
-      timeRemaining.textContent = `00:${{timeLeft.toString().padStart(2, '0')}}`;
-      timerProgress.style.width = `${{(timeLeft / (isWorking ? WORK_SECONDS : REST_SECONDS)) * 100}}%`;
-      if(isWorking) {{
+    function updateDisplay() {
+      timeRemaining.textContent = `00:${timeLeft.toString().padStart(2, '0')}`;
+      timerProgress.style.width = `${(timeLeft / (isWorking ? WORK_SECONDS : REST_SECONDS)) * 100}%`;
+      if(isWorking) {
         timerStatus.textContent = "WORK";
         timerStatus.className = "text-red-600 font-bold";
         timerProgress.className = "h-full bg-red-600 w-full transition-all duration-300";
-      }} else {{
+      } else {
         timerStatus.textContent = "REST";
         timerStatus.className = "text-blue-500 font-bold";
         timerProgress.className = "h-full bg-blue-500 w-full transition-all duration-300";
-      }}
-      roundDisplay.textContent = `ROUND ${{currentRound}}/${{TOTAL_ROUNDS}}`;
-    }}
+      }
+      roundDisplay.textContent = `ROUND ${currentRound}/${TOTAL_ROUNDS}`;
+    }
     
-    function toggleTimer() {{
-      if(isRunning) {{
+    function toggleTimer() {
+      if(isRunning) {
         clearInterval(timerInterval); isRunning = false; startTimerBtn.textContent = 'RESUME';
-      }} else {{
+      } else {
         isRunning = true; startTimerBtn.textContent = 'PAUSE'; playBeep(880, 0.2);
-        timerInterval = setInterval(() => {{
-          if(timeLeft > 0) {{
+        timerInterval = setInterval(() => {
+          if(timeLeft > 0) {
             timeLeft--;
             if(timeLeft <= 3 && timeLeft > 0) playBeep(520, 0.1);
             updateDisplay();
-          }} else {{
-            if(isWorking) {{
+          } else {
+            if(isWorking) {
               playBeep(1050, 0.35);
-              if(currentRound >= TOTAL_ROUNDS) {{
+              if(currentRound >= TOTAL_ROUNDS) {
                 clearInterval(timerInterval); isRunning = false;
                 startTimerBtn.textContent = 'DONE!'; timerStatus.textContent = "FINISHED";
                 timeRemaining.textContent = "00:00"; return;
-              }}
+              }
               isWorking = false; timeLeft = REST_SECONDS;
-            }} else {{
+            } else {
               playBeep(920, 0.25);
               isWorking = true; currentRound++; timeLeft = WORK_SECONDS;
-            }}
+            }
             updateDisplay();
-          }}
-        }}, 1000);
-      }}
-    }}
+          }
+        }, 1000);
+      }
+    }
     
-    function resetTimer() {{
+    function resetTimer() {
       clearInterval(timerInterval); isRunning = false; isWorking = true;
       currentRound = 1; timeLeft = WORK_SECONDS; startTimerBtn.textContent = 'START';
       updateDisplay();
-    }}
+    }
     
     // Speech Logic
-    function speakAllPillars() {{
+    function speakAllPillars() {
       const text = "Mounirs drei Säulen der Sportleridentität. Erstens: Eiserne Disziplin und Fokus. Zweitens: Maximale Körperspannung und perfekte Form. Drittens: Unaufhaltsamer Wille, keine Ausreden!";
-      if ('speechSynthesis' in window) {{
+      if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'de-DE';
         window.speechSynthesis.speak(utterance);
-      }} else {{ alert(text); }}
-    }}
+      } else { alert(text); }
+    }
     
     goTo(0);
   </script>
